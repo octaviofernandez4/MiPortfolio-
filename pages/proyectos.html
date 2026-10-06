@@ -194,6 +194,59 @@
                 <div class="project-visual">
                     <div class="carousel-track">
                         <div class="carousel-slide">
+                            <img src="../assets/img/elgarage-home.png" alt="Home de El Garage Automóviles" width="2533" height="1237" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/elgarage-stock.png" alt="Stock de vehículos de El Garage Automóviles con filtros" width="2522" height="1203" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/elgarage-tasacion.png" alt="Formulario de tasación online de El Garage Automóviles" width="2328" height="1077" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-arrow carousel-next" aria-label="Foto siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Claude API</span>
+                    </div>
+                    <h3>El Garage Automóviles</h3>
+                    <p class="desc">Plataforma web para una concesionaria de autos usados: los clientes exploran el stock, filtran por marca/carrocería/precio, consultan la ficha de cada unidad y tasan su auto actual online, mientras el dueño gestiona todo el inventario, las tasaciones recibidas y las conversaciones del chat desde un panel propio.</p>
+                    <button type="button" class="btn-more" aria-expanded="false" aria-controls="desc-more-elgarage">
+                        <span class="btn-more-label">Ver más</span>
+                        <svg class="btn-more-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="desc-more" id="desc-more-elgarage">
+                        <ul class="desc-list">
+                            <li><strong>Dos experiencias con rutas protegidas:</strong> sitio público (stock, ficha de auto, tasación, chat) y panel admin detrás de login con JWT, sin exponer ninguna ruta de gestión sin autenticar.</li>
+                            <li><strong>Carga de vehículos con moneda dual (USD/ARS):</strong> cada auto se publica en dólares o en pesos según convenga, con selector de moneda en el formulario y precio formateado correctamente en toda la web.</li>
+                            <li><strong>Chatbot con IA (Claude Haiku vía Anthropic SDK):</strong> usa function calling para consultar el stock real en MongoDB y responder con datos concretos (marca, precio, disponibilidad) en vez de inventar información.</li>
+                            <li><strong>Carga de fotos directa a Cloudinary:</strong> subida sin pasar por el servidor (unsigned upload), hasta 7 fotos por vehículo, con reordenamiento y selección de portada desde el panel.</li>
+                            <li><strong>SEO técnico completo:</strong> metadata dinámica por página (hook propio useSeo), datos estructurados JSON-LD (AutomotiveBusiness), sitemap.xml generado en cada build consultando la API en vivo, y robots.txt.</li>
+                            <li><strong>Backend en Express + MongoDB:</strong> autenticación con JWT y bcrypt, rate limiting propio por IP (con trust proxy para Render), CORS multi-origen para soportar dominio propio y subdominios.</li>
+                            <li><strong>Notificaciones automáticas por email (Nodemailer):</strong> el dueño recibe un correo apenas entra una tasación nueva, sin tener que estar pendiente del panel.</li>
+                            <li><strong>Frontend SPA con React 18 + Vite + React Router 7:</strong> sin librerías de UI, diseño propio con tokens de color/tipografía consistentes en todo el sitio.</li>
+                            <li><strong>Infraestructura productiva real:</strong> frontend en Vercel, backend en Render, base de datos en MongoDB Atlas y dominio propio conectado a mano (DNS, SSL, verificación en Google Search Console).</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>2026 · EN PRODUCCIÓN</span>
+                        <a href="https://elgarageautomovilesyb.com/" target="_blank" rel="noopener" class="cta">VER DEMO →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card span-3 reveal">
+                <div class="project-visual">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
                             <img src="../assets/img/focusonweb-hero.png" alt="Pantalla principal de FocusOnWeb" width="2529" height="1226" loading="lazy" decoding="async">
                         </div>
                         <div class="carousel-slide">
