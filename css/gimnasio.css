@@ -99,7 +99,7 @@ img { max-width: 100%; display: block; }
 .hero { padding-top: 56px; overflow: hidden; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; align-items: end; padding-bottom: 64px; }
 .hero__title {
-  font-size: clamp(52px, 8.4vw, 124px);
+  font-size: clamp(52px, 6vw, 96px);
   font-weight: 900;
   font-stretch: 118%;
   line-height: .88;
@@ -323,6 +323,9 @@ img { max-width: 100%; display: block; }
 .toast.is-show { transform: translate(-50%, 0); }
 
 /* Responsive */
+@media (max-width: 1400px) {
+  .hero__title { font-size: clamp(52px, 5.2vw, 88px); }
+}
 @media (max-width: 1024px) {
   .slot { grid-template-columns: 90px minmax(0, 1fr) 140px; }
   .slot__coach { display: none; }
