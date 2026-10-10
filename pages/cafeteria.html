@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almendra — Café & Pastelería</title>
+<meta name="description" content="Café de especialidad y pastelería artesanal en Palermo, Buenos Aires. Tortas por encargo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/cafeteria.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#top" class="logo">Almendra</a>
+    <nav class="nav">
+      <a href="#carta">Carta</a>
+      <a href="#encargos">Encargos</a>
+      <a href="#visitanos">Visitanos</a>
+    </nav>
+    <a href="https://wa.me/5491100000000" class="btn btn--accent btn--sm">Pedir por WhatsApp</a>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="container hero">
+    <div class="hero__text">
+      <p class="eyebrow">Café de especialidad · Pastelería artesanal</p>
+      <h1 class="hero__title">Horneamos todas las mañanas, desde las seis.</h1>
+      <p class="hero__lead">Medialunas de manteca, tortas de autor y un espresso tostado acá a la vuelta. Vení a sentarte o llevate algo rico a casa.</p>
+      <div class="actions">
+        <a href="#carta" class="btn btn--dark">Ver la carta</a>
+        <a href="#encargos" class="btn btn--outline">Encargar una torta</a>
+      </div>
+    </div>
+    <div class="ph ph--arch"><span>foto: mostrador con pastelería</span></div>
+  </section>
+
+  <section class="dark">
+    <div class="container split">
+      <h2 class="h2">Una cocina chica, recetas de familia y cero apuro.</h2>
+      <div class="story">
+        <p>Abrimos en 2019 con un horno y una receta de budín de la abuela. Hoy amasamos todo en el local, con manteca de verdad, harinas seleccionadas y fruta de estación.</p>
+        <p>El café lo tuesta un productor amigo en pequeños lotes. Lo preparamos en espresso, filtrado o con leche, como más te guste.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="carta" class="container section menu">
+    <div class="menu__head">
+      <div class="stack-sm">
+        <p class="eyebrow">La carta</p>
+        <h2 class="h2">Para acompañar el café</h2>
+      </div>
+      <div class="tabs" role="tablist">
+        <button class="tab" data-tab="cafe" role="tab">Café</button>
+        <button class="tab is-active" data-tab="pasteleria" role="tab">Pastelería</button>
+        <button class="tab" data-tab="salado" role="tab">Salado</button>
+      </div>
+    </div>
+    <div id="menu-list" class="menu__list"></div>
+  </section>
+
+  <section class="container featured">
+    <div class="card"><div class="ph ph--square"><span>foto: medialunas</span></div><h3>Medialunas de manteca</h3></div>
+    <div class="card"><div class="ph ph--square"><span>foto: torta de frutos rojos</span></div><h3>Torta de frutos rojos</h3></div>
+    <div class="card"><div class="ph ph--square"><span>foto: flat white</span></div><h3>Flat white</h3></div>
+  </section>
+
+  <section id="encargos" class="tinted">
+    <div class="container section split split--center">
+      <div class="ph ph--wide ph--tinted"><span>foto: torta de cumpleaños</span></div>
+      <div class="stack">
+        <p class="eyebrow">Tortas por encargo</p>
+        <h2 class="h2">¿Cumpleaños, aniversario o merienda especial?</h2>
+        <p class="lead">Hacemos tortas a pedido desde 8 porciones. Contanos la fecha, el sabor y para cuántos, y te pasamos presupuesto en el día.</p>
+        <ol class="steps">
+          <li><span>01</span>Escribinos por WhatsApp con 72 h de anticipación.</li>
+          <li><span>02</span>Elegís sabor, tamaño y decoración.</li>
+          <li><span>03</span>Señás el 50% y la retirás en el local.</li>
+        </ol>
+        <div><a href="https://wa.me/5491100000000" class="btn btn--accent">Encargar por WhatsApp</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section reviews">
+    <figure><blockquote>“Las mejores medialunas del barrio, y el café siempre impecable.”</blockquote><figcaption>Lucía M. · Google</figcaption></figure>
+    <figure><blockquote>“Encargué la torta de cumple de mi hija y fue la estrella de la fiesta.”</blockquote><figcaption>Martín G. · Instagram</figcaption></figure>
+    <figure><blockquote>“Lugar tranquilo para trabajar un rato. Volvemos todos los sábados.”</blockquote><figcaption>Sofía R. · Google</figcaption></figure>
+  </section>
+
+  <section id="visitanos" class="bordered">
+    <div class="container section split">
+      <div class="stack-lg">
+        <h2 class="h2">Visitanos</h2>
+        <address class="address">
+          <span>Gorriti 4820, Palermo</span>
+          <span class="muted">Buenos Aires</span>
+        </address>
+        <dl class="hours">
+          <dt>Lunes a viernes</dt><dd>7:30 — 20:00</dd>
+          <dt>Sábados</dt><dd>8:30 — 20:00</dd>
+          <dt>Domingos</dt><dd>9:00 — 14:00</dd>
+        </dl>
+        <div class="links">
+          <a href="https://wa.me/5491100000000">WhatsApp</a>
+          <a href="#">Instagram</a>
+          <a href="#">Cómo llegar</a>
+        </div>
+      </div>
+      <div class="ph ph--map"><span>mapa / foto de la fachada</span></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span class="logo logo--light">Almendra</span>
+    <span>© <span id="year">2026</span> Almendra Café & Pastelería</span>
+  </div>
+</footer>
+
+<script src="../js/cafeteria.js"></script>
+</body>
+</html>

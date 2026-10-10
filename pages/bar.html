@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barril Norte — Cervecería & Bar</title>
+  <meta name="description" content="Cervecería artesanal: carta digital, eventos y reserva de mesas por turnos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bar.css">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="logo">BARRIL<span>NORTE</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#carta">Carta</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#reservas" class="btn btn--primary btn--sm">Reservar mesa</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="status" id="openStatus"><span class="dot"></span>Calculando horario…</p>
+          <h1>Birra tirada.<br>Noches <em>largas.</em></h1>
+          <p class="lead">12 canillas rotativas, cocina hasta tarde y mesas por turnos para que siempre haya lugar. Mirá la carta, elegí tu noche y reservá en 30 segundos.</p>
+          <div class="hero__ctas">
+            <a href="#reservas" class="btn btn--primary">Reservar mesa</a>
+            <a href="#carta" class="btn btn--ghost">Ver carta</a>
+          </div>
+          <dl class="hero__facts">
+            <div><dt>Turnos</dt><dd>20:00 · 22:00 · 00:00</dd></div>
+            <div><dt>Canillas</dt><dd>12 activas</dd></div>
+            <div><dt>Capacidad</dt><dd>120 personas</dd></div>
+          </dl>
+        </div>
+        <div class="hero__media">
+          <div class="ph ph--tall"><span>foto ambiente / barra con canillas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="tickerTrack"></div>
+    </div>
+
+    <!-- CARTA -->
+    <section class="section" id="carta">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">01 — Carta digital</p>
+          <h2>Lo que sale hoy</h2>
+          <p class="section__sub">Actualizada en tiempo real. Si se pincha un barril, lo vas a ver acá primero.</p>
+        </div>
+
+        <div class="menu__controls">
+          <div class="tabs" role="tablist" id="menuTabs"></div>
+          <label class="search">
+            <input type="search" id="menuSearch" placeholder="Buscar: IPA, papas, sin TACC…">
+          </label>
+        </div>
+
+        <ul class="menu__list" id="menuList"></ul>
+        <p class="menu__empty" id="menuEmpty" hidden>No encontramos nada con esa búsqueda.</p>
+
+        <div class="happy">
+          <div>
+            <strong>Happy hour 19:00 – 21:00</strong>
+            <span>2x1 en pintas de la casa · todos los días</span>
+          </div>
+          <a href="#reservas" class="btn btn--ghost btn--sm">Reservar turno 20:00</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTOS -->
+    <section class="section section--alt" id="eventos">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">02 — Eventos</p>
+          <h2>Próximas noches</h2>
+          <p class="section__sub">Las fechas con evento se llenan rápido. Reservá directo desde acá.</p>
+        </div>
+        <div class="events" id="eventsList"></div>
+      </div>
+    </section>
+
+    <!-- RESERVAS -->
+    <section class="section" id="reservas">
+      <div class="container reserve">
+        <div class="reserve__info">
+          <p class="eyebrow">03 — Reservas</p>
+          <h2>Reservá tu mesa</h2>
+          <p class="section__sub">Trabajamos por turnos de 2 horas para que todos tengan lugar. Pasado el turno, si la mesa no está reservada, te podés quedar.</p>
+          <ul class="rules">
+            <li><span>01</span>Tolerancia de 15 minutos. Después la mesa se libera.</li>
+            <li><span>02</span>Grupos de más de 10 personas: escribinos por WhatsApp.</li>
+            <li><span>03</span>Noches con evento: el turno de las 22:00 dura hasta el cierre.</li>
+          </ul>
+          <a class="wa" href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp · +54 9 11 0000-0000</a>
+        </div>
+
+        <form class="form" id="reserveForm" novalidate>
+          <div class="field">
+            <label>Fecha</label>
+            <div class="days" id="daysList"></div>
+          </div>
+
+          <div class="field">
+            <label>Turno</label>
+            <div class="slots" id="slotsList"></div>
+          </div>
+
+          <div class="field field--row">
+            <div>
+              <label>Personas</label>
+              <div class="stepper">
+                <button type="button" data-step="-1" aria-label="Menos">−</button>
+                <output id="peopleOut">2</output>
+                <button type="button" data-step="1" aria-label="Más">+</button>
+              </div>
+            </div>
+            <div>
+              <label for="zone">Zona</label>
+              <select id="zone" name="zone">
+                <option>Salón</option>
+                <option>Barra</option>
+                <option>Patio cervecero</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field field--row">
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" type="tel" placeholder="11 2345 6789" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="note">Comentario <small>(opcional)</small></label>
+            <input id="note" name="note" type="text" placeholder="Cumpleaños, silla para bebé, celíacos…">
+          </div>
+
+          <p class="form__error" id="formError" hidden></p>
+
+          <div class="form__summary">
+            <span id="summaryText">Elegí fecha y turno</span>
+            <button type="submit" class="btn btn--primary">Confirmar reserva</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="section section--alt" id="ubicacion">
+      <div class="container location">
+        <div class="ph ph--map"><span>mapa / foto de la fachada</span></div>
+        <div class="location__info">
+          <p class="eyebrow">04 — Dónde estamos</p>
+          <h2>Av. Siempreviva 742</h2>
+          <p class="section__sub">A dos cuadras del subte. Estacionamiento en la esquina.</p>
+          <table class="hours">
+            <tr><td>Lunes</td><td>Cerrado</td></tr>
+            <tr><td>Mar – Jue</td><td>19:00 – 02:00</td></tr>
+            <tr><td>Vie – Sáb</td><td>19:00 – 04:00</td></tr>
+            <tr><td>Domingo</td><td>18:00 – 01:00</td></tr>
+          </table>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--ghost">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#inicio" class="logo">BARRIL<span>NORTE</span></a>
+      <nav>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:hola@barrilnorte.com">hola@barrilnorte.com</a>
+      </nav>
+      <p>Beber con moderación. Prohibida su venta a menores de 18 años.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL CONFIRMACIÓN -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <p class="eyebrow">Reserva confirmada</p>
+      <h3 id="modalTitle">¡Listo, te esperamos!</h3>
+      <dl class="ticket" id="ticket"></dl>
+      <p class="modal__note">Te mandamos la confirmación por WhatsApp. Tolerancia: 15 minutos.</p>
+      <button class="btn btn--primary" id="modalClose">Perfecto</button>
+    </div>
+  </div>
+
+  <script src="../js/bar.js"></script>
+</body>
+</html>

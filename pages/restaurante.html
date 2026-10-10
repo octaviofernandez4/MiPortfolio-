@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servido — Menú digital, reservas y mesas en un solo sistema</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/restaurante.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="logo"><span></span>Servido</a>
+    <nav class="nav-links">
+      <a href="#producto">Producto</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#precios">Precios</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost">Ingresar</a>
+      <a href="#demo" class="btn btn-primary">Probar gratis</a>
+      <button class="burger" id="burger" aria-label="Abrir menú"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#producto">Producto</a>
+    <a href="#como">Cómo funciona</a>
+    <a href="#precios">Precios</a>
+    <a href="#faq">Preguntas</a>
+    <a href="#demo" style="color:var(--accent);border:0">Probar gratis →</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Software para restaurantes</span>
+        <h1>Tu salón, <em>en orden</em> desde la primera reserva.</h1>
+        <p class="lead">Menú digital, reservas online y gestión de mesas en un solo sistema. Menos llamados, menos papel, más cubiertos por noche.</p>
+        <div class="hero-actions">
+          <a href="#demo" class="btn btn-primary">Empezar 14 días gratis</a>
+          <a href="#producto" class="btn btn-ghost">Ver cómo funciona</a>
+        </div>
+        <p class="hero-note">Sin tarjeta de crédito · Listo en una tarde</p>
+      </div>
+
+      <div class="mock reveal">
+        <div class="mock-head">
+          <strong>Salón principal · Viernes 21:30</strong>
+          <div class="legend">
+            <span><i class="dot" style="background:var(--ok)"></i>Libre</span>
+            <span><i class="dot" style="background:var(--warn)"></i>Reservada</span>
+            <span><i class="dot" style="background:var(--accent)"></i>Ocupada</span>
+          </div>
+        </div>
+        <div class="floor" id="floor"></div>
+        <div class="mock-foot">
+          <div class="stat"><b id="sLibre">0</b><span>Libres</span></div>
+          <div class="stat"><b id="sRes">0</b><span>Reservadas</span></div>
+          <div class="stat"><b id="sOcu">0</b><span>Ocupadas</span></div>
+        </div>
+        <p class="mock-hint">Tocá una mesa para cambiar su estado</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>Parrillas</span><span>Bodegones</span><span>Cafeterías</span><span>Bistrós</span><span>Pizzerías</span><span>Cervecerías</span><span>Restó de autor</span>
+      <span>Parrillas</span><span>Bodegones</span><span>Cafeterías</span><span>Bistrós</span><span>Pizzerías</span><span>Cervecerías</span><span>Restó de autor</span>
+    </div>
+  </div>
+
+  <section class="block" id="producto">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Tres herramientas, un sistema</span>
+          <h2 style="margin-top:16px">Todo lo que pasa entre la puerta y la cuenta.</h2>
+        </div>
+        <p>Cada reserva, pedido y mesa se conecta. Cuando alguien reserva online, el salón ya lo sabe; cuando cambiás un plato, el menú se actualiza al instante.</p>
+      </div>
+
+      <div class="features">
+        <article class="feat reveal">
+          <span class="num">01 — Menú digital</span>
+          <h3>Una carta que se actualiza sola.</h3>
+          <div class="feat-visual">
+            <div class="menu-cat" id="menuCats">
+              <button class="on" data-c="principales">Principales</button>
+              <button data-c="entradas">Entradas</button>
+              <button data-c="postres">Postres</button>
+            </div>
+            <div id="menuList" style="display:flex;flex-direction:column;gap:6px"></div>
+          </div>
+          <p>QR en cada mesa, fotos, alérgenos y precios que cambiás desde el celular en segundos.</p>
+          <ul><li>Multi-idioma automático</li><li>Platos agotados al instante</li><li>Sin reimprimir nunca más</li></ul>
+        </article>
+
+        <article class="feat reveal">
+          <span class="num">02 — Reservas online</span>
+          <h3>Reservas las 24 horas, sin atender el teléfono.</h3>
+          <div class="feat-visual">
+            <span class="eyebrow" style="font-size:11px">Sábado · 2 personas</span>
+            <div class="slots" id="slots"></div>
+            <div class="slot-msg" id="slotMsg">Elegí un horario</div>
+          </div>
+          <p>Desde tu web, Instagram o Google. Confirmación y recordatorio por WhatsApp para bajar los ausentes.</p>
+          <ul><li>Recordatorios automáticos</li><li>Lista de espera inteligente</li><li>Seña opcional por reserva</li></ul>
+        </article>
+
+        <article class="feat reveal">
+          <span class="num">03 — Gestión de mesas</span>
+          <h3>El salón entero en una sola pantalla.</h3>
+          <div class="feat-visual" style="justify-content:center">
+            <div class="bars">
+              <div class="bar"><span>Salón</span><div><i style="width:82%"></i></div><span>82%</span></div>
+              <div class="bar"><span>Terraza</span><div><i style="width:64%"></i></div><span>64%</span></div>
+              <div class="bar"><span>Barra</span><div><i style="width:91%;background:var(--accent)"></i></div><span>91%</span></div>
+              <div class="bar"><span>Privado</span><div><i style="width:40%"></i></div><span>40%</span></div>
+            </div>
+          </div>
+          <p>Plano editable, tiempos de ocupación y rotación en vivo para que el encargado decida rápido.</p>
+          <ul><li>Plano arrastrable</li><li>Unir y separar mesas</li><li>Reportes de rotación</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block how" id="como">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Cómo funciona</span>
+          <h2 style="margin-top:16px">De cero a servicio en una tarde.</h2>
+        </div>
+        <p>No hace falta instalar nada ni comprar equipos. Funciona en la tablet, la compu o el celular que ya tenés.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><b>1</b><h3>Cargá tu carta</h3><p>Subí un PDF o una foto y la convertimos en menú digital editable.</p></div>
+        <div class="step reveal"><b>2</b><h3>Dibujá tu salón</h3><p>Arrastrá mesas, definí sectores y capacidad en minutos.</p></div>
+        <div class="step reveal"><b>3</b><h3>Activá reservas</h3><p>Pegá el botón en tu web e Instagram. Listo.</p></div>
+        <div class="step reveal"><b>4</b><h3>Serví más</h3><p>Seguí la ocupación en vivo y mirá qué funciona cada noche.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap quote">
+      <div class="ph reveal">[ foto del restaurante cliente ]</div>
+      <div class="reveal">
+        <blockquote>“Dejamos de perder reservas por no atender el teléfono en pleno servicio. Ahora el salón se llena solo.”</blockquote>
+        <cite><b>Lucía Ferrero</b>Dueña, Almacén Ferrero</cite>
+        <div class="metrics">
+          <div><b>−38%</b><span>ausencias a reservas</span></div>
+          <div><b>+22%</b><span>cubiertos por noche</span></div>
+          <div><b>3 h</b><span>ahorradas por semana</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="precios" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Precios</span>
+          <h2 style="margin-top:16px">Un precio claro, sin comisión por cubierto.</h2>
+        </div>
+        <p>Probá cualquier plan 14 días gratis. Cambiá o cancelá cuando quieras.</p>
+      </div>
+      <div class="toggle" id="billing">
+        <button class="on" data-b="m">Mensual</button>
+        <button data-b="a">Anual <small>−20%</small></button>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <h3>Menú</h3>
+          <p>Para cafés y locales que quieren digitalizar su carta.</p>
+          <div class="price"><span data-m="19" data-a="15">19</span> <small>USD / mes</small></div>
+          <ul><li>Menú digital con QR</li><li>Fotos y alérgenos</li><li>Hasta 3 idiomas</li></ul>
+          <a href="#demo" class="btn btn-ghost">Empezar</a>
+        </div>
+        <div class="plan featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Servicio completo</h3>
+          <p>Menú, reservas y mesas conectados en un solo sistema.</p>
+          <div class="price"><span data-m="49" data-a="39">49</span> <small>USD / mes</small></div>
+          <ul><li>Todo lo de Menú</li><li>Reservas online ilimitadas</li><li>Recordatorios por WhatsApp</li><li>Plano de mesas en vivo</li></ul>
+          <a href="#demo" class="btn btn-primary">Probar 14 días gratis</a>
+        </div>
+        <div class="plan reveal">
+          <h3>Grupo</h3>
+          <p>Para cadenas y grupos gastronómicos con varias sucursales.</p>
+          <div class="price"><span data-m="129" data-a="103">129</span> <small>USD / mes</small></div>
+          <ul><li>Todo lo de Servicio completo</li><li>Sucursales ilimitadas</li><li>Reportes consolidados</li><li>Soporte prioritario</li></ul>
+          <a href="#demo" class="btn btn-ghost">Hablar con ventas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap faq-grid">
+      <div class="reveal">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 style="margin-top:16px">Lo que nos preguntan antes de arrancar.</h2>
+      </div>
+      <div class="faq reveal" id="faqList">
+        <div class="faq-item"><button class="faq-q">¿Necesito comprar tablets o equipos?<i>+</i></button><div class="faq-a"><p>No. Servido funciona desde el navegador en cualquier celular, tablet o computadora que ya tengas.</p></div></div>
+        <div class="faq-item"><button class="faq-q">¿Cobran comisión por reserva?<i>+</i></button><div class="faq-a"><p>Nunca. Pagás un precio fijo mensual sin importar cuántas reservas o cubiertos tengas.</p></div></div>
+        <div class="faq-item"><button class="faq-q">¿Puedo usar solo el menú digital?<i>+</i></button><div class="faq-a"><p>Sí. El plan Menú incluye solo la carta digital y podés sumar reservas y mesas cuando quieras.</p></div></div>
+        <div class="faq-item"><button class="faq-q">¿Cómo llegan los clientes a reservar?<i>+</i></button><div class="faq-a"><p>Con un link o botón que ponés en tu web, Instagram, Google Maps o WhatsApp. Todas las reservas caen en el mismo plano.</p></div></div>
+        <div class="faq-item"><button class="faq-q">¿Qué pasa cuando termina la prueba?<i>+</i></button><div class="faq-a"><p>Elegís un plan o se pausa la cuenta. No pedimos tarjeta para empezar, así que no hay cobros sorpresa.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 0 40px" id="demo">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div>
+          <h2>Abrí tu próximo servicio con Servido.</h2>
+          <p>14 días gratis. Te ayudamos a cargar la carta y el salón.</p>
+        </div>
+        <form class="form" id="ctaForm" novalidate>
+          <input type="text" name="local" placeholder="Nombre del restaurante" required>
+          <input type="email" name="email" placeholder="Tu email" required>
+          <button type="submit" class="btn">Crear mi cuenta gratis</button>
+          <div class="form-msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#" class="logo"><span></span>Servido</a>
+        <p>Menú digital, reservas online y gestión de mesas para restaurantes.</p>
+      </div>
+      <div><h4>Producto</h4><ul><li><a href="#producto">Menú digital</a></li><li><a href="#producto">Reservas</a></li><li><a href="#producto">Mesas</a></li><li><a href="#precios">Precios</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="#">Nosotros</a></li><li><a href="#">Clientes</a></li><li><a href="#">Contacto</a></li></ul></div>
+      <div><h4>Ayuda</h4><ul><li><a href="#faq">Preguntas</a></li><li><a href="#">Centro de ayuda</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Servido</span><span><a href="#">Términos</a> · <a href="#">Privacidad</a></span></div>
+  </div>
+</footer>
+
+<script src="../js/restaurante.js"></script>
+</body>
+</html>

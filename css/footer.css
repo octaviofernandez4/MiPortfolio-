@@ -1,0 +1,400 @@
+/* ========================================= */
+/* 8. FOOTER                                 */
+/* ========================================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.site-footer {
+    padding: 40px 20px 24px;
+    background: #0b0e18;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.footer-col { min-width: 0; }
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    text-decoration: none; /* Asegura que no haya subrayado en el logo */
+}
+
+.footer-logo img {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.footer-logo span {
+    font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #e7ebf1;
+}
+
+.footer-tagline {
+    color: #93a0b4;
+    font-size: 0.82rem;
+    margin-bottom: 10px;
+    max-width: 32ch;
+}
+
+.footer-location {
+    color: #93a0b4;
+    font-size: 0.72rem;
+    margin-bottom: 14px;
+    max-width: 32ch;
+}
+
+.footer-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: #93a0b4;
+}
+
+.footer-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #32e87a;
+    box-shadow: 0 0 8px #32e87a;
+    flex-shrink: 0;
+    animation: footer-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes footer-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.footer-accordion-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    color: #e7ebf1;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    min-height: 44px;
+    cursor: pointer;
+    text-align: left;
+    padding: 0; /* Resetea padding por defecto de botones */
+}
+
+.footer-accordion-chevron {
+    width: 18px;
+    height: 18px;
+    color: #93a0b4;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.footer-accordion-trigger[aria-expanded="true"] .footer-accordion-chevron {
+    transform: rotate(180deg);
+}
+
+.footer-accordion-panel {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 0 0 0; /* Reseteo de padding para ul */
+    margin: 0;
+}
+
+.js-footer-enhanced .footer-accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    transition: max-height 0.35s ease, padding-top 0.35s ease;
+}
+
+.js-footer-enhanced .footer-accordion-panel.expanded {
+    max-height: 600px;
+    padding-top: 10px;
+}
+
+.footer-accordion-panel a,
+.footer-plain {
+    color: #93a0b4;
+    font-size: 0.82rem;
+    display: inline-block;
+    min-height: 24px;
+    text-decoration: none; /* Asegura que los enlaces no tengan subrayado por defecto */
+}
+
+.footer-accordion-panel a:hover {
+    color: #2fd8e8;
+}
+
+.footer-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 28px 0;
+    margin-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-process-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-process-list li {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: #93a0b4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+.footer-process-list li:not(:last-child)::after {
+    content: '↓';
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.16);
+}
+
+/* ========================================================== */
+/* SECCIÓN DE ICONOS DE TECNOLOGÍA (.footer-stack)            */
+/* ========================================================== */
+.footer-stack {
+    display: flex;
+    flex-wrap: wrap; /* Importante para que no se compriman en móviles */
+    align-items: center;
+    justify-content: center;
+    gap: 16px; /* Este gap DEBE separar los elementos */
+    padding: 0; /* Resetea el padding por defecto del <ul> */
+    margin: 0; /* Resetea márgenes */
+}
+
+.footer-stack li {
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px; 
+    height: 46px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0; /* IMPIDE QUE EL NAVEGADOR LOS APLASTE */
+    box-sizing: border-box; /* Asegura que el border no cambie el tamaño final */
+}
+
+.footer-stack i {
+    font-size: 22px;
+    line-height: 1;
+    display: block; /* Asegura que el icono no tenga espacios raros de fuente */
+}
+
+.footer-stack .devicon-express-original.colored {
+    color: #e7ebf1;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Incrementado un poco el gap para mejor respiro */
+    padding-top: 40px;
+    text-align: center;
+}
+
+.footer-copy {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: #93a0b4;
+    margin: 0; /* Reseteo de margen */
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.footer-legal a {
+    font-size: 0.72rem;
+    color: #93a0b4;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: #2fd8e8;
+}
+
+/* ========================================================== */
+/* SECCIÓN DE REDES SOCIALES (.footer-social)                 */
+/* ========================================================== */
+.footer-social {
+    display: flex;
+    gap: 16px; /* Asegura la separación */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Para que en móviles muy pequeños no se aplasten */
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #93a0b4;
+    flex-shrink: 0; /* EVITA EL APLASTAMIENTO */
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.footer-social a:hover {
+    color: #2fd8e8;
+    border-color: #2fd8e8;
+}
+
+.footer-social svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.footer-top {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 40px;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: #93a0b4;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 30px;
+    padding: 8px 18px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0; 
+    box-sizing: border-box;
+}
+
+.footer-top:hover {
+    color: #2fd8e8;
+    border-color: #2fd8e8;
+}
+
+@media (min-width: 768px) {
+    .site-footer { padding: 50px 5% 30px; }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 32px;
+    }
+
+    .footer-accordion-trigger {
+        cursor: default;
+        min-height: auto;
+        padding-bottom: 14px;
+        margin-bottom: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.92rem;
+    }
+
+    .footer-accordion-chevron { display: none; }
+
+    .js-footer-enhanced .footer-accordion-panel,
+    .js-footer-enhanced .footer-accordion-panel.expanded {
+        max-height: none;
+        overflow: visible;
+        padding-top: 0;
+    }
+
+    .footer-strip {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap; 
+        gap: 24px;
+    }
+
+    .footer-stack {
+        justify-content: flex-end; /* Alinea los iconos a la derecha en escritorio */
+    }
+
+    .footer-process-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .footer-process-list li { margin: 0 14px; }
+
+    .footer-process-list li:not(:last-child)::after {
+        content: '→';
+        display: inline-block;
+        margin: 0 0 0 14px;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between; /* El copyright, legal y redes se reparten el espacio */
+        align-items: center;
+        text-align: left;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-main {
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    
+    /* Pequeño ajuste adicional para la tira inferior en pantallas muy grandes,
+       asegura que los iconos de tecnología y la lista de proceso no se peleen por espacio */
+    .footer-strip {
+        flex-wrap: nowrap;
+    }
+}

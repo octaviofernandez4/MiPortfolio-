@@ -110,3 +110,42 @@ document.querySelectorAll('.btn-more').forEach((btn) => {
         if (label) label.textContent = expanded ? 'Ver menos' : 'Ver más';
     });
 });
+
+// ------------------------------------------------------------
+// Footer: acordeones en mobile (Servicios, Navegación, Contacto).
+// Desde 768px los paneles quedan siempre abiertos y los triggers
+// se sacan del orden de tabulación, ya que pasan a ser títulos.
+// ------------------------------------------------------------
+const footerTriggers = document.querySelectorAll('.footer-accordion-trigger');
+
+if (footerTriggers.length) {
+    document.documentElement.classList.add('js-footer-enhanced');
+    const footerMq = window.matchMedia('(min-width: 768px)');
+
+    const syncFooterAccordions = (e) => {
+        footerTriggers.forEach((trigger) => {
+            const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+            if (e.matches) {
+                trigger.setAttribute('aria-expanded', 'true');
+                trigger.setAttribute('tabindex', '-1');
+                if (panel) panel.classList.add('expanded');
+            } else {
+                trigger.removeAttribute('tabindex');
+                trigger.setAttribute('aria-expanded', String(panel ? panel.classList.contains('expanded') : false));
+            }
+        });
+    };
+
+    footerTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            if (footerMq.matches) return;
+            const panel = document.getElementById(trigger.getAttribute('aria-controls'));
+            if (!panel) return;
+            const expanded = panel.classList.toggle('expanded');
+            trigger.setAttribute('aria-expanded', String(expanded));
+        });
+    });
+
+    syncFooterAccordions(footerMq);
+    footerMq.addEventListener('change', syncFooterAccordions);
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa Larga — Catering para eventos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/catering.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="logo">Mesa Larga<span>catering</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#menus">Menús</a>
+        <a href="#cotizar">Cotizar</a>
+        <a href="#seguimiento">Seguimiento</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#cotizar" class="btn btn--dark btn--sm nav__cta">Pedir presupuesto</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Catering para bodas, empresas y celebraciones</p>
+          <h1>Cocinamos para tu evento. <em>Vos solo disfrutá.</em></h1>
+          <p class="lead">Elegí un menú, cotizá en un minuto y seguí tu pedido en tiempo real, desde la confirmación hasta que servimos el primer plato.</p>
+          <div class="hero__actions">
+            <a href="#cotizar" class="btn btn--accent">Cotizar mi evento</a>
+            <a href="#menus" class="btn btn--ghost">Ver menús</a>
+          </div>
+          <dl class="hero__facts">
+            <div><dt>+1.200</dt><dd>eventos servidos</dd></div>
+            <div><dt>20 – 800</dt><dd>invitados</dd></div>
+            <div><dt>48 h</dt><dd>para confirmar</dd></div>
+          </dl>
+        </div>
+        <div class="hero__media">
+          <div class="ph ph--tall"><span>foto principal — mesa servida</span></div>
+          <div class="ph ph--small"><span>detalle de plato</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="section" id="menus">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">01 — Catálogo</p>
+            <h2>Menús por tipo de evento</h2>
+          </div>
+          <p class="section__note">Precios por persona. Todos los menús se pueden adaptar a opciones vegetarianas, veganas y sin TACC.</p>
+        </div>
+        <div class="tabs" id="eventTabs" role="tablist"></div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- COTIZADOR -->
+    <section class="section section--alt" id="cotizar">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">02 — Cotizador online</p>
+            <h2>Armá tu presupuesto</h2>
+          </div>
+          <p class="section__note">El total se calcula al instante. Al enviar, recibís un código para seguir tu pedido.</p>
+        </div>
+
+        <div class="quote">
+          <form class="quote__form" id="quoteForm" novalidate>
+            <div class="field">
+              <label for="qEvent">Tipo de evento</label>
+              <select id="qEvent"></select>
+            </div>
+            <div class="field">
+              <label for="qMenu">Menú</label>
+              <select id="qMenu"></select>
+            </div>
+            <div class="field field--full">
+              <label for="qGuests">Invitados <output id="qGuestsOut">80</output></label>
+              <input type="range" id="qGuests" min="20" max="800" step="10" value="80">
+              <div class="range-labels"><span>20</span><span>800</span></div>
+            </div>
+            <div class="field">
+              <label for="qDate">Fecha</label>
+              <input type="date" id="qDate" required>
+            </div>
+            <div class="field">
+              <label for="qZone">Zona</label>
+              <select id="qZone">
+                <option value="0">CABA</option>
+                <option value="45000">GBA Norte / Oeste / Sur</option>
+                <option value="120000">Más de 60 km</option>
+              </select>
+            </div>
+            <fieldset class="field field--full">
+              <legend>Adicionales</legend>
+              <div class="extras" id="qExtras"></div>
+            </fieldset>
+            <div class="field">
+              <label for="qName">Nombre</label>
+              <input type="text" id="qName" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label for="qEmail">Email</label>
+              <input type="email" id="qEmail" placeholder="tu@email.com" required>
+            </div>
+            <p class="form-error" id="formError" role="alert"></p>
+          </form>
+
+          <aside class="summary" aria-live="polite">
+            <p class="summary__label">Resumen</p>
+            <h3 class="summary__menu" id="sMenu">—</h3>
+            <ul class="summary__lines" id="sLines"></ul>
+            <div class="summary__total">
+              <span>Total estimado</span>
+              <strong id="sTotal">$0</strong>
+            </div>
+            <p class="summary__pp" id="sPerPerson"></p>
+            <button type="submit" form="quoteForm" class="btn btn--accent btn--block">Enviar pedido</button>
+            <p class="summary__fine">Sin compromiso. Te confirmamos disponibilidad en menos de 48 h.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGUIMIENTO -->
+    <section class="section" id="seguimiento">
+      <div class="container track">
+        <div class="track__intro">
+          <p class="eyebrow">03 — Seguimiento</p>
+          <h2>¿Cómo va tu pedido?</h2>
+          <p class="lead">Ingresá el código que te enviamos por email. Probá con <button type="button" class="link-btn" id="demoCode">ML-2048</button>.</p>
+          <form class="track__form" id="trackForm">
+            <input type="text" id="trackInput" placeholder="ML-0000" aria-label="Código de pedido" autocomplete="off">
+            <button class="btn btn--dark" type="submit">Buscar</button>
+          </form>
+          <p class="form-error" id="trackError" role="alert"></p>
+        </div>
+
+        <div class="track__panel" id="trackPanel" hidden>
+          <div class="track__header">
+            <div>
+              <p class="summary__label">Pedido</p>
+              <h3 id="tCode">—</h3>
+            </div>
+            <span class="badge" id="tStatus">—</span>
+          </div>
+          <dl class="track__meta">
+            <div><dt>Menú</dt><dd id="tMenu">—</dd></div>
+            <div><dt>Invitados</dt><dd id="tGuests">—</dd></div>
+            <div><dt>Fecha</dt><dd id="tDate">—</dd></div>
+            <div><dt>Total</dt><dd id="tTotal">—</dd></div>
+          </dl>
+          <ol class="timeline" id="tTimeline"></ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="container footer__grid">
+      <div>
+        <a href="#" class="logo logo--light">Mesa Larga<span>catering</span></a>
+        <p class="footer__tag">Cocina de estación para eventos desde 2012.</p>
+      </div>
+      <div>
+        <p class="footer__title">Contacto</p>
+        <a href="mailto:hola@mesalarga.com">hola@mesalarga.com</a>
+        <a href="https://wa.me/5491100000000">WhatsApp +54 9 11 0000-0000</a>
+      </div>
+      <div>
+        <p class="footer__title">Cocina</p>
+        <p>Av. Siempreviva 742, CABA</p>
+        <p>Lun a sáb · 9 a 19 h</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Mesa Larga Catering</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="../js/catering.js"></script>
+</body>
+</html>

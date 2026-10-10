@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serena — Agenda online para centros de estética y spas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/estetica.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">Serena<span>.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#funciones">Funciones</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#precios">Precios</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#precios" class="btn btn-ghost">Ingresar</a>
+      <a href="#contacto" class="btn btn-primary">Probar gratis</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Software para centros de estética y spas</p>
+        <h1>Su agenda llena,<br><em>sin atender el teléfono.</em></h1>
+        <p class="lead">Turnos online las 24 horas, un catálogo de tratamientos que se vende solo y recordatorios automáticos por WhatsApp que bajan las ausencias.</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary btn-lg">Comience gratis 14 días</a>
+          <a href="#agenda" class="btn btn-link">Ver la agenda en acción →</a>
+        </div>
+        <ul class="hero-proof">
+          <li><strong>−68%</strong><span>ausencias</span></li>
+          <li><strong>24/7</strong><span>reservas</span></li>
+          <li><strong>5 min</strong><span>para configurarlo</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <div class="placeholder ph-tall"><span>foto · cabina de spa / tratamiento facial</span></div>
+        <div class="float-card float-booking">
+          <p class="fc-label">Nuevo turno</p>
+          <p class="fc-title">Masaje descontracturante</p>
+          <p class="fc-meta">Jueves 16 · 18:30 · 60 min</p>
+          <span class="chip chip-ok">Confirmado</span>
+        </div>
+        <div class="float-card float-msg">
+          <p class="fc-label">WhatsApp · automático</p>
+          <p class="fc-text">Hola Lucía, le recordamos su turno de mañana a las 18:30. ¿Confirma?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCIONES -->
+  <section class="section" id="funciones">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Funciones</p>
+        <h2>Todo lo que su recepción hace,<br><em>pero sola.</em></h2>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <span class="feature-num">01</span>
+          <h3>Agenda online</h3>
+          <p>Sus clientas eligen tratamiento, profesional y horario desde Instagram, Google o su web. Sin superposiciones, con tiempos de limpieza entre turnos.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-num">02</span>
+          <h3>Catálogo de tratamientos</h3>
+          <p>Fotos, duración, precio y cuidados previos de cada servicio. Arme packs y promociones de temporada en dos clics.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-num">03</span>
+          <h3>Recordatorios automáticos</h3>
+          <p>WhatsApp y email 24 h antes, confirmación con un toque y lista de espera que completa los huecos cuando alguien cancela.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA DEMO -->
+  <section class="section section-alt" id="agenda">
+    <div class="wrap agenda-grid">
+      <div class="agenda-copy">
+        <p class="eyebrow">Pruébelo aquí mismo</p>
+        <h2>Así reserva<br><em>su clienta.</em></h2>
+        <p class="lead">Tres pasos, sin descargar nada ni crear cuenta. Elija un tratamiento, un día y un horario.</p>
+        <ol class="steps">
+          <li class="step is-active" data-step="1"><span>1</span>Tratamiento</li>
+          <li class="step" data-step="2"><span>2</span>Día y horario</li>
+          <li class="step" data-step="3"><span>3</span>Confirmación</li>
+        </ol>
+      </div>
+
+      <div class="booking" id="booking">
+        <div class="booking-panel is-active" data-panel="1">
+          <p class="booking-title">¿Qué tratamiento desea?</p>
+          <div class="service-list" id="serviceList"></div>
+          <button class="btn btn-primary btn-block" id="toStep2" disabled>Continuar</button>
+        </div>
+
+        <div class="booking-panel" data-panel="2">
+          <button class="back" data-back="1">← Cambiar tratamiento</button>
+          <p class="booking-title" id="chosenService"></p>
+          <div class="days" id="days"></div>
+          <div class="slots" id="slots"></div>
+          <button class="btn btn-primary btn-block" id="toStep3" disabled>Reservar turno</button>
+        </div>
+
+        <div class="booking-panel" data-panel="3">
+          <div class="confirm">
+            <span class="confirm-mark">✓</span>
+            <p class="booking-title">¡Turno reservado!</p>
+            <p class="confirm-detail" id="confirmDetail"></p>
+            <div class="confirm-msg">
+              <p class="fc-label">Le recordaremos por WhatsApp</p>
+              <p id="reminderPreview"></p>
+            </div>
+            <button class="btn btn-ghost btn-block" id="restart">Reservar otro</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section class="section" id="catalogo">
+    <div class="wrap">
+      <div class="section-head section-head-row">
+        <div>
+          <p class="eyebrow">Catálogo</p>
+          <h2>Su carta de tratamientos,<br><em>linda y reservable.</em></h2>
+        </div>
+        <div class="filters" id="filters">
+          <button class="filter is-active" data-cat="todos">Todos</button>
+          <button class="filter" data-cat="facial">Facial</button>
+          <button class="filter" data-cat="corporal">Corporal</button>
+          <button class="filter" data-cat="masajes">Masajes</button>
+          <button class="filter" data-cat="manos">Manos y pies</button>
+        </div>
+      </div>
+      <div class="catalog" id="catalog"></div>
+    </div>
+  </section>
+
+  <!-- RECORDATORIOS -->
+  <section class="section section-dark">
+    <div class="wrap reminders-grid">
+      <div>
+        <p class="eyebrow eyebrow-light">Recordatorios automáticos</p>
+        <h2>Menos sillas vacías.<br><em>Cero llamadas.</em></h2>
+        <p class="lead lead-light">Serena envía cada mensaje en el momento justo. Si alguien cancela, avisa a la lista de espera y el hueco se llena solo.</p>
+        <ul class="timeline">
+          <li><span class="tl-time">Al reservar</span><span>Confirmación con dirección y cuidados previos</span></li>
+          <li><span class="tl-time">24 h antes</span><span>Recordatorio con botón “Confirmo / Reprogramo”</span></li>
+          <li><span class="tl-time">2 h antes</span><span>Último aviso para los turnos sin confirmar</span></li>
+          <li><span class="tl-time">48 h después</span><span>Encuesta de satisfacción y oferta de próximo turno</span></li>
+        </ul>
+      </div>
+      <div class="phone">
+        <div class="phone-head">
+          <span class="phone-avatar">S</span>
+          <div><p class="phone-name">Spa Aurora</p><p class="phone-status">en línea</p></div>
+        </div>
+        <div class="chat" id="chat">
+          <div class="bubble in">Hola Lucía 🌿 Le recordamos su <strong>Limpieza facial profunda</strong> mañana jueves a las 18:30.</div>
+          <div class="bubble in">Recuerde venir sin maquillaje. ¿Confirma su turno?</div>
+          <div class="chat-btns"><span>Confirmo</span><span>Reprogramar</span></div>
+          <div class="bubble out">Confirmo 🙌</div>
+          <div class="bubble in">¡Perfecto! La esperamos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Testimonios</p>
+        <h2>Centros que ya<br><em>respiran tranquilos.</em></h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>“Antes perdíamos tres o cuatro turnos por semana. Desde que llegan los recordatorios por WhatsApp, casi no tenemos ausencias.”</blockquote>
+          <figcaption><span class="placeholder ph-avatar"></span><span><strong>Carolina M.</strong><br>Estética Bruma · Córdoba</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“Mis clientas reservan a las once de la noche desde Instagram. Yo me levanto con la agenda armada.”</blockquote>
+          <figcaption><span class="placeholder ph-avatar"></span><span><strong>Valeria R.</strong><br>Nácar Spa · Rosario</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“Tenemos cinco cabinas y siete profesionales. Serena ordena todo sin que nadie se pise.”</blockquote>
+          <figcaption><span class="placeholder ph-avatar"></span><span><strong>Martín G.</strong><br>Termas Urbanas · CABA</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="section section-alt" id="precios">
+    <div class="wrap">
+      <div class="section-head section-head-row">
+        <div>
+          <p class="eyebrow">Precios</p>
+          <h2>Un plan para cada<br><em>tamaño de centro.</em></h2>
+        </div>
+        <div class="billing" id="billing">
+          <button class="is-active" data-period="mensual">Mensual</button>
+          <button data-period="anual">Anual <small>−20%</small></button>
+        </div>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <p class="plan-name">Esencial</p>
+          <p class="plan-desc">Profesionales independientes</p>
+          <p class="plan-price"><span class="price" data-m="9900" data-a="7900"></span><small>/mes</small></p>
+          <ul>
+            <li>1 profesional</li>
+            <li>Agenda online ilimitada</li>
+            <li>Catálogo de tratamientos</li>
+            <li>Recordatorios por email</li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost btn-block">Empezar</a>
+        </article>
+        <article class="plan plan-featured">
+          <span class="plan-badge">Más elegido</span>
+          <p class="plan-name">Centro</p>
+          <p class="plan-desc">Gabinetes y centros de estética</p>
+          <p class="plan-price"><span class="price" data-m="24900" data-a="19900"></span><small>/mes</small></p>
+          <ul>
+            <li>Hasta 5 profesionales</li>
+            <li>Recordatorios por WhatsApp</li>
+            <li>Lista de espera automática</li>
+            <li>Packs, promociones y señas</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary btn-block">Probar 14 días gratis</a>
+        </article>
+        <article class="plan">
+          <p class="plan-name">Spa</p>
+          <p class="plan-desc">Spas y cadenas con varias sedes</p>
+          <p class="plan-price"><span class="price" data-m="49900" data-a="39900"></span><small>/mes</small></p>
+          <ul>
+            <li>Profesionales ilimitados</li>
+            <li>Varias sedes y cabinas</li>
+            <li>Reportes y métricas</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a href="#contacto" class="btn btn-ghost btn-block">Hablar con ventas</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Lo que nos<br><em>suelen preguntar.</em></h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>¿Mis clientas necesitan descargar una app?</summary>
+          <p>No. Reservan desde un link que puede colocar en Instagram, Google Maps o su web. Funciona en cualquier celular.</p>
+        </details>
+        <details>
+          <summary>¿Puedo cobrar una seña al reservar?</summary>
+          <p>Sí. Puede solicitar una seña fija o un porcentaje del tratamiento con Mercado Pago, y se descuenta del total el día del turno.</p>
+        </details>
+        <details>
+          <summary>¿Los recordatorios de WhatsApp tienen costo extra?</summary>
+          <p>Están incluidos en los planes Centro y Spa, sin límite de mensajes.</p>
+        </details>
+        <details>
+          <summary>¿Puedo pasar mi agenda actual?</summary>
+          <p>Sí. Importamos sus clientas y turnos desde Excel o Google Calendar, sin costo.</p>
+        </details>
+        <details>
+          <summary>¿Hay permanencia mínima?</summary>
+          <p>No. Puede cancelar cuando lo desee desde su panel.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contacto">
+    <div class="wrap cta-inner">
+      <h2>Que su próximo turno<br><em>se reserve solo.</em></h2>
+      <form class="cta-form" id="ctaForm">
+        <input type="text" placeholder="Nombre de su centro" required>
+        <input type="email" placeholder="Su email" required>
+        <button class="btn btn-primary btn-lg" type="submit">Crear mi cuenta gratis</button>
+      </form>
+      <p class="cta-note" id="ctaNote">14 días gratis · Sin tarjeta · Configuración en 5 minutos</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a href="#" class="logo">Serena<span>.</span></a>
+    <nav>
+      <a href="#funciones">Funciones</a>
+      <a href="#precios">Precios</a>
+      <a href="#faq">Ayuda</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <p>© 2026 Serena. Hecho para centros de estética.</p>
+  </div>
+</footer>
+
+<script src="../js/estetica.js"></script>
+</body>
+</html>

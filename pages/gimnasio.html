@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORJA Training Club — Reservá tu clase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/gimnasio.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a href="#inicio" class="logo">FORJA<span>.</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#clases">Clases</a>
+        <a href="#planes">Planes</a>
+        <a href="#coaches">Coaches</a>
+        <a href="#sede">Sede</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="btn btn--ghost" id="openTurnos">Mis turnos <span class="badge" id="turnosCount">0</span></button>
+        <a href="#clases" class="btn btn--lime nav__cta">Reservar</a>
+        <button class="burger" id="burger" aria-label="Menú"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">Musculación · Funcional · Clases grupales</p>
+        <h1 class="hero__title">Entrenamiento<br>con método.<br><em>Resultados medibles.</em></h1>
+        <p class="hero__lead">Reservá tu lugar en segundos, elegí el plan que se adapta a tu semana y seguí todos tus turnos desde un solo lugar.</p>
+        <div class="hero__ctas">
+          <a href="#clases" class="btn btn--lime btn--lg">Reservar clase de prueba</a>
+          <a href="#planes" class="btn btn--line btn--lg">Ver planes</a>
+        </div>
+        <ul class="hero__facts">
+          <li><strong>6:00 — 23:00</strong><span>Lunes a viernes</span></li>
+          <li><strong>40+</strong><span>Clases por semana</span></li>
+          <li><strong>1ª clase</strong><span>Sin cargo</span></li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <div class="ph ph--tall"><span>foto hero — atleta entrenando</span></div>
+        <div class="hero__tag">
+          <span class="dot"></span>
+          <div>
+            <small>Próxima clase</small>
+            <strong id="nextClass">—</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>CROSS TRAINING</span><i>✦</i><span>SPINNING</span><i>✦</i><span>MUSCULACIÓN</span><i>✦</i><span>HIIT</span><i>✦</i><span>MOVILIDAD</span><i>✦</i><span>BOX</span><i>✦</i>
+        <span>CROSS TRAINING</span><i>✦</i><span>SPINNING</span><i>✦</i><span>MUSCULACIÓN</span><i>✦</i><span>HIIT</span><i>✦</i><span>MOVILIDAD</span><i>✦</i><span>BOX</span><i>✦</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASES -->
+  <section class="section" id="clases">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">01 — Grilla semanal</p>
+          <h2 class="h2">Elegí día, hora<br>y reservá tu lugar.</h2>
+        </div>
+        <div class="filters" id="filters">
+          <button class="chip is-active" data-type="all">Todas</button>
+          <button class="chip" data-type="fuerza">Fuerza</button>
+          <button class="chip" data-type="cardio">Cardio</button>
+          <button class="chip" data-type="movilidad">Movilidad</button>
+        </div>
+      </div>
+
+      <div class="days" id="days" role="tablist"></div>
+      <div class="schedule" id="schedule"></div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section class="section section--dark" id="planes">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">02 — Membresías</p>
+          <h2 class="h2">Un plan para<br>cada semana.</h2>
+        </div>
+        <div class="toggle" id="billingToggle">
+          <button class="is-active" data-billing="mensual">Mensual</button>
+          <button data-billing="anual">Anual <em>-20%</em></button>
+        </div>
+      </div>
+
+      <div class="plans">
+        <article class="plan">
+          <h3 class="plan__name">Básico</h3>
+          <p class="plan__desc">Para arrancar y sumar constancia.</p>
+          <p class="plan__price"><span class="cur">$</span><span class="amount" data-price="18000">18.000</span><span class="per">/mes</span></p>
+          <ul class="plan__list">
+            <li>Sala de musculación libre</li>
+            <li>2 clases grupales por semana</li>
+            <li>Evaluación física inicial</li>
+          </ul>
+          <button class="btn btn--line btn--block" data-plan="Básico">Elegir Básico</button>
+        </article>
+        <article class="plan plan--featured">
+          <span class="plan__flag">Más elegido</span>
+          <h3 class="plan__name">Full</h3>
+          <p class="plan__desc">Todas las clases, todos los días.</p>
+          <p class="plan__price"><span class="cur">$</span><span class="amount" data-price="26000">26.000</span><span class="per">/mes</span></p>
+          <ul class="plan__list">
+            <li>Musculación + clases ilimitadas</li>
+            <li>Reserva con 7 días de anticipación</li>
+            <li>Plan de entrenamiento mensual</li>
+            <li>App de seguimiento de turnos</li>
+          </ul>
+          <button class="btn btn--lime btn--block" data-plan="Full">Elegir Full</button>
+        </article>
+        <article class="plan">
+          <h3 class="plan__name">Personal</h3>
+          <p class="plan__desc">Acompañamiento 1 a 1 con coach.</p>
+          <p class="plan__price"><span class="cur">$</span><span class="amount" data-price="42000">42.000</span><span class="per">/mes</span></p>
+          <ul class="plan__list">
+            <li>Todo lo del plan Full</li>
+            <li>8 sesiones personalizadas</li>
+            <li>Asesoría nutricional</li>
+          </ul>
+          <button class="btn btn--line btn--block" data-plan="Personal">Elegir Personal</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHES -->
+  <section class="section" id="coaches">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">03 — Equipo</p>
+          <h2 class="h2">Profesionales<br>certificados.</h2>
+        </div>
+      </div>
+      <div class="coaches">
+        <figure class="coach"><div class="ph"><span>foto coach</span></div><figcaption><strong>Lucía Ferreyra</strong><span>Cross Training · HIIT</span></figcaption></figure>
+        <figure class="coach"><div class="ph"><span>foto coach</span></div><figcaption><strong>Martín Ríos</strong><span>Fuerza · Musculación</span></figcaption></figure>
+        <figure class="coach"><div class="ph"><span>foto coach</span></div><figcaption><strong>Sofía Acosta</strong><span>Spinning · Cardio</span></figcaption></figure>
+        <figure class="coach"><div class="ph"><span>foto coach</span></div><figcaption><strong>Diego Paz</strong><span>Movilidad · Yoga</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEDE -->
+  <section class="section section--line" id="sede">
+    <div class="wrap sede">
+      <div>
+        <p class="eyebrow">04 — Sede</p>
+        <h2 class="h2">Av. Siempre Viva 742</h2>
+        <table class="hours">
+          <tr><td>Lunes a viernes</td><td>06:00 — 23:00</td></tr>
+          <tr><td>Sábados</td><td>08:00 — 20:00</td></tr>
+          <tr><td>Domingos</td><td>09:00 — 14:00</td></tr>
+        </table>
+        <div class="hero__ctas">
+          <a href="https://wa.me/5491100000000" target="_blank" rel="noopener" class="btn btn--lime">Escribinos por WhatsApp</a>
+          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--line">Cómo llegar</a>
+        </div>
+      </div>
+      <div class="ph ph--map"><span>mapa / foto de la sede</span></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap faq">
+      <div>
+        <p class="eyebrow">05 — Preguntas</p>
+        <h2 class="h2">Preguntas<br>frecuentes.</h2>
+      </div>
+      <div class="faq__list">
+        <details open>
+          <summary>¿La primera clase es gratis?</summary>
+          <p>Sí. Reservá cualquier clase de la grilla y vení a probar sin costo. Solo traé ropa cómoda y agua.</p>
+        </details>
+        <details>
+          <summary>¿Cómo cancelo un turno?</summary>
+          <p>Desde “Mis turnos” podés cancelar cualquier reserva hasta 2 horas antes. El lugar se libera para otra persona.</p>
+        </details>
+        <details>
+          <summary>¿Puedo cambiar de plan?</summary>
+          <p>Cuando quieras. El cambio se aplica desde el siguiente ciclo de facturación.</p>
+        </details>
+        <details>
+          <summary>¿Necesito experiencia previa?</summary>
+          <p>No. Todas las clases tienen variantes para cada nivel y los coaches adaptan los ejercicios.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a href="#inicio" class="logo logo--xl">FORJA<span>.</span></a>
+      <div class="footer__cols">
+        <a href="#clases">Clases</a>
+        <a href="#planes">Planes</a>
+        <a href="#coaches">Coaches</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p class="footer__legal">© 2026 FORJA Training Club</p>
+    </div>
+  </footer>
+
+  <!-- MODAL RESERVA -->
+  <div class="modal" id="bookModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <form class="modal__box" id="bookForm">
+      <button type="button" class="modal__x" data-close aria-label="Cerrar">×</button>
+      <p class="eyebrow">Confirmar reserva</p>
+      <h3 class="modal__title" id="bookTitle">—</h3>
+      <p class="modal__meta" id="bookMeta">—</p>
+      <label>Nombre y apellido<input type="text" name="nombre" required placeholder="Ej. Juana Pérez"></label>
+      <label>Email<input type="email" name="email" required placeholder="juana@email.com"></label>
+      <label>Teléfono<input type="tel" name="tel" placeholder="11 2345 6789"></label>
+      <button type="submit" class="btn btn--lime btn--block btn--lg">Confirmar lugar</button>
+    </form>
+  </div>
+
+  <!-- PANEL MIS TURNOS -->
+  <aside class="drawer" id="turnosDrawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close></div>
+    <div class="drawer__panel">
+      <div class="drawer__head">
+        <h3>Mis turnos</h3>
+        <button class="modal__x" data-close aria-label="Cerrar">×</button>
+      </div>
+      <ul class="turnos" id="turnosList"></ul>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/gimnasio.js"></script>
+</body>
+</html>

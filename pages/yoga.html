@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nido — Estudio de Yoga & Pilates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/yoga.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="logo">Nido<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#clases">Clases</a>
+    <a href="#calendario">Calendario</a>
+    <a href="#membresias">Membresías</a>
+    <a href="#faq">Preguntas</a>
+  </nav>
+  <a href="#calendario" class="btn btn-dark btn-sm">Reservar clase</a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Yoga · Pilates Reformer · Mat</p>
+      <h1>Un lugar para <em>volver</em> a tu cuerpo.</h1>
+      <p class="lead">Grupos reducidos de hasta 10 personas, profesores certificados y reservas online en segundos. Elegí tu clase, asegurá tu lugar y pagá tu membresía desde acá.</p>
+      <div class="hero-cta">
+        <a href="#calendario" class="btn btn-dark">Ver calendario</a>
+        <a href="#membresias" class="btn btn-ghost">Planes y precios</a>
+      </div>
+      <ul class="hero-facts">
+        <li><strong>32</strong> clases por semana</li>
+        <li><strong>10</strong> cupos máx. por clase</li>
+        <li><strong>1ª clase</strong> sin cargo</li>
+      </ul>
+    </div>
+    <div class="hero-media">
+      <div class="ph ph-tall"><span>foto · sala de reformer con luz natural</span></div>
+      <div class="ph ph-small"><span>foto · detalle de clase</span></div>
+    </div>
+  </section>
+
+  <!-- DISCIPLINAS -->
+  <section id="clases" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Disciplinas</p>
+      <h2>Tres formas de moverte</h2>
+    </div>
+    <div class="disciplines">
+      <article class="disc">
+        <div class="ph ph-card"><span>foto · vinyasa yoga</span></div>
+        <div class="disc-tag" data-type="yoga">Yoga</div>
+        <h3>Vinyasa & Hatha</h3>
+        <p>Secuencias fluidas sincronizadas con la respiración. Fuerza, movilidad y calma mental.</p>
+      </article>
+      <article class="disc">
+        <div class="ph ph-card"><span>foto · pilates reformer</span></div>
+        <div class="disc-tag" data-type="reformer">Reformer</div>
+        <h3>Pilates Reformer</h3>
+        <p>Trabajo con máquina para tonificar en profundidad, corregir postura y fortalecer el centro.</p>
+      </article>
+      <article class="disc">
+        <div class="ph ph-card"><span>foto · pilates mat</span></div>
+        <div class="disc-tag" data-type="mat">Mat</div>
+        <h3>Pilates Mat</h3>
+        <p>Pilates en colchoneta con accesorios. Ideal para empezar y construir una base sólida.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section id="calendario" class="section section-tinted">
+    <div class="section-head row">
+      <div>
+        <p class="eyebrow">Calendario semanal</p>
+        <h2>Reservá tu lugar</h2>
+      </div>
+      <div class="filters" id="filters">
+        <button class="chip active" data-filter="all">Todas</button>
+        <button class="chip" data-filter="yoga">Yoga</button>
+        <button class="chip" data-filter="reformer">Reformer</button>
+        <button class="chip" data-filter="mat">Mat</button>
+      </div>
+    </div>
+
+    <div class="days" id="days" role="tablist"></div>
+    <div class="schedule" id="schedule"></div>
+    <p class="note">Podés cancelar sin cargo hasta 6 horas antes. Los cupos se liberan automáticamente.</p>
+  </section>
+
+  <!-- MEMBRESÍAS -->
+  <section id="membresias" class="section">
+    <div class="section-head row">
+      <div>
+        <p class="eyebrow">Membresías</p>
+        <h2>Elegí tu ritmo</h2>
+      </div>
+      <div class="toggle" id="billingToggle">
+        <button class="active" data-billing="monthly">Mensual</button>
+        <button data-billing="quarterly">Trimestral <span>−15%</span></button>
+      </div>
+    </div>
+    <div class="plans" id="plans"></div>
+    <p class="note">Pago seguro con tarjeta de crédito, débito o transferencia. Cancelás cuando quieras.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section-tinted">
+    <div class="section-head">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Antes de tu primera clase</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>¿Necesito experiencia previa?</summary>
+        <p>No. Todas las clases tienen opciones para cada nivel y los grupos reducidos permiten que el profe te acompañe de cerca.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si no puedo ir a una clase reservada?</summary>
+        <p>Cancelá desde "Mis reservas" hasta 6 horas antes y el crédito vuelve a tu cuenta. Después de ese plazo la clase se descuenta.</p>
+      </details>
+      <details>
+        <summary>¿Qué tengo que llevar?</summary>
+        <p>Ropa cómoda y medias antideslizantes para Reformer. Mats, bloques y toallas los ponemos nosotros.</p>
+      </details>
+      <details>
+        <summary>¿Cómo funciona el pago de la membresía?</summary>
+        <p>Pagás online al contratar y se renueva automáticamente cada período. Podés pausarla o cancelarla en cualquier momento.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>
+    <a href="#" class="logo">Nido<span>.</span></a>
+    <p>Av. Siempreviva 742 · Palermo, CABA</p>
+  </div>
+  <div class="footer-cols">
+    <div>
+      <p class="eyebrow">Horarios</p>
+      <p>Lun a Vie 7:00 – 21:30<br>Sáb 9:00 – 13:00</p>
+    </div>
+    <div>
+      <p class="eyebrow">Contacto</p>
+      <p><a href="mailto:hola@nidoestudio.com">hola@nidoestudio.com</a><br><a href="#">@nido.estudio</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón flotante: mis reservas -->
+<button class="my-bookings" id="myBookingsBtn" hidden>Mis reservas <span id="bookingCount">0</span></button>
+
+<!-- MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Cerrar">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="../js/yoga.js"></script>
+</body>
+</html>

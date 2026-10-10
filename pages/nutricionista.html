@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pauta — Software para nutricionistas</title>
+  <meta name="description" content="Turnos online, seguimiento de planes y portal privado para tus pacientes. Todo en un solo lugar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/nutricionista.css">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="logo"><span class="logo__mark"></span>Pauta</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#funciones">Funciones</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#" class="nav__login">Ingresar</a>
+      </nav>
+      <a href="#precios" class="btn btn--primary nav__cta">Probar gratis</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Software para nutricionistas</p>
+          <h1>Tu consultorio,<br><em>ordenado</em> de punta a punta.</h1>
+          <p class="lead">Turnos online, seguimiento de planes alimentarios y un portal privado para cada paciente. Menos WhatsApp, más tiempo para atender.</p>
+          <div class="hero__actions">
+            <a href="#precios" class="btn btn--primary btn--lg">Empezar 14 días gratis</a>
+            <a href="#como-funciona" class="btn btn--ghost btn--lg">Ver cómo funciona</a>
+          </div>
+          <p class="hero__note">Sin tarjeta de crédito · Cancelás cuando quieras</p>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="card agenda">
+            <div class="agenda__head">
+              <div>
+                <p class="muted small">Martes 14 de octubre</p>
+                <p class="agenda__title">Agenda de hoy</p>
+              </div>
+              <span class="pill pill--green">6 turnos</span>
+            </div>
+            <ul class="agenda__list">
+              <li><span class="agenda__time">09:00</span><div><strong>Lucía Fernández</strong><span class="muted small">Control mensual</span></div><span class="tag">Presencial</span></li>
+              <li class="is-active"><span class="agenda__time">10:30</span><div><strong>Martín Ruiz</strong><span class="muted small">Primera consulta</span></div><span class="tag tag--accent">Online</span></li>
+              <li><span class="agenda__time">12:00</span><div><strong>Sofía Gómez</strong><span class="muted small">Ajuste de plan</span></div><span class="tag">Presencial</span></li>
+              <li class="agenda__free"><span class="agenda__time">15:00</span><div><span class="muted small">Horario libre · reservable online</span></div></li>
+            </ul>
+          </div>
+          <div class="card progress-card">
+            <p class="muted small">Martín · peso</p>
+            <p class="progress-card__value">−4,2 kg <span class="muted small">en 8 semanas</span></p>
+            <div class="bars" aria-hidden="true">
+              <span style="height:90%"></span><span style="height:84%"></span><span style="height:80%"></span><span style="height:74%"></span><span style="height:70%"></span><span style="height:63%"></span><span style="height:58%"></span><span style="height:52%"></span>
+            </div>
+          </div>
+          <div class="card notif">
+            <span class="notif__dot"></span>
+            <div><strong>Nuevo turno reservado</strong><span class="muted small">Ana P. · jueves 11:00</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCIONES -->
+    <section class="section" id="funciones">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Funciones</p>
+          <h2>Tres herramientas que trabajan juntas.</h2>
+        </div>
+
+        <div class="feature reveal">
+          <div class="feature__copy">
+            <span class="feature__num">01</span>
+            <h3>Turnos online</h3>
+            <p>Tus pacientes reservan desde un link, las 24 horas. Vos definís horarios, duración por tipo de consulta y modalidad presencial u online.</p>
+            <ul class="checks">
+              <li>Recordatorios automáticos por email y WhatsApp</li>
+              <li>Cobro de seña opcional al reservar</li>
+              <li>Sincroniza con Google Calendar</li>
+            </ul>
+          </div>
+          <div class="feature__visual">
+            <div class="card booking">
+              <p class="booking__title">Elegí un horario</p>
+              <div class="booking__days" id="bookingDays">
+                <button class="day">Lun<b>13</b></button>
+                <button class="day is-selected">Mar<b>14</b></button>
+                <button class="day">Mié<b>15</b></button>
+                <button class="day">Jue<b>16</b></button>
+                <button class="day">Vie<b>17</b></button>
+              </div>
+              <div class="booking__slots" id="bookingSlots">
+                <button class="slot" disabled>09:00</button>
+                <button class="slot">11:00</button>
+                <button class="slot is-selected">15:00</button>
+                <button class="slot">16:30</button>
+                <button class="slot" disabled>18:00</button>
+                <button class="slot">19:00</button>
+              </div>
+              <button class="btn btn--primary btn--block">Confirmar turno</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature feature--reverse reveal">
+          <div class="feature__copy">
+            <span class="feature__num">02</span>
+            <h3>Seguimiento de planes</h3>
+            <p>Armá planes alimentarios con plantillas propias, registrá mediciones en cada control y mirá la evolución de cada paciente en un vistazo.</p>
+            <ul class="checks">
+              <li>Plantillas de planes reutilizables</li>
+              <li>Peso, perímetros y pliegues con gráficos</li>
+              <li>Notas clínicas privadas por consulta</li>
+            </ul>
+          </div>
+          <div class="feature__visual">
+            <div class="card plan">
+              <div class="plan__head">
+                <strong>Plan semana 8</strong>
+                <span class="pill pill--terra">Activo</span>
+              </div>
+              <div class="plan__row"><span>Desayuno</span><p>Yogur natural, avena y frutos rojos</p></div>
+              <div class="plan__row"><span>Almuerzo</span><p>Pollo grillado, quinoa y vegetales asados</p></div>
+              <div class="plan__row"><span>Merienda</span><p>Tostada integral con palta</p></div>
+              <div class="plan__row"><span>Cena</span><p>Merluza al horno con ensalada</p></div>
+              <div class="plan__adherence">
+                <span class="muted small">Adherencia semanal</span>
+                <div class="meter"><span style="width:82%"></span></div>
+                <strong>82%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature reveal">
+          <div class="feature__copy">
+            <span class="feature__num">03</span>
+            <h3>Portal privado para pacientes</h3>
+            <p>Cada paciente tiene su espacio con su plan, sus turnos y su progreso. Pueden cargar registros de comidas y escribirte sin perderse en un chat.</p>
+            <ul class="checks">
+              <li>Acceso seguro desde el celular</li>
+              <li>Registro de comidas con foto</li>
+              <li>Mensajería ordenada por paciente</li>
+            </ul>
+          </div>
+          <div class="feature__visual">
+            <div class="phone">
+              <div class="phone__screen">
+                <p class="muted small">Hola, Lucía</p>
+                <p class="phone__title">Tu próximo control</p>
+                <div class="phone__appt"><b>Jue 16</b><span>09:00 · Presencial</span></div>
+                <div class="phone__grid">
+                  <div><span class="muted small">Plan</span><strong>Semana 8</strong></div>
+                  <div><span class="muted small">Progreso</span><strong>−3,1 kg</strong></div>
+                </div>
+                <div class="phone__msg">
+                  <span class="muted small">Mensaje de tu nutri</span>
+                  <p>¡Gran semana! Sumá una porción más de verduras en la cena.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section section--dark" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow eyebrow--light">Cómo funciona</p>
+          <h2>Listo en una tarde.</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span>1</span><h4>Creá tu cuenta</h4><p>Cargá tus horarios, tipos de consulta y valores.</p></li>
+          <li class="reveal"><span>2</span><h4>Compartí tu link</h4><p>En Instagram, WhatsApp o tu web. Tus pacientes reservan solos.</p></li>
+          <li class="reveal"><span>3</span><h4>Atendé y hacé seguimiento</h4><p>Registrá cada control y publicá el plan en el portal del paciente.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section class="section" id="precios">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <p class="eyebrow">Precios</p>
+          <h2>Simple, como debería ser.</h2>
+          <div class="billing" role="group" aria-label="Período de facturación">
+            <button class="billing__opt is-active" data-billing="monthly">Mensual</button>
+            <button class="billing__opt" data-billing="yearly">Anual <em>−20%</em></button>
+          </div>
+        </div>
+        <div class="pricing">
+          <article class="price reveal">
+            <h4>Inicial</h4>
+            <p class="muted">Para quien está arrancando.</p>
+            <p class="price__amount"><span class="price__value" data-monthly="9.900" data-yearly="7.900">9.900</span><small>ARS / mes</small></p>
+            <ul class="checks">
+              <li>Hasta 40 pacientes</li>
+              <li>Turnos online y recordatorios</li>
+              <li>Portal del paciente</li>
+            </ul>
+            <a href="#" class="btn btn--ghost btn--block">Empezar gratis</a>
+          </article>
+          <article class="price price--featured reveal">
+            <span class="price__badge">Más elegido</span>
+            <h4>Profesional</h4>
+            <p class="muted">Para consultorios en marcha.</p>
+            <p class="price__amount"><span class="price__value" data-monthly="18.900" data-yearly="15.100">18.900</span><small>ARS / mes</small></p>
+            <ul class="checks">
+              <li>Pacientes ilimitados</li>
+              <li>Planes, mediciones y gráficos</li>
+              <li>Cobro de señas online</li>
+              <li>Recordatorios por WhatsApp</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--block">Empezar gratis</a>
+          </article>
+          <article class="price reveal">
+            <h4>Equipo</h4>
+            <p class="muted">Para centros con varios profesionales.</p>
+            <p class="price__amount"><span class="price__value" data-monthly="39.900" data-yearly="31.900">39.900</span><small>ARS / mes</small></p>
+            <ul class="checks">
+              <li>Hasta 5 profesionales</li>
+              <li>Agenda compartida</li>
+              <li>Reportes del centro</li>
+            </ul>
+            <a href="#" class="btn btn--ghost btn--block">Hablar con ventas</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--soft" id="faq">
+      <div class="container faq">
+        <div class="section__head reveal">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2>Lo que suelen preguntarnos.</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item" open>
+            <summary>¿Mis pacientes necesitan descargar una app?</summary>
+            <p>No. El portal funciona desde el navegador del celular o la computadora. Pueden agregarlo a la pantalla de inicio como si fuera una app.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Los datos de mis pacientes están seguros?</summary>
+            <p>Sí. La información viaja cifrada, cada paciente accede solo a lo suyo y vos sos la única persona que ve las notas clínicas.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Puedo importar mis pacientes actuales?</summary>
+            <p>Sí, desde una planilla de Excel o Google Sheets. Si preferís, lo hacemos nosotros sin costo.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Qué pasa cuando termina la prueba gratis?</summary>
+            <p>Elegís un plan o tu cuenta queda en pausa. No perdés ningún dato y no se cobra nada automáticamente.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta__inner reveal">
+        <h2>Dedicale el tiempo a tus pacientes, <em>no a la agenda.</em></h2>
+        <form class="cta__form" id="ctaForm">
+          <input type="email" placeholder="tu@email.com" required aria-label="Email">
+          <button type="submit" class="btn btn--primary btn--lg">Crear cuenta gratis</button>
+        </form>
+        <p class="cta__msg" id="ctaMsg" hidden>¡Listo! Te enviamos un email para activar tu cuenta.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="logo"><span class="logo__mark"></span>Pauta</a>
+      <nav>
+        <a href="#funciones">Funciones</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Ayuda</a>
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
+      </nav>
+      <p class="muted small">© <span id="year"></span> Pauta</p>
+    </div>
+  </footer>
+
+  <script src="../js/nutricionista.js"></script>
+</body>
+</html>

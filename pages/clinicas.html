@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulso — Turnos online y gestión para clínicas y consultorios</title>
+  <meta name="description" content="Turnos online, ficha de pacientes y recordatorios por WhatsApp o email para clínicas y consultorios médicos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/clinicas.css">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="logo"><span class="logo__dot"></span>Pulso</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#funciones">Funciones</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#demo" class="btn btn--primary btn--sm nav__cta-mobile">Pedir demo</a>
+      </nav>
+      <a href="#demo" class="btn btn--primary btn--sm nav__cta">Pedir demo</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Software para clínicas y consultorios</p>
+          <h1>Tu agenda llena, <em>sin llamadas</em> ni ausencias.</h1>
+          <p class="lead">Turnos online las 24 horas, ficha de cada paciente en un solo lugar y recordatorios automáticos por WhatsApp o email.</p>
+          <div class="hero__actions">
+            <a href="#demo" class="btn btn--primary">Probar 14 días gratis</a>
+            <a href="#como-funciona" class="btn btn--ghost">Ver cómo funciona</a>
+          </div>
+          <ul class="hero__checks">
+            <li>Sin tarjeta de crédito</li>
+            <li>Configuración en 10 minutos</li>
+          </ul>
+        </div>
+
+        <div class="hero__mock reveal" aria-label="Vista previa de la agenda">
+          <div class="mock">
+            <div class="mock__head">
+              <div>
+                <p class="mock__label">Agenda · Dra. Laura Méndez</p>
+                <p class="mock__date" id="mockDate">Martes 14</p>
+              </div>
+              <div class="mock__days" id="mockDays">
+                <button class="active" data-day="Martes 14">Ma</button>
+                <button data-day="Miércoles 15">Mi</button>
+                <button data-day="Jueves 16">Ju</button>
+              </div>
+            </div>
+            <ul class="slots" id="slots"></ul>
+            <p class="mock__hint">Tocá un horario libre para reservarlo</p>
+          </div>
+
+          <div class="wa-bubble" id="waBubble">
+            <p class="wa-bubble__from">WhatsApp · Pulso</p>
+            <p>Hola Martín 👋 Te recordamos tu turno <strong>mañana 10:30</strong> con la Dra. Méndez. ¿Confirmás?</p>
+            <div class="wa-bubble__btns"><span>Confirmar</span><span>Reprogramar</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="reveal"><strong>−70%</strong><span>de ausencias con recordatorios automáticos</span></div>
+        <div class="reveal"><strong>24/7</strong><span>tus pacientes reservan cuando quieren</span></div>
+        <div class="reveal"><strong>3 h</strong><span>menos por día de teléfono en recepción</span></div>
+      </div>
+    </section>
+
+    <!-- FUNCIONES -->
+    <section class="section" id="funciones">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Funciones</p>
+          <h2>Todo lo que tu consultorio necesita, <em>nada que sobre</em>.</h2>
+        </div>
+
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature__num">01</span>
+            <h3>Turnos online</h3>
+            <p>Un link propio para compartir en Instagram, Google o tu web. El paciente elige profesional, día y horario en segundos.</p>
+            <ul>
+              <li>Múltiples profesionales y sedes</li>
+              <li>Duración por tipo de consulta</li>
+              <li>Bloqueo de feriados y vacaciones</li>
+            </ul>
+          </article>
+          <article class="feature reveal">
+            <span class="feature__num">02</span>
+            <h3>Ficha de pacientes</h3>
+            <p>Historia clínica, antecedentes, estudios adjuntos y notas de cada consulta. Ordenado, buscable y seguro.</p>
+            <ul>
+              <li>Adjuntá PDFs e imágenes</li>
+              <li>Obra social y datos de contacto</li>
+              <li>Historial completo de turnos</li>
+            </ul>
+          </article>
+          <article class="feature reveal">
+            <span class="feature__num">03</span>
+            <h3>Recordatorios automáticos</h3>
+            <p>Mensajes por WhatsApp o email 24 h antes. El paciente confirma o reprograma con un toque y tu agenda se actualiza sola.</p>
+            <ul>
+              <li>Mensajes personalizables</li>
+              <li>Confirmación con un clic</li>
+              <li>Liberación automática del horario</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section section--dark" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow eyebrow--light">Cómo funciona</p>
+          <h2>Empezá hoy. <em>En tres pasos.</em></h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__n">1</span>
+            <h3>Creá tu cuenta</h3>
+            <p>Cargá profesionales, horarios de atención y tipos de consulta.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__n">2</span>
+            <h3>Compartí tu link</h3>
+            <p>Pegalo en tu bio, Google Maps o enviálo por WhatsApp a tus pacientes.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__n">3</span>
+            <h3>Atendé, nosotros recordamos</h3>
+            <p>Los turnos entran solos y cada paciente recibe su recordatorio.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section class="section" id="precios">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <p class="eyebrow">Precios</p>
+          <h2>Un plan para cada <em>tamaño de consultorio</em>.</h2>
+          <div class="billing" role="group" aria-label="Facturación">
+            <button class="billing__opt active" data-billing="monthly">Mensual</button>
+            <button class="billing__opt" data-billing="yearly">Anual <span class="tag">−20%</span></button>
+          </div>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3>Consultorio</h3>
+            <p class="plan__desc">Para profesionales independientes.</p>
+            <p class="plan__price"><span class="price" data-monthly="19" data-yearly="15">19</span><small>USD / mes</small></p>
+            <ul>
+              <li>1 profesional</li>
+              <li>Turnos online ilimitados</li>
+              <li>Recordatorios por email</li>
+              <li>Ficha de pacientes</li>
+            </ul>
+            <a href="#demo" class="btn btn--ghost btn--block">Empezar gratis</a>
+          </article>
+          <article class="plan plan--featured reveal">
+            <span class="plan__badge">Más elegido</span>
+            <h3>Clínica</h3>
+            <p class="plan__desc">Para equipos de hasta 10 profesionales.</p>
+            <p class="plan__price"><span class="price" data-monthly="49" data-yearly="39">49</span><small>USD / mes</small></p>
+            <ul>
+              <li>Hasta 10 profesionales</li>
+              <li>Recordatorios por WhatsApp y email</li>
+              <li>Historia clínica con adjuntos</li>
+              <li>Reportes de asistencia</li>
+            </ul>
+            <a href="#demo" class="btn btn--primary btn--block">Empezar gratis</a>
+          </article>
+          <article class="plan reveal">
+            <h3>Centro médico</h3>
+            <p class="plan__desc">Para múltiples sedes y especialidades.</p>
+            <p class="plan__price"><span class="price" data-monthly="99" data-yearly="79">99</span><small>USD / mes</small></p>
+            <ul>
+              <li>Profesionales ilimitados</li>
+              <li>Múltiples sedes</li>
+              <li>Roles y permisos</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="#demo" class="btn btn--ghost btn--block">Hablar con ventas</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--soft" id="faq">
+      <div class="container faq__grid">
+        <div class="section__head reveal">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2>Lo que <em>suelen preguntarnos</em>.</h2>
+        </div>
+        <div class="faq" id="faqList">
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Mis pacientes necesitan descargar una app?<span class="faq__icon"></span></button>
+            <div class="faq__a"><p>No. Reservan desde el navegador del celular o la computadora, con tu link propio.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Los datos de los pacientes están seguros?<span class="faq__icon"></span></button>
+            <div class="faq__a"><p>Sí. La información viaja cifrada, se guarda con copias de seguridad diarias y solo acceden los usuarios que vos autorices.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Cómo funcionan los recordatorios por WhatsApp?<span class="faq__icon"></span></button>
+            <div class="faq__a"><p>Se envían automáticamente desde un número verificado. El paciente responde con un botón y el turno se confirma o se libera en tu agenda.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Puedo importar mis pacientes actuales?<span class="faq__icon"></span></button>
+            <div class="faq__a"><p>Sí, desde un Excel o CSV. Si lo necesitás, nuestro equipo lo hace por vos sin costo.</p></div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" aria-expanded="false">¿Puedo cancelar cuando quiera?<span class="faq__icon"></span></button>
+            <div class="faq__a"><p>Sí. No hay permanencia mínima y podés exportar todos tus datos en cualquier momento.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO / CTA -->
+    <section class="section cta" id="demo">
+      <div class="container cta__grid">
+        <div class="reveal">
+          <p class="eyebrow eyebrow--light">Probalo gratis</p>
+          <h2>Dejá de perder turnos <em>a partir de hoy</em>.</h2>
+          <p class="cta__lead">Completá tus datos y te ayudamos a configurar todo en una videollamada de 15 minutos.</p>
+        </div>
+        <form class="form reveal" id="demoForm" novalidate>
+          <div class="form__row">
+            <label>Nombre y apellido
+              <input type="text" name="nombre" required placeholder="Dra. Laura Méndez">
+            </label>
+          </div>
+          <div class="form__row form__row--2">
+            <label>Email
+              <input type="email" name="email" required placeholder="laura@consultorio.com">
+            </label>
+            <label>WhatsApp
+              <input type="tel" name="tel" required placeholder="+54 9 11 1234 5678">
+            </label>
+          </div>
+          <div class="form__row">
+            <label>Tipo de institución
+              <select name="tipo" required>
+                <option value="">Elegí una opción</option>
+                <option>Consultorio individual</option>
+                <option>Clínica (2 a 10 profesionales)</option>
+                <option>Centro médico (+10 profesionales)</option>
+              </select>
+            </label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Solicitar demo gratis</button>
+          <p class="form__msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="logo"><span class="logo__dot"></span>Pulso</a>
+      <nav>
+        <a href="#funciones">Funciones</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Preguntas</a>
+        <a href="mailto:hola@pulso.com">hola@pulso.com</a>
+      </nav>
+      <p>© <span id="year"></span> Pulso. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/clinicas.js"></script>
+</body>
+</html>

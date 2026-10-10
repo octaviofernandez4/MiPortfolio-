@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodante — Pedidos online para food trucks</title>
+  <meta name="description" content="Pedidos online, ubicación en vivo y menú siempre actualizado para food trucks y comida rápida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/comida-rapida.css">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="logo"><span class="logo__dot"></span>Rodante</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#funciones">Funciones</a>
+        <a href="#demo">Demo</a>
+        <a href="#como">Cómo funciona</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <a href="#empezar" class="btn btn--dark nav__cta">Probar gratis</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="live-dot"></span> <span id="liveClock">Abierto ahora</span></p>
+          <h1>Tu food truck,<br>en el bolsillo de<br><em>cada cliente.</em></h1>
+          <p class="lead">Pedidos online, ubicación en vivo y un menú que se actualiza en un toque. Sin filas, sin "¿dónde están hoy?", sin vender lo que ya se terminó.</p>
+          <div class="hero__actions">
+            <a href="#empezar" class="btn btn--accent">Crear mi menú gratis</a>
+            <a href="#demo" class="btn btn--ghost">Ver demo en vivo →</a>
+          </div>
+          <ul class="hero__proof">
+            <li><strong>0%</strong> comisión por pedido</li>
+            <li><strong>5 min</strong> para estar online</li>
+          </ul>
+        </div>
+        <div class="hero__visual">
+          <div class="phone">
+            <div class="phone__screen">
+              <div class="phone__top">
+                <span class="mono">La Parrilla Rodante</span>
+                <span class="tag tag--green">● Abierto</span>
+              </div>
+              <div class="placeholder placeholder--phone"><span>foto del truck</span></div>
+              <div class="phone__loc">
+                <span class="mono small">HOY ESTAMOS EN</span>
+                <strong>Plaza Belgrano · hasta 23:30</strong>
+              </div>
+              <div class="phone__item"><span>Choripán completo</span><span class="mono">$4.500</span></div>
+              <div class="phone__item"><span>Burger doble</span><span class="mono">$7.200</span></div>
+              <div class="phone__item is-out"><span>Papas rústicas</span><span class="mono">Agotado</span></div>
+              <button class="phone__btn">Pedir · retiro en 12 min</button>
+            </div>
+          </div>
+          <div class="float-card float-card--order">
+            <span class="mono small">NUEVO PEDIDO #214</span>
+            <strong>2× Burger doble</strong>
+            <span class="muted small">Retira Sofi · 19:42</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Hamburguesas</span><span>✦</span><span>Tacos</span><span>✦</span><span>Choripanes</span><span>✦</span><span>Pizzas al paso</span><span>✦</span><span>Empanadas</span><span>✦</span><span>Café de especialidad</span><span>✦</span>
+        <span>Hamburguesas</span><span>✦</span><span>Tacos</span><span>✦</span><span>Choripanes</span><span>✦</span><span>Pizzas al paso</span><span>✦</span><span>Empanadas</span><span>✦</span><span>Café de especialidad</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- FUNCIONES -->
+    <section class="section" id="funciones">
+      <div class="container">
+        <p class="eyebrow eyebrow--plain">01 — Funciones</p>
+        <h2>Tres cosas. Hechas muy bien.</h2>
+        <div class="features">
+          <article class="feature">
+            <span class="feature__num mono">A</span>
+            <h3>Pedidos online</h3>
+            <p>Tus clientes piden y pagan desde el celu con un QR o un link. Vos recibís el pedido en la tablet de la cocina y avisás cuando está listo.</p>
+            <ul class="checks">
+              <li>Pago con tarjeta, QR o efectivo</li>
+              <li>Aviso automático de "pedido listo"</li>
+              <li>Horario de retiro estimado</li>
+            </ul>
+          </article>
+          <article class="feature feature--accent">
+            <span class="feature__num mono">B</span>
+            <h3>Ubicación en vivo</h3>
+            <p>Compartí dónde estás estacionado hoy y hasta qué hora. Tus seguidores reciben una notificación cuando llegás a su zona.</p>
+            <ul class="checks">
+              <li>GPS en tiempo real</li>
+              <li>Agenda semanal de paradas</li>
+              <li>Alertas a clientes cercanos</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <span class="feature__num mono">C</span>
+            <h3>Menú siempre actualizado</h3>
+            <p>¿Se terminaron las papas? Un toque y desaparecen del menú. Cambiá precios, fotos y especiales del día en segundos.</p>
+            <ul class="checks">
+              <li>Marcar "agotado" al instante</li>
+              <li>Especiales y combos del día</li>
+              <li>Sin reimprimir carteles</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="section section--dark" id="demo">
+      <div class="container">
+        <p class="eyebrow eyebrow--plain">02 — Probalo</p>
+        <h2>Así se ve desde tu lado.</h2>
+        <p class="lead lead--light">Tocá los productos para marcarlos como agotados y mirá cómo cambia el menú del cliente en tiempo real.</p>
+
+        <div class="demo">
+          <div class="demo__panel">
+            <div class="demo__head">
+              <span class="mono small">PANEL DEL TRUCK</span>
+              <span class="tag tag--green">● En línea</span>
+            </div>
+            <ul class="demo__list" id="adminList"></ul>
+          </div>
+
+          <div class="demo__panel demo__panel--light">
+            <div class="demo__head">
+              <span class="mono small">LO QUE VE TU CLIENTE</span>
+              <span class="mono small" id="cartCount">Carrito: 0</span>
+            </div>
+            <ul class="demo__list" id="clientList"></ul>
+            <div class="demo__total">
+              <span>Total</span>
+              <strong class="mono" id="cartTotal">$0</strong>
+            </div>
+            <button class="btn btn--accent btn--block" id="checkoutBtn" disabled>Hacer pedido</button>
+            <p class="demo__msg mono small" id="demoMsg"></p>
+          </div>
+
+          <div class="demo__panel demo__map">
+            <div class="demo__head">
+              <span class="mono small">UBICACIÓN EN VIVO</span>
+              <span class="mono small" id="eta">a 350 m</span>
+            </div>
+            <div class="map">
+              <div class="map__road map__road--h"></div>
+              <div class="map__road map__road--v"></div>
+              <div class="map__you"><span>vos</span></div>
+              <div class="map__truck" id="mapTruck"><span class="map__pulse"></span></div>
+              <span class="map__label mono">mapa real acá</span>
+            </div>
+            <p class="small muted-light">Plaza Belgrano · abierto hasta 23:30</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section" id="como">
+      <div class="container">
+        <p class="eyebrow eyebrow--plain">03 — Cómo funciona</p>
+        <h2>De cero a vender online<br>antes de la cena.</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n">1</span>
+            <h3>Cargá tu menú</h3>
+            <p>Productos, precios y fotos. Importalo desde una foto de tu carta si querés.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">2</span>
+            <h3>Pegá tu QR</h3>
+            <p>Te damos un QR para la ventanilla y un link para Instagram y WhatsApp.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">3</span>
+            <h3>Recibí pedidos</h3>
+            <p>Los pedidos llegan ordenados por hora de retiro. Vos solo cocinás.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- TESTIMONIO -->
+    <section class="quote">
+      <div class="container quote__inner">
+        <div class="placeholder placeholder--avatar"><span>foto</span></div>
+        <blockquote>
+          <p>"Antes perdíamos la mitad de la cola en hora pico. Ahora la gente pide mientras camina hacia el truck y nosotros despachamos el doble."</p>
+          <cite><strong>Martina Gómez</strong> · Taco Loco, Córdoba</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section class="section" id="precios">
+      <div class="container">
+        <p class="eyebrow eyebrow--plain">04 — Precios</p>
+        <div class="pricing__head">
+          <h2>Simple, como un buen choripán.</h2>
+          <div class="switch" role="group" aria-label="Facturación">
+            <button class="switch__btn is-active" data-billing="monthly">Mensual</button>
+            <button class="switch__btn" data-billing="yearly">Anual <span class="tag tag--yellow">-20%</span></button>
+          </div>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <h3>Arranque</h3>
+            <p class="plan__price"><span class="mono">$0</span><small>/mes</small></p>
+            <p class="muted">Para probar con tu primer truck.</p>
+            <ul class="checks">
+              <li>Menú online + QR</li>
+              <li>Ubicación del día</li>
+              <li>Hasta 100 pedidos/mes</li>
+            </ul>
+            <a href="#empezar" class="btn btn--ghost btn--block">Empezar gratis</a>
+          </article>
+          <article class="plan plan--featured">
+            <span class="plan__badge mono small">MÁS ELEGIDO</span>
+            <h3>Truck</h3>
+            <p class="plan__price"><span class="mono" data-monthly="$18.000" data-yearly="$14.400">$18.000</span><small>/mes</small></p>
+            <p>Todo para vender sin límites.</p>
+            <ul class="checks">
+              <li>Pedidos ilimitados, 0% comisión</li>
+              <li>GPS en vivo + alertas a clientes</li>
+              <li>Pagos online integrados</li>
+              <li>Estadísticas de ventas</li>
+            </ul>
+            <a href="#empezar" class="btn btn--accent btn--block">Probar 14 días gratis</a>
+          </article>
+          <article class="plan">
+            <h3>Flota</h3>
+            <p class="plan__price"><span class="mono" data-monthly="$45.000" data-yearly="$36.000">$45.000</span><small>/mes</small></p>
+            <p class="muted">Para varios trucks o locales.</p>
+            <ul class="checks">
+              <li>Hasta 5 trucks</li>
+              <li>Menús por ubicación</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="#empezar" class="btn btn--ghost btn--block">Hablar con ventas</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--tint" id="faq">
+      <div class="container faq">
+        <div>
+          <p class="eyebrow eyebrow--plain">05 — Preguntas</p>
+          <h2>Lo que todos<br>nos preguntan.</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item" open>
+            <summary>¿Necesito una app o una web propia?</summary>
+            <p>No. Te damos una página lista con tu menú, tu ubicación y tu botón de pedido. Tus clientes no tienen que descargar nada.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Cobran comisión por pedido?</summary>
+            <p>No. Pagás un plan fijo por mes. Solo aplica la comisión estándar del procesador de pagos si cobrás online.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Cómo funciona la ubicación en vivo?</summary>
+            <p>Activás el GPS desde el panel cuando abrís. Si preferís, podés cargar tus paradas de la semana y se publican solas.</p>
+          </details>
+          <details class="faq__item">
+            <summary>¿Sirve para un local de comida rápida fijo?</summary>
+            <p>Sí. Usás pedidos online y menú actualizado igual; simplemente dejás la ubicación fija.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="empezar">
+      <div class="container cta__inner">
+        <h2>Prendé la plancha.<br>Nosotros traemos los pedidos.</h2>
+        <form class="cta__form" id="ctaForm" novalidate>
+          <input type="text" name="truck" placeholder="Nombre de tu truck" required>
+          <input type="email" name="email" placeholder="tu@email.com" required>
+          <button type="submit" class="btn btn--dark">Crear mi menú</button>
+        </form>
+        <p class="cta__msg mono small" id="ctaMsg">Gratis para siempre en el plan Arranque. Sin tarjeta.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#" class="logo"><span class="logo__dot"></span>Rodante</a>
+      <nav class="footer__links">
+        <a href="#funciones">Funciones</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Ayuda</a>
+        <a href="#">Instagram</a>
+      </nav>
+      <span class="mono small muted">© <span id="year"></span> Rodante</span>
+    </div>
+  </footer>
+
+  <script src="../js/comida-rapida.js"></script>
+</body>
+</html>

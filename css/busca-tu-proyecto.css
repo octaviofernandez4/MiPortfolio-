@@ -1,0 +1,473 @@
+/* ========================================= */
+/* 10. BUSCA TU PROYECTO (MATCHMAKER)        */
+/* ========================================= */
+.matchmaker-hero {
+    padding: 110px 0 50px;
+    text-align: center;
+}
+
+.matchmaker-hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.matchmaker-hero h1 {
+    font-size: 1.9rem;
+    max-width: 780px;
+    margin-bottom: 20px;
+}
+
+.matchmaker-hero > .container > p {
+    font-size: 1.02rem;
+    color: #93a0b4;
+    max-width: 560px;
+    margin-bottom: 36px;
+}
+
+/* Panel de busqueda y filtros */
+.search-panel {
+    width: 100%;
+    max-width: 900px;
+    background: #10141f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.search-icon {
+    width: 18px;
+    height: 18px;
+    color: #93a0b4;
+    flex-shrink: 0;
+}
+
+.search-bar input {
+    flex: 1;
+    min-width: 160px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e7ebf1;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 0.82rem;
+    min-height: 32px;
+}
+
+.search-bar input::placeholder {
+    color: rgba(147, 160, 180, 0.6);
+}
+
+.search-btn {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.search-btn svg,
+.cta-banner-actions .btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.rubro-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.rubro-pill {
+    min-height: 36px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #93a0b4;
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.rubro-pill:hover {
+    border-color: #2fd8e8;
+    color: #e7ebf1;
+}
+
+.rubro-pill.active {
+    background: rgba(41, 82, 227, 0.16);
+    border-color: #2952e3;
+    color: #e7ebf1;
+}
+
+.search-empty {
+    color: #93a0b4;
+    font-size: 0.82rem;
+    text-align: center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.search-empty a {
+    color: #2fd8e8;
+    font-weight: 600;
+}
+
+.search-empty a:hover {
+    color: #e7ebf1;
+}
+
+/* ========================================= */
+/* CATALOGO DE CASOS                         */
+/* ========================================= */
+.catalog-section {
+    padding: 0 0 70px;
+}
+
+.catalog-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.catalog-header h2 {
+    font-size: 1.6rem;
+}
+
+.catalog-count {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    color: #93a0b4;
+}
+
+.catalog-count strong {
+    color: #2fd8e8;
+}
+
+.rubro-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.rubro-group-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rubro-group-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(47, 216, 232, 0.1);
+    color: #2fd8e8;
+}
+
+.rubro-group-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.rubro-group-header h3 {
+    font-size: 1.02rem;
+}
+
+.rubro-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.rubro-card {
+    min-width: 0;
+    background: #10141f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.rubro-card:hover {
+    transform: translateY(-6px);
+    border-color: #2fd8e8;
+}
+
+.rubro-card-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #1a1e2b;
+}
+
+.rubro-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.rubro-card-badge {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.rubro-card-badge svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.rubro-card-badge-category {
+    top: 12px;
+    left: 12px;
+    background: rgba(47, 216, 232, 0.16);
+    color: #2fd8e8;
+}
+
+.rubro-card-badge-time {
+    top: 12px;
+    right: 12px;
+    background: rgba(6, 8, 16, 0.65);
+    color: #e7ebf1;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.rubro-card-body {
+    min-width: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rubro-card-body h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.rubro-card-body p {
+    color: #93a0b4;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.rubro-card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.rubro-card-tags .tag {
+    background: rgba(47, 216, 232, 0.1);
+    color: #2fd8e8;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-family: 'Space Mono', 'Courier New', monospace;
+}
+
+.rubro-card-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rubro-card-link {
+    color: #2fd8e8;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.rubro-card-link:hover {
+    color: #e7ebf1;
+}
+
+.rubro-card-link-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    color: #e7ebf1;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.rubro-card-link-secondary:hover {
+    border-color: #2fd8e8;
+    color: #2fd8e8;
+}
+
+.cat-gastronomia .rubro-card-badge-category, .cat-gastronomia .rubro-group-icon { background: rgba(255, 181, 69, 0.16); color: #ffb545; }
+.cat-gastronomia .rubro-card:hover { border-color: #ffb545; }
+
+.cat-salud .rubro-card-badge-category, .cat-salud .rubro-group-icon { background: rgba(50, 232, 122, 0.16); color: #32e87a; }
+.cat-salud .rubro-card:hover { border-color: #32e87a; }
+
+.cat-comercio .rubro-card-badge-category, .cat-comercio .rubro-group-icon { background: rgba(41, 82, 227, 0.2); color: #6e85ff; }
+.cat-comercio .rubro-card:hover { border-color: #6e85ff; }
+
+.cat-servicios .rubro-card-badge-category, .cat-servicios .rubro-group-icon { background: rgba(47, 216, 232, 0.16); color: #2fd8e8; }
+.cat-servicios .rubro-card:hover { border-color: #2fd8e8; }
+
+.cat-educacion .rubro-card-badge-category, .cat-educacion .rubro-group-icon { background: rgba(236, 107, 208, 0.16); color: #ec6bd0; }
+.cat-educacion .rubro-card:hover { border-color: #ec6bd0; }
+
+.cat-oficios .rubro-card-badge-category, .cat-oficios .rubro-group-icon { background: rgba(255, 107, 74, 0.16); color: #ff6b4a; }
+.cat-oficios .rubro-card:hover { border-color: #ff6b4a; }
+
+.cat-entretenimiento .rubro-card-badge-category, .cat-entretenimiento .rubro-group-icon { background: rgba(168, 85, 247, 0.18); color: #a855f7; }
+.cat-entretenimiento .rubro-card:hover { border-color: #a855f7; }
+
+/* ========================================= */
+/* BANNER CTA FINAL                          */
+/* ========================================= */
+.cta-banner-section {
+    padding: 0 0 70px;
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, rgba(47, 216, 232, 0.08), rgba(16, 20, 31, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.cta-eyebrow {
+    color: #ec6bd0;
+}
+
+.cta-banner-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+.cta-banner-text p {
+    color: #93a0b4;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 22px;
+    max-width: 60ch;
+}
+
+.cta-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cta-features span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e7ebf1;
+    font-size: 0.82rem;
+}
+
+.cta-features svg {
+    width: 18px;
+    height: 18px;
+    color: #2fd8e8;
+    flex-shrink: 0;
+}
+
+.cta-banner-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+@media (min-width: 480px) {
+    .search-bar { flex-wrap: nowrap; }
+    .search-btn { width: auto; }
+}
+
+@media (min-width: 768px) {
+    .matchmaker-hero { padding-top: 140px; }
+
+    .catalog-section { padding: 0 0 90px; }
+    .cta-banner-section { padding: 0 0 90px; }
+
+    .rubro-card-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .rubro-card-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .rubro-card-link-secondary {
+        min-height: auto;
+        border: none;
+        padding: 0;
+    }
+
+    .cta-banner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 44px;
+    }
+
+    .cta-banner-text {
+        flex: 1;
+    }
+
+    .cta-banner-actions {
+        flex-shrink: 0;
+        width: 320px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .matchmaker-hero { padding: 170px 0 70px; }
+
+    .rubro-card-grid { grid-template-columns: repeat(3, 1fr); }
+}
