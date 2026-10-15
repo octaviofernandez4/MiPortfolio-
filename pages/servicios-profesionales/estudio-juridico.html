@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valenzuela & Benítez | Estudio Jurídico Integral</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/servicios-profesionales/estudio-juridico.css">
+</head>
+<body>
+
+  <!-- Encabezado & Navegación -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#inicio" class="logo">
+        <span>⚖</span> Valenzuela & Benítez
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#institucional" class="active">Institucional</a></li>
+        <li><a href="#areas">Áreas de Práctica</a></li>
+        <li><a href="#consulta">Consulta Online</a></li>
+        <li><a href="#gestion">Gestión de Casos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Sección Hero / Inicio -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <span class="hero-tag">Excelencia & Compromiso Jurídico</span>
+      <h1>Defensa estratégica y asesoría legal de alto nivel</h1>
+      <p>Acompañamos a empresas y particulares con soluciones jurídicas sólidas, atención personalizada y la máxima confidencialidad en cada proceso.</p>
+      <div class="hero-actions">
+        <a href="#consulta" class="btn btn-primary">Iniciar Consulta Online</a>
+        <a href="#gestion" class="btn btn-outline">Portal de Gestión Interna</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Sitio Institucional -->
+  <section class="section" id="institucional">
+    <div class="section-title">
+      <h2>Estudio Jurídico Institucional</h2>
+      <p>Más de 25 años de trayectoria velando por los intereses y derechos de nuestros clientes.</p>
+    </div>
+
+    <div class="grid-3" id="areas">
+      <div class="card">
+        <div class="card-icon">🏛</div>
+        <h3>Derecho Corporativo y Comercial</h3>
+        <p>Estructuración societaria, fusiones y adquisiciones, auditorías legales (due diligence) y contratos mercantiles complejos.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">⚖</div>
+        <h3>Litigios y Solución de Controversias</h3>
+        <p>Defensa judicial rigurosa en fueros civiles, comerciales y contencioso-administrativos con enfoque en resultados medibles.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">👥</div>
+        <h3>Derecho Laboral y Seguridad Social</h3>
+        <p>Asesoramiento preventivo integral para empresas, negociación colectiva y representación en litigios laborales individuales.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📜</div>
+        <h3>Derecho Civil y Sucesiones</h3>
+        <p>Planificación patrimonial, sucesiones testamentarias, reclamos por daños y perjuicios y derecho contractual.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🛡</div>
+        <h3>Defensa Penal Económica</h3>
+        <p>Representación especializada en delitos económicos, tributarios, compliance penal y prevención de riesgos empresariales.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Mediación y Arbitraje</h3>
+        <p>Resolución alternativa y expedita de disputas comerciales y civiles con árbitros certificados a nivel nacional e internacional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Consulta Online -->
+  <section class="section" id="consulta" style="background-color: #f1f5f9; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-title">
+      <h2>Consulta Legal Online</h2>
+      <p>Envíe los detalles de su caso. Nuestro equipo revisará la información y le responderá a la brevedad.</p>
+    </div>
+
+    <div class="form-container">
+      <div id="formSuccessAlert" class="alert alert-success"></div>
+
+      <form id="onlineConsultationForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientName">Nombre y Apellido *</label>
+            <input type="text" id="clientName" class="form-control" placeholder="Ej. Roberto Gómez" required>
+          </div>
+          <div class="form-group">
+            <label for="clientEmail">Correo Electrónico *</label>
+            <input type="email" id="clientEmail" class="form-control" placeholder="ejemplo@correo.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientPhone">Teléfono / WhatsApp</label>
+            <input type="tel" id="clientPhone" class="form-control" placeholder="+54 11 4000-0000">
+          </div>
+          <div class="form-group">
+            <label for="matterType">Área de Consulta *</label>
+            <select id="matterType" class="form-control" required>
+              <option value="Laboral">Derecho Laboral</option>
+              <option value="Comercial">Derecho Corporativo / Comercial</option>
+              <option value="Civil">Derecho Civil / Familia / Sucesión</option>
+              <option value="Penal">Derecho Penal Económico</option>
+              <option value="Otra">Otra Consulta Legal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="clientMessage">Descripción del Caso o Consulta *</label>
+          <textarea id="clientMessage" rows="4" class="form-control" placeholder="Detalle brevemente los hechos, fechas y situación jurídica..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Enviar Consulta Confidencial</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 3. Gestión de Casos para el Equipo -->
+  <section class="section" id="gestion">
+    <div class="section-title">
+      <h2>Gestión de Casos & Expedientes</h2>
+      <p>Panel interno para abogados del equipo: seguimiento de expedientes, asignación y altas rápidas.</p>
+    </div>
+
+    <!-- Formulario para agregar nuevo caso -->
+    <div class="form-container" style="max-width: 100%; margin-bottom: 2rem;">
+      <h3 style="margin-bottom: 1rem; color: var(--primary); font-size: 1.1rem;">+ Cargar Nuevo Caso al Sistema</h3>
+      <form id="newCaseForm">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; align-items: flex-end;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="newClientName">Cliente / Razón Social</label>
+            <input type="text" id="newClientName" class="form-control" placeholder="Nombre del cliente" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="newMatter">Carátula / Materia</label>
+            <input type="text" id="newMatter" class="form-control" placeholder="Ej. Reclamo indemnizatorio" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="newLawyer">Abogado Asignado</label>
+            <select id="newLawyer" class="form-control">
+              <option value="Dra. Valenzuela">Dra. Valenzuela</option>
+              <option value="Dr. Benítez">Dr. Benítez</option>
+              <option value="Dr. Aranda (Asoc.)">Dr. Aranda (Asoc.)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="height: 42px;">Registrar Caso</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Panel de Casos -->
+    <div class="case-mgmt-panel">
+      <div class="panel-header">
+        <div>
+          <strong style="color: var(--primary);">Expedientes Activos</strong>
+          <span style="color: var(--text-muted); font-size: 0.9rem; margin-left: 0.5rem;">(Total: <span id="totalCasesCount">0</span>)</span>
+        </div>
+        <div class="panel-controls">
+          <input type="text" id="searchCase" class="search-input" placeholder="Buscar por cliente, ID o materia...">
+          <select id="filterStatus" class="search-input">
+            <option value="all">Todos los estados</option>
+            <option value="active">En Trámite</option>
+            <option value="pending">En Espera</option>
+            <option value="closed">Cerrados</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Nº Expediente</th>
+              <th>Cliente</th>
+              <th>Materia</th>
+              <th>Responsable</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="caseTableBody">
+            <!-- Rellenado dinámicamente con JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contacto -->
+  <footer class="footer" id="contacto">
+    <div class="footer-inner">
+      <div>
+        <h4 style="color: var(--accent);">⚖ Valenzuela & Benítez</h4>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Firma legal comprometida con la ética, solvencia técnica y agilidad en cada resolución jurídica.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#institucional">Institucional</a></li>
+          <li><a href="#areas">Áreas de Práctica</a></li>
+          <li><a href="#consulta">Consulta Online</a></li>
+          <li><a href="#gestion">Gestión de Casos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto & Ubicación</h4>
+        <ul>
+          <li>📍 Av. del Libertador 4980, Piso 12</li>
+          <li>📞 (+54 11) 4890-5500</li>
+          <li>✉ contacto@valenzuelabenitez.com</li>
+          <li>🕒 Lunes a Viernes: 09:00 - 19:00 hs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Valenzuela & Benítez Estudio de Abogados. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script src="../../js/servicios-profesionales/estudio-juridico.js"></script>
+</body>
+</html>

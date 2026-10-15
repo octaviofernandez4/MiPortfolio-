@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plaza — Moda multimarca</title>
+  <link rel="stylesheet" href="../../css/comercio/ropa.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <span>Envío gratis desde $80.000</span>
+    <span>3 cuotas sin interés</span>
+    <span>Cambio de talle gratis</span>
+  </div>
+
+  <header class="nav site-nav">
+    <a href="#" class="nav-brand">PLAZA<span class="accent">.</span></a>
+    <nav class="nav-links">
+      <a href="#categorias">Categorías</a>
+      <a href="#coleccion">Colección</a>
+      <a href="#talles">Guía de talles</a>
+    </nav>
+    <button class="btn btn-secondary cart-btn" id="openCart" aria-label="Abrir carrito">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Carrito <span class="count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h6 class="kicker">Otoño · Invierno 26 — 40 marcas</h6>
+        <h1>Todas tus marcas.<br>Un solo checkout.</h1>
+        <p class="lead">Ropa, calzado y accesorios de marcas independientes. Elegí talle y color, y pagá en un paso — sin crear cuenta.</p>
+        <div class="hero-actions">
+          <a href="#coleccion" class="btn btn-primary btn-lg">Ver colección
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#talles" class="btn btn-secondary btn-lg">¿Qué talle soy?</a>
+        </div>
+      </div>
+      <div class="hero-media grayscale">
+        <div class="ph"><span>foto campaña — colección otoño invierno</span></div>
+      </div>
+      <div class="hero-cells">
+        <div><span class="num">01</span><strong>Talle y color</strong><p>Variantes con stock en tiempo real.</p></div>
+        <div><span class="num">02</span><strong>Checkout en 1 paso</strong><p>Email, dirección y pagás.</p></div>
+        <div><span class="num">03</span><strong>Cambios en 30 días</strong><p>El primer cambio de talle es gratis.</p></div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="block" id="categorias">
+      <div class="block-head">
+        <h2>Categorías</h2>
+      </div>
+      <div class="cats">
+        <button class="cat" data-filter="mujer"><div class="ph grayscale"><span>foto categoría mujer</span></div><span class="cat-row"><span>Mujer</span><span class="cat-n">→</span></span></button>
+        <button class="cat" data-filter="hombre"><div class="ph grayscale"><span>foto categoría hombre</span></div><span class="cat-row"><span>Hombre</span><span class="cat-n">→</span></span></button>
+        <button class="cat" data-filter="calzado"><div class="ph grayscale"><span>foto categoría calzado</span></div><span class="cat-row"><span>Calzado</span><span class="cat-n">→</span></span></button>
+        <button class="cat" data-filter="accesorios"><div class="ph grayscale"><span>foto categoría accesorios</span></div><span class="cat-row"><span>Accesorios</span><span class="cat-n">→</span></span></button>
+      </div>
+    </section>
+
+    <!-- COLECCIÓN -->
+    <section class="block" id="coleccion">
+      <div class="block-head">
+        <h2>Colección</h2>
+        <div class="seg" id="filters">
+          <label class="seg-opt"><input type="radio" name="f" value="all" checked>Todo</label>
+          <label class="seg-opt"><input type="radio" name="f" value="mujer">Mujer</label>
+          <label class="seg-opt"><input type="radio" name="f" value="hombre">Hombre</label>
+          <label class="seg-opt"><input type="radio" name="f" value="calzado">Calzado</label>
+          <label class="seg-opt"><input type="radio" name="f" value="accesorios">Accesorios</label>
+        </div>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+
+    <!-- GUÍA DE TALLES -->
+    <section class="block sizes" id="talles">
+      <div class="sizes-copy">
+        <h2>Guía de talles</h2>
+        <p class="text-muted">Medidas del cuerpo en centímetros. Si estás entre dos talles, elegí el más grande.</p>
+        <div class="seg" id="guideTabs">
+          <label class="seg-opt"><input type="radio" name="g" value="ropa" checked>Ropa</label>
+          <label class="seg-opt"><input type="radio" name="g" value="calzado">Calzado</label>
+        </div>
+        <div class="fit" id="fitRopa">
+          <div class="field"><label for="fitHeight">Altura (cm)</label><input class="input" type="number" id="fitHeight" placeholder="170"></div>
+          <div class="field"><label for="fitChest">Pecho / busto (cm)</label><input class="input" type="number" id="fitChest" placeholder="94"></div>
+          <button class="btn btn-primary" id="fitBtn">Calcular mi talle</button>
+          <p class="fit-result" id="fitResult"></p>
+        </div>
+        <div class="fit hidden" id="fitCalzado">
+          <div class="field"><label for="fitFoot">Largo del pie (cm)</label><input class="input" type="number" step="0.1" id="fitFoot" placeholder="25.5"></div>
+          <button class="btn btn-primary" id="fitFootBtn">Calcular mi número</button>
+          <p class="fit-result" id="fitFootResult"></p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="table" id="tableRopa">
+          <thead><tr><th>Talle</th><th>Pecho</th><th>Cintura</th><th>Cadera</th><th>Altura</th></tr></thead>
+          <tbody>
+            <tr><td>XS</td><td>82–86</td><td>66–70</td><td>86–90</td><td>155–162</td></tr>
+            <tr><td>S</td><td>87–92</td><td>71–76</td><td>91–96</td><td>160–168</td></tr>
+            <tr><td>M</td><td>93–98</td><td>77–82</td><td>97–102</td><td>166–174</td></tr>
+            <tr><td>L</td><td>99–104</td><td>83–88</td><td>103–108</td><td>172–180</td></tr>
+            <tr><td>XL</td><td>105–112</td><td>89–96</td><td>109–116</td><td>178–186</td></tr>
+          </tbody>
+        </table>
+        <table class="table hidden" id="tableCalzado">
+          <thead><tr><th>AR</th><th>EU</th><th>US</th><th>Largo pie (cm)</th></tr></thead>
+          <tbody>
+            <tr><td>36</td><td>37</td><td>6</td><td>23.5</td></tr>
+            <tr><td>37</td><td>38</td><td>7</td><td>24.2</td></tr>
+            <tr><td>38</td><td>39</td><td>7.5</td><td>24.8</td></tr>
+            <tr><td>39</td><td>40</td><td>8</td><td>25.5</td></tr>
+            <tr><td>40</td><td>41</td><td>9</td><td>26.2</td></tr>
+            <tr><td>41</td><td>42</td><td>9.5</td><td>26.8</td></tr>
+            <tr><td>42</td><td>43</td><td>10</td><td>27.5</td></tr>
+            <tr><td>43</td><td>44</td><td>11</td><td>28.2</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="nav-brand">PLAZA<span class="accent">.</span></span>
+      <p class="text-muted">Moda multimarca. Buenos Aires, Argentina.</p>
+    </div>
+    <div><h6>Tienda</h6><a href="#categorias">Categorías</a><a href="#coleccion">Colección</a><a href="#talles">Guía de talles</a></div>
+    <div><h6>Ayuda</h6><a href="#">Envíos</a><a href="#">Cambios y devoluciones</a><a href="#">Medios de pago</a></div>
+    <div><h6>Contacto</h6><a href="#">hola@plaza.com.ar</a><a href="#">Instagram</a><a href="#">WhatsApp</a></div>
+    <p class="copy">© 2026 Plaza</p>
+  </footer>
+
+  <!-- VISTA RÁPIDA -->
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <button class="btn btn-icon close" id="closeModal" aria-label="Cerrar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <div class="modal-media grayscale"><div class="ph" id="modalImg"><span>foto producto</span></div></div>
+    <div class="modal-body">
+      <h6 class="kicker" id="modalBrand"></h6>
+      <h3 id="modalName"></h3>
+      <p class="price" id="modalPrice"></p>
+      <p class="text-muted" id="modalDesc"></p>
+      <div class="opt">
+        <div class="opt-label">Color — <strong id="modalColorName"></strong></div>
+        <div class="swatches lg" id="modalColors"></div>
+      </div>
+      <div class="opt">
+        <div class="opt-label">Talle <a href="#talles" id="modalSizeGuide">Guía de talles</a></div>
+        <div class="sizes-row" id="modalSizes"></div>
+      </div>
+      <div class="buy-row">
+        <div class="qty"><button id="qtyMinus" aria-label="Restar">−</button><span id="qtyVal">1</span><button id="qtyPlus" aria-label="Sumar">+</button></div>
+        <button class="btn btn-primary grow" id="modalAdd">Agregar al carrito</button>
+      </div>
+      <button class="btn btn-secondary full" id="modalBuyNow">Comprar ahora</button>
+      <p class="hint" id="modalHint"></p>
+    </div>
+  </div>
+
+  <!-- CARRITO / CHECKOUT -->
+  <aside class="drawer" id="drawer" aria-label="Carrito">
+    <div class="drawer-head">
+      <div class="steps"><span class="step active" data-step="cart">01 Carrito</span><span class="step" data-step="checkout">02 Pago</span></div>
+      <button class="btn btn-icon" id="closeCart" aria-label="Cerrar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer-view" id="viewCart">
+      <div class="ship-bar"><p id="shipMsg"></p><div class="bar"><div id="shipFill"></div></div></div>
+      <ul class="cart-list" id="cartList"></ul>
+      <div class="cart-empty" id="cartEmpty"><p>Tu carrito está vacío.</p><a href="#coleccion" class="btn btn-secondary" id="emptyLink">Ver colección →</a></div>
+      <div class="drawer-foot" id="cartFoot">
+        <div class="row"><span>Subtotal</span><strong id="subtotal"></strong></div>
+        <button class="btn btn-primary full" id="toCheckout">Finalizar compra →</button>
+      </div>
+    </div>
+
+    <form class="drawer-view checkout hidden" id="viewCheckout">
+      <button type="button" class="btn btn-ghost back" id="backToCart">← Volver al carrito</button>
+      <fieldset>
+        <legend>Contacto</legend>
+        <input class="input" type="email" name="email" required placeholder="Email">
+      </fieldset>
+      <fieldset>
+        <legend>Envío</legend>
+        <input class="input" name="name" required placeholder="Nombre y apellido">
+        <input class="input" name="address" required placeholder="Dirección">
+        <div class="two"><input class="input" name="city" required placeholder="Ciudad"><input class="input" name="zip" required placeholder="CP"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Pago</legend>
+        <label class="radio pay"><input type="radio" name="pay" value="card" checked><span class="dot"></span>Tarjeta — 3 cuotas sin interés</label>
+        <label class="radio pay"><input type="radio" name="pay" value="mp"><span class="dot"></span>Mercado Pago</label>
+        <label class="radio pay"><input type="radio" name="pay" value="transfer"><span class="dot"></span>Transferencia — 10% off</label>
+      </fieldset>
+      <div class="summary">
+        <div class="row"><span>Subtotal</span><span id="sumSub"></span></div>
+        <div class="row"><span>Envío</span><span id="sumShip"></span></div>
+        <div class="row discount hidden" id="sumDiscRow"><span>Descuento transferencia</span><span id="sumDisc"></span></div>
+        <div class="row total"><span>Total</span><strong id="sumTotal"></strong></div>
+      </div>
+      <button class="btn btn-primary full" type="submit">Pagar ahora →</button>
+    </form>
+
+    <div class="drawer-view success hidden" id="viewSuccess">
+      <span class="num">✓</span>
+      <h3>Pedido confirmado</h3>
+      <p class="text-muted">Pedido <strong id="orderId"></strong>. Te enviamos el detalle por email.</p>
+      <button class="btn btn-primary full" id="keepShopping">Seguir comprando →</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../../js/comercio/ropa.js"></script>
+</body>
+</html>

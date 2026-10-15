@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voltio — Tecnología y celulares</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/comercio/tecnologia-celulares.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="#" class="logo">VOLTIO<span>.</span></a>
+      <nav class="nav__links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#comparador">Comparador</a>
+        <a href="#stock">Stock en vivo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#catalogo" class="btn btn--primary btn--sm">Ver equipos</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="stock">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="dot"></span> Stock actualizado en tiempo real</p>
+          <h1>Tecnología con ficha clara y stock real.</h1>
+          <p class="lead">Explorá el catálogo completo, revisá cada especificación técnica y compará hasta tres equipos lado a lado antes de decidir.</p>
+          <div class="hero__ctas">
+            <a href="#catalogo" class="btn btn--primary">Explorar catálogo</a>
+            <a href="#comparador" class="btn btn--ghost">Comparar equipos</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="ph ph--hero"><span>foto de producto destacado</span></div>
+          <div class="live">
+            <div class="live__head">
+              <span class="mono">STOCK EN VIVO</span>
+              <span class="mono live__time" id="liveTime">actualizado ahora</span>
+            </div>
+            <ul class="live__list" id="liveList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="perks">
+      <div class="wrap perks__grid">
+        <div><strong>Envío en 24 h</strong><span>En toda la ciudad</span></div>
+        <div><strong>Garantía oficial</strong><span>12 meses en todos los equipos</span></div>
+        <div><strong>Hasta 12 cuotas</strong><span>Con todas las tarjetas</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--muted">01 — Catálogo</p>
+            <h2>Todos los equipos</h2>
+          </div>
+          <div class="tools">
+            <input type="search" id="search" class="input" placeholder="Buscar modelo…">
+            <select id="sort" class="input">
+              <option value="default">Destacados</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="stock">Más stock</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="chip is-active" data-cat="all">Todos</button>
+          <button class="chip" data-cat="Celulares">Celulares</button>
+          <button class="chip" data-cat="Tablets">Tablets</button>
+          <button class="chip" data-cat="Wearables">Wearables</button>
+          <button class="chip" data-cat="Audio">Audio</button>
+        </div>
+
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>No encontramos equipos con ese criterio.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="comparador">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--muted">02 — Comparador</p>
+            <h2>Lado a lado</h2>
+          </div>
+          <p class="section__note">Marcá “Comparar” en hasta 3 equipos del catálogo. Resaltamos el mejor valor en cada fila.</p>
+        </div>
+        <div id="compareArea"></div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contacto">
+      <div class="wrap cta__grid">
+        <div>
+          <p class="eyebrow eyebrow--muted">03 — Contacto</p>
+          <h2>¿Buscás un modelo que no está?</h2>
+          <p class="lead">Dejanos tus datos y te avisamos apenas ingrese, o te lo conseguimos por encargo.</p>
+        </div>
+        <form class="form" id="contactForm">
+          <label>Nombre<input class="input" type="text" required placeholder="Tu nombre"></label>
+          <label>WhatsApp o email<input class="input" type="text" required placeholder="+54 9 11 …"></label>
+          <label>Modelo que buscás<input class="input" type="text" placeholder="Ej: Nova X12 256 GB"></label>
+          <button class="btn btn--primary" type="submit">Enviar consulta</button>
+          <p class="form__ok" id="formOk" hidden>¡Listo! Te contactamos a la brevedad.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a href="#" class="logo">VOLTIO<span>.</span></a>
+      <p class="mono">Av. Siempre Viva 742 · Lun a Sáb 10–20 h</p>
+      <p class="mono">© 2026 Voltio</p>
+    </div>
+  </footer>
+
+  <!-- Bandeja comparador -->
+  <div class="tray" id="tray">
+    <div class="wrap tray__inner">
+      <div class="tray__items" id="trayItems"></div>
+      <div class="tray__actions">
+        <button class="btn btn--ghost btn--sm" id="trayClear">Limpiar</button>
+        <a href="#comparador" class="btn btn--primary btn--sm">Comparar (<span id="trayCount">0</span>)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal ficha técnica -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close aria-label="Cerrar">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="../../js/comercio/tecnologia-celulares.js"></script>
+</body>
+</html>

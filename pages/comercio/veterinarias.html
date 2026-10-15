@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawCare & Vet - Veterinaria & Pet Shop</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN para utilidades -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../css/comercio/veterinarias.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div
+                    class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-teal-600 to-emerald-400 flex items-center justify-center text-white shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-1">
+                        PawCare <span class="text-teal-600">&</span> Vet
+                    </span>
+                    <span class="text-xs text-slate-500 block font-medium">Clínica & Pet Shop Integral</span>
+                </div>
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#servicios" class="hover:text-teal-600 transition-colors">Servicios</a>
+                <a href="#turnos" class="hover:text-teal-600 transition-colors">Turnos</a>
+                <a href="#tienda" class="hover:text-teal-600 transition-colors">Tienda Online</a>
+                <a href="#recordatorios" class="hover:text-teal-600 transition-colors">Recordatorios</a>
+                <a href="#opiniones" class="hover:text-teal-600 transition-colors">Opiniones</a>
+            </nav>
+
+            <!-- Botones de Acción -->
+            <div class="flex items-center gap-4">
+                <!-- Carrito Trigger -->
+                <button id="cartBtn"
+                    class="relative p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"
+                    aria-label="Ver carrito">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cartCount"
+                        class="absolute -top-1 -right-1 bg-amber-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">0</span>
+                </button>
+
+                <!-- CTA Principal -->
+                <a href="#turnos"
+                    class="hidden sm:inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-md shadow-teal-600/20 hover:shadow-lg hover:shadow-teal-600/30 transition-all hover:-translate-y-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Reservar Turno
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Contenido Hero -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-teal-500 animate-ping"></span>
+                        Clínica Veterinaria 24/7 & Pet Shop Express
+                    </div>
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                        Salud, bienestar y todo para tu <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">mejor
+                            amigo</span> en un solo lugar.
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Gestioná turnos médicos con especialistas, comprá alimentos y accesorios con entrega express, y
+                        nunca más olvides una dosis con nuestros recordatorios automáticos de vacunación.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#turnos"
+                            class="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-teal-600/25 transition-all text-base">
+                            📅 Agendar Turno Online
+                        </a>
+                        <a href="#tienda"
+                            class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-bold px-7 py-3.5 rounded-xl shadow-sm hover:border-slate-300 transition-all text-base">
+                            🛍️ Explorar Tienda
+                        </a>
+                    </div>
+
+                    <!-- Métricas de Confianza -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/70 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">+15k</p>
+                            <p class="text-xs text-slate-500 font-medium">Pacientes atendidos</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-teal-600">4.9 ★</p>
+                            <p class="text-xs text-slate-500 font-medium">Más de 2.000 reseñas</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">24/7</p>
+                            <p class="text-xs text-slate-500 font-medium">Guardia y urgencias</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner / Tarjeta Hero interactiva -->
+                <div class="lg:col-span-5 relative">
+                    <div
+                        class="bg-gradient-to-br from-teal-600 to-emerald-700 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
+                        <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span
+                                class="text-xs font-bold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">Atención
+                                Prioritaria</span>
+                            <span class="flex items-center gap-1 text-xs text-emerald-200">🟢 Consultorios
+                                Activos</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">¿Urgencia médica veterinaria?</h3>
+                        <p class="text-emerald-100 text-sm mb-6 leading-relaxed">
+                            Contamos con quirófano, diagnóstico por imágenes y laboratorio propio disponible las 24
+                            horas.
+                        </p>
+                        <div
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-emerald-200">Línea de Urgencias Directa</p>
+                                <p class="text-lg font-extrabold tracking-wide">0800-888-PAWCARE</p>
+                            </div>
+                            <a href="tel:08008887292"
+                                class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-4 py-2 rounded-xl text-sm transition-colors">
+                                Llamar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1: TURNOS ONLINE (INTERACTIVO) -->
+    <section id="turnos" class="py-20 bg-white border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-teal-600 font-bold text-sm tracking-wider uppercase">Turnos para consultas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Reservá tu consulta médica o
+                    servicio en segundos</h2>
+                <p class="text-slate-600 mt-3 text-base">Elegí la especialidad, el profesional de confianza y el horario
+                    que mejor te quede sin llamadas de espera.</p>
+            </div>
+
+            <div
+                class="max-w-4xl mx-auto bg-slate-50 border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50">
+                <form id="appointmentForm" class="space-y-8">
+
+                    <!-- Paso 1: Tipo de Mascota -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-3">1. Seleccioná el tipo de
+                            mascota</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="petType" value="Perro" class="peer sr-only" checked>
+                                <div
+                                    class="p-4 rounded-2xl border-2 border-slate-200 peer-checked:border-teal-600 peer-checked:bg-teal-50/60 bg-white text-center transition-all">
+                                    <span class="text-2xl block mb-1">🐶</span>
+                                    <span class="text-xs font-bold text-slate-800">Perro</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="petType" value="Gato" class="peer sr-only">
+                                <div
+                                    class="p-4 rounded-2xl border-2 border-slate-200 peer-checked:border-teal-600 peer-checked:bg-teal-50/60 bg-white text-center transition-all">
+                                    <span class="text-2xl block mb-1">🐱</span>
+                                    <span class="text-xs font-bold text-slate-800">Gato</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="petType" value="Ave" class="peer sr-only">
+                                <div
+                                    class="p-4 rounded-2xl border-2 border-slate-200 peer-checked:border-teal-600 peer-checked:bg-teal-50/60 bg-white text-center transition-all">
+                                    <span class="text-2xl block mb-1">🦜</span>
+                                    <span class="text-xs font-bold text-slate-800">Ave</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="petType" value="Exótico / Roedor" class="peer sr-only">
+                                <div
+                                    class="p-4 rounded-2xl border-2 border-slate-200 peer-checked:border-teal-600 peer-checked:bg-teal-50/60 bg-white text-center transition-all">
+                                    <span class="text-2xl block mb-1">🐰</span>
+                                    <span class="text-xs font-bold text-slate-800">Roedor / Otro</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2: Motivo y Veterinario -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">2. Motivo de la consulta</label>
+                            <select id="serviceType"
+                                class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                required>
+                                <option value="Consulta Clínica General">Consulta Clínica General</option>
+                                <option value="Plan de Vacunación & Desparasitación">Plan de Vacunación &
+                                    Desparasitación</option>
+                                <option value="Dermatología y Alergias">Dermatología y Alergias</option>
+                                <option value="Odontología y Limpieza Dental">Odontología y Limpieza Dental</option>
+                                <option value="Peluquería Canina & Baño Terapéutico">Peluquería & Spa Terapéutico
+                                </option>
+                                <option value="Control Pediátrico / Cachorros">Control Pediátrico / Cachorros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">3. Profesional
+                                Veterinario</label>
+                            <select id="doctorSelect"
+                                class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                                <option value="Dra. Valentina Morales (Clínica General)">Dra. Valentina Morales (Clínica
+                                    General)</option>
+                                <option value="Dr. Marcos Benítez (Cirugía y Traumatología)">Dr. Marcos Benítez
+                                    (Cirugía)</option>
+                                <option value="Dra. Camila Rossi (Dermatología & Nutrición)">Dra. Camila Rossi
+                                    (Nutrición)</option>
+                                <option value="Cualquier profesional disponible">Cualquier profesional disponible
+                                    (Recomendado)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3: Fecha y Horarios -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">4. Fecha y Horarios
+                            Disponibles</label>
+                        <div class="grid sm:grid-cols-12 gap-4 items-center">
+                            <div class="sm:col-span-5">
+                                <input type="date" id="appointmentDate"
+                                    class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                    required>
+                            </div>
+                            <div class="sm:col-span-7">
+                                <div class="flex flex-wrap gap-2" id="timeSlotsContainer">
+                                    <button type="button"
+                                        class="time-slot active px-3 py-2 text-xs font-bold rounded-lg border border-teal-600 bg-teal-50 text-teal-800"
+                                        data-time="09:00">09:00 hs</button>
+                                    <button type="button"
+                                        class="time-slot px-3 py-2 text-xs font-bold rounded-lg border border-slate-200 bg-white text-slate-700 hover:border-teal-500"
+                                        data-time="10:30">10:30 hs</button>
+                                    <button type="button"
+                                        class="time-slot px-3 py-2 text-xs font-bold rounded-lg border border-slate-200 bg-white text-slate-700 hover:border-teal-500"
+                                        data-time="11:45">11:45 hs</button>
+                                    <button type="button"
+                                        class="time-slot px-3 py-2 text-xs font-bold rounded-lg border border-slate-200 bg-white text-slate-700 hover:border-teal-500"
+                                        data-time="14:00">14:00 hs</button>
+                                    <button type="button"
+                                        class="time-slot px-3 py-2 text-xs font-bold rounded-lg border border-slate-200 bg-white text-slate-700 hover:border-teal-500"
+                                        data-time="16:30">16:30 hs</button>
+                                    <button type="button"
+                                        class="time-slot px-3 py-2 text-xs font-bold rounded-lg border border-slate-200 bg-white text-slate-700 hover:border-teal-500"
+                                        data-time="18:15">18:15 hs</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 4: Datos del Paciente / Dueño -->
+                    <div class="grid sm:grid-cols-3 gap-4 pt-2">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nombre de la Mascota</label>
+                            <input type="text" id="petName" placeholder="Ej: Milo, Luna..."
+                                class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Tu Nombre y Apellido</label>
+                            <input type="text" id="ownerName" placeholder="Ej: Martín Gómez"
+                                class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp / Teléfono</label>
+                            <input type="tel" id="ownerPhone" placeholder="Ej: +54 9 11 4444-5555"
+                                class="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Botón Confirmación -->
+                    <button type="submit"
+                        class="w-full bg-teal-600 hover:bg-teal-700 text-white font-extrabold py-4 rounded-2xl shadow-lg shadow-teal-600/30 hover:shadow-xl transition-all text-base flex items-center justify-center gap-2">
+                        <span>Confirmar y Agendar Turno</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: TIENDA ONLINE (INTERACTIVA CON CARRITO) -->
+    <section id="tienda" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-amber-500 font-bold text-sm tracking-wider uppercase">Tienda Online Oficial</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Nutrición y Cuidados Premium
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-base">Envíos en el día para compras antes de las 14:00 hs. Envío
+                        gratis en órdenes superiores a $18.000.</p>
+                </div>
+
+                <!-- Filtros de Categorías -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="categoryFilters">
+                    <button
+                        class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold border border-teal-600 bg-teal-600 text-white transition-colors"
+                        data-category="todos">Todos</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 hover:border-teal-500 transition-colors"
+                        data-category="alimentos">Alimentos</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 hover:border-teal-500 transition-colors"
+                        data-category="farmacia">Farmacia & Higiene</button>
+                    <button
+                        class="filter-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 hover:border-teal-500 transition-colors"
+                        data-category="accesorios">Accesorios & Juguetes</button>
+                </div>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Generado dinámicamente o estructurado por JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: RECORDATORIOS DE VACUNACIÓN (INTERACTIVO) -->
+    <section id="recordatorios" class="py-20 bg-white border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Columna Izquierda: Información y Registro -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-teal-600 font-bold text-sm tracking-wider uppercase">Recordatorios de
+                        Vacunación</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Nunca más se te pasará una vacuna ni desparasitación
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Nuestro sistema inteligente sincroniza el calendario sanitario oficial para perros y gatos. Te
+                        enviamos alertas personalizadas a WhatsApp 7 días y 24 horas antes del vencimiento.
+                    </p>
+
+                    <!-- Formulario para agregar alerta -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm">
+                        <h4 class="font-bold text-slate-900 text-sm mb-4">🔔 Configurar recordatorio para tu mascota
+                        </h4>
+                        <form id="reminderForm" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Nombre de la Mascota</label>
+                                <input type="text" id="remPetName" placeholder="Ej: Simona"
+                                    class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                    required>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Tipo de Vacuna /
+                                        Tratamiento</label>
+                                    <select id="remVaccineType"
+                                        class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-medium focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                                        <option value="Antirrábica Anual">Antirrábica Anual</option>
+                                        <option value="Vacuna Séxtuple / Múltiple">Vacuna Séxtuple Canina</option>
+                                        <option value="Triple Felina">Triple Felina</option>
+                                        <option value="Desparasitación Interna">Desparasitación Interna</option>
+                                        <option value="Pipeta Antipulgas/Garrapatas">Pipeta Antipulgas</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Fecha de
+                                        Aplicación</label>
+                                    <input type="date" id="remDate"
+                                        class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-medium focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                        required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Teléfono WhatsApp para
+                                    alertas</label>
+                                <input type="tel" id="remPhone" placeholder="+54 9 11 ..."
+                                    class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                                    required>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2.5 rounded-xl text-sm transition-colors shadow-md shadow-teal-600/20">
+                                Guardar en Carnet Digital
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Carnet Sanitario Interactivo -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white border-2 border-slate-100 rounded-3xl p-6 sm:p-8 shadow-xl">
+                        <div class="flex items-center justify-between pb-6 border-b border-slate-100 mb-6">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-teal-600 text-2xl font-bold">
+                                    🐾
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-slate-900 text-lg">Carnet Digital de Vacunación</h3>
+                                    <p class="text-xs text-slate-500">Historial preventivo y próximas dosis
+                                        sincronizadas</p>
+                                </div>
+                            </div>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Activo</span>
+                        </div>
+
+                        <!-- Lista de Vacunas y Estado -->
+                        <div id="vaccineList" class="space-y-3">
+                            <!-- Rellenado dinámicamente con JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: TESTIMONIOS / OPINIONES -->
+    <section id="opiniones" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-teal-600 font-bold text-sm tracking-wider uppercase">Opiniones de Familias</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">La tranquilidad de saber que están en las
+                    mejores manos</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 text-sm">★★★★★</div>
+                    <p class="text-slate-600 text-sm leading-relaxed">"Excelente atención de la Dra. Valentina. Llevé a
+                        mi perro por una intoxicación un domingo a la noche y la respuesta fue inmediata. El sistema de
+                        turnos online es comodísimo."</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+                        <div
+                            class="w-9 h-9 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-xs">
+                            LG</div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">Lucía Gómez</p>
+                            <p class="text-[11px] text-slate-400">Dueña de Coco (Golden Retriever)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 text-sm">★★★★★</div>
+                    <p class="text-slate-600 text-sm leading-relaxed">"Compro el alimento medicado de mi gata en su
+                        tienda online y llega siempre puntual. Los recordatorios de pipeta y vacunas por WhatsApp me
+                        salvaron varias veces."</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+                        <div
+                            class="w-9 h-9 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">
+                            FR</div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">Fernando Rossi</p>
+                            <p class="text-[11px] text-slate-400">Dueño de Misi (Siamés)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                    <div class="flex text-amber-400 text-sm">★★★★★</div>
+                    <p class="text-slate-600 text-sm leading-relaxed">"Profesionalismo puro e instalaciones de primer
+                        nivel. Hicieron la cirugía dental de mi caniche y todo el posoperatorio fue impecable. Muy
+                        recomendados."</p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+                        <div
+                            class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">
+                            CR</div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900">Carolina Rivas</p>
+                            <p class="text-[11px] text-slate-400">Dueña de Toby (Caniche Toy)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRAWER LATERAL: CARRITO DE COMPRAS -->
+    <div id="cartModal" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title"
+        role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity" id="cartOverlay"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <!-- Header Carrito -->
+                <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <h3 class="text-lg font-extrabold text-slate-900">Tu Carrito</h3>
+                        <span id="cartDrawerCount"
+                            class="bg-teal-50 text-teal-700 text-xs font-bold px-2.5 py-0.5 rounded-full">0
+                            artículos</span>
+                    </div>
+                    <button id="closeCartBtn"
+                        class="text-slate-400 hover:text-slate-600 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+                        ✕
+                    </button>
+                </div>
+
+                <!-- Lista de Productos en Carrito -->
+                <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Ítems agregados mediante JavaScript -->
+                </div>
+
+                <!-- Footer Carrito -->
+                <div class="p-6 border-t border-slate-100 bg-slate-50/70 space-y-4">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-slate-500 font-medium">Subtotal</span>
+                        <span id="cartSubtotal" class="font-extrabold text-slate-900 text-lg">$0</span>
+                    </div>
+                    <p class="text-xs text-slate-400">Costos de envío calculados en el checkout. ¡Envío bonificado para
+                        pedidos seleccionados!</p>
+                    <button id="checkoutBtn"
+                        class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-teal-600/25 transition-all text-sm">
+                        Finalizar Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: CONFIRMACIÓN DE TURNO -->
+    <div id="appointmentModal"
+        class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl text-center space-y-5 animate-fade-in">
+            <div
+                class="w-16 h-16 rounded-2xl bg-teal-100 text-teal-600 mx-auto flex items-center justify-center text-3xl">
+                🎉
+            </div>
+            <div>
+                <h3 class="text-2xl font-extrabold text-slate-900">¡Turno Confirmado con Éxito!</h3>
+                <p class="text-xs text-slate-500 mt-1">Hemos registrado la cita en nuestra agenda médica.</p>
+            </div>
+
+            <div id="modalSummary"
+                class="bg-slate-50 rounded-2xl p-4 text-left text-xs space-y-2 border border-slate-200/70 text-slate-700">
+                <!-- Resumen insertado por JS -->
+            </div>
+
+            <div class="space-y-2">
+                <button id="closeAppointmentModal"
+                    class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                    Entendido, ¡muchas gracias!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICACIÓN -->
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-sm font-medium transform translate-y-20 opacity-0 transition-all duration-300">
+        <span id="toastIcon">🛒</span>
+        <span id="toastMsg">Producto agregado al carrito</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-14 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 mb-10">
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 text-white font-extrabold text-lg">
+                    🐾 PawCare & Vet
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Centro veterinario integral y pet shop especializado. Brindamos amor, medicina preventiva y los
+                    mejores productos para tus mascotas.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#turnos" class="hover:text-white transition-colors">Reserva de Turnos</a></li>
+                    <li><a href="#tienda" class="hover:text-white transition-colors">Tienda Online</a></li>
+                    <li><a href="#recordatorios" class="hover:text-white transition-colors">Recordatorios de Vacunas</a>
+                    </li>
+                    <li><a href="#opiniones" class="hover:text-white transition-colors">Opiniones de Pacientes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Horarios & Urgencias</h4>
+                <p class="text-xs">Lunes a Sábados: 08:30 a 20:30 hs</p>
+                <p class="text-xs mt-1">Guardia de Urgencias: 24 Horas los 365 días</p>
+                <p class="text-teal-400 font-bold text-xs mt-3">Línea Directa: 0800-888-PAWCARE</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 text-xs uppercase tracking-wider">Contacto & Ubicación</h4>
+                <p class="text-xs">Av. del Libertador 4820, Palermo</p>
+                <p class="text-xs mt-1">WhatsApp: +54 9 11 5555-7890</p>
+                <p class="text-xs mt-1">info@pawcarevet.com</p>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            © 2025 PawCare & Vet. Todos los derechos reservados. Diseñado para veterinarias y pet shops.
+        </div>
+    </footer>
+
+    <script src="../../js/comercio/veterinarias.js"></script>
+</body>
+
+</html>

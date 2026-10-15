@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Épure — Joyería de Autor &amp; Escultura Portable</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/comercio/joyerias.css" rel="stylesheet"/>
+</head>
+<body class="bg-alabaster text-charcoal">
+<!-- BARRA DE ANUNCIO / GARANTÍA -->
+<aside class="top-announcement">
+<p>ENVÍO BLINDADO ASEGURADO DE CORTESÍA • CERTIFICADO GEMOLÓGICO GIA INDIVIDUAL • ATELIER MADRID</p>
+</aside>
+<!-- NAVEGACIÓN PRINCIPAL (ESTILO ZARA HOME EDITORIAL) -->
+<header class="navbar" id="mainHeader">
+<div class="nav-left">
+<button aria-label="Abrir Menú" class="icon-btn menu-toggle" id="menuBtn">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="1.2" viewbox="0 0 22 14" width="22">
+<line x1="0" x2="22" y1="1" y2="1"></line>
+<line x1="0" x2="16" y1="7" y2="7"></line>
+<line x1="0" x2="22" y1="13" y2="13"></line>
+</svg>
+</button>
+<nav class="nav-links">
+<a class="nav-link" href="#catalogo">Colección</a>
+<a class="nav-link" href="#artesania">El Taller</a>
+<a class="nav-link" href="#seguridad">Pagos &amp; Garantía</a>
+</nav>
+</div>
+<div class="nav-brand">
+<a class="brand-title" href="#">ATELIER ÉPURE</a>
+<span class="brand-sub">HAUTE JOAILLERIE</span>
+</div>
+<div class="nav-right">
+<div class="search-box">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input autocomplete="off" id="searchInput" placeholder="BUSCAR PIEZA..." type="text"/>
+</div>
+<button class="nav-action-btn" id="favsNavBtn">
+        FAVORITOS (<span id="favsCount">0</span>)
+      </button>
+<button class="nav-action-btn bag-btn" id="cartNavBtn">
+        CESTA (<span id="cartCount">0</span>)
+      </button>
+</div>
+</header>
+<!-- HERO SECTION EDITORIAL -->
+<section class="hero-section">
+<div class="hero-image-wrapper">
+<img alt="Atelier Épure Colección Aura" class="hero-img" src="../../assets/img/hero-joyeria.png"/>
+<div class="hero-overlay"></div>
+</div>
+<div class="hero-content">
+<span class="tag-label">ÉDITION LIMITÉE — 2026</span>
+<h1 class="hero-title">Objetos de Permanencia<br/><em>Colección Aura</em></h1>
+<p class="hero-description">
+        Esculturas portables forjadas a mano en oro reciclado de 18k y gemas naturales éticas. Cada pieza captura la cadencia del tiempo geológico y la luz del sur.
+      </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#catalogo">EXPLORAR CATÁLOGO →</a>
+<a class="btn btn-outline" href="#artesania">FILOSOFÍA DE ATELIER</a>
+</div>
+</div>
+</section>
+<!-- CINTA DE CONFIANZA INICIAL -->
+<section class="trust-strip">
+<div class="trust-item">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24" width="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+<span>CERTIFICADO GEMOLÓGICO INDIVIDUAL</span>
+</div>
+<div class="trust-item">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24" width="18"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+<span>PAGOS CRIPTOGRÁFICOS Y SSL 256-BIT</span>
+</div>
+<div class="trust-item">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24" width="18"><rect height="13" width="15" x="1" y="3"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+<span>ENVÍO ASEGURADO &amp; CORTESÍA GLOBAL</span>
+</div>
+</section>
+<!-- CATÁLOGO PREMIUM INTERACTIVO -->
+<section class="catalog-section" id="catalogo">
+<div class="catalog-header">
+<div class="catalog-title-wrap">
+<span class="section-uptitle">CATALOGUE SÉLECTIF</span>
+<h2 class="section-title">Obras en Escultura Mineral</h2>
+</div>
+<!-- CONTROLES FILTROS Y ORDEN -->
+<div class="catalog-controls">
+<div class="filter-pills" id="filterPills">
+<button class="pill active" data-category="all">TODOS</button>
+<button class="pill" data-category="brazaletes">BRAZALETES</button>
+<button class="pill" data-category="collares">COLLARES</button>
+<button class="pill" data-category="anillos">ANILLOS</button>
+<button class="pill" data-category="pendientes">PENDIENTES</button>
+</div>
+<div class="display-controls">
+<label class="sort-label">
+<span>ORDENAR:</span>
+<select class="sort-select" id="sortSelect">
+<option value="featured">MÁS RECIENTES</option>
+<option value="price-asc">PRECIO: MENOR A MAYOR</option>
+<option value="price-desc">PRECIO: MAYOR A MENOR</option>
+</select>
+</label>
+<div class="grid-toggle">
+<button aria-label="Vista 2 Columnas" class="grid-btn" id="grid2Btn" title="2 Columnas">
+<svg height="16" viewbox="0 0 16 16" width="16"><rect fill="currentColor" height="14" width="6" x="1" y="1"></rect><rect fill="currentColor" height="14" width="6" x="9" y="1"></rect></svg>
+</button>
+<button aria-label="Vista 3 Columnas" class="grid-btn active" id="grid3Btn" title="3 Columnas">
+<svg height="16" viewbox="0 0 16 16" width="16"><rect fill="currentColor" height="14" width="3.5" x="1" y="1"></rect><rect fill="currentColor" height="14" width="3.5" x="6.25" y="1"></rect><rect fill="currentColor" height="14" width="3.5" x="11.5" y="1"></rect></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PRODUCT GRID INYECTADO DINÁMICAMENTE POR JS -->
+<div class="products-grid grid-3" id="productsGrid">
+<!-- Inyectado por script.js -->
+</div>
+</section>
+<!-- SECCIÓN EDITORIAL: EL TALLER Y FILOSOFÍA -->
+<section class="artisan-section" id="artesania">
+<div class="artisan-text">
+<span class="section-uptitle">ATELIER &amp; TALLER</span>
+<h2 class="artisan-heading">La belleza no reside en la perfección simétrica, sino en la memoria del metal.</h2>
+<p class="artisan-p">
+        Cada joya se funda en pequeñas partidas en nuestro taller madrileño. Empleamos ceras perdidas modeladas a mano, respetando las rugosidades y microondulaciones que el oro adopta de manera natural.
+      </p>
+<div class="artisan-meta">
+<div class="meta-item">
+<strong>01 / ORO 100% RECICLADO FAIRMINED</strong>
+<p>Sin extracción virgen perjudicial; oro refinado trazable y ético.</p>
+</div>
+<div class="meta-item">
+<strong>02 / GEMAS CON DENOMINACIÓN DE ORIGEN</strong>
+<p>Esmeraldas Muzo y diamantes seleccionados por gemólogos independientes.</p>
+</div>
+</div>
+</div>
+<div class="artisan-gallery">
+<img alt="Taller de orfebrería" class="artisan-img-1" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<img alt="Detalle de joya artesanal" class="artisan-img-2" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+</div>
+</section>
+<!-- SECCIÓN DE PAGOS SEGUROS & PROTOCOLO -->
+<section class="security-section" id="seguridad">
+<div class="security-header">
+<span class="section-uptitle">RIGOR &amp; CONFIANZA</span>
+<h2 class="section-title">Garantía y Seguridad Absoluta</h2>
+<p class="section-sub">
+        La adquisición de una pieza de autor en Atelier Épure está resguardada por los más estrictos estándares de la banca privada suiza y el protocolo de custodia de alta joyería.
+      </p>
+</div>
+<div class="security-cards">
+<article class="sec-card">
+<div class="sec-icon">
+<svg fill="none" height="28" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24" width="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<span class="sec-number">01. SEGURIDAD FINANCIERA</span>
+<h3 class="sec-card-title">Encriptación Bancaria y Tokenización</h3>
+<p class="sec-card-desc">
+          Procesamiento seguro bajo estándar PCI-DSS Nivel 1. Aceptamos Visa, MasterCard, American Express, Apple Pay y fraccionamiento Klarna sin intereses. Pagos con custodia digital encriptada 256-bit.
+        </p>
+<div class="payment-logos">
+<span>VISA</span>
+<span>MASTERCARD</span>
+<span>AMEX</span>
+<span>APPLE PAY</span>
+</div>
+</article>
+<article class="sec-card">
+<div class="sec-icon">
+<svg fill="none" height="28" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24" width="28"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+</div>
+<span class="sec-number">02. TRAZABILIDAD OFICIAL</span>
+<h3 class="sec-card-title">Certificación GIA &amp; RJC</h3>
+<p class="sec-card-desc">
+          Cada gema superior a 0.50 ct cuenta con dossier holográfico individual GIA / HRD. Miembros certificados del Responsible Jewellery Council (RJC) para asegurar una cadena de suministro transparente.
+        </p>
+<div class="badge-tag">RESPONSIBLE JEWELLERY COUNCIL</div>
+</article>
+<article class="sec-card">
+<div class="sec-icon">
+<svg fill="none" height="28" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24" width="28"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" x2="12" y1="22.08" y2="12"></line></svg>
+</div>
+<span class="sec-number">03. LOGÍSTICA BLINDADA</span>
+<h3 class="sec-card-title">Envío Asegurado Puerta a Puerta</h3>
+<p class="sec-card-desc">
+          Entregas gestionadas mediante mensajería especializada de valor declarado con cobertura al 100%. Embalaje neutro confidencial, apertura mediante código OTP y devoluciones de cortesía en 30 días.
+        </p>
+<div class="badge-tag">COBERTURA TOTAL LLOYD'S LONDON</div>
+</article>
+</div>
+</section>
+<!-- FOOTER EDITORIAL -->
+<footer class="footer">
+<div class="footer-grid">
+<div class="footer-col brand-col">
+<h4 class="footer-brand">ATELIER ÉPURE</h4>
+<p class="footer-desc">Maison de alta joyería y esculturas corporales concebidas con pureza formal y arquitectura mineral.</p>
+</div>
+<div class="footer-col">
+<span class="footer-heading">COLECCIONES</span>
+<ul>
+<li><a href="#catalogo">Oro Puro 18k</a></li>
+<li><a href="#catalogo">Piezas Escultóricas</a></li>
+<li><a href="#catalogo">Diamantes de Autor</a></li>
+<li><a href="#catalogo">Archivo &amp; Vitrina</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<span class="footer-heading">MAISON</span>
+<ul>
+<li><a href="#artesania">El Manifiesto</a></li>
+<li><a href="#artesania">Talleres de Fundición</a></li>
+<li><a href="#">Cita en Galería</a></li>
+<li><a href="#">Cuidado de Joyas</a></li>
+</ul>
+</div>
+<div class="footer-col newsletter-col">
+<span class="footer-heading">NEWSLETTER</span>
+<p>Inscríbase a la correspondencia confidencial de nuevos lanzamientos.</p>
+<form class="newsletter-form" id="newsForm" onsubmit="event.preventDefault(); alert('Gracias por su suscripción a Atelier Épure.');">
+<input placeholder="SU CORREO" required="" type="email"/>
+<button type="submit">UNIRSE</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 ATELIER ÉPURE. TODOS LOS DERECHOS RESERVADOS.</p>
+<div class="footer-legal">
+<a href="#">TÉRMINOS</a>
+<a href="#">PRIVACIDAD</a>
+<a href="#">CERTIFICACIONES</a>
+</div>
+</div>
+</footer>
+<!-- DRAWER: FICHA DE PRODUCTO DETALLADA INTERACTIVA -->
+<div class="drawer-backdrop" id="productDrawerBackdrop">
+<div aria-modal="true" class="product-drawer" id="productDrawer" role="dialog">
+<button aria-label="Cerrar Ficha" class="drawer-close-btn" id="closeDrawerBtn">×</button>
+<div class="drawer-body" id="drawerBody">
+<!-- Renderizado dinámicamente con JavaScript -->
+</div>
+</div>
+</div>
+<!-- DRAWER: CESTA DE COMPRA INTERACTIVA -->
+<div class="drawer-backdrop" id="cartDrawerBackdrop">
+<div aria-modal="true" class="cart-drawer" id="cartDrawer" role="dialog">
+<div class="cart-drawer-header">
+<h3>CESTA DE COMPRA (<span id="cartHeaderCount">0</span>)</h3>
+<button class="drawer-close-btn" id="closeCartBtn">×</button>
+</div>
+<div class="cart-drawer-items" id="cartItemsContainer">
+<!-- Inyectado por JS -->
+</div>
+<div class="cart-drawer-footer">
+<div class="cart-subtotal-row">
+<span>Subtotal estimado</span>
+<span class="cart-subtotal-amount" id="cartSubtotalAmount">$0</span>
+</div>
+<p class="cart-shipping-note">Envío asegurado a domicilio: <strong>CORTESÍA</strong></p>
+<button class="btn btn-primary btn-block checkout-btn" id="checkoutBtn">
+<svg fill="none" height="16" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="16"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          CHECKOUT SEGURO SSL
+        </button>
+<div class="cart-guarantee-badges">
+<span>GARANTÍA 30 DÍAS</span> • <span>REEMBOLSO 100%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICACIÓN -->
+<div class="toast-notification" id="toastNotification">
+<span id="toastMsg">Pieza añadida a la cesta</span>
+</div>
+<script src="../../js/comercio/joyerias.js"></script>
+</body>
+</html>

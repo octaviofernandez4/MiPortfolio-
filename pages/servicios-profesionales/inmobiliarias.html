@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Inmobiliaria | Bienes Raíces de Alta Gama</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/servicios-profesionales/inmobiliarias.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navegación Principal -->
+<header class="site-header">
+<div class="container nav-wrapper">
+<a class="brand-logo" href="#">
+<svg fill="none" height="28" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="28">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span>AURA<span style="color: var(--accent);">PROPERTIES</span></span>
+</a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#catalogo">Catálogo</a></li>
+<li><a href="#filtros">Búsqueda Avanzada</a></li>
+<li><a href="#contacto">Asesoría</a></li>
+<li><a class="btn btn-primary" href="#contacto" style="padding: 8px 18px; font-size: 14px;">Publicar Propiedad</a></li>
+</ul>
+<button aria-label="Abrir Menú" class="mobile-toggle" id="mobileToggle">
+<svg fill="none" height="26" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="26">
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section">
+<div class="container hero-grid">
+<div class="hero-content">
+<span class="badge badge-gold">
+<svg fill="currentColor" height="14" viewbox="0 0 24 24" width="14">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+          Líderes en Real Estate Premium
+        </span>
+<h1>Encuentra la propiedad que define <span>tu estilo de vida</span></h1>
+<p class="hero-desc">
+          Accede a las mejores oportunidades en venta y alquiler residencial y corporativo. Filtros precisos, asesoría personalizada y gestión de leads en tiempo real.
+        </p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="#filtros">Explorar Catálogo</a>
+<a class="btn btn-secondary" href="#contacto">Contactar Asesor</a>
+</div>
+<div class="hero-stats">
+<div class="stat-item">
+<h3>+500</h3>
+<p>Propiedades exclusivas</p>
+</div>
+<div class="stat-item">
+<h3>98%</h3>
+<p>Clientes satisfechos</p>
+</div>
+<div class="stat-item">
+<h3>15 min</h3>
+<p>Tiempo de respuesta</p>
+</div>
+</div>
+</div>
+<div class="hero-card">
+<div class="hero-image-wrapper">
+<img alt="Propiedad Destacada" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="hero-floating-card">
+<div>
+<span class="badge badge-blue">Destacado de la semana</span>
+<h4 style="font-size: 16px; font-weight: 700; margin-top: 4px;">Villa en Sarrià, Barcelona</h4>
+<p style="font-size: 13px; color: var(--text-muted);">5 Dormitorios · 360 m² · Piscina</p>
+</div>
+<div style="text-align: right;">
+<span style="font-size: 18px; font-weight: 800; color: var(--accent);">$890,000 USD</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filtros Avanzados y Catálogo Interactivo -->
+<section class="catalog-section" id="catalogo">
+<div class="container">
+<div class="section-head" id="filtros">
+<span class="badge badge-blue">Buscador Inteligente</span>
+<h2>Catálogo de Propiedades</h2>
+<p>Utiliza nuestros filtros dinámicos en tiempo real para encontrar exactamente lo que necesitas.</p>
+</div>
+<!-- Barra de Filtros Interactiva -->
+<div class="filter-box">
+<div class="filter-main-grid">
+<div class="form-group">
+<label for="searchKeyword">Buscar por zona o palabra clave</label>
+<div class="input-icon-wrapper">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input class="form-control" id="searchKeyword" placeholder="Ej: Salamanca, Sarrià, Terraza, Ático..." type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label for="filterOperation">Operación</label>
+<select class="form-control" id="filterOperation">
+<option value="all">Todas</option>
+<option value="venta">Venta</option>
+<option value="alquiler">Alquiler</option>
+</select>
+</div>
+<div class="form-group">
+<label for="filterType">Tipo de Inmueble</label>
+<select class="form-control" id="filterType">
+<option value="all">Todos los tipos</option>
+<option value="departamento">Departamento / Ático</option>
+<option value="casa">Casa / Villa</option>
+<option value="oficina">Oficina Comercial</option>
+</select>
+</div>
+<div class="form-group">
+<label for="filterBedrooms">Dormitorios</label>
+<select class="form-control" id="filterBedrooms">
+<option value="all">Cualquiera</option>
+<option value="1">1 Dormitorio</option>
+<option value="2">2 Dormitorios</option>
+<option value="3">3 Dormitorios</option>
+<option value="4+">4 o más</option>
+</select>
+</div>
+<div class="form-group">
+<button class="btn btn-secondary" onclick="resetFilters()" style="height: 48px;">
+              Limpiar
+            </button>
+</div>
+</div>
+<!-- Filtros Avanzados Colapsables -->
+<div class="filter-toggle-row">
+<button class="advanced-toggle-btn" id="btnToggleAdvanced" type="button">
+<span>+ Más filtros (Habitaciones, Amenidades, Precio)</span>
+</button>
+<span class="active-count" id="propertiesCount">Cargando propiedades...</span>
+</div>
+<div class="advanced-filters-panel" id="advancedPanel">
+<div class="form-group">
+<label id="priceRangeLabel">Presupuesto Máximo</label>
+<input id="filterPriceRange" max="1000000" min="1000" step="10000" style="width: 100%; margin-top: 8px;" type="range" value="1000000"/>
+<span id="priceRangeValue" style="font-size: 14px; font-weight: 700; color: var(--accent); margin-top: 4px;">Hasta $1,000,000 USD</span>
+</div>
+<div class="form-group" style="justify-content: center;">
+<label>Amenidades</label>
+<div style="display: flex; gap: 20px; align-items: center; margin-top: 8px;">
+<label style="display: flex; align-items: center; gap: 8px; font-size: 14px; text-transform: none; font-weight: 500; cursor: pointer;">
+<input id="checkGarage" type="checkbox"/> Cochera / Garaje
+              </label>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 14px; text-transform: none; font-weight: 500; cursor: pointer;">
+<input id="checkPool" type="checkbox"/> Piscina
+              </label>
+</div>
+</div>
+</div>
+</div>
+<!-- Cuadrícula Dinámica de Propiedades (Cargadas por JS) -->
+<div class="properties-wrapper" id="propertiesGrid">
+<!-- Renderizado dinámico vía app.js -->
+</div>
+</div>
+</section>
+<!-- Captura Directa de Leads y Contacto -->
+<section class="contact-section" id="contacto">
+<div class="container contact-grid">
+<div class="contact-info">
+<span class="badge badge-blue" style="background: rgba(37, 99, 235, 0.2); color: #60A5FA;">Contacto Directo</span>
+<h2>¿Buscas vender, comprar o alquilar?</h2>
+<p>Nuestro equipo de expertos en bienes raíces te brinda atención exclusiva y confidencial. Déjanos tus datos o coordina una visita directa.</p>
+<div class="contact-channels">
+<div class="channel-card">
+<div class="channel-icon">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</div>
+<div class="channel-details">
+<h4>Línea Telefónica Directa</h4>
+<p>+34 910 000 888 (Lun a Vie 9:00 - 19:00)</p>
+</div>
+</div>
+<div class="channel-card">
+<div class="channel-icon">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</div>
+<div class="channel-details">
+<h4>Correo Corporativo</h4>
+<p>consultas@auraproperties.com</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Formulario de Conversión de Leads -->
+<div class="lead-form-card">
+<h3>Solicitar Asesoría Inmobiliaria</h3>
+<p>Completa el formulario y te enviaremos una ficha detallada con propiedades a tu medida.</p>
+<div class="form-alert" id="contactFormAlert"></div>
+<form id="mainContactForm">
+<div class="form-row">
+<div class="form-group">
+<label for="leadName">Nombre Completo *</label>
+<input class="form-control" id="leadName" placeholder="Tu nombre" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="leadPhone">Teléfono / WhatsApp *</label>
+<input class="form-control" id="leadPhone" placeholder="+34 600 000 000" required="" type="tel"/>
+</div>
+</div>
+<div class="form-full form-group">
+<label for="leadEmail">Correo Electrónico *</label>
+<input class="form-control" id="leadEmail" placeholder="tuemail@ejemplo.com" required="" type="email"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="leadInterest">Tipo de Interés</label>
+<select class="form-control" id="leadInterest">
+<option value="comprar">Deseo Comprar</option>
+<option value="alquilar">Deseo Alquilar</option>
+<option value="vender">Quiero Vender mi Inmueble</option>
+<option value="inversion">Inversión Inmobiliaria</option>
+</select>
+</div>
+<div class="form-group">
+<label for="leadBudget">Rango Estimado</label>
+<select class="form-control" id="leadBudget">
+<option value="100-300k">$100k - $300k USD</option>
+<option value="300-600k">$300k - $600k USD</option>
+<option value="600k+">Más de $600k USD</option>
+</select>
+</div>
+</div>
+<div class="form-full form-group">
+<label for="leadMessage">Mensaje o consulta específica</label>
+<textarea class="form-control" id="leadMessage" placeholder="Indícanos zonas de interés, requerimientos específicos o si deseas agendar visita..."></textarea>
+</div>
+<button class="btn btn-primary" style="width: 100%; height: 50px; font-size: 16px;" type="submit">
+            Enviar Solicitud de Información
+          </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Modal Interactivo para Consulta Específica por Inmueble -->
+<div class="modal-overlay" id="leadModal">
+<div class="modal-content">
+<button aria-label="Cerrar ventana" class="modal-close-btn" onclick="closeDirectLeadModal()">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+<span class="badge badge-blue">Consulta Directa</span>
+<h3 id="modalPropertyTitle" style="font-size: 22px; font-weight: 800; margin: 10px 0 4px;">Propiedad</h3>
+<p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">Un asesor asignado responderá tu consulta en pocos minutos.</p>
+<div class="form-alert" id="modalAlert"></div>
+<form id="modalLeadForm">
+<input id="modalPropertyId" type="hidden" value=""/>
+<div class="form-group" style="margin-bottom: 14px;">
+<label for="mName">Nombre y Apellido</label>
+<input class="form-control" id="mName" placeholder="Tu nombre" required="" type="text"/>
+</div>
+<div class="form-group" style="margin-bottom: 14px;">
+<label for="mPhone">Teléfono / WhatsApp</label>
+<input class="form-control" id="mPhone" placeholder="+34 600 000 000" required="" type="tel"/>
+</div>
+<div class="form-group" style="margin-bottom: 14px;">
+<label for="mEmail">Correo Electrónico</label>
+<input class="form-control" id="mEmail" placeholder="tuemail@ejemplo.com" required="" type="email"/>
+</div>
+<div class="form-group" style="margin-bottom: 20px;">
+<label for="mMessage">Pregunta o disponibilidad para visita</label>
+<textarea class="form-control" id="mMessage" placeholder="¿Está disponible para visitar esta semana?" style="height: 80px;"></textarea>
+</div>
+<button class="btn btn-primary" style="width: 100%; height: 46px;" type="submit">Enviar Consulta</button>
+</form>
+</div>
+</div>
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container footer-content">
+<div>
+<p>© 2025 Aura Properties Real Estate S.L. Todos los derechos reservados.</p>
+</div>
+<div>
+<p>Diseño exclusivo · Alta conversión de Leads · Responsive Desktop &amp; Mobile</p>
+</div>
+</div>
+</footer>
+<script src="../../js/servicios-profesionales/inmobiliarias.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* Fondo estilo cemento caliente con sombras de ramas orgánicas y caústicos como en el moodboard */
+body {
+  background-color: #6e675d;
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(0, 0, 0, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(20, 18, 15, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 40%, rgba(255, 250, 240, 0.12) 0%, transparent 60%),
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.02) 0px, rgba(0, 0, 0, 0.02) 2px, transparent 2px, transparent 4px);
+  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
+  color: #1a1917;
+}
+
+/* Proyección de sombras de follaje/ramas simulando la luz natural del snapshot */
+.branch-shadows {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  background: radial-gradient(ellipse at 70% 30%, transparent 40%, rgba(10, 8, 5, 0.6) 100%),
+              radial-gradient(circle at 30% 70%, transparent 30%, rgba(15, 12, 8, 0.4) 90%);
+  mix-blend-mode: multiply;
+  filter: blur(16px);
+}
+
+/* Borde biselado industrial metálico/retro visible en los marcos del snapshot */
+.bezel-frame {
+  border: 6px solid #4a453e;
+  border-radius: 20px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.15), 0 16px 36px rgba(0,0,0,0.5);
+}
+
+.polaroid-card {
+  background: #fbf9f4;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) scale(1.02) rotate(0deg) !important;
+  z-index: 30;
+  box-shadow: 0 24px 38px -6px rgba(0,0,0,0.6), 0 8px 16px -2px rgba(0,0,0,0.3);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Movimiento — anima lo que ya existe, sin agregar elementos nuevos
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Deriva ambiental de la sombra de ramas, como luz natural que se mueve */
+.branch-shadows {
+  animation: driftShadow 22s ease-in-out infinite alternate;
+}
+@keyframes driftShadow {
+  0%   { translate: 0 0; scale: 1; }
+  50%  { translate: -2% 2%; scale: 1.04; }
+  100% { translate: 2% -1%; scale: 1.02; }
+}
+
+/* Nota pineada: leve balanceo, como si colgara de una chinche */
+.pinned-note {
+  animation: noteSway 6s ease-in-out infinite;
+  transform-origin: top center;
+}
+@keyframes noteSway {
+  0%, 100% { rotate: 2deg; }
+  50%      { rotate: -1deg; }
+}
+
+/* Entrada de los polaroids: se asientan sobre el tablero al aparecer */
+@keyframes popIn {
+  from { opacity: 0; translate: 0 26px; scale: 0.92; }
+  to   { opacity: 1; translate: 0 0; scale: 1; }
+}
+.polaroid-card {
+  animation: popIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+/* Entrada escalonada de tarjetas de catálogo y filas de stock */
+@keyframes fadeUp {
+  from { opacity: 0; translate: 0 16px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+.fade-up-in {
+  animation: fadeUp 0.5s ease backwards;
+}
+
+/* Revelado de secciones al entrar en el viewport */
+.reveal {
+  opacity: 0;
+  translate: 0 28px;
+  transition: opacity 0.7s ease, translate 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Contador del carrito: rebote al sumar un producto */
+@keyframes bump {
+  0%, 100% { scale: 1; }
+  50%      { scale: 1.4; }
+}
+#cart-counter-badge.bump {
+  animation: bump 0.35s ease;
+}
+
+/* Fila de stock: destello al ajustar unidades */
+@keyframes rowFlash {
+  0%   { background-color: rgba(245, 158, 11, 0.35); }
+  100% { background-color: transparent; }
+}
+.row-flash {
+  animation: rowFlash 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-shadows, .pinned-note, .polaroid-card, .fade-up-in, .reveal,
+  #cart-counter-badge.bump, .row-flash {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; translate: 0 0; }
+}

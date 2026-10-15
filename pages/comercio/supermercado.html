@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercadito — Tu súper del barrio, online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/comercio/supermercado.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__mark"></span>
+        Mercadito
+      </a>
+      <nav class="nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="cart-btn" id="openCart" aria-label="Abrir carrito">
+        Carrito
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <span class="tag">Delivery hoy · de 9 a 22 h</span>
+        <h1>El súper del barrio, ahora en tu celular.</h1>
+        <p>Elegí tus productos, armá el carrito y te lo llevamos a la puerta. Sin apps, sin registros, sin vueltas.</p>
+        <div class="hero__actions">
+          <a href="#catalogo" class="btn btn--primary">Ver catálogo</a>
+          <a href="#delivery" class="btn btn--ghost">Cómo funciona</a>
+        </div>
+        <ul class="hero__facts">
+          <li><strong>45 min</strong><span>tiempo promedio</span></li>
+          <li><strong>Gratis</strong><span>envío desde $15.000</span></li>
+        </ul>
+      </div>
+      <div class="hero__visual">
+        <div class="placeholder placeholder--hero"><span>foto: góndola / bolsa de compras</span></div>
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Pedido en camino
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section class="catalog" id="catalogo">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">01 — Catálogo</span>
+          <h2>Todo lo de siempre, a un toque.</h2>
+        </div>
+        <label class="search">
+          <input type="search" id="search" placeholder="Buscar productos…">
+        </label>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="productGrid"></div>
+      <p class="empty" id="emptyMsg" hidden>No encontramos productos con esa búsqueda.</p>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section class="delivery" id="delivery">
+    <div class="container">
+      <span class="eyebrow eyebrow--light">02 — Delivery</span>
+      <h2>Así llega tu pedido.</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num">1</span>
+          <h3>Elegí</h3>
+          <p>Recorré el catálogo y sumá productos al carrito.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">2</span>
+          <h3>Confirmá</h3>
+          <p>Dejá tu dirección y elegí cómo pagar: efectivo, transferencia o tarjeta.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">3</span>
+          <h3>Recibí</h3>
+          <p>Te avisamos por WhatsApp cuando el pedido sale para tu casa.</p>
+        </li>
+      </ol>
+      <div class="zones">
+        <div class="zone">
+          <span>Zona 1 · hasta 2 km</span>
+          <strong>$1.500</strong>
+        </div>
+        <div class="zone">
+          <span>Zona 2 · hasta 5 km</span>
+          <strong>$2.500</strong>
+        </div>
+        <div class="zone zone--accent">
+          <span>Compras desde $15.000</span>
+          <strong>Envío gratis</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacto">
+    <div class="container footer__inner">
+      <div>
+        <a href="#" class="logo logo--footer"><span class="logo__mark"></span>Mercadito</a>
+        <p>Av. Siempre Viva 742 · Abierto todos los días de 9 a 22 h</p>
+      </div>
+      <div class="footer__links">
+        <a href="https://wa.me/5491100000000" target="_blank">WhatsApp</a>
+        <a href="#">Instagram</a>
+        <a href="tel:+5491100000000">Llamar</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRITO (DRAWER) -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3 id="drawerTitle">Tu carrito</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Cerrar">✕</button>
+    </div>
+
+    <!-- Paso 1: items -->
+    <div class="drawer__body" id="stepCart">
+      <ul class="cart-list" id="cartList"></ul>
+      <div class="cart-empty" id="cartEmpty">
+        <p>Tu carrito está vacío.</p>
+        <a href="#catalogo" class="btn btn--ghost" id="goShop">Ir al catálogo</a>
+      </div>
+    </div>
+
+    <!-- Paso 2: checkout -->
+    <form class="drawer__body checkout" id="stepCheckout" hidden>
+      <label>Nombre
+        <input type="text" name="nombre" required placeholder="Ej: Laura Pérez">
+      </label>
+      <label>Teléfono
+        <input type="tel" name="telefono" required placeholder="Ej: 11 2345 6789">
+      </label>
+      <label>Dirección de entrega
+        <input type="text" name="direccion" required placeholder="Calle, número, piso">
+      </label>
+      <label>Zona
+        <select name="zona" id="zoneSelect">
+          <option value="1500">Zona 1 · hasta 2 km ($1.500)</option>
+          <option value="2500">Zona 2 · hasta 5 km ($2.500)</option>
+          <option value="0">Retiro en el local (gratis)</option>
+        </select>
+      </label>
+      <fieldset class="pay">
+        <legend>Forma de pago</legend>
+        <label><input type="radio" name="pago" value="Efectivo" checked> Efectivo</label>
+        <label><input type="radio" name="pago" value="Transferencia"> Transferencia</label>
+        <label><input type="radio" name="pago" value="Tarjeta"> Tarjeta</label>
+      </fieldset>
+      <label>Notas (opcional)
+        <textarea name="notas" rows="2" placeholder="Timbre, horario, reemplazos…"></textarea>
+      </label>
+    </form>
+
+    <!-- Paso 3: confirmado -->
+    <div class="drawer__body done" id="stepDone" hidden>
+      <span class="done__check">✓</span>
+      <h3>¡Pedido recibido!</h3>
+      <p>Te escribimos por WhatsApp para confirmar. Llega en unos 45 minutos.</p>
+      <button class="btn btn--ghost" id="newOrder">Hacer otro pedido</button>
+    </div>
+
+    <div class="drawer__foot" id="drawerFoot">
+      <div class="totals">
+        <div><span>Subtotal</span><span id="subtotal">$0</span></div>
+        <div><span>Envío</span><span id="shipping">$0</span></div>
+        <div class="totals__total"><span>Total</span><span id="total">$0</span></div>
+      </div>
+      <p class="free-hint" id="freeHint"></p>
+      <button class="btn btn--primary btn--block" id="nextBtn">Continuar</button>
+      <button class="btn btn--link" id="backBtn" hidden>← Volver al carrito</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../../js/comercio/supermercado.js"></script>
+</body>
+</html>

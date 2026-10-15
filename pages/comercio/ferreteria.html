@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corralón Ferretería — Materiales, cotizador y pedidos a medida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/comercio/ferreteria.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#" class="logo"><span class="logo__mark"></span>EL CORRALÓN</a>
+    <nav class="nav" id="nav">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#cotizador">Cotizador</a>
+      <a href="#pedidos">Pedidos a medida</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#cotizador" class="quote-pill">Cotización <span id="quoteCount">0</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú"><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">Ferretería · Corralón · Envíos a obra</p>
+      <h1>Todo para tu obra,<br>del cimiento al techo.</h1>
+      <p class="hero__lead">Elegí materiales del catálogo, calculá cantidades con el cotizador y pedí cortes a medida. Te respondemos con precio y fecha de entrega.</p>
+      <div class="hero__actions">
+        <a href="#cotizador" class="btn btn--primary">Cotizar materiales</a>
+        <a href="#catalogo" class="btn btn--ghost">Ver catálogo</a>
+      </div>
+      <ul class="hero__facts">
+        <li><strong>+2.500</strong><span>productos en stock</span></li>
+        <li><strong>24/48 h</strong><span>entrega en obra</span></li>
+        <li><strong>Cortes</strong><span>madera, chapa y hierro</span></li>
+      </ul>
+    </div>
+    <div class="hero__media placeholder"><span>foto · patio del corralón / materiales</span></div>
+  </div>
+</section>
+
+<section class="section" id="catalogo">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">01 — Catálogo</p>
+      <h2>Materiales por categoría</h2>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="catalog" id="catalog"></div>
+  </div>
+</section>
+
+<section class="section section--dark" id="cotizador">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">02 — Cotizador</p>
+      <h2>Calculá cuánto material necesitás</h2>
+    </div>
+    <div class="quoter">
+      <div class="calc">
+        <h3>Calculadora de obra</h3>
+        <label class="field">
+          <span>Tipo de trabajo</span>
+          <select id="calcType">
+            <option value="pared">Pared de ladrillo común</option>
+            <option value="contrapiso">Contrapiso</option>
+            <option value="pintura">Pintura</option>
+          </select>
+        </label>
+        <div class="field-row">
+          <label class="field"><span>Largo (m)</span><input type="number" id="calcL" value="5" min="0" step="0.1"></label>
+          <label class="field"><span id="calcHLabel">Alto (m)</span><input type="number" id="calcH" value="2.6" min="0" step="0.1"></label>
+        </div>
+        <label class="field" id="calcExtraWrap">
+          <span id="calcExtraLabel">Espesor (cm)</span>
+          <input type="number" id="calcExtra" value="8" min="1" step="1">
+        </label>
+        <div class="calc__result" id="calcResult"></div>
+        <button class="btn btn--primary btn--full" id="calcAdd">Sumar a la cotización</button>
+      </div>
+
+      <div class="cart">
+        <div class="cart__head">
+          <h3>Tu cotización</h3>
+          <button class="link-btn" id="clearCart">Vaciar</button>
+        </div>
+        <ul class="cart__list" id="cartList"></ul>
+        <div class="cart__total">
+          <span>Total estimado</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <p class="cart__note">Precios de referencia. El valor final se confirma al momento del pedido.</p>
+        <button class="btn btn--light btn--full" id="sendQuote">Enviar cotización por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pedidos">
+  <div class="container pedidos">
+    <div class="pedidos__info">
+      <p class="eyebrow">03 — Pedidos a medida</p>
+      <h2>Cortamos y preparamos tu pedido</h2>
+      <p>Pasanos las medidas y lo dejamos listo para retirar o lo enviamos a tu obra.</p>
+      <ol class="steps">
+        <li><span>1</span>Elegí el material y cargá las medidas.</li>
+        <li><span>2</span>Te enviamos precio y plazo.</li>
+        <li><span>3</span>Retirás o lo llevamos a obra.</li>
+      </ol>
+      <div class="pedidos__media placeholder"><span>foto · sierra / corte de tirantes</span></div>
+    </div>
+
+    <form class="order-form" id="orderForm">
+      <div class="field-row">
+        <label class="field"><span>Nombre</span><input type="text" name="nombre" required placeholder="Juan Pérez"></label>
+        <label class="field"><span>Teléfono</span><input type="tel" name="tel" required placeholder="11 5555-5555"></label>
+      </div>
+      <label class="field">
+        <span>Material</span>
+        <select name="material">
+          <option>Madera / tirantes</option>
+          <option>Placa MDF / fenólico</option>
+          <option>Chapa</option>
+          <option>Hierro / caño</option>
+          <option>Vidrio</option>
+        </select>
+      </label>
+      <div class="field-row field-row--3">
+        <label class="field"><span>Largo (cm)</span><input type="number" name="largo" required min="1"></label>
+        <label class="field"><span>Ancho (cm)</span><input type="number" name="ancho" min="0"></label>
+        <label class="field"><span>Espesor (mm)</span><input type="number" name="espesor" min="0"></label>
+      </div>
+      <div class="field-row">
+        <label class="field"><span>Cantidad</span><input type="number" name="cantidad" value="1" min="1"></label>
+        <label class="field">
+          <span>Entrega</span>
+          <select name="entrega"><option>Retiro en local</option><option>Envío a obra</option></select>
+        </label>
+      </div>
+      <label class="field"><span>Detalles</span><textarea name="detalle" rows="3" placeholder="Ej: cantos pulidos, agujeros, terminación…"></textarea></label>
+      <button type="submit" class="btn btn--primary btn--full">Enviar pedido</button>
+      <p class="form-msg" id="formMsg"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer" id="contacto">
+  <div class="container footer__grid">
+    <div>
+      <a href="#" class="logo logo--light"><span class="logo__mark"></span>EL CORRALÓN</a>
+      <p>Ferretería y materiales de construcción.</p>
+    </div>
+    <div><h4>Dirección</h4><p>Av. Siempreviva 1234<br>Buenos Aires</p></div>
+    <div><h4>Horarios</h4><p>Lun a Vie 7:30 – 18:00<br>Sáb 8:00 – 13:00</p></div>
+    <div><h4>Contacto</h4><p>11 5555-5555<br>ventas@elcorralon.com</p></div>
+  </div>
+  <div class="container footer__bottom">© 2026 El Corralón</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="../../js/comercio/ferreteria.js"></script>
+</body>
+</html>
