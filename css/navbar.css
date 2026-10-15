@@ -11,7 +11,6 @@ header {
 }
 
 .navbar {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,28 +25,6 @@ header {
     box-shadow: 0 20px 60px rgba(0, 0, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    overflow: hidden;
-    transition: transform .5s cubic-bezier(.34, 1.56, .64, 1);
-}
-
-.navbar::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(140px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, .4), rgba(255, 255, 255, 0) 70%);
-    opacity: 0;
-    transition: opacity .3s ease;
-    pointer-events: none;
-}
-
-.navbar.is-touching {
-    transform: scale(.985, 1.03);
-    transition: transform .15s ease-out;
-}
-
-.navbar.is-touching::before {
-    opacity: 1;
 }
 
 .logo {
