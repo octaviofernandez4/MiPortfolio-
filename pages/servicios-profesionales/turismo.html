@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MundoHorizonte Viajes | Catálogo, Cotizador y Reservas con Seña</title>
+  <link rel="stylesheet" href="../../css/servicios-profesionales/turismo.css">
+  
+</head>
+<body>
+
+  <!-- Barra de Navegación Superior -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+        </svg>
+        Mundo<span>Horizonte</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#cotizador">Cotizador</a></li>
+        <li><a href="#reservas">Reservas con Seña</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <a href="#cotizador" class="nav-cta-btn">Cotizar Ahora</a>
+    </div>
+  </header>
+
+  <!-- Hero Principal -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-badge">
+        <span>✨</span> Temporada 2025 - Cupos Exclusivos
+      </div>
+      <h1 class="hero-title">
+        Tu Próximo Gran Viaje<br><span>Empieza Con Una Seña</span>
+      </h1>
+      <p class="hero-subtitle">
+        Descubrí destinos increíbles, cotizá tu itinerario a medida en segundos y asegurá tu tarifa congelada reservando online con sólo el 15% al 25% de seña.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn btn-primary">Explorar Paquetes</a>
+        <a href="#cotizador" class="btn btn-outline-white">Ir al Cotizador</a>
+      </div>
+
+      <div class="perks-strip">
+        <div>🛡️ Tarifa Congelada</div>
+        <div>💳 Pagos Seguros SSL</div>
+        <div>⚡ Confirmación Inmediata</div>
+        <div>🧑‍💼 Asistencia 24/7</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 1: CATÁLOGO DE PAQUETES -->
+  <section id="catalogo" style="padding: 44px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Destinos Soñados</span>
+        <h2 class="section-title">Catálogo de Paquetes Turísticos</h2>
+        <p class="section-desc">Elegí tu experiencia favorita con asistencia al viajero y opciones flexibles.</p>
+      </div>
+
+      <!-- Filtro por categorías -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="todos">Todos los Destinos</button>
+        <button class="filter-btn" data-filter="playa">Playas & All Inclusive</button>
+        <button class="filter-btn" data-filter="montana">Montaña & Lagos</button>
+        <button class="filter-btn" data-filter="europa">Circuitos por Europa</button>
+        <button class="filter-btn" data-filter="aventura">Aventura & Cultura</button>
+      </div>
+
+      <!-- Grid dinámica de paquetes -->
+      <div class="packages-grid" id="packages-container"></div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: COTIZADOR DINÁMICO EN VIVO -->
+  <section id="cotizador" class="cotizador-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Calculá en Tiempo Real</span>
+        <h2 class="section-title">Cotizador Inteligente</h2>
+        <p class="section-desc">Seleccioná tu destino, pasajeros y agregados para calcular el total y el monto exacto de la seña online.</p>
+      </div>
+
+      <div class="cotizador-card">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="quote-destination">Paquete / Destino Elegido</label>
+            <select id="quote-destination" class="form-select"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="quote-passengers">
+              <span>Cantidad de Pasajeros</span>
+              <span id="passengers-display" style="color: var(--primary); font-weight: 700;">Adultos</span>
+            </label>
+            <input type="number" id="quote-passengers" class="form-control" value="2" min="1" max="15">
+          </div>
+        </div>
+
+        <!-- Opciones adicionales -->
+        <div class="addons-group">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 8px; text-transform: uppercase;">
+            Servicios Opcionales Recomendados
+          </div>
+
+          <label class="addon-item">
+            <div class="addon-label-group">
+              <input type="checkbox" id="opt-insurance" checked>
+              <span>Seguro de Asistencia Médica Premium</span>
+            </div>
+            <span class="addon-price">+USD $45 /pers</span>
+          </label>
+
+          <label class="addon-item">
+            <div class="addon-label-group">
+              <input type="checkbox" id="opt-transfers" checked>
+              <span>Traslados In/Out Aeropuerto Privados</span>
+            </div>
+            <span class="addon-price">+USD $35 /pers</span>
+          </label>
+
+          <label class="addon-item">
+            <div class="addon-label-group">
+              <input type="checkbox" id="opt-excursions">
+              <span>Excursión Exclusiva con Almuerzo Típico</span>
+            </div>
+            <span class="addon-price">+USD $80 /pers</span>
+          </label>
+        </div>
+
+        <!-- Resumen de Costos y Seña -->
+        <div class="quote-summary">
+          <div class="quote-breakdown">
+            <div class="quote-line">
+              <span id="summary-pkg-name">Cargando paquete...</span>
+              <span id="summary-base-rate">USD $0</span>
+            </div>
+            <div class="quote-line">
+              <span>Servicios adicionales:</span>
+              <span id="summary-extras">USD $0</span>
+            </div>
+          </div>
+
+          <div class="total-full">
+            <span>Valor Total del Viaje:</span>
+            <span id="summary-grand-total">USD $0</span>
+          </div>
+
+          <div class="total-sena">
+            <div>
+              <div class="sena-badge">🔒 SEÑA PARA CONGELAR TARIFA (<span id="summary-deposit-pct">20%</span>)</div>
+              <div style="font-size: 0.74rem; color: #fed7aa;">Saldo restante hasta 15 días antes de viajar</div>
+            </div>
+            <div class="sena-amount" id="summary-deposit-amount">USD $0</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 18px;">
+          <a href="#reservas" class="btn btn-primary" style="width: 100%; max-width: 320px;">
+            Continuar con la Reserva Online ➔
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: RESERVAS CON SEÑA ONLINE -->
+  <section id="reservas" class="booking-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Asegurá Tu Lugar</span>
+        <h2 class="section-title">Reserva con Seña Online</h2>
+        <p class="section-desc">Completá tus datos de pasajero y aboná la seña para congelar el valor y emitir tu voucher digital al instante.</p>
+      </div>
+
+      <div class="booking-panel">
+        <div class="booking-steps-bar">
+          <div class="step-indicator completed">
+            <span class="step-num">1</span>
+            <span class="step-name">Paquete</span>
+          </div>
+          <div class="step-indicator completed">
+            <span class="step-num">2</span>
+            <span class="step-name">Cotización</span>
+          </div>
+          <div class="step-indicator active">
+            <span class="step-num">3</span>
+            <span class="step-name">Seña Online</span>
+          </div>
+        </div>
+
+        <div id="booking-form-wrapper">
+          <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <div>
+              <span style="font-size: 0.74rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Paquete seleccionado:</span>
+              <div id="booking-target-pkg" style="font-weight: 700; color: var(--text-main);">Cancún All Inclusive</div>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 0.74rem; text-transform: uppercase; color: var(--accent); font-weight: 700;">Monto de seña a abonar hoy:</span>
+              <div id="booking-sena-view" style="font-size: 1.25rem; font-weight: 900; color: var(--accent);">USD $0</div>
+            </div>
+          </div>
+
+          <form id="booking-checkout-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="client-name">Nombre y Apellido del Titular *</label>
+                <input type="text" id="client-name" class="form-control" placeholder="Ej. Carlos Martínez" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="client-email">Correo Electrónico (Para vouchers) *</label>
+                <input type="email" id="client-email" class="form-control" placeholder="carlos@ejemplo.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="client-phone">Teléfono / WhatsApp *</label>
+                <input type="tel" id="client-phone" class="form-control" placeholder="+54 9 11 1234-5678" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="client-date">Fecha Estimada de Salida *</label>
+                <input type="date" id="client-date" class="form-control" value="2025-05-15" required>
+              </div>
+            </div>
+
+            <!-- Selección de medio de pago -->
+            <div style="margin-top: 14px;">
+              <label class="form-label">Seleccioná cómo abonar la seña:</label>
+              <div class="payment-selector">
+                <div class="payment-opt selected" data-method="tarjeta">
+                  <span>💳</span>
+                  <div>
+                    <div style="font-size: 0.82rem; font-weight: 700;">Tarjeta Débito / Crédito</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted);">Hasta 3 cuotas fijas</div>
+                  </div>
+                </div>
+
+                <div class="payment-opt" data-method="transferencia">
+                  <span>🏦</span>
+                  <div>
+                    <div style="font-size: 0.82rem; font-weight: 700;">Transferencia Bancaria</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted);">5% extra de descuento</div>
+                  </div>
+                </div>
+
+                <div class="payment-opt" data-method="mercadopago">
+                  <span>📱</span>
+                  <div>
+                    <div style="font-size: 0.82rem; font-weight: 700;">Mercado Pago / Billetera</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted);">Acreditación instantánea</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin: 14px 0; display: flex; align-items: center; gap: 8px;">
+              <input type="checkbox" id="accept-terms" checked required>
+              <label for="accept-terms">Acepto las condiciones de contratación y política de cancelación flexible.</label>
+            </div>
+
+            <button type="submit" id="btn-submit-booking" class="btn btn-primary" style="width: 100%; padding: 13px; font-size: 1rem;">
+              🔒 Pagar Seña & Confirmar Reserva
+            </button>
+          </form>
+        </div>
+
+        <div id="booking-success-box" class="booking-success-box"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contacto">
+    <div class="footer-content">
+      <div class="brand-logo" style="color: white;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+        </svg>
+        Mundo<span style="color: var(--accent);">Horizonte</span>
+      </div>
+      <p style="max-width: 480px;">
+        Agencia de Viajes y Turismo autorizada. Legajo EVyT Nº 18.492. Asesoramiento personalizado, seguridad en pagos y las mejores experiencias por el mundo.
+      </p>
+      <div style="display: flex; gap: 16px; font-size: 0.78rem; flex-wrap: wrap; justify-content: center;">
+        <span>📍 Av. Corrientes 1450, CABA</span>
+        <span>📞 0800-333-VIAJES</span>
+        <span>✉️ info@mundohorizonte.com</span>
+      </div>
+      <div style="font-size: 0.72rem; color: #64748b; border-top: 1px solid #1e293b; width: 100%; padding-top: 12px;">
+        © 2025 MundoHorizonte Turismo. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Navegación Inferior Móvil Fija con íconos compactos -->
+  <nav class="mobile-bottom-nav">
+    <a href="#hero" class="mob-nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span>Inicio</span>
+    </a>
+    <a href="#catalogo" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/></svg>
+      <span>Catálogo</span>
+    </a>
+    <a href="#cotizador" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/></svg>
+      <span>Cotizador</span>
+    </a>
+    <a href="#reservas" class="mob-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+      <span>Reservar</span>
+    </a>
+  </nav>
+
+  <script src="../../js/servicios-profesionales/turismo.js"></script>
+</body>
+</html>

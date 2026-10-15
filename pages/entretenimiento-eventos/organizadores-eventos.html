@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>AURELIA | Eventos &amp; Bodas Exclusivas</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700&amp;family=Rajdhani:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="../../css/entretenimiento-eventos/organizadores-eventos.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Pantalla de carga -->
+<div class="loader-wrapper" id="loader-screen">
+<div class="loader-content text-center">
+<div class="loader-gear-icon mb-3">
+<i class="bi bi-flower1"></i>
+</div>
+<h2 class="loader-logo-title">AURELIA</h2>
+<p class="loader-subtitle">DISEÑO DE BODAS &amp; EXPERIENCIAS</p>
+<div class="loader-bar">
+<div class="loader-progress"></div>
+</div>
+</div>
+</div>
+<!-- Barra de progreso de lectura / scroll -->
+<div aria-hidden="true" class="scroll-tracker" id="scroll-progress-bar"></div>
+<!-- Header Superior -->
+<header class="site-header fixed-top" id="main-header">
+<div class="container-fluid px-3 px-md-5 d-flex align-items-center justify-content-between">
+<a class="brand-identity text-decoration-none d-flex align-items-center gap-2" href="#hero">
+<span class="brand-crest"><i class="bi bi-gem"></i></span>
+<div class="brand-titles">
+<span class="brand-name">AURELIA</span>
+<span class="brand-tagline">WEDDING &amp; EVENT ATELIER</span>
+</div>
+</a>
+<!-- Desktop Navigation Menu -->
+<nav aria-label="Navegación principal" class="desktop-navigation d-none d-md-flex align-items-center gap-4">
+<a class="nav-anchor active" href="#hero">INICIO</a>
+<a class="nav-anchor" href="#portfolio">PORTFOLIO</a>
+<a class="nav-anchor" href="#servicios">SERVICIOS</a>
+<a class="nav-anchor" href="#cotizador">COTIZADOR</a>
+<a class="nav-anchor" href="#consulta">RESERVA FECHA</a>
+<a class="nav-anchor" href="#faq">PREGUNTAS</a>
+</nav>
+<!-- Botón de acción rápida del header -->
+<div class="header-action-wrapper d-flex align-items-center gap-2">
+<a class="btn-primary-action text-decoration-none" href="#consulta">
+<span class="btn-text">CONSULTAR FECHA</span>
+<i class="bi bi-calendar-heart-fill"></i>
+</a>
+</div>
+</div>
+</header>
+<!-- Hero Section a Pantalla Completa con Parallax y Overlay Degradado -->
+<section class="hero-full-viewport position-relative overflow-hidden" id="hero">
+<div class="hero-background-image" id="hero-parallax-bg"></div>
+<div class="hero-gradient-overlay"></div>
+<div class="container hero-content-container position-relative text-center text-md-start">
+<div class="row align-items-center min-vh-100 py-5">
+<div class="col-12 col-lg-9 col-xl-8">
+<div class="hero-badge mb-3 d-inline-flex align-items-center gap-2">
+<i class="bi bi-stars"></i>
+<span>PRODUCCIÓN INTEGRAL DE AUTOR</span>
+</div>
+<h1 class="hero-headline text-uppercase" id="hero-title-animated">
+            CREAMOS <span class="highlight-crimson">BODAS ÚNICAS</span> Y CELEBRACIONES <span class="text-gradient-gold">INOLVIDABLES</span>
+</h1>
+<p class="hero-description lead">
+            Curaduría estética, ambientación sensorial y coordinación milimétrica para momentos irrepetibles. Convertimos historias de amor en memorias eternas.
+          </p>
+<div class="hero-cta-group d-flex flex-wrap gap-3 mt-4 justify-content-center justify-content-md-start">
+<a class="btn-primary-action text-decoration-none" href="#cotizador">
+<span class="btn-text">COTIZAR MI EVENTO</span>
+<i class="bi bi-arrow-right-short"></i>
+</a>
+<a class="btn-secondary-action text-decoration-none" href="#portfolio">
+<span class="btn-text">EXPLORAR PORTFOLIO</span>
+<i class="bi bi-eye"></i>
+</a>
+</div>
+<!-- Métricas y contadores animados en Hero -->
+<div class="hero-stats-row row mt-5 pt-3 g-3">
+<div class="col-4 stat-col">
+<div class="stat-box" data-animate="zoom-in">
+<span class="stat-number count-up" data-target="380">0</span><span class="stat-plus">+</span>
+<span class="stat-label">BODAS REALIZADAS</span>
+</div>
+</div>
+<div class="col-4 stat-col">
+<div class="stat-box" data-animate="zoom-in">
+<span class="stat-number count-up" data-target="14">0</span>
+<span class="stat-label">AÑOS DE EXPERIENCIA</span>
+</div>
+</div>
+<div class="col-4 stat-col">
+<div class="stat-box" data-animate="zoom-in">
+<span class="stat-number count-up" data-target="99">0</span><span class="stat-plus">%</span>
+<span class="stat-label">SATISFACCIÓN SUPREMA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Servicios & Experiencias Exclusivas -->
+<section class="section-spacing site-section-surface" id="servicios">
+<div class="container">
+<div class="text-center section-header-block mb-5" data-animate="fade-up">
+<div class="section-eyebrow">
+<i class="bi bi-magic me-1"></i> NUESTRA COBERTURA
+        </div>
+<h2 class="section-title text-uppercase">
+          SERVICIOS DE <span class="highlight-crimson">ALTA GAMA</span>
+</h2>
+<p class="section-subtext mx-auto">
+          Cada detalle es concebido bajo estándares de excelencia europea y calidez contemporánea.
+        </p>
+</div>
+<!-- Carrusel deslizable en Mobile con scroll-snap / Grid en Desktop -->
+<div class="mobile-carousel-track g-4">
+<div class="service-slide-col" data-animate="fade-up">
+<div class="interactive-card card-tilt h-100">
+<div class="card-icon-emblem">
+<i class="bi bi-heart-pulse"></i>
+</div>
+<h3 class="card-item-title">FULL WEDDING PLANNING</h3>
+<p class="card-item-desc">
+              Acompañamiento holístico desde el concepto, búsqueda de locación, contratación de proveedores hasta el último baile.
+            </p>
+<ul class="service-feature-list list-unstyled">
+<li><i class="bi bi-check-circle-fill text-gold"></i> Diseño de concepto visual &amp; styling</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Negociación y control presupuestario</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Minuto a minuto del día del enlace</li>
+</ul>
+</div>
+</div>
+<div class="service-slide-col" data-animate="fade-up">
+<div class="interactive-card card-tilt h-100">
+<div class="card-icon-emblem">
+<i class="bi bi-flower2"></i>
+</div>
+<h3 class="card-item-title">AMBIENTACIÓN &amp; ESCENOGRAFÍA</h3>
+<p class="card-item-desc">
+              Transformación arquitectónica de espacios mediante floristería de autor, mobiliario curado e iluminación escénica.
+            </p>
+<ul class="service-feature-list list-unstyled">
+<li><i class="bi bi-check-circle-fill text-gold"></i> Renders 3D e iluminación teatral</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Floristería orgánica importada</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Menaje y vajilla de alta costura</li>
+</ul>
+</div>
+</div>
+<div class="service-slide-col" data-animate="fade-up">
+<div class="interactive-card card-tilt h-100">
+<div class="card-icon-emblem">
+<i class="bi bi-cup-hot"></i>
+</div>
+<h3 class="card-item-title">COORDINACIÓN DAY-OF</h3>
+<p class="card-item-desc">
+              Supervisión in situ para parejas que planificaron todo y desean entregarse al disfrute absoluto sin preocupaciones técnicas.
+            </p>
+<ul class="service-feature-list list-unstyled">
+<li><i class="bi bi-check-circle-fill text-gold"></i> Dirección de equipo de 10 coordinadores</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Resolución inmediata de contingencias</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Asistencia personalizada a los novios</li>
+</ul>
+</div>
+</div>
+<div class="service-slide-col" data-animate="fade-up">
+<div class="interactive-card card-tilt h-100">
+<div class="card-icon-emblem">
+<i class="bi bi-compass"></i>
+</div>
+<h3 class="card-item-title">DESTINATION WEDDINGS</h3>
+<p class="card-item-desc">
+              Bodas boutique en viñedos de Mendoza, estancias de ensueño en Buenos Aires, costas patagónicas o playas internacionales.
+            </p>
+<ul class="service-feature-list list-unstyled">
+<li><i class="bi bi-check-circle-fill text-gold"></i> Logística de traslados e invitados</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Welcome dinners y brunch post boda</li>
+<li><i class="bi bi-check-circle-fill text-gold"></i> Concierge bilingüe dedicado</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Portfolio Curado de Eventos -->
+<section class="section-spacing site-section-dark" id="portfolio">
+<div class="container">
+<div class="text-center section-header-block mb-5" data-animate="fade-up">
+<div class="section-eyebrow">
+<i class="bi bi-camera-fill me-1"></i> GALERÍA EDITORIAL
+        </div>
+<h2 class="section-title text-uppercase">
+          PORTFOLIO DE <span class="highlight-crimson">PRODUCCIONES</span>
+</h2>
+<p class="section-subtext mx-auto">
+          Una mirada íntima a las celebraciones que han marcado un antes y un después en el diseño nupcial.
+        </p>
+<!-- Filtros de Categoría -->
+<div class="portfolio-filter-group d-flex flex-wrap justify-content-center gap-2 mt-4">
+<button class="portfolio-filter-btn active" data-filter="all">TODOS</button>
+<button class="portfolio-filter-btn" data-filter="boda">BODAS DE LUJO</button>
+<button class="portfolio-filter-btn" data-filter="destination">DESTINATION</button>
+<button class="portfolio-filter-btn" data-filter="ambientacion">AMBIENTACIÓN</button>
+</div>
+</div>
+<!-- Grid de Proyectos -->
+<div class="row g-4" id="portfolio-grid">
+<div class="col-12 col-md-6 col-lg-4 portfolio-item" data-animate="zoom-in" data-category="boda">
+<div class="portfolio-card interactive-card">
+<div class="portfolio-image-wrapper">
+<img alt="Boda Estancia San Román" class="portfolio-image" loading="lazy" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="portfolio-badge-pill">BODA REAL</div>
+</div>
+<div class="portfolio-details">
+<div class="portfolio-meta">
+<span class="portfolio-location"><i class="bi bi-geo-alt"></i> Mendoza, Viñedos</span>
+<span class="portfolio-guest-count"><i class="bi bi-people"></i> 260 Invitados</span>
+</div>
+<h4 class="portfolio-project-title">Camila &amp; Mateo | Vow Sunset</h4>
+<p class="portfolio-synopsis">Ceremonia al aire libre entre barricas de roble y cascadas florales de lavanda y peonías silvestres.</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 portfolio-item" data-animate="zoom-in" data-category="destination">
+<div class="portfolio-card interactive-card">
+<div class="portfolio-image-wrapper">
+<img alt="Boda Villa Bellavista" class="portfolio-image" loading="lazy" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="portfolio-badge-pill">DESTINATION</div>
+</div>
+<div class="portfolio-details">
+<div class="portfolio-meta">
+<span class="portfolio-location"><i class="bi bi-geo-alt"></i> Lago Nahuel Huapi</span>
+<span class="portfolio-guest-count"><i class="bi bi-people"></i> 180 Invitados</span>
+</div>
+<h4 class="portfolio-project-title">Sofía &amp; Julian | Alpine Luxe</h4>
+<p class="portfolio-synopsis">Elegancia invernal con velas flotantes, domo vidriado climatizado y carpa panorámica.</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 portfolio-item" data-animate="zoom-in" data-category="ambientacion">
+<div class="portfolio-card interactive-card">
+<div class="portfolio-image-wrapper">
+<img alt="Gala Nocturna Palacio Sans Souci" class="portfolio-image" loading="lazy" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="portfolio-badge-pill">ESCENOGRÁFICO</div>
+</div>
+<div class="portfolio-details">
+<div class="portfolio-meta">
+<span class="portfolio-location"><i class="bi bi-geo-alt"></i> Buenos Aires, Palacio</span>
+<span class="portfolio-guest-count"><i class="bi bi-people"></i> 340 Invitados</span>
+</div>
+<h4 class="portfolio-project-title">Valentina &amp; Ignacio | Crystal Night</h4>
+<p class="portfolio-synopsis">Candelabros de cristal Baccarat y jardín colgante de orquídeas blancas en salón imperial.</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 portfolio-item" data-animate="zoom-in" data-category="boda">
+<div class="portfolio-card interactive-card">
+<div class="portfolio-image-wrapper">
+<img alt="Boda Boho Chic" class="portfolio-image" loading="lazy" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="portfolio-badge-pill">BODA REAL</div>
+</div>
+<div class="portfolio-details">
+<div class="portfolio-meta">
+<span class="portfolio-location"><i class="bi bi-geo-alt"></i> Pilar, Estancia</span>
+<span class="portfolio-guest-count"><i class="bi bi-people"></i> 220 Invitados</span>
+</div>
+<h4 class="portfolio-project-title">Clara &amp; Tomás | Rustic Symphony</h4>
+<p class="portfolio-synopsis">Estructuras de madera de guayubira, luces de hadas y vajilla de cerámica esmaltada a mano.</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 portfolio-item" data-animate="zoom-in" data-category="destination">
+<div class="portfolio-card interactive-card">
+<div class="portfolio-image-wrapper">
+<img alt="Boda de Playa Exclusiva" class="portfolio-image" loading="lazy" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="portfolio-badge-pill">DESTINATION</div>
+</div>
+<div class="portfolio-details">
+<div class="portfolio-meta">
+<span class="portfolio-location"><i class="bi bi-geo-alt"></i> José Ignacio, Uruguay</span>
+<span class="portfolio-guest-count"><i class="bi bi-people"></i> 140 Invitados</span>
+</div>
+<h4 class="portfolio-project-title">Lucía &amp; Federico | Ocean Breeze</h4>
+<p class="portfolio-synopsis">Puesta sobre arena con decks suspendidos, fuegos abiertos y barra de mixología botánica.</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-4 portfolio-item" data-animate="zoom-in" data-category="ambientacion">
+<div class="portfolio-card interactive-card">
+<div class="portfolio-image-wrapper">
+<img alt="Banquete Real" class="portfolio-image" loading="lazy" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="portfolio-badge-pill">ESCENOGRÁFICO</div>
+</div>
+<div class="portfolio-details">
+<div class="portfolio-meta">
+<span class="portfolio-location"><i class="bi bi-geo-alt"></i> Salta, La Linda</span>
+<span class="portfolio-guest-count"><i class="bi bi-people"></i> 300 Invitados</span>
+</div>
+<h4 class="portfolio-project-title">Martina &amp; Gonzalo | Colonial Heritage</h4>
+<p class="portfolio-synopsis">Patios coloniales iluminados por 1200 faroles artesanales y banquete en mesas imperiales.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Cotizador Interactivo de Presupuesto Estimado -->
+<section class="section-spacing site-section-surface" id="cotizador">
+<div class="container">
+<div class="text-center section-header-block mb-5" data-animate="fade-up">
+<div class="section-eyebrow">
+<i class="bi bi-calculator me-1"></i> ESTIMADOR EN TIEMPO REAL
+        </div>
+<h2 class="section-title text-uppercase">
+          COTIZADOR <span class="highlight-crimson">INTELIGENTE</span>
+</h2>
+<p class="section-subtext mx-auto">
+          Configurá los elementos esenciales de tu boda o evento para obtener una proyección financiera instantánea y transparente.
+        </p>
+</div>
+<div class="row justify-content-center">
+<div class="col-12 col-lg-10">
+<div class="calculator-panel p-4 p-md-5">
+<form id="event-calculator-form" novalidate="">
+<!-- Paso 1: Tipo de Evento / Experiencia -->
+<div class="calc-section mb-4">
+<label class="calc-label d-block mb-3">1. SELECCIONÁ EL TIPO DE EXPERIENCIA</label>
+<div class="touch-cards-grid row g-3">
+<div class="col-6 col-md-3">
+<input checked="" class="btn-check" id="srv_full" name="calc_service" type="radio" value="full"/>
+<label class="touchable-option-card text-center h-100" for="srv_full">
+<i class="bi bi-award-fill"></i>
+<span class="card-radio-title">Full Wedding</span>
+<span class="card-radio-desc">Organización 360°</span>
+</label>
+</div>
+<div class="col-6 col-md-3">
+<input class="btn-check" id="srv_ambient" name="calc_service" type="radio" value="ambient"/>
+<label class="touchable-option-card text-center h-100" for="srv_ambient">
+<i class="bi bi-palette-fill"></i>
+<span class="card-radio-title">Ambientación</span>
+<span class="card-radio-desc">Arte y Floristería</span>
+</label>
+</div>
+<div class="col-6 col-md-3">
+<input class="btn-check" id="srv_day" name="calc_service" type="radio" value="day"/>
+<label class="touchable-option-card text-center h-100" for="srv_day">
+<i class="bi bi-clock-history"></i>
+<span class="card-radio-title">Day-Of Coord</span>
+<span class="card-radio-desc">Minuto a Minuto</span>
+</label>
+</div>
+<div class="col-6 col-md-3">
+<input class="btn-check" id="srv_dest" name="calc_service" type="radio" value="dest"/>
+<label class="touchable-option-card text-center h-100" for="srv_dest">
+<i class="bi bi-airplane-engines-fill"></i>
+<span class="card-radio-title">Destination</span>
+<span class="card-radio-desc">Viaje &amp; Logística</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Paso 2: Locación & Estilo de Espacio -->
+<div class="calc-section mb-4">
+<label class="calc-label d-block mb-3">2. ENTORNO O LOCACIÓN ESTIMADA</label>
+<div class="touch-cards-grid row g-3">
+<div class="col-6 col-md-3">
+<input checked="" class="btn-check" id="ven_estancia" name="calc_venue" type="radio" value="estancia"/>
+<label class="touchable-option-card text-center h-100" for="ven_estancia">
+<i class="bi bi-tree-fill"></i>
+<span class="card-radio-title">Estancia / Quinta</span>
+<span class="card-radio-desc">Al aire libre</span>
+</label>
+</div>
+<div class="col-6 col-md-3">
+<input class="btn-check" id="ven_salon" name="calc_venue" type="radio" value="salon"/>
+<label class="touchable-option-card text-center h-100" for="ven_salon">
+<i class="bi bi-building"></i>
+<span class="card-radio-title">Salón / Palacio</span>
+<span class="card-radio-desc">Patrimonio urbano</span>
+</label>
+</div>
+<div class="col-6 col-md-3">
+<input class="btn-check" id="ven_vinedo" name="calc_venue" type="radio" value="vinedo"/>
+<label class="touchable-option-card text-center h-100" for="ven_vinedo">
+<i class="bi bi-cup-straw"></i>
+<span class="card-radio-title">Viñedo / Montaña</span>
+<span class="card-radio-desc">Scenic views</span>
+</label>
+</div>
+<div class="col-6 col-md-3">
+<input class="btn-check" id="ven_hotel" name="calc_venue" type="radio" value="hotel"/>
+<label class="touchable-option-card text-center h-100" for="ven_hotel">
+<i class="bi bi-star-fill"></i>
+<span class="card-radio-title">Hotel Boutique</span>
+<span class="card-radio-desc">All-in-one resort</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Paso 3: Rango de Invitados y Nivel de Producción -->
+<div class="calc-section row g-4 mb-4">
+<div class="col-12 col-md-6">
+<label class="calc-label d-flex justify-content-between" for="calc-guest-range">
+<span>CANTIDAD DE INVITADOS:</span>
+<strong class="calc-highlight-number" id="guest-count-badge">180 personas</strong>
+</label>
+<input class="form-range custom-slider mt-2" id="calc-guest-range" max="500" min="50" step="10" type="range" value="180"/>
+<div class="d-flex justify-content-between text-muted fs-7">
+<span>50 íntima</span>
+<span>250 estándar</span>
+<span>500+ magna</span>
+</div>
+</div>
+<div class="col-12 col-md-6">
+<label class="calc-label d-block mb-2">TIER DE PRODUCCIÓN &amp; DETALLE</label>
+<div class="d-flex gap-2">
+<input checked="" class="btn-check" id="tier_signature" name="calc_tier" type="radio" value="signature"/>
+<label class="touchable-pill-btn flex-fill text-center" for="tier_signature">
+<span class="tier-title">SIGNATURE</span>
+<small class="d-block">Estándar Aurelia</small>
+</label>
+<input class="btn-check" id="tier_couture" name="calc_tier" type="radio" value="couture"/>
+<label class="touchable-pill-btn flex-fill text-center" for="tier_couture">
+<span class="tier-title">HAUTE COUTURE</span>
+<small class="d-block">Renders &amp; Raras Flores</small>
+</label>
+</div>
+</div>
+</div>
+<!-- Extras seleccionables -->
+<div class="calc-section mb-4">
+<label class="calc-label d-block mb-3">EXPERIENCIAS SENSORIALES COMPLEMENTARIAS</label>
+<div class="row g-2">
+<div class="col-12 col-sm-6 col-md-4">
+<div class="form-check custom-checkbox-box">
+<input checked="" class="form-check-input calc-addon" data-cost="750" id="addon_lighting" type="checkbox" value="iluminacion"/>
+<label class="form-check-label d-flex align-items-center gap-2" for="addon_lighting">
+<i class="bi bi-lightbulb-fill"></i>
+<span>Iluminación Teatral / Dimmers</span>
+</label>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4">
+<div class="form-check custom-checkbox-box">
+<input class="form-check-input calc-addon" data-cost="600" id="addon_brunch" type="checkbox" value="brunch"/>
+<label class="form-check-label d-flex align-items-center gap-2" for="addon_brunch">
+<i class="bi bi-egg-fried"></i>
+<span>Coordinación Brunch Post-Boda</span>
+</label>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4">
+<div class="form-check custom-checkbox-box">
+<input class="form-check-input calc-addon" data-cost="500" id="addon_concierge" type="checkbox" value="concierge"/>
+<label class="form-check-label d-flex align-items-center gap-2" for="addon_concierge">
+<i class="bi bi-person-hearts"></i>
+<span>Concierge VIP para Novios</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Desglose de Inversión Resultante -->
+<div class="calculator-result-box p-4 rounded-4 mt-4">
+<div class="row align-items-center">
+<div class="col-12 col-md-7 text-center text-md-start mb-3 mb-md-0">
+<span class="calc-result-tag text-uppercase">INVERSIÓN ESTIMADA DE PRODUCCIÓN</span>
+<div class="calc-currency-display">
+<span class="currency-symbol">USD $</span>
+<span class="calculated-value" id="calculated-total-amount">3,850</span>
+</div>
+<small class="text-muted d-block mt-1">Incluye honorarios directos de planificación, styling integral y coordinación de día.</small>
+</div>
+<div class="col-12 col-md-5 d-flex flex-column gap-2">
+<button class="btn-primary-action w-100 justify-content-center" id="btn-lock-quote" type="button">
+<span class="btn-text">RESERVAR ESTE PRESUPUESTO</span>
+<i class="bi bi-lock-fill"></i>
+</button>
+<button class="btn-tertiary-action w-100 justify-content-center" id="btn-reset-calc" type="button">
+<i class="bi bi-arrow-counterclockwise"></i> Reiniciar cotización
+                    </button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Consulta por Fecha (Wizard Multistep Form) -->
+<section class="section-spacing site-section-dark" id="consulta">
+<div class="container">
+<div class="text-center section-header-block mb-5" data-animate="fade-up">
+<div class="section-eyebrow">
+<i class="bi bi-calendar2-check-fill me-1"></i> DISPONIBILIDAD SELECTIVA
+        </div>
+<h2 class="section-title text-uppercase">
+          CONSULTA TU <span class="highlight-crimson">FECHA SOÑADA</span>
+</h2>
+<p class="section-subtext mx-auto">
+          Limitamos nuestro calendario a solo 25 bodas anuales para garantizar dedicación absoluta.
+        </p>
+</div>
+<div class="row justify-content-center">
+<div class="col-12 col-md-10 col-lg-8">
+<div class="booking-wizard-card p-4 p-md-5">
+<!-- Barra de Progreso del Formulario Multi-Pasos -->
+<div class="wizard-progress-header mb-4">
+<div class="wizard-steps-indicators d-flex justify-content-between mb-2">
+<div class="wizard-step-node active" id="node-step-1">
+<span class="node-num">1</span>
+<span class="node-label">FECHA &amp; LUGAR</span>
+</div>
+<div class="wizard-step-node" id="node-step-2">
+<span class="node-num">2</span>
+<span class="node-label">PAREJA / CONTACTO</span>
+</div>
+<div class="wizard-step-node" id="node-step-3">
+<span class="node-num">3</span>
+<span class="node-label">DETALLES</span>
+</div>
+</div>
+<div class="progress wizard-progress-bar-container">
+<div class="progress-bar custom-wizard-progress" id="wizard-progress-bar" role="progressbar" style="width: 33%"></div>
+</div>
+</div>
+<!-- Formulario Wizard -->
+<form id="booking-appointment-form" novalidate="">
+<!-- Paso 1: Fecha y Locación -->
+<div class="wizard-step-panel" id="wizard-step-1-content">
+<h4 class="wizard-panel-title mb-3">¿Cuándo y dónde imaginan su día?</h4>
+<div class="row g-3">
+<div class="col-12 col-md-6">
+<label class="form-label field-label" for="book-event-date">FECHA PREFERIDA O TENTATIVA *</label>
+<div class="input-group">
+<span class="input-group-text form-addon-icon"><i class="bi bi-calendar-event"></i></span>
+<input class="form-control custom-input" id="book-event-date" required="" type="date"/>
+</div>
+<div class="invalid-feedback">Por favor elijan una fecha tentativa válida.</div>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label field-label" for="book-event-city">CIUDAD O DESTINO *</label>
+<div class="input-group">
+<span class="input-group-text form-addon-icon"><i class="bi bi-geo-alt-fill"></i></span>
+<input class="form-control custom-input" id="book-event-city" placeholder="Ej: Mendoza, Buenos Aires, Bariloche" required="" type="text"/>
+</div>
+<div class="invalid-feedback">Indiquen la locación proyectada.</div>
+</div>
+<div class="col-12">
+<label class="form-label field-label">TIPO DE CELEBRACIÓN *</label>
+<div class="row g-2">
+<div class="col-6 col-sm-3">
+<input checked="" class="btn-check" id="type_wedding" name="book_type" type="radio" value="Boda"/>
+<label class="touchable-option-card text-center p-3 w-100" for="type_wedding">
+<i class="bi bi-heart-fill"></i>
+<span class="d-block mt-1">Boda</span>
+</label>
+</div>
+<div class="col-6 col-sm-3">
+<input class="btn-check" id="type_dest" name="book_type" type="radio" value="Destination"/>
+<label class="touchable-option-card text-center p-3 w-100" for="type_dest">
+<i class="bi bi-globe-americas"></i>
+<span class="d-block mt-1">Destination</span>
+</label>
+</div>
+<div class="col-6 col-sm-3">
+<input class="btn-check" id="type_vow" name="book_type" type="radio" value="Renovación"/>
+<label class="touchable-option-card text-center p-3 w-100" for="type_vow">
+<i class="bi bi-infinity"></i>
+<span class="d-block mt-1">Vow Renewal</span>
+</label>
+</div>
+<div class="col-6 col-sm-3">
+<input class="btn-check" id="type_gala" name="book_type" type="radio" value="Gala Privada"/>
+<label class="touchable-option-card text-center p-3 w-100" for="type_gala">
+<i class="bi bi-balloon-fill"></i>
+<span class="d-block mt-1">Gala Privada</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex justify-content-end mt-4">
+<button class="btn-primary-action" id="btn-next-step-1" type="button">
+<span class="btn-text">CONTINUAR PASO 2</span>
+<i class="bi bi-arrow-right"></i>
+</button>
+</div>
+</div>
+<!-- Paso 2: Datos de la Pareja / Contacto -->
+<div class="wizard-step-panel d-none" id="wizard-step-2-content">
+<h4 class="wizard-panel-title mb-3">Datos de los anfitriones</h4>
+<div class="row g-3">
+<div class="col-12 col-md-6">
+<label class="form-label field-label" for="book-client-name">NOMBRES DE LA PAREJA *</label>
+<div class="input-group">
+<span class="input-group-text form-addon-icon"><i class="bi bi-people-fill"></i></span>
+<input class="form-control custom-input" id="book-client-name" placeholder="Ej: Clara &amp; Julián" required="" type="text"/>
+</div>
+<div class="invalid-feedback">Por favor indiquen sus nombres.</div>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label field-label" for="book-client-phone">TELÉFONO / WHATSAPP *</label>
+<div class="input-group">
+<span class="input-group-text form-addon-icon"><i class="bi bi-whatsapp"></i></span>
+<input class="form-control custom-input" id="book-client-phone" placeholder="+54 9 11 ..." required="" type="tel"/>
+</div>
+<div class="invalid-feedback">Indiquen un número de contacto válido.</div>
+</div>
+<div class="col-12">
+<label class="form-label field-label" for="book-client-email">CORREO ELECTRÓNICO *</label>
+<div class="input-group">
+<span class="input-group-text form-addon-icon"><i class="bi bi-envelope-at-fill"></i></span>
+<input class="form-control custom-input" id="book-client-email" placeholder="contacto@ejemplo.com" required="" type="email"/>
+</div>
+<div class="invalid-feedback">Ingresen un email válido para recibir la propuesta.</div>
+</div>
+</div>
+<div class="d-flex justify-content-between mt-4">
+<button class="btn-secondary-action" id="btn-prev-step-2" type="button">
+<i class="bi bi-arrow-left"></i>
+<span class="btn-text">VOLVER</span>
+</button>
+<button class="btn-primary-action" id="btn-next-step-2" type="button">
+<span class="btn-text">CONTINUAR PASO FINAL</span>
+<i class="bi bi-arrow-right"></i>
+</button>
+</div>
+</div>
+<!-- Paso 3: Detalles y Visión -->
+<div class="wizard-step-panel d-none" id="wizard-step-3-content">
+<h4 class="wizard-panel-title mb-3">Su visión y deseos especiales</h4>
+<div class="row g-3">
+<div class="col-12 col-md-6">
+<label class="form-label field-label" for="book-guests-qty">CANTIDAD ESTIMADA DE INVITADOS</label>
+<div class="input-group">
+<span class="input-group-text form-addon-icon"><i class="bi bi-person-badge-fill"></i></span>
+<input class="form-control custom-input" id="book-guests-qty" max="800" min="20" type="number" value="180"/>
+</div>
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label field-label" for="book-preferred-time">HORARIO PREFERIDO PARA PRIMER CONTACTO</label>
+<select class="form-select custom-select" id="book-preferred-time">
+<option value="Mañana (10:00 - 13:00)">Mañana (10:00 - 13:00)</option>
+<option selected="" value="Tarde (14:00 - 18:00)">Tarde (14:00 - 18:00)</option>
+<option value="Noche (18:30 - 20:30)">Noche (18:30 - 20:30)</option>
+</select>
+</div>
+<div class="col-12">
+<label class="form-label field-label" for="book-notes">CUÉNTENNOS SU SUEÑO O ESTILO DESEADO</label>
+<textarea class="form-control custom-textarea" id="book-notes" placeholder="Paleta favorita, música soñada, detalles que no pueden faltar..." rows="3"></textarea>
+</div>
+</div>
+<div class="d-flex justify-content-between mt-4">
+<button class="btn-secondary-action" id="btn-prev-step-3" type="button">
+<i class="bi bi-arrow-left"></i>
+<span class="btn-text">VOLVER</span>
+</button>
+<button class="btn-primary-action pulse-highlight" id="btn-submit-booking" type="submit">
+<span class="btn-text">CONFIRMAR SOLICITUD DE FECHA</span>
+<i class="bi bi-send-check-fill"></i>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Testimonios / Reseñas Editoriales -->
+<section class="section-spacing site-section-surface">
+<div class="container">
+<div class="text-center section-header-block mb-5" data-animate="fade-up">
+<div class="section-eyebrow">
+<i class="bi bi-chat-quote-fill me-1"></i> HISTORIAS VIVIDAS
+        </div>
+<h2 class="section-title text-uppercase">
+          LA VOZ DE <span class="highlight-crimson">NUESTRAS PAREJAS</span>
+</h2>
+<p class="section-subtext mx-auto">
+          Confianza forjada a través de la serenidad absoluta durante el día más trascendente.
+        </p>
+</div>
+<!-- Carrusel deslizable con scroll-snap en Mobile / Grid en Desktop -->
+<div class="mobile-carousel-track g-4">
+<div class="service-slide-col" data-animate="fade-up">
+<div class="interactive-card h-100 p-4">
+<div class="d-flex align-items-center gap-1 text-gold mb-3">
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+</div>
+<p class="fst-italic text-muted mb-4">
+              "Aurelia no solo organizó nuestra boda en Mendoza: creó una atmósfera de película donde nosotros solo tuvimos que abrazar y disfrutar. Cero estrés."
+            </p>
+<div class="d-flex align-items-center gap-3">
+<div class="testimonial-avatar-placeholder">C&amp;M</div>
+<div>
+<h5 class="mb-0 text-title-font">Camila &amp; Mateo</h5>
+<small class="text-muted">Bodega Norton, 2024</small>
+</div>
+</div>
+</div>
+</div>
+<div class="service-slide-col" data-animate="fade-up">
+<div class="interactive-card h-100 p-4">
+<div class="d-flex align-items-center gap-1 text-gold mb-3">
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+</div>
+<p class="fst-italic text-muted mb-4">
+              "La ambientación floral y la sincronización con los 20 proveedores fue milimétrica. Cada invitado nos dijo que fue la boda más elegante a la que asistieron."
+            </p>
+<div class="d-flex align-items-center gap-3">
+<div class="testimonial-avatar-placeholder">V&amp;I</div>
+<div>
+<h5 class="mb-0 text-title-font">Valentina &amp; Ignacio</h5>
+<small class="text-muted">Palacio Sans Souci, 2024</small>
+</div>
+</div>
+</div>
+</div>
+<div class="service-slide-col" data-animate="fade-up">
+<div class="interactive-card h-100 p-4">
+<div class="d-flex align-items-center gap-1 text-gold mb-3">
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+<i class="bi bi-star-fill"></i>
+</div>
+<p class="fst-italic text-muted mb-4">
+              "Hicieron que traer a 150 amigos de tres países distintos a Bariloche pareciera lo más fácil del mundo. Insuperables en calidad humana y resolutiva."
+            </p>
+<div class="d-flex align-items-center gap-3">
+<div class="testimonial-avatar-placeholder">S&amp;J</div>
+<div>
+<h5 class="mb-0 text-title-font">Sofía &amp; Julian</h5>
+<small class="text-muted">Villa Huapi, 2023</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección FAQ: Acordeón Bootstrap -->
+<section class="section-spacing site-section-dark" id="faq">
+<div class="container">
+<div class="text-center section-header-block mb-5" data-animate="fade-up">
+<div class="section-eyebrow">
+<i class="bi bi-question-circle-fill me-1"></i> RESPUESTAS CLARAS
+        </div>
+<h2 class="section-title text-uppercase">
+          PREGUNTAS <span class="highlight-crimson">FRECUENTES</span>
+</h2>
+<p class="section-subtext mx-auto">
+          Despejamos las dudas habituales previas a iniciar la planificación conjunta.
+        </p>
+</div>
+<div class="row justify-content-center">
+<div class="col-12 col-lg-8">
+<div class="accordion custom-accordion" id="accordionFaq">
+<div class="accordion-item mb-3" data-animate="fade-up">
+<h2 class="accordion-header" id="headingOne">
+<button aria-controls="collapseOne" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
+<i class="bi bi-clock-history me-2"></i> ¿Con cuánta anticipación recomiendan reservar la fecha?
+                </button>
+</h2>
+<div aria-labelledby="headingOne" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" id="collapseOne">
+<div class="accordion-body">
+                  Para bodas de alta producción y en temporadas altas (Octubre a Abril), recomendamos asegurar la fecha entre 9 y 14 meses antes. Sin embargo, para eventos boutique o con menos de 100 invitados podemos diseñar experiencias extraordinarias en 4 a 6 meses.
+                </div>
+</div>
+</div>
+<div class="accordion-item mb-3" data-animate="fade-up">
+<h2 class="accordion-header" id="headingTwo">
+<button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
+<i class="bi bi-cash-stack me-2"></i> ¿Cobran comisión sobre los proveedores contratados?
+                </button>
+</h2>
+<div aria-labelledby="headingTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" id="collapseTwo">
+<div class="accordion-body">
+                  No. Trabajamos bajo el modelo de honorario profesional transparente (Flat Fee). Todos los descuentos o beneficios que conseguimos con banquetes, floristas y fotógrafos se trasladan 100% de manera directa a los novios.
+                </div>
+</div>
+</div>
+<div class="accordion-item mb-3" data-animate="fade-up">
+<h2 class="accordion-header" id="headingThree">
+<button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">
+<i class="bi bi-airplane me-2"></i> ¿Realizan bodas fuera de Buenos Aires o en el exterior?
+                </button>
+</h2>
+<div aria-labelledby="headingThree" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" id="collapseThree">
+<div class="accordion-body">
+                  Sí. Contamos con una división especializada en Destination Weddings con experiencia en Mendoza, Bariloche, Salta, José Ignacio (Uruguay) e Italia. Nos ocupamos de vuelos, logística, hospedaje y protocolo bilingüe.
+                </div>
+</div>
+</div>
+<div class="accordion-item" data-animate="fade-up">
+<h2 class="accordion-header" id="headingFour">
+<button aria-controls="collapseFour" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#collapseFour" data-bs-toggle="collapse" type="button">
+<i class="bi bi-shield-check me-2"></i> ¿Qué ocurre ante imprevistos climáticos en eventos al aire libre?
+                </button>
+</h2>
+<div aria-labelledby="headingFour" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" id="collapseFour">
+<div class="accordion-body">
+                  Todo proyecto con nosotros cuenta desde el día uno con un Plan B estético riguroso: carpas tensadas transparentes, pisos elevados técnicos y ambientación convertible que garantiza que el evento se sienta igual de sublime sin importar el clima.
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer de Marca con Detalle Decorativo Giratorio -->
+<footer class="site-footer text-center text-md-start">
+<div class="container py-5">
+<div class="row g-4 align-items-center">
+<div class="col-12 col-md-5">
+<div class="d-flex align-items-center gap-3 justify-content-center justify-content-md-start mb-2">
+<span class="footer-spin-gear"><i class="bi bi-flower1"></i></span>
+<span class="footer-brand-name">AURELIA ATELIER</span>
+</div>
+<p class="footer-bio text-muted mb-0">
+            Diseñando las bodas más recordadas del cono sur. Miembros de la International Association of Destination Wedding Planners.
+          </p>
+</div>
+<div class="col-12 col-md-4 text-center">
+<div class="footer-contact-links d-flex flex-column gap-1">
+<span class="text-white"><i class="bi bi-geo-alt me-2 text-gold"></i>Av. Alvear 1890, Recoleta, Buenos Aires</span>
+<span class="text-white"><i class="bi bi-envelope me-2 text-gold"></i>atelier@aureliaeventos.com</span>
+<span class="text-white"><i class="bi bi-telephone me-2 text-gold"></i>+54 11 5849-2200</span>
+</div>
+</div>
+<div class="col-12 col-md-3 text-center text-md-end">
+<div class="social-links-row d-inline-flex gap-3 mb-2">
+<a aria-label="Instagram" class="social-circle-link" href="#"><i class="bi bi-instagram"></i></a>
+<a aria-label="Pinterest" class="social-circle-link" href="#"><i class="bi bi-pinterest"></i></a>
+<a aria-label="Spotify" class="social-circle-link" href="#"><i class="bi bi-spotify"></i></a>
+</div>
+<div class="footer-copy text-muted fs-8">
+            © 2025 Aurelia Eventos. Todos los derechos reservados.
+          </div>
+</div>
+</div>
+</div>
+</footer>
+<!-- BOTTOM NAV PARA MOBILE (Experiencia App Nativa < 768px) -->
+<nav aria-label="Navegación Móvil Rápida" class="mobile-bottom-bar d-md-none">
+<div class="bottom-bar-container d-flex justify-content-around align-items-center">
+<a class="bottom-bar-item active" data-nav-target="hero" href="#hero">
+<i class="bi bi-house-heart"></i>
+<span>Inicio</span>
+</a>
+<a class="bottom-bar-item" data-nav-target="portfolio" href="#portfolio">
+<i class="bi bi-images"></i>
+<span>Portfolio</span>
+</a>
+<a class="bottom-bar-item" data-nav-target="cotizador" href="#cotizador">
+<i class="bi bi-calculator"></i>
+<span>Cotizador</span>
+</a>
+<a class="bottom-bar-item" data-nav-target="consulta" href="#consulta">
+<i class="bi bi-calendar-heart"></i>
+<span>Fechas</span>
+</a>
+</div>
+</nav>
+<!-- Botón Flotante de WhatsApp -->
+<a aria-label="Contactar por WhatsApp" class="whatsapp-floating-bubble" href="https://wa.me/5491158492200?text=Hola%20Aurelia,%20deseo%20consultar%20disponibilidad%20para%20un%20evento" rel="noopener noreferrer" target="_blank">
+<i class="bi bi-whatsapp"></i>
+<span class="whatsapp-tooltip">Chatear con una Planner</span>
+</a>
+<!-- BOTTOM SHEET (Offcanvas Inferior de Bootstrap para Confirmación en Mobile) -->
+<div aria-labelledby="confirmationBottomSheetLabel" class="offcanvas offcanvas-bottom custom-bottom-sheet" id="confirmationBottomSheet" tabindex="-1">
+<div class="offcanvas-header pb-0 border-0">
+<div class="sheet-drag-handle mx-auto"></div>
+</div>
+<div class="offcanvas-body text-center pt-2 pb-4 px-4">
+<div class="success-icon-badge mb-3">
+<i class="bi bi-check2-circle"></i>
+</div>
+<h3 class="sheet-title mb-2" id="confirmationBottomSheetLabel">¡SOLICITUD REGISTRADA!</h3>
+<p class="sheet-description mb-4">
+        Hemos reservado provisionalmente la fecha consultada. Una Wedding Planner senior de Aurelia se pondrá en contacto en las próximas 4 horas hábiles.
+      </p>
+<div class="sheet-summary-box text-start p-3 rounded-3 mb-4">
+<div class="d-flex justify-content-between mb-1">
+<span class="text-muted">Pareja:</span>
+<strong id="sheet-summary-names">-</strong>
+</div>
+<div class="d-flex justify-content-between mb-1">
+<span class="text-muted">Fecha Tentativa:</span>
+<strong id="sheet-summary-date">-</strong>
+</div>
+<div class="d-flex justify-content-between">
+<span class="text-muted">Celebración:</span>
+<strong id="sheet-summary-type">-</strong>
+</div>
+</div>
+<button class="btn-primary-action w-100 justify-content-center" data-bs-dismiss="offcanvas" type="button">
+<span class="btn-text">ENTENDIDO, MUCHAS GRACIAS</span>
+<i class="bi bi-check-lg"></i>
+</button>
+</div>
+</div>
+<!-- TOAST DE ÉXITO BOOTSTRAP -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3 toast-layout-fix">
+<div aria-atomic="true" aria-live="assertive" class="toast custom-toast align-items-center text-white border-0" id="actionToast" role="alert">
+<div class="d-flex">
+<div class="toast-body d-flex align-items-center gap-2">
+<i class="bi bi-bell-fill text-gold fs-5"></i>
+<span id="toast-message-text">Cotización actualizada con éxito.</span>
+</div>
+<button aria-label="Close" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="" src="../../js/entretenimiento-eventos/organizadores-eventos.js"></script>
+</body>
+</html>

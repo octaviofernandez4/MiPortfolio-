@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGISTIX - Soluciones Globales de Carga y Logística</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS & Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="../../css/oficios-vehiculos/logistica-flete.css">
+</head>
+<body>
+  <!-- Barra de progreso de lectura -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+  <!-- Pantalla de Carga (Preloader) -->
+  <div id="preloader" class="preloader-overlay">
+    <div class="preloader-content text-center">
+      <div class="preloader-icon-wrapper mb-3">
+        <i class="bi bi-gear-fill icon-spinner-gear"></i>
+        <i class="bi bi-box-seam-fill icon-box-center"></i>
+      </div>
+      <h2 class="preloader-brand">LOGISTIX</h2>
+      <p class="preloader-tagline">CONECTANDO DESTINOS EN TIEMPO REAL</p>
+    </div>
+  </div>
+
+  <!-- Header / Navbar Principal -->
+  <header id="main-header" class="site-header fixed-top">
+    <div class="container-fluid container-xl">
+      <div class="header-inner d-flex align-items-center justify-content-between">
+        <a href="#hero" class="brand-logo d-flex align-items-center text-decoration-none">
+          <i class="bi bi-truck-flatbed brand-icon me-2"></i>
+          <span class="brand-name">LOGIS<span>TIX</span></span>
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav class="desktop-nav d-none d-md-flex align-items-center gap-4">
+          <a href="#hero" class="nav-link-custom active">Inicio</a>
+          <a href="#cotizador" class="nav-link-custom">Cotizador</a>
+          <a href="#tracking" class="nav-link-custom">Seguimiento</a>
+          <a href="#servicios" class="nav-link-custom">Servicios</a>
+          <a href="#pedidos" class="nav-link-custom">Gestión</a>
+          <a href="#faq" class="nav-link-custom">FAQ</a>
+        </nav>
+
+        <!-- CTA Header -->
+        <div class="header-actions d-flex align-items-center gap-2">
+          <a href="#cotizador" class="btn btn-primary-custom d-none d-sm-inline-flex align-items-center">
+            <span>Cotizar Ahora</span>
+            <i class="bi bi-arrow-right-short ms-1"></i>
+          </a>
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener" class="btn btn-contact-icon d-md-none" aria-label="Contacto Rápido">
+            <i class="bi bi-chat-dots-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-parallax" id="hero-bg"></div>
+      <div class="hero-gradient-overlay"></div>
+      <div class="container hero-container position-relative">
+        <div class="row align-items-center min-vh-100 py-5">
+          <div class="col-lg-8 hero-text-col">
+            <div class="hero-badge mb-3 animate-item" data-anim="fade-up">
+              <i class="bi bi-shield-check me-2"></i> Operador Logístico Certificado ISO 9001
+            </div>
+            <h1 class="hero-title animate-item" data-anim="fade-up">
+              TRANSPORTE Y LOGÍSTICA <span class="highlight-crimson">INTELIGENTE</span> SIN FRONTERAS
+            </h1>
+            <p class="hero-subtitle animate-item" data-anim="fade-up">
+              Solución integral de última milla, flete internacional y distribución con trazabilidad satelital minuto a minuto.
+            </p>
+            <div class="hero-cta-group d-flex flex-wrap gap-3 animate-item" data-anim="fade-up">
+              <a href="#cotizador" class="btn btn-primary-custom btn-lg">
+                <span>Calcular Tarifa</span>
+                <i class="bi bi-calculator ms-2"></i>
+              </a>
+              <a href="#tracking" class="btn btn-outline-custom btn-lg">
+                <span>Rastrear Envío</span>
+                <i class="bi bi-geo-alt ms-2"></i>
+              </a>
+            </div>
+
+            <!-- Métricas Rápidas en Hero -->
+            <div class="hero-stats-row row g-3 mt-4 pt-3 border-top-custom animate-item" data-anim="fade-up">
+              <div class="col-4">
+                <div class="stat-box">
+                  <span class="stat-number counter" data-target="99.8">0</span><span class="stat-unit">%</span>
+                  <p class="stat-label">Puntualidad en Entregas</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <span class="stat-number counter" data-target="150">0</span><span class="stat-unit">K+</span>
+                  <p class="stat-label">Envíos Anuales</p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <span class="stat-number counter" data-target="24">0</span><span class="stat-unit">/7</span>
+                  <p class="stat-label">Monitoreo Activo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COTIZADOR INTERACTIVO / WIZARD -->
+    <section id="cotizador" class="section-padding bg-surface">
+      <div class="container">
+        <div class="section-header text-center mb-5 animate-item" data-anim="fade-up">
+          <span class="section-tag">CALCULADORA EN LÍNEA</span>
+          <h2 class="section-title">COTIZADOR DE <span class="highlight-crimson">ENVÍOS</span> INMEDIATO</h2>
+          <p class="section-desc">Obtené una tarifa transparente en 3 simples pasos adaptada a tu carga.</p>
+        </div>
+
+        <div class="wizard-card mx-auto animate-item" data-anim="zoom-in">
+          <!-- Wizard Steps Indicators -->
+          <div class="wizard-steps-nav d-flex justify-content-between mb-4">
+            <div class="step-indicator active" data-step="1">
+              <span class="step-circle">1</span>
+              <span class="step-title">Vehículo & Servicio</span>
+            </div>
+            <div class="step-indicator" data-step="2">
+              <span class="step-circle">2</span>
+              <span class="step-title">Ruta & Peso</span>
+            </div>
+            <div class="step-indicator" data-step="3">
+              <span class="step-circle">3</span>
+              <span class="step-title">Cotización Final</span>
+            </div>
+          </div>
+
+          <!-- Wizard Form Container -->
+          <form id="shipping-calculator-form" novalidate>
+            <!-- Paso 1: Tipo de Vehículo / Carga -->
+            <div class="wizard-step-pane active" id="wizard-step-1">
+              <h4 class="step-heading mb-3">1. Seleccioná el tipo de transporte requerido:</h4>
+              <div class="row g-3 mb-4 select-card-group">
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="vehicle_type" id="v_moto" value="moto" data-base="15" checked>
+                  <label class="selectable-card text-center p-3 w-100" for="v_moto">
+                    <i class="bi bi-bicycle card-select-icon"></i>
+                    <span class="card-select-title">Urbano Express</span>
+                    <span class="card-select-sub">Hasta 20 kg</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="vehicle_type" id="v_utilitario" value="utilitario" data-base="45">
+                  <label class="selectable-card text-center p-3 w-100" for="v_utilitario">
+                    <i class="bi bi-truck card-select-icon"></i>
+                    <span class="card-select-title">Utilitario / Van</span>
+                    <span class="card-select-sub">Hasta 800 kg</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="vehicle_type" id="v_camion" value="camion" data-base="120">
+                  <label class="selectable-card text-center p-3 w-100" for="v_camion">
+                    <i class="bi bi-truck-flatbed card-select-icon"></i>
+                    <span class="card-select-title">Camión Chasis</span>
+                    <span class="card-select-sub">Hasta 5 Tn</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="vehicle_type" id="v_semi" value="semi" data-base="350">
+                  <label class="selectable-card text-center p-3 w-100" for="v_semi">
+                    <i class="bi bi-box-seam card-select-icon"></i>
+                    <span class="card-select-title">Semirremolque</span>
+                    <span class="card-select-sub">Carga Completa</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="text-end">
+                <button type="button" class="btn btn-primary-custom btn-wizard-next" data-next="2">
+                  <span>Siguiente: Ruta y Peso</span>
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Paso 2: Distancia y Peso -->
+            <div class="wizard-step-pane" id="wizard-step-2">
+              <h4 class="step-heading mb-3">2. Indicá origen, destino y volumen estimado:</h4>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="quote-origin" class="form-label-custom">Ciudad / Punto de Origen</label>
+                  <div class="input-group-custom">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <input type="text" id="quote-origin" class="form-control-custom" placeholder="Ej: Buenos Aires / Santiago" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="quote-dest" class="form-label-custom">Ciudad / Punto de Destino</label>
+                  <div class="input-group-custom">
+                    <i class="bi bi-flag-fill"></i>
+                    <input type="text" id="quote-dest" class="form-control-custom" placeholder="Ej: Rosario / Mendoza" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="quote-distance" class="form-label-custom">Distancia Estimada (KM)</label>
+                  <div class="input-group-custom">
+                    <i class="bi bi-speedometer2"></i>
+                    <input type="number" id="quote-distance" class="form-control-custom" min="5" max="5000" value="120" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="quote-weight" class="form-label-custom">Peso Estimado Total (KG)</label>
+                  <div class="input-group-custom">
+                    <i class="bi bi-badge-wc-fill"></i>
+                    <input type="number" id="quote-weight" class="form-control-custom" min="1" max="25000" value="85" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-custom btn-wizard-prev" data-prev="1">
+                  <i class="bi bi-arrow-left me-2"></i>
+                  <span>Atrás</span>
+                </button>
+                <button type="button" class="btn btn-primary-custom btn-wizard-next" data-next="3" id="btn-calc-rate">
+                  <span>Calcular Presupuesto</span>
+                  <i class="bi bi-cash-stack ms-2"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Paso 3: Resumen y Resultado -->
+            <div class="wizard-step-pane" id="wizard-step-3">
+              <div class="quote-result-box text-center p-4">
+                <i class="bi bi-check-circle-fill text-success fs-1 mb-2"></i>
+                <h4 class="quote-price-label">Tarifa Estimada de Flete</h4>
+                <div class="quote-amount-display my-2">
+                  <span class="currency">$</span>
+                  <span id="calculated-total" class="amount">0.00</span>
+                  <span class="tax-tag">+ IVA</span>
+                </div>
+                <p class="quote-details-text mb-4" id="quote-summary-text">
+                  Cálculo basado en trayecto de entrega estándar con seguro de carga básico incluido.
+                </p>
+
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                  <button type="button" class="btn btn-outline-custom btn-wizard-prev" data-prev="2">
+                    <i class="bi bi-pencil me-1"></i> Modificar Datos
+                  </button>
+                  <button type="button" class="btn btn-primary-custom" id="btn-book-quote">
+                    <i class="bi bi-calendar-check me-2"></i> Confirmar y Reservar Despacho
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGUIMIENTO EN VIVO (TRACKING) -->
+    <section id="tracking" class="section-padding bg-darker">
+      <div class="container">
+        <div class="section-header text-center mb-5 animate-item" data-anim="fade-up">
+          <span class="section-tag">CONTROL SATELITAL</span>
+          <h2 class="section-title">SEGUIMIENTO EN <span class="highlight-crimson">VIVO</span></h2>
+          <p class="section-desc">Ingresá tu código de guía para conocer la posición y estado de tu despacho.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="tracking-search-bar mb-4 animate-item" data-anim="zoom-in">
+              <form id="tracking-form" class="d-flex flex-column flex-sm-row gap-2">
+                <div class="input-group-custom flex-grow-1">
+                  <i class="bi bi-upc-scan"></i>
+                  <input type="text" id="tracking-input" class="form-control-custom" placeholder="Ej: LGX-88294 (Probá este código)" required>
+                </div>
+                <button type="submit" class="btn btn-primary-custom px-4">
+                  <span>Localizar</span>
+                  <i class="bi bi-radar ms-2"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Estado de Tracking Dinámico -->
+            <div id="tracking-result-panel" class="tracking-result-card animate-item" data-anim="fade-up">
+              <div class="tracking-header d-flex flex-wrap justify-content-between align-items-center pb-3 border-bottom-custom mb-4">
+                <div>
+                  <span class="badge badge-custom-status mb-1" id="tr-badge">EN TRÁNSITO</span>
+                  <h4 class="tracking-code-title mb-0" id="tr-code">GUÍA #LGX-88294</h4>
+                </div>
+                <div class="text-sm-end mt-2 mt-sm-0">
+                  <span class="eta-label d-block text-muted">Entrega Estimada:</span>
+                  <strong class="eta-time text-accent" id="tr-eta">Hoy, 16:30 hs</strong>
+                </div>
+              </div>
+
+              <!-- Barra de Hitos de Rastreo -->
+              <div class="tracking-timeline-container mb-4">
+                <div class="timeline-step done">
+                  <div class="timeline-dot"><i class="bi bi-box-arrow-in-down"></i></div>
+                  <div class="timeline-info">
+                    <h6>Recolectado</h6>
+                    <small>Centro Logístico Sur</small>
+                  </div>
+                </div>
+                <div class="timeline-step done">
+                  <div class="timeline-dot"><i class="bi bi-buildings"></i></div>
+                  <div class="timeline-info">
+                    <h6>Centro Distribución</h6>
+                    <small>Clasificación OK</small>
+                  </div>
+                </div>
+                <div class="timeline-step active">
+                  <div class="timeline-dot pulse-dot"><i class="bi bi-truck"></i></div>
+                  <div class="timeline-info">
+                    <h6>En Ruta de Entrega</h6>
+                    <small>Unidad #412 en tránsito</small>
+                  </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-dot"><i class="bi bi-check-circle"></i></div>
+                  <div class="timeline-info">
+                    <h6>Entregado</h6>
+                    <small>Pendiente de firma</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ficha de Operación -->
+              <div class="row g-3 tracking-meta-grid">
+                <div class="col-6 col-md-3">
+                  <span class="meta-label">Origen</span>
+                  <span class="meta-value">Planta Pacheco</span>
+                </div>
+                <div class="col-6 col-md-3">
+                  <span class="meta-label">Destino</span>
+                  <span class="meta-value">Polo Industrial Pilar</span>
+                </div>
+                <div class="col-6 col-md-3">
+                  <span class="meta-label">Conductor</span>
+                  <span class="meta-value">Martín Gómez (Cert. B)</span>
+                </div>
+                <div class="col-6 col-md-3">
+                  <span class="meta-label">Temp. Monitoreada</span>
+                  <span class="meta-value text-success">4.2° C (Cadena Frío)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS INTEGRALES -->
+    <section id="servicios" class="section-padding bg-surface">
+      <div class="container">
+        <div class="section-header text-center mb-5 animate-item" data-anim="fade-up">
+          <span class="section-tag">NUESTRA CAPACIDAD</span>
+          <h2 class="section-title">SOLUCIONES DE <span class="highlight-crimson">TRANSPORTE</span> Y ALMACENAJE</h2>
+          <p class="section-desc">Infraestructura tecnológica y flota propia para cubrir cualquier volumen y distancia.</p>
+        </div>
+
+        <!-- Contenedor scrollable en mobile con scroll-snap -->
+        <div class="services-carousel-wrapper">
+          <div class="row g-4 flex-nowrap flex-md-wrap services-scroll-container">
+            <!-- Servicio 1 -->
+            <div class="col-10 col-sm-6 col-lg-4 service-card-col">
+              <div class="service-card interactive-tilt p-4 h-100 animate-item" data-anim="fade-up">
+                <div class="service-icon-box mb-4">
+                  <i class="bi bi-truck"></i>
+                </div>
+                <h4 class="service-title">Carga General & Masiva</h4>
+                <p class="service-text">
+                  Transporte punto a punto con semirremolques térmicos, sider y playos de alta capacidad con seguimiento GPS.
+                </p>
+                <ul class="service-check-list list-unstyled mb-4">
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Monitoreo de precinto digital</li>
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Seguro de carga incluido</li>
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Flota con descanso regulado</li>
+                </ul>
+                <a href="#cotizador" class="service-link">Calcular Flete <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="col-10 col-sm-6 col-lg-4 service-card-col">
+              <div class="service-card interactive-tilt p-4 h-100 animate-item" data-anim="fade-up">
+                <div class="service-icon-box mb-4">
+                  <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <h4 class="service-title">Última Milla eCommerce</h4>
+                <p class="service-text">
+                  Entregas same-day y next-day para plataformas de comercio electrónico y distribución capilar urbana.
+                </p>
+                <ul class="service-check-list list-unstyled mb-4">
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Integración API con tu tienda</li>
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Prueba de entrega digital (POD)</li>
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Logística inversa y cambios</li>
+                </ul>
+                <a href="#cotizador" class="service-link">Calcular Flete <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Servicio 3 -->
+            <div class="col-10 col-sm-6 col-lg-4 service-card-col">
+              <div class="service-card interactive-tilt p-4 h-100 animate-item" data-anim="fade-up">
+                <div class="service-icon-box mb-4">
+                  <i class="bi bi-snow2"></i>
+                </div>
+                <h4 class="service-title">Cadena de Frío</h4>
+                <p class="service-text">
+                  Equipos frigoríficos para fármacos y alimentos perecederos con telemetría de temperatura en tiempo real.
+                </p>
+                <ul class="service-check-list list-unstyled mb-4">
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Rango de -25°C a +15°C</li>
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Alarmas automáticas de desvío</li>
+                  <li><i class="bi bi-check2 text-accent me-2"></i>Certificación sanitaria SENASA</li>
+                </ul>
+                <a href="#cotizador" class="service-link">Calcular Flete <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GESTIÓN DE PEDIDOS Y TURNOS -->
+    <section id="pedidos" class="section-padding bg-darker">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 animate-item" data-anim="fade-right">
+            <span class="section-tag">OPERACIONES EFICIENTES</span>
+            <h2 class="section-title">GESTIÓN CENTRALIZADA DE <span class="highlight-crimson">PEDIDOS</span> Y DESPACHOS</h2>
+            <p class="section-desc">
+              Programá tus retiros en planta o coordiná turnos de descarga en centros de distribución con aviso anticipado para evitar demoras.
+            </p>
+            <div class="features-list mt-4">
+              <div class="feature-item d-flex gap-3 mb-3">
+                <div class="feature-icon"><i class="bi bi-calendar3"></i></div>
+                <div>
+                  <h5>Turnos de Descarga Programados</h5>
+                  <p class="text-muted">Evitá esperas innecesarias en dársenas con ventanas horarias estrictas.</p>
+                </div>
+              </div>
+              <div class="feature-item d-flex gap-3 mb-3">
+                <div class="feature-icon"><i class="bi bi-bell-fill"></i></div>
+                <div>
+                  <h5>Recordatorios & Alertas Automáticas</h5>
+                  <p class="text-muted">Notificaciones SMS, WhatsApp y correo cuando tu chofer arriba a destino.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de Turno / Despacho -->
+          <div class="col-lg-6 animate-item" data-anim="fade-left">
+            <div class="order-form-card p-4 p-md-5">
+              <h3 class="card-form-title mb-4">
+                <i class="bi bi-clock-history me-2 text-accent"></i> Programar Turno de Despacho
+              </h3>
+              <form id="order-dispatch-form" novalidate>
+                <div class="mb-3">
+                  <label for="order-company" class="form-label-custom">Razón Social / Empresa</label>
+                  <div class="input-group-custom">
+                    <i class="bi bi-building"></i>
+                    <input type="text" id="order-company" class="form-control-custom" placeholder="Tu Empresa S.A." required>
+                  </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="order-date" class="form-label-custom">Fecha de Carga</label>
+                    <div class="input-group-custom">
+                      <i class="bi bi-calendar-event"></i>
+                      <input type="date" id="order-date" class="form-control-custom" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="order-time" class="form-label-custom">Franja Horaria</label>
+                    <div class="input-group-custom">
+                      <i class="bi bi-clock"></i>
+                      <select id="order-time" class="form-control-custom" required>
+                        <option value="">Seleccionar franja...</option>
+                        <option value="08:00 - 11:00">08:00 - 11:00 hs (Mañana)</option>
+                        <option value="11:00 - 14:00">11:00 - 14:00 hs (Mediodía)</option>
+                        <option value="14:00 - 18:00">14:00 - 18:00 hs (Tarde)</option>
+                        <option value="18:00 - 22:00">18:00 - 22:00 hs (Nocturno)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="order-phone" class="form-label-custom">Teléfono para Alertas WhatsApp</label>
+                  <div class="input-group-custom">
+                    <i class="bi bi-whatsapp"></i>
+                    <input type="tel" id="order-phone" class="form-control-custom" placeholder="+54 9 11 0000-0000" required>
+                  </div>
+                </div>
+
+                <div class="mb-4 form-check">
+                  <input type="checkbox" class="form-check-input" id="order-alert-check" checked>
+                  <label class="form-check-label text-muted small" for="order-alert-check">
+                    Recibir recordatorio automático de service y arribo de unidad.
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary-custom w-100 btn-lg">
+                  <span>Confirmar Solicitud de Turno</span>
+                  <i class="bi bi-check-circle ms-2"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" class="section-padding bg-surface">
+      <div class="container">
+        <div class="section-header text-center mb-5 animate-item" data-anim="fade-up">
+          <span class="section-tag">DUDAS COMUNES</span>
+          <h2 class="section-title">PREGUNTAS <span class="highlight-crimson">FRECUENTES</span></h2>
+          <p class="section-desc">Todo lo que necesitás saber sobre nuestras pólizas y modalidad operativa.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 animate-item" data-anim="zoom-in">
+            <div class="accordion accordion-custom" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+                    ¿Qué tipo de seguros cubren la mercadería transportada?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Todos nuestros viajes cuentan con póliza de seguro de transporte contra robo, choque, vuelco e incendio emitida por aseguradoras de primera línea internacional, con ampliación de cobertura declarada por valor real.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    ¿Cómo accedo al comprobante de entrega digital?
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Apenas el receptor firma el remito en la app móvil de nuestro conductor, el sistema digitaliza la firma, geolocaliza la entrega y envía automáticamente el comprobante en formato PDF a tu correo.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                    ¿Cuáles son los tiempos de respuesta en cotizaciones a medida?
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    A través de nuestro cotizador en línea la estimación es instantánea. Para contratos corporativos o proyectos de flota dedicada, un ejecutivo logístico se comunica en menos de 30 minutos.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer bg-darkest py-5">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <div class="brand-logo mb-3">
+            <i class="bi bi-truck-flatbed text-accent me-2 fs-3"></i>
+            <span class="brand-name fs-3">LOGIS<span>TIX</span></span>
+          </div>
+          <p class="footer-desc text-muted">
+            Líderes en conectividad terrestre, soluciones multimodales y tecnología aplicada a la logística industrial y corporativa.
+          </p>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5 class="footer-heading mb-3">Accesos Directos</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#cotizador">Cotizador de Envíos</a></li>
+            <li><a href="#tracking">Seguimiento en Vivo</a></li>
+            <li><a href="#pedidos">Gestión de Turnos</a></li>
+            <li><a href="#servicios">Flota y Servicios</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5 class="footer-heading mb-3">Contacto Comercial</h5>
+          <ul class="list-unstyled footer-contact text-muted">
+            <li><i class="bi bi-geo-alt me-2 text-accent"></i> Av. Logística 5400, Parque Industrial</li>
+            <li><i class="bi bi-telephone me-2 text-accent"></i> +54 (11) 5555-8800</li>
+            <li><i class="bi bi-envelope me-2 text-accent"></i> operaciones@logistix.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom border-top-custom pt-4 text-center text-muted small">
+        <p class="mb-0">&copy; 2025 LOGISTIX S.A. Todos los derechos reservados. Diseñado para alto rendimiento.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM NAV (APP FEEL en < 768px) -->
+  <nav class="mobile-bottom-nav d-md-none" aria-label="Navegación Móvil">
+    <div class="bottom-nav-inner d-flex justify-content-around align-items-center">
+      <a href="#hero" class="bottom-nav-item active" data-nav="hero">
+        <i class="bi bi-house-door-fill"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="#pedidos" class="bottom-nav-item" data-nav="pedidos">
+        <i class="bi bi-calendar-check"></i>
+        <span>Turnos</span>
+      </a>
+      <a href="#cotizador" class="bottom-nav-item" data-nav="cotizador">
+        <i class="bi bi-calculator"></i>
+        <span>Presupuesto</span>
+      </a>
+      <a href="#tracking" class="bottom-nav-item" data-nav="tracking">
+        <i class="bi bi-radar"></i>
+        <span>Seguimiento</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/1234567890" target="_blank" rel="noopener" class="whatsapp-float-btn" aria-label="Chat WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- OFFCANVAS / BOTTOM SHEET DE CONFIRMACIÓN -->
+  <div class="offcanvas offcanvas-bottom offcanvas-custom" tabindex="-1" id="orderConfirmSheet" aria-labelledby="orderConfirmSheetLabel">
+    <div class="offcanvas-header border-bottom-custom">
+      <h5 class="offcanvas-title" id="orderConfirmSheetLabel">
+        <i class="bi bi-check2-circle text-success me-2"></i> ¡Turno Solicitado con Éxito!
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body text-center py-4">
+      <div class="mb-3">
+        <i class="bi bi-patch-check-fill text-accent fs-1"></i>
+      </div>
+      <h4 class="mb-2" id="confirm-sheet-company">Empresa Confirmada</h4>
+      <p class="text-muted mb-3" id="confirm-sheet-details">Hemos asignado tu dársena y enviado el comprobante a tu WhatsApp.</p>
+      <div class="p-3 bg-darker rounded mb-3 text-start">
+        <div class="d-flex justify-content-between mb-1">
+          <span class="text-muted">Código de Turno:</span>
+          <strong class="text-accent" id="confirm-turn-code">TRN-94021</strong>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="text-muted">Dársena Asignada:</span>
+          <strong>Sector B - Muelle 04</strong>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary-custom w-100" data-bs-dismiss="offcanvas">
+        Aceptar y Volver
+      </button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICACIÓN -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1090;">
+    <div id="actionToast" class="toast toast-custom text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center">
+          <i class="bi bi-bell-fill text-accent me-2 fs-5"></i>
+          <span id="toast-message">Operación realizada con éxito.</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script Propio -->
+  <script src="../../js/oficios-vehiculos/logistica-flete.js" defer></script>
+</body>
+</html>

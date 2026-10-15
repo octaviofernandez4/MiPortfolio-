@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Bastión Seguridad Integral: vigilancia física, monitoreo de alarmas 24/7, CCTV y control de acceso. Cotizá tu plan online.">
+  <meta name="theme-color" content="#284b63">
+  <title>Bastión Seguridad Integral | Vigilancia y monitoreo 24/7</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../../css/oficios-vehiculos/servicio-seguridad.css">
+</head>
+<body>
+
+  <div class="pantalla-carga" id="pantallaCarga" aria-hidden="true">
+    <div class="carga-logo">
+      <i class="bi bi-shield-lock-fill"></i>
+      <span>BASTIÓN</span>
+    </div>
+    <div class="carga-barra"><span></span></div>
+  </div>
+
+  <div class="barra-progreso" id="barraProgreso"></div>
+
+  <header class="header-principal" id="headerPrincipal">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand marca" href="#inicio">
+          <span class="marca-icono"><i class="bi bi-shield-lock-fill"></i></span>
+          <span class="marca-texto">BASTIÓN<small>Seguridad integral</small></span>
+        </a>
+        <a class="btn-contacto-header d-md-none" href="tel:+541148005500" aria-label="Llamar a la central">
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center menu-links">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cotizador">Cotizador</a></li>
+            <li class="nav-item"><a class="nav-link" href="#turno">Visita técnica</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-principal btn-ripple btn-nav" href="tel:+541148005500">
+                <i class="bi bi-telephone-fill"></i><span>0800-555-BASTIÓN</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio" data-seccion="inicio">
+      <div class="hero-fondo" id="heroFondo"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-contenido">
+        <span class="etiqueta etiqueta-clara hero-etiqueta"><i class="bi bi-broadcast"></i> Central de monitoreo activa 24/7</span>
+        <h1 class="hero-titulo" id="heroTitulo">
+          <span class="palabra">Protegemos</span>
+          <span class="palabra">lo</span>
+          <span class="palabra">que</span>
+          <span class="palabra">más</span>
+          <span class="palabra palabra-degradado">importa</span>
+        </h1>
+        <p class="hero-texto">Vigilancia física, monitoreo de alarmas y videovigilancia inteligente para hogares, empresas, barrios privados e industrias. Un solo equipo responsable de tu tranquilidad.</p>
+        <div class="hero-acciones">
+          <a href="#cotizador" class="btn btn-principal btn-brillo btn-ripple btn-lg-propio">
+            <span>Cotizar mi plan</span><i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="#turno" class="btn btn-secundario-claro btn-ripple btn-lg-propio">
+            <i class="bi bi-calendar-check"></i><span>Visita técnica sin cargo</span>
+          </a>
+        </div>
+        <ul class="hero-confianza">
+          <li><i class="bi bi-patch-check-fill"></i> Habilitación oficial</li>
+          <li><i class="bi bi-lightning-charge-fill"></i> Respuesta en minutos</li>
+          <li><i class="bi bi-people-fill"></i> Personal certificado</li>
+        </ul>
+      </div>
+      <a href="#cifras" class="hero-scroll d-none d-md-flex" aria-label="Bajar a la siguiente sección">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="cifras" id="cifras">
+      <div class="container">
+        <div class="cifras-grilla" data-escalonado>
+          <div class="cifra" data-anim="fade-up">
+            <i class="bi bi-house-lock"></i>
+            <div class="cifra-numero"><span class="contador" data-objetivo="1250">0</span>+</div>
+            <p class="cifra-texto">Clientes protegidos</p>
+          </div>
+          <div class="cifra" data-anim="fade-up">
+            <i class="bi bi-award"></i>
+            <div class="cifra-numero"><span class="contador" data-objetivo="18">0</span></div>
+            <p class="cifra-texto">Años de experiencia</p>
+          </div>
+          <div class="cifra" data-anim="fade-up">
+            <i class="bi bi-person-badge"></i>
+            <div class="cifra-numero"><span class="contador" data-objetivo="340">0</span></div>
+            <p class="cifra-texto">Vigiladores activos</p>
+          </div>
+          <div class="cifra" data-anim="fade-up">
+            <i class="bi bi-stopwatch"></i>
+            <div class="cifra-numero"><span class="contador" data-objetivo="4">0</span> min</div>
+            <p class="cifra-texto">Respuesta promedio</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="servicios" data-seccion="inicio">
+      <div class="container">
+        <div class="encabezado-seccion" data-anim="fade-up">
+          <span class="etiqueta">Servicios</span>
+          <h2 class="titulo-seccion">Seguridad <span class="destacado">a medida</span> de cada espacio</h2>
+          <p class="subtitulo-seccion">Combinamos personas, tecnología y procesos para cubrir cada punto vulnerable.</p>
+        </div>
+        <div class="carrusel carrusel-servicios" data-escalonado>
+          <article class="card-servicio tarjeta-3d" data-anim="zoom-in">
+            <div class="card-servicio-icono"><i class="bi bi-person-badge-fill"></i></div>
+            <h3>Vigilancia física</h3>
+            <p>Vigiladores capacitados y habilitados, con supervisión móvil y reportes digitales por turno.</p>
+            <span class="card-servicio-link">Desde <strong class="precio-chico">$1.450.000</strong>/mes</span>
+          </article>
+          <article class="card-servicio tarjeta-3d" data-anim="zoom-in">
+            <div class="card-servicio-icono"><i class="bi bi-broadcast-pin"></i></div>
+            <h3>Monitoreo de alarmas</h3>
+            <p>Central propia 24/7 con verificación de eventos, aviso a fuerzas de seguridad y app para clientes.</p>
+            <span class="card-servicio-link">Desde <strong class="precio-chico">$45.000</strong>/mes</span>
+          </article>
+          <article class="card-servicio tarjeta-3d" data-anim="zoom-in">
+            <div class="card-servicio-icono"><i class="bi bi-camera-video-fill"></i></div>
+            <h3>Videovigilancia CCTV</h3>
+            <p>Cámaras HD con analítica inteligente, grabación en la nube y acceso remoto desde tu celular.</p>
+            <span class="card-servicio-link">Desde <strong class="precio-chico">$120.000</strong>/mes</span>
+          </article>
+          <article class="card-servicio tarjeta-3d" data-anim="zoom-in">
+            <div class="card-servicio-icono"><i class="bi bi-fingerprint"></i></div>
+            <h3>Control de acceso</h3>
+            <p>Biometría, tarjetas y QR para empleados, visitas y proveedores, con registro auditable.</p>
+            <span class="card-servicio-link">Desde <strong class="precio-chico">$180.000</strong>/mes</span>
+          </article>
+          <article class="card-servicio tarjeta-3d" data-anim="zoom-in">
+            <div class="card-servicio-icono"><i class="bi bi-truck"></i></div>
+            <h3>Custodia y traslados</h3>
+            <p>Escolta de mercadería y valores con vehículos rastreados en tiempo real.</p>
+            <span class="card-servicio-link">Cotización a medida</span>
+          </article>
+          <article class="card-servicio tarjeta-3d" data-anim="zoom-in">
+            <div class="card-servicio-icono"><i class="bi bi-calendar-event-fill"></i></div>
+            <h3>Seguridad en eventos</h3>
+            <p>Planificación de operativos, control de ingreso y coordinación con organizadores.</p>
+            <span class="card-servicio-link">Cotización a medida</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-oscura" id="nosotros" data-seccion="inicio">
+      <i class="bi bi-gear-wide-connected engranaje-decorativo" aria-hidden="true"></i>
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6" data-anim="fade-right">
+            <span class="etiqueta etiqueta-clara">Quiénes somos</span>
+            <h2 class="titulo-seccion titulo-claro">Una empresa <span class="destacado-claro">argentina</span> que responde</h2>
+            <p class="texto-claro">Desde 2008 diseñamos esquemas de seguridad para más de mil clientes en AMBA y el interior. Cada servicio tiene un supervisor asignado, protocolos escritos y métricas que podés ver en tiempo real.</p>
+            <div class="central-monitoreo">
+              <div>
+                <span class="central-etiqueta">Central de monitoreo</span>
+                <span class="central-horario">24 / 7 / 365</span>
+              </div>
+              <div class="central-estado"><span class="punto-vivo"></span> En línea</div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="beneficios" data-escalonado>
+              <div class="beneficio" data-anim="fade-left">
+                <i class="bi bi-shield-check"></i>
+                <div>
+                  <h3>Habilitación y seguros</h3>
+                  <p>Personal registrado, ART y seguro de responsabilidad civil vigentes.</p>
+                </div>
+              </div>
+              <div class="beneficio" data-anim="fade-left">
+                <i class="bi bi-phone-vibrate"></i>
+                <div>
+                  <h3>App de cliente</h3>
+                  <p>Rondas, novedades y cámaras desde tu celular, con alertas al instante.</p>
+                </div>
+              </div>
+              <div class="beneficio" data-anim="fade-left">
+                <i class="bi bi-mortarboard"></i>
+                <div>
+                  <h3>Capacitación continua</h3>
+                  <p>Primeros auxilios, prevención de incendios y atención al público.</p>
+                </div>
+              </div>
+              <div class="beneficio" data-anim="fade-left">
+                <i class="bi bi-graph-up-arrow"></i>
+                <div>
+                  <h3>Reportes mensuales</h3>
+                  <p>Informes de incidentes y recomendaciones para reducir riesgos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="cotizador" data-seccion="cotizador">
+      <div class="container">
+        <div class="encabezado-seccion" data-anim="fade-up">
+          <span class="etiqueta">Cotizador online</span>
+          <h2 class="titulo-seccion">Armá tu plan en <span class="destacado">30 segundos</span></h2>
+          <p class="subtitulo-seccion">Valores mensuales estimados. El precio final se confirma en la visita técnica.</p>
+        </div>
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-8">
+            <form class="cotizador" id="formCotizador" novalidate>
+              <fieldset class="bloque-cotizador" data-anim="fade-up">
+                <legend><span class="paso-numero">01</span> Tipo de servicio</legend>
+                <div class="opciones-grilla opciones-4">
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="servicio" value="vigilancia" data-precio="1450000" data-nombre="Vigilancia física" checked>
+                    <span class="opcion-contenido"><i class="bi bi-person-badge-fill"></i><span>Vigilancia</span></span>
+                  </label>
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="servicio" value="alarmas" data-precio="45000" data-nombre="Monitoreo de alarmas">
+                    <span class="opcion-contenido"><i class="bi bi-broadcast-pin"></i><span>Alarmas</span></span>
+                  </label>
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="servicio" value="cctv" data-precio="120000" data-nombre="Videovigilancia CCTV">
+                    <span class="opcion-contenido"><i class="bi bi-camera-video-fill"></i><span>CCTV</span></span>
+                  </label>
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="servicio" value="acceso" data-precio="180000" data-nombre="Control de acceso">
+                    <span class="opcion-contenido"><i class="bi bi-fingerprint"></i><span>Acceso</span></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="bloque-cotizador" data-anim="fade-up">
+                <legend><span class="paso-numero">02</span> Tipo de propiedad</legend>
+                <div class="opciones-grilla opciones-4">
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="propiedad" value="hogar" data-factor="1" data-nombre="Hogar" checked>
+                    <span class="opcion-contenido"><i class="bi bi-house-door-fill"></i><span>Hogar</span></span>
+                  </label>
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="propiedad" value="comercio" data-factor="1.25" data-nombre="Comercio">
+                    <span class="opcion-contenido"><i class="bi bi-shop"></i><span>Comercio</span></span>
+                  </label>
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="propiedad" value="empresa" data-factor="1.6" data-nombre="Empresa">
+                    <span class="opcion-contenido"><i class="bi bi-building-fill"></i><span>Empresa</span></span>
+                  </label>
+                  <label class="opcion-tarjeta">
+                    <input type="radio" name="propiedad" value="barrio" data-factor="2.2" data-nombre="Barrio privado">
+                    <span class="opcion-contenido"><i class="bi bi-houses-fill"></i><span>Barrio</span></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="bloque-cotizador" data-anim="fade-up">
+                <legend><span class="paso-numero">03</span> Cobertura</legend>
+                <div class="opciones-grilla opciones-3">
+                  <label class="opcion-tarjeta opcion-compacta">
+                    <input type="radio" name="cobertura" value="12" data-factor="1" data-nombre="12 h diurnas" checked>
+                    <span class="opcion-contenido"><span class="opcion-numero">12 h</span><span>Diurna</span></span>
+                  </label>
+                  <label class="opcion-tarjeta opcion-compacta">
+                    <input type="radio" name="cobertura" value="nocturna" data-factor="1.15" data-nombre="12 h nocturnas">
+                    <span class="opcion-contenido"><span class="opcion-numero">12 h</span><span>Nocturna</span></span>
+                  </label>
+                  <label class="opcion-tarjeta opcion-compacta">
+                    <input type="radio" name="cobertura" value="24" data-factor="1.85" data-nombre="24 h">
+                    <span class="opcion-contenido"><span class="opcion-numero">24 h</span><span>Completa</span></span>
+                  </label>
+                </div>
+                <div class="rango-grupo">
+                  <div class="rango-encabezado">
+                    <label for="rangoPuestos" class="form-label">Puestos / zonas a cubrir</label>
+                    <span class="rango-valor" id="valorPuestos">1</span>
+                  </div>
+                  <input type="range" class="form-range rango-propio" id="rangoPuestos" min="1" max="10" value="1">
+                </div>
+                <div class="extras">
+                  <div class="form-check form-switch switch-propio">
+                    <input class="form-check-input" type="checkbox" role="switch" id="extraApp">
+                    <label class="form-check-label" for="extraApp"><i class="bi bi-phone"></i> App con cámaras en vivo <span class="extra-precio">+$18.000</span></label>
+                  </div>
+                  <div class="form-check form-switch switch-propio">
+                    <input class="form-check-input" type="checkbox" role="switch" id="extraMovil">
+                    <label class="form-check-label" for="extraMovil"><i class="bi bi-car-front"></i> Patrulla móvil de apoyo <span class="extra-precio">+$95.000</span></label>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-lg-4">
+            <aside class="resumen-cotizacion" data-anim="flip">
+              <span class="resumen-etiqueta">Tu plan estimado</span>
+              <h3 class="resumen-plan" id="resumenPlan">Plan Esencial</h3>
+              <div class="resumen-precio"><span class="moneda">$</span><span id="resumenTotal">1.450.000</span></div>
+              <span class="resumen-periodo">por mes · IVA incluido</span>
+              <ul class="resumen-detalle" id="resumenDetalle"></ul>
+              <a href="#turno" class="btn btn-principal btn-brillo btn-ripple w-100 btn-lg-propio" id="btnSolicitarPlan">
+                <span>Solicitar este plan</span><i class="bi bi-arrow-right"></i>
+              </a>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-gris" id="turno" data-seccion="turno">
+      <div class="container">
+        <div class="encabezado-seccion" data-anim="fade-up">
+          <span class="etiqueta">Visita técnica</span>
+          <h2 class="titulo-seccion">Agendá un <span class="destacado">relevamiento</span> sin cargo</h2>
+          <p class="subtitulo-seccion">Un asesor recorre tu propiedad, detecta vulnerabilidades y te entrega una propuesta por escrito.</p>
+        </div>
+        <div class="wizard-contenedor" data-anim="zoom-in">
+          <div class="wizard-progreso">
+            <div class="wizard-pasos">
+              <span class="wizard-indicador activo" data-indicador="1"><i class="bi bi-grid-fill"></i><span>Servicio</span></span>
+              <span class="wizard-indicador" data-indicador="2"><i class="bi bi-person-fill"></i><span>Datos</span></span>
+              <span class="wizard-indicador" data-indicador="3"><i class="bi bi-calendar3"></i><span>Fecha</span></span>
+            </div>
+            <div class="progress progreso-propio" role="progressbar" aria-label="Progreso del formulario" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" id="wizardBarra"></div>
+            </div>
+          </div>
+
+          <form id="formTurno" class="wizard-form" novalidate>
+            <div class="wizard-paso activo" data-paso="1">
+              <h3 class="wizard-titulo">¿Qué necesitás proteger?</h3>
+              <div class="opciones-grilla opciones-3">
+                <label class="opcion-tarjeta">
+                  <input type="radio" name="turnoServicio" value="Vigilancia física" required>
+                  <span class="opcion-contenido"><i class="bi bi-person-badge-fill"></i><span>Vigilancia física</span></span>
+                </label>
+                <label class="opcion-tarjeta">
+                  <input type="radio" name="turnoServicio" value="Alarmas y monitoreo">
+                  <span class="opcion-contenido"><i class="bi bi-broadcast-pin"></i><span>Alarmas</span></span>
+                </label>
+                <label class="opcion-tarjeta">
+                  <input type="radio" name="turnoServicio" value="Cámaras CCTV">
+                  <span class="opcion-contenido"><i class="bi bi-camera-video-fill"></i><span>Cámaras</span></span>
+                </label>
+                <label class="opcion-tarjeta">
+                  <input type="radio" name="turnoServicio" value="Control de acceso">
+                  <span class="opcion-contenido"><i class="bi bi-fingerprint"></i><span>Acceso</span></span>
+                </label>
+                <label class="opcion-tarjeta">
+                  <input type="radio" name="turnoServicio" value="Solución integral">
+                  <span class="opcion-contenido"><i class="bi bi-shield-fill-check"></i><span>Integral</span></span>
+                </label>
+                <label class="opcion-tarjeta">
+                  <input type="radio" name="turnoServicio" value="Asesoramiento">
+                  <span class="opcion-contenido"><i class="bi bi-question-circle-fill"></i><span>No sé aún</span></span>
+                </label>
+              </div>
+              <p class="mensaje-error" data-error="turnoServicio"><i class="bi bi-exclamation-circle"></i> Elegí una opción para continuar.</p>
+            </div>
+
+            <div class="wizard-paso" data-paso="2">
+              <h3 class="wizard-titulo">¿A quién visitamos?</h3>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="turnoNombre" class="form-label"><i class="bi bi-person"></i> Nombre y apellido</label>
+                  <input type="text" class="form-control campo" id="turnoNombre" required minlength="3" autocomplete="name">
+                  <div class="invalid-feedback">Ingresá tu nombre completo.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="turnoTelefono" class="form-label"><i class="bi bi-telephone"></i> Teléfono</label>
+                  <input type="tel" class="form-control campo" id="turnoTelefono" required pattern="[0-9+\s\-]{8,}" autocomplete="tel" inputmode="tel">
+                  <div class="invalid-feedback">Ingresá un teléfono válido (mín. 8 dígitos).</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="turnoEmail" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                  <input type="email" class="form-control campo" id="turnoEmail" required autocomplete="email" inputmode="email">
+                  <div class="invalid-feedback">Ingresá un email válido.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="turnoDireccion" class="form-label"><i class="bi bi-geo-alt"></i> Dirección del lugar</label>
+                  <input type="text" class="form-control campo" id="turnoDireccion" required minlength="5" autocomplete="street-address">
+                  <div class="invalid-feedback">Indicá la dirección a relevar.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-paso" data-paso="3">
+              <h3 class="wizard-titulo">¿Cuándo te queda bien?</h3>
+              <div class="row g-3">
+                <div class="col-md-5">
+                  <label for="turnoFecha" class="form-label"><i class="bi bi-calendar-event"></i> Fecha</label>
+                  <input type="date" class="form-control campo" id="turnoFecha" required>
+                  <div class="invalid-feedback">Elegí una fecha a partir de mañana.</div>
+                </div>
+                <div class="col-md-7">
+                  <span class="form-label d-block"><i class="bi bi-clock"></i> Franja horaria</span>
+                  <div class="opciones-grilla opciones-3">
+                    <label class="opcion-tarjeta opcion-compacta">
+                      <input type="radio" name="turnoHorario" value="09:00 a 12:00" required>
+                      <span class="opcion-contenido"><span class="opcion-numero">09–12</span><span>Mañana</span></span>
+                    </label>
+                    <label class="opcion-tarjeta opcion-compacta">
+                      <input type="radio" name="turnoHorario" value="12:00 a 15:00">
+                      <span class="opcion-contenido"><span class="opcion-numero">12–15</span><span>Mediodía</span></span>
+                    </label>
+                    <label class="opcion-tarjeta opcion-compacta">
+                      <input type="radio" name="turnoHorario" value="15:00 a 18:00">
+                      <span class="opcion-contenido"><span class="opcion-numero">15–18</span><span>Tarde</span></span>
+                    </label>
+                  </div>
+                  <p class="mensaje-error" data-error="turnoHorario"><i class="bi bi-exclamation-circle"></i> Elegí una franja horaria.</p>
+                </div>
+                <div class="col-12">
+                  <label for="turnoNotas" class="form-label"><i class="bi bi-chat-left-text"></i> Comentarios (opcional)</label>
+                  <textarea class="form-control campo" id="turnoNotas" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-acciones">
+              <button type="button" class="btn btn-secundario btn-ripple" id="wizardAnterior" disabled>
+                <i class="bi bi-arrow-left"></i><span>Anterior</span>
+              </button>
+              <button type="button" class="btn btn-principal btn-ripple" id="wizardSiguiente">
+                <span>Siguiente</span><i class="bi bi-arrow-right"></i>
+              </button>
+              <button type="submit" class="btn btn-principal btn-brillo btn-ripple d-none" id="wizardEnviar">
+                <span>Confirmar visita</span><i class="bi bi-check2-circle"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="testimonios" data-seccion="turno">
+      <div class="container">
+        <div class="encabezado-seccion" data-anim="fade-up">
+          <span class="etiqueta">Testimonios</span>
+          <h2 class="titulo-seccion">Lo que dicen <span class="destacado">nuestros clientes</span></h2>
+        </div>
+        <div class="carrusel carrusel-testimonios" data-escalonado>
+          <figure class="card-testimonio tarjeta-3d" data-anim="fade-up">
+            <div class="estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <blockquote>“Una madrugada saltó la alarma del depósito y en cuatro minutos había una patrulla. Desde entonces duermo tranquilo.”</blockquote>
+            <figcaption><span class="avatar">MR</span><span><strong>Martín Rossi</strong>Distribuidora Rossi · Avellaneda</span></figcaption>
+          </figure>
+          <figure class="card-testimonio tarjeta-3d" data-anim="fade-up">
+            <div class="estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <blockquote>“Cubren los tres accesos del barrio con control por QR. Los vecinos valoran mucho la cordialidad del personal.”</blockquote>
+            <figcaption><span class="avatar">LG</span><span><strong>Laura Giménez</strong>Administración Barrio Los Álamos</span></figcaption>
+          </figure>
+          <figure class="card-testimonio tarjeta-3d" data-anim="fade-up">
+            <div class="estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+            <blockquote>“Instalaron las cámaras en un día y veo el local desde el celular. El reporte mensual es claro y útil.”</blockquote>
+            <figcaption><span class="avatar">PS</span><span><strong>Pablo Suárez</strong>Óptica Suárez · Palermo</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-gris" id="preguntas" data-seccion="turno">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4" data-anim="fade-right">
+            <span class="etiqueta">Preguntas frecuentes</span>
+            <h2 class="titulo-seccion">Resolvemos tus <span class="destacado">dudas</span></h2>
+            <p class="subtitulo-seccion">¿No encontrás lo que buscás? Escribinos y te respondemos en el día.</p>
+          </div>
+          <div class="col-lg-8" data-anim="fade-left">
+            <div class="accordion acordeon-propio" id="acordeonPreguntas">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta1" aria-expanded="true" aria-controls="pregunta1">¿Cuánto tarda la instalación de alarmas o cámaras?</button>
+                </h3>
+                <div id="pregunta1" class="accordion-collapse collapse show" data-bs-parent="#acordeonPreguntas">
+                  <div class="accordion-body">En hogares y comercios instalamos en 24 a 72 horas desde la aprobación del presupuesto. En empresas definimos un cronograma luego del relevamiento.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta2" aria-expanded="false" aria-controls="pregunta2">¿El personal está habilitado y asegurado?</button>
+                </h3>
+                <div id="pregunta2" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                  <div class="accordion-body">Sí. Todo el personal está registrado ante el organismo de control, cuenta con ART, seguro de responsabilidad civil y capacitación periódica.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta3" aria-expanded="false" aria-controls="pregunta3">¿Hay permanencia mínima en los planes?</button>
+                </h3>
+                <div id="pregunta3" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                  <div class="accordion-body">Los planes de monitoreo no tienen permanencia. Los servicios de vigilancia física se contratan por períodos de 6 o 12 meses con precio actualizado trimestralmente.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta4" aria-expanded="false" aria-controls="pregunta4">¿Qué pasa si se corta la luz o internet?</button>
+                </h3>
+                <div id="pregunta4" class="accordion-collapse collapse" data-bs-parent="#acordeonPreguntas">
+                  <div class="accordion-body">Los paneles tienen batería de respaldo y comunicador dual (GPRS + IP). La central recibe la señal aunque falle uno de los dos canales.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="contacto" data-seccion="contacto">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-5" data-anim="fade-right">
+            <span class="etiqueta">Contacto directo</span>
+            <h2 class="titulo-seccion">Hablemos <span class="destacado">hoy</span></h2>
+            <p class="subtitulo-seccion">Un asesor te responde en menos de 2 horas hábiles.</p>
+            <ul class="datos-contacto">
+              <li><span class="dato-icono"><i class="bi bi-telephone-fill"></i></span><span><small>Central 24 h</small><a href="tel:+541148005500" class="dato-numero">11 4800-5500</a></span></li>
+              <li><span class="dato-icono"><i class="bi bi-envelope-fill"></i></span><span><small>Email</small><a href="mailto:contacto@bastionseguridad.com.ar">contacto@bastionseguridad.com.ar</a></span></li>
+              <li><span class="dato-icono"><i class="bi bi-geo-alt-fill"></i></span><span><small>Oficinas</small>Av. Corrientes 2450, CABA</span></li>
+              <li><span class="dato-icono"><i class="bi bi-clock-fill"></i></span><span><small>Atención comercial</small><span class="dato-numero">Lun a Vie 09:00 – 18:00</span></span></li>
+            </ul>
+          </div>
+          <div class="col-lg-7" data-anim="fade-left">
+            <form class="form-contacto" id="formContacto" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="contactoNombre" class="form-label"><i class="bi bi-person"></i> Nombre</label>
+                  <input type="text" class="form-control campo" id="contactoNombre" required minlength="3" autocomplete="name">
+                  <div class="invalid-feedback">Ingresá tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactoEmail" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                  <input type="email" class="form-control campo" id="contactoEmail" required autocomplete="email" inputmode="email">
+                  <div class="invalid-feedback">Ingresá un email válido.</div>
+                </div>
+                <div class="col-12">
+                  <span class="form-label d-block"><i class="bi bi-tag"></i> Motivo</span>
+                  <div class="opciones-grilla opciones-3">
+                    <label class="opcion-tarjeta opcion-compacta">
+                      <input type="radio" name="contactoMotivo" value="Presupuesto" required checked>
+                      <span class="opcion-contenido"><i class="bi bi-calculator"></i><span>Presupuesto</span></span>
+                    </label>
+                    <label class="opcion-tarjeta opcion-compacta">
+                      <input type="radio" name="contactoMotivo" value="Soy cliente">
+                      <span class="opcion-contenido"><i class="bi bi-person-check"></i><span>Soy cliente</span></span>
+                    </label>
+                    <label class="opcion-tarjeta opcion-compacta">
+                      <input type="radio" name="contactoMotivo" value="Trabajar con nosotros">
+                      <span class="opcion-contenido"><i class="bi bi-briefcase"></i><span>Trabajo</span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="contactoMensaje" class="form-label"><i class="bi bi-chat-left-text"></i> Mensaje</label>
+                  <textarea class="form-control campo" id="contactoMensaje" rows="4" required minlength="10"></textarea>
+                  <div class="invalid-feedback">Contanos brevemente qué necesitás (mín. 10 caracteres).</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check check-propio">
+                    <input class="form-check-input" type="checkbox" id="contactoAcepto" required>
+                    <label class="form-check-label" for="contactoAcepto">Acepto ser contactado por un asesor de Bastión.</label>
+                    <div class="invalid-feedback">Necesitamos tu autorización para responderte.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-principal btn-brillo btn-ripple btn-lg-propio btn-ancho-mobile">
+                    <span>Enviar mensaje</span><i class="bi bi-send-fill"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grilla">
+        <a class="marca" href="#inicio">
+          <span class="marca-icono"><i class="bi bi-shield-lock-fill"></i></span>
+          <span class="marca-texto">BASTIÓN<small>Seguridad integral</small></span>
+        </a>
+        <p class="footer-texto">Empresa habilitada · Disposición N.º 1234/08 · CUIT 30-71234567-8</p>
+        <div class="footer-redes">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+      <p class="footer-legal">© 2026 Bastión Seguridad Integral. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-flotante" href="https://wa.me/5491148005500?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20seguridad" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <nav class="bottom-nav" aria-label="Navegación principal móvil">
+    <a href="#inicio" class="bottom-nav-item activo" data-destino="inicio"><i class="bi bi-house-door-fill"></i><span>Inicio</span></a>
+    <a href="#turno" class="bottom-nav-item" data-destino="turno"><i class="bi bi-calendar-check-fill"></i><span>Turnos</span></a>
+    <a href="#cotizador" class="bottom-nav-item" data-destino="cotizador"><i class="bi bi-calculator-fill"></i><span>Presupuesto</span></a>
+    <a href="#contacto" class="bottom-nav-item" data-destino="contacto"><i class="bi bi-chat-dots-fill"></i><span>Contacto</span></a>
+  </nav>
+
+  <div class="modal fade modal-propio" id="modalTurno" tabindex="-1" aria-labelledby="modalTurnoTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="confirmacion-icono"><i class="bi bi-calendar2-check-fill"></i></div>
+          <h2 class="modal-title" id="modalTurnoTitulo">Confirmá tu visita</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <dl class="resumen-turno" data-resumen-turno></dl>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secundario btn-ripple" data-bs-dismiss="modal"><i class="bi bi-pencil"></i><span>Editar</span></button>
+          <button type="button" class="btn btn-principal btn-ripple" data-confirmar-turno><span>Confirmar</span><i class="bi bi-check2"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-bottom hoja-inferior" tabindex="-1" id="hojaTurno" aria-labelledby="hojaTurnoTitulo">
+    <div class="hoja-agarre"></div>
+    <div class="offcanvas-header">
+      <div class="confirmacion-icono"><i class="bi bi-calendar2-check-fill"></i></div>
+      <h2 class="offcanvas-title" id="hojaTurnoTitulo">Confirmá tu visita</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <dl class="resumen-turno" data-resumen-turno></dl>
+      <button type="button" class="btn btn-principal btn-ripple w-100 btn-lg-propio" data-confirmar-turno><span>Confirmar visita</span><i class="bi bi-check2"></i></button>
+      <button type="button" class="btn btn-secundario btn-ripple w-100 btn-lg-propio mt-2" data-bs-dismiss="offcanvas"><i class="bi bi-pencil"></i><span>Editar datos</span></button>
+    </div>
+  </div>
+
+  <div class="toast-container contenedor-toasts">
+    <div class="toast toast-propio" id="toastExito" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-body">
+        <i class="bi bi-check-circle-fill"></i>
+        <div>
+          <strong id="toastTitulo">¡Listo!</strong>
+          <span id="toastMensaje">Recibimos tu solicitud.</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/oficios-vehiculos/servicio-seguridad.js" defer></script>
+</body>
+</html>

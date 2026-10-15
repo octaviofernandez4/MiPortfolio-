@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talentum HR - Portal de Búsquedas Laborales y Gestión de Candidatos</title>
+  
+  <!-- Enlace al archivo CSS externo independiente -->
+  <link rel="stylesheet" href="../../css/servicios-profesionales/recursos-humanos.css">
+</head>
+<body>
+
+  <!-- Barra de Navegación Global -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" onclick="event.preventDefault();">
+        <div class="brand-icon">T</div>
+        <span>Talentum HR</span>
+      </a>
+
+      <!-- Botón Hamburguesa Responsive -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+        ☰
+      </button>
+
+      <!-- Enlaces de Navegación -->
+      <ul class="nav-links" id="mainNavLinks">
+        <li><a href="#portal" class="nav-link active" data-tab="jobs">Portal de Empleo</a></li>
+        <li><a href="#postulacion" class="nav-link" data-tab="apply">Postulación Online</a></li>
+        <li><a href="#panel" class="nav-link" data-tab="candidates">Panel de Candidatos</a></li>
+        <li><button class="btn-nav" onclick="document.querySelector('[data-tab=\'apply\']').click()">Cargar CV</button></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-badge">💼 Consultora Integral de Recursos Humanos</div>
+      <h1 class="hero-title">Conectamos el mejor talento con las <span>empresas líderes</span></h1>
+      <p class="hero-subtitle">Plataforma integral para postulantes y equipos de selección. Encuentra oportunidades profesionales de alto impacto y gestiona postulaciones en tiempo real.</p>
+      
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <div class="metric-number">+120</div>
+          <div class="metric-label">Búsquedas Activas</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">98%</div>
+          <div class="metric-label">Tasa de Aceptación</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">48hs</div>
+          <div class="metric-label">Tiempo Medio de Respuesta</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra de Pestañas Interactivas (Navegación de Secciones) -->
+  <div class="section-nav-tabs">
+    <div class="container" style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:nowrap; overflow-x:auto;">
+      <button class="tab-btn active" data-tab="jobs">
+        🔍 1. Portal de Empleos
+      </button>
+      <button class="tab-btn" data-tab="apply">
+        📝 2. Postulación Online
+      </button>
+      <button class="tab-btn" data-tab="candidates">
+        👥 3. Panel de Candidatos (RRHH)
+      </button>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- SECCIÓN 1: PORTAL DE BÚSQUEDAS LABORALES -->
+    <section id="section-jobs" class="app-section">
+      <div class="section-header">
+        <h2 class="section-title">Oportunidades Laborales Vigentes</h2>
+        <p class="section-desc">Filtra por área de especialización, modalidad de trabajo o palabras clave.</p>
+      </div>
+
+      <!-- Barra de Filtros y Búsqueda Interactiva -->
+      <div class="search-filter-bar">
+        <input type="text" id="jobSearchInput" class="input-field" placeholder="Buscar por puesto, tecnología o palabra clave...">
+        
+        <select id="areaFilter" class="select-field">
+          <option value="">Todas las áreas</option>
+          <option value="Tecnología">Tecnología & IT</option>
+          <option value="Recursos Humanos">Recursos Humanos</option>
+          <option value="Diseño">Diseño & UX</option>
+          <option value="Operaciones">Operaciones & Logística</option>
+        </select>
+
+        <select id="modalityFilter" class="select-field">
+          <option value="">Todas las modalidades</option>
+          <option value="Remoto">Remoto</option>
+          <option value="Híbrido">Híbrido</option>
+          <option value="Presencial">Presencial</option>
+        </select>
+
+        <button id="btnResetFilters" class="btn-secondary">Limpiar</button>
+      </div>
+
+      <!-- Grid de Tarjetas de Empleo (Renderizado vía JS) -->
+      <div class="jobs-grid" id="jobsContainer">
+        <!-- Contenido dinámico inyectado por script.js -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: POSTULACIÓN ONLINE -->
+    <section id="section-apply" class="app-section" style="display: none;">
+      <div class="section-header" style="text-align: center;">
+        <h2 class="section-title">Formulario de Postulación Online</h2>
+        <p class="section-desc">Completa tus datos profesionales y carga tu Currículum Vitae para participar en nuestros procesos de selección.</p>
+      </div>
+
+      <div class="form-card">
+        <form id="applyForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="candidateName">Nombre y Apellido <span>*</span></label>
+              <input type="text" id="candidateName" class="input-field" placeholder="Ej. Mariana López" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="candidateEmail">Correo Electrónico <span>*</span></label>
+              <input type="email" id="candidateEmail" class="input-field" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="candidatePhone">Teléfono / WhatsApp</label>
+              <input type="tel" id="candidatePhone" class="input-field" placeholder="+54 9 11 0000-0000">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="targetJobSelect">Puesto al que postula <span>*</span></label>
+              <select id="targetJobSelect" class="select-field" required>
+                <!-- Opciones dinámicas cargadas por JS -->
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" for="candidateExp">Resumen de Experiencia y Competencias</label>
+              <textarea id="candidateExp" class="input-field" rows="3" placeholder="Comenta brevemente tus principales fortalezas, seniority y herramientas dominadas..."></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">Adjuntar CV (PDF, DOCX) <span>*</span></label>
+              <div class="file-drop-area" id="fileDropArea">
+                <input type="file" id="cvFile" accept=".pdf,.doc,.docx" style="display: none;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
+                <div style="font-weight: 600; color: var(--primary);">Haz clic para seleccionar o arrastra tu archivo aquí</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Formatos soportados: PDF, Word (Máx 10MB)</div>
+                <div class="file-preview" id="filePreview"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+            <button type="button" class="btn-secondary" onclick="document.querySelector('[data-tab=\'jobs\']').click()">Volver a Búsquedas</button>
+            <button type="submit" class="btn-primary">Enviar Mi Postulación</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: PANEL DE CANDIDATOS (DASHBOARD RRHH) -->
+    <section id="section-candidates" class="app-section" style="display: none;">
+      <div class="section-header">
+        <h2 class="section-title">Panel de Control de Candidatos (RRHH)</h2>
+        <p class="section-desc">Módulo interno para consultores de RRHH: clasifica postulaciones, gestiona etapas de selección y descarga CVs.</p>
+      </div>
+
+      <!-- Métricas del Panel -->
+      <div class="candidate-stats">
+        <div class="stat-box">
+          <h4>Total Postulados</h4>
+          <div class="count" id="statTotal">0</div>
+        </div>
+        <div class="stat-box">
+          <h4>En Revisión</h4>
+          <div class="count" id="statRevision" style="color: #d97706;">0</div>
+        </div>
+        <div class="stat-box">
+          <h4>En Entrevista</h4>
+          <div class="count" id="statEntrevista" style="color: #2563eb;">0</div>
+        </div>
+        <div class="stat-box">
+          <h4>Contratados</h4>
+          <div class="count" id="statContratados" style="color: #059669;">0</div>
+        </div>
+      </div>
+
+      <!-- Filtro rápido de estado -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+        <h3 style="font-size: 1.1rem; font-weight: 700;">Listado de Postulantes</h3>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <label style="font-size: 0.85rem; font-weight: 600;" for="statusFilterCandidate">Filtrar por estado:</label>
+          <select id="statusFilterCandidate" class="select-field" style="width: auto; padding: 0.4rem 0.8rem;">
+            <option value="">Todos los estados</option>
+            <option value="En Revisión">En Revisión</option>
+            <option value="Entrevista">Entrevista</option>
+            <option value="Finalista">Finalista</option>
+            <option value="Contratado">Contratado</option>
+            <option value="Descartado">Descartado</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tabla de Candidatos -->
+      <div class="candidates-table-wrapper">
+        <table class="candidates-table">
+          <thead>
+            <tr>
+              <th>Candidato</th>
+              <th>Puesto Solicitado</th>
+              <th>Fecha</th>
+              <th>Modificar Estado</th>
+              <th>Estado Actual</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="candidatesTableBody">
+            <!-- Filas dinámicas administradas por script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Notificación Toast Flotante -->
+  <div id="toast" class="toast">Notificación del sistema</div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <strong>Talentum HR Solutions</strong> &copy; 2025. Todos los derechos reservados.
+      </div>
+      <div>
+        Portal de Empleo &bull; Postulaciones Online &bull; Sistema de Gestión de Talento
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enlace al archivo JavaScript independiente -->
+  <script src="../../js/servicios-profesionales/recursos-humanos.js"></script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MecaniQ - Gestión Integral para Talleres Mecánicos y Lubricentros</title>
+  <link rel="stylesheet" href="../../css/oficios-vehiculos/talleres-lubricentros.css">
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor header-nav">
+      <a href="#" class="logo">
+        <span class="logo-icono">⚙️</span>
+        <span class="logo-texto">Mecani<strong>Q</strong></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span class="menu-barra"></span>
+        <span class="menu-barra"></span>
+        <span class="menu-barra"></span>
+      </button>
+      <nav class="nav" id="mainNav">
+        <a href="#servicios" class="nav-enlace">Servicios</a>
+        <a href="#turnos" class="nav-enlace">Turnos Online</a>
+        <a href="#presupuestos" class="nav-enlace">Presupuestos</a>
+        <a href="#recordatorios" class="nav-enlace">Recordatorios</a>
+        <a href="#contacto" class="btn btn-primario nav-cta">Comenzar Ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="contenedor hero-grid">
+        <div class="hero-contenido">
+          <span class="etiqueta">Software Especializado</span>
+          <h1 class="hero-titulo">Digitalizá tu taller mecánico y lubricentro sin complicaciones</h1>
+          <p class="hero-descripcion">
+            Optimizá tu negocio automotriz: agendá turnos online 24/7, enviá presupuestos transparentes al instante y fidelizá a tus clientes con recordatorios automáticos de service.
+          </p>
+          <div class="hero-acciones">
+            <a href="#turnos" class="btn btn-primario">Agendar Demo en Vivo</a>
+            <a href="#servicios" class="btn btn-secundario">Conocer Módulos</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-numero">+45%</span>
+              <span class="stat-etiqueta">Retención de clientes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-numero">-60%</span>
+              <span class="stat-etiqueta">Tiempo en presupuestos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-numero">24/7</span>
+              <span class="stat-etiqueta">Recepción de turnos</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-tarjeta-destacada">
+          <div class="tarjeta-panel">
+            <div class="panel-cabecera">
+              <span class="punto-estado"></span>
+              <span>Panel de Control - Taller Central</span>
+            </div>
+            <div class="panel-item">
+              <div class="panel-info">
+                <strong>Próximo turno: Ford Focus</strong>
+                <span>Cambio de aceite y filtro - 10:30 hs</span>
+              </div>
+              <span class="badge badge-activo">Confirmado</span>
+            </div>
+            <div class="panel-item">
+              <div class="panel-info">
+                <strong>Presupuesto #1042</strong>
+                <span>Distribución + Bomba de agua</span>
+              </div>
+              <span class="badge badge-espera">Aprobado</span>
+            </div>
+            <div class="panel-item">
+              <div class="panel-info">
+                <strong>Recordatorio automático</strong>
+                <span>Service 10.000 km enviado por WhatsApp</span>
+              </div>
+              <span class="badge badge-notif">Enviado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+      <div class="contenedor">
+        <div class="seccion-cabecera">
+          <span class="etiqueta">Nuestras Soluciones</span>
+          <h2 class="seccion-titulo">Todo lo que tu taller necesita en una sola plataforma</h2>
+          <p class="seccion-subtitulo">Herramientas diseñadas exclusivamente para el ritmo y necesidades de talleres y lubricentros modernos.</p>
+        </div>
+
+        <div class="grilla-servicios">
+          <article class="card-servicio">
+            <div class="servicio-icono">📅</div>
+            <h3 class="servicio-titulo">Turnos Online</h3>
+            <p class="servicio-texto">
+              Tus clientes eligen fecha, horario y tipo de servicio desde su celular. Agenda sincronizada en tiempo real que evita esperas y solapamientos.
+            </p>
+            <ul class="servicio-lista">
+              <li>Página de reserva personalizada</li>
+              <li>Capacidad por elevador o bahía</li>
+              <li>Confirmación automática inmediata</li>
+            </ul>
+          </article>
+
+          <article class="card-servicio">
+            <div class="servicio-icono">📑</div>
+            <h3 class="servicio-titulo">Presupuestos Clairs</h3>
+            <p class="servicio-texto">
+              Generá cotizaciones detalladas de repuestos y mano de obra en segundos. Envialos por WhatsApp o email con aprobación digital en 1 clic.
+            </p>
+            <ul class="servicio-lista">
+              <li>Desglose de repuestos y mano de obra</li>
+              <li>Aprobación digital por el cliente</li>
+              <li>Historial de presupuestos por patente</li>
+            </ul>
+          </article>
+
+          <article class="card-servicio">
+            <div class="servicio-icono">🔔</div>
+            <h3 class="servicio-titulo">Recordatorios de Service</h3>
+            <p class="servicio-texto">
+              Fidelización automática basada en tiempo y kilometraje proyectado. Avisale a tus clientes cuándo les toca cambio de aceite, filtros o distribución.
+            </p>
+            <ul class="servicio-lista">
+              <li>Alertas por WhatsApp y SMS</li>
+              <li>Ficha técnica e historial del vehículo</li>
+              <li>Aumento de tasa de recurrencia</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="turnos" class="seccion-destacada">
+      <div class="contenedor grid-dos-columnas">
+        <div class="columna-info">
+          <span class="etiqueta">Módulo 1</span>
+          <h2 class="seccion-titulo">Turnos Online las 24 horas</h2>
+          <p class="seccion-texto">
+            Dejá de perder clientes por no atender el teléfono mientras estás bajo el capó. Tu taller recibe solicitudes incluso fuera de horario comercial.
+          </p>
+          <div class="pasos-lista">
+            <div class="paso-item">
+              <span class="paso-num">1</span>
+              <div>
+                <h4>El cliente selecciona servicio y fecha</h4>
+                <p>Elige mecánica general, service programado o diagnóstico express.</p>
+              </div>
+            </div>
+            <div class="paso-item">
+              <span class="paso-num">2</span>
+              <div>
+                <h4>Ingreso de patente y datos</h4>
+                <p>El sistema identifica el historial del auto si ya es cliente.</p>
+              </div>
+            </div>
+            <div class="paso-item">
+              <span class="paso-num">3</span>
+              <div>
+                <h4>Turno confirmado en tu calendario</h4>
+                <p>Notificación automática tanto para vos como para tu cliente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columna-interactiva">
+          <div class="tarjeta-formulario">
+            <h3 class="formulario-titulo">Simulador de Reserva de Turno</h3>
+            <form id="formTurno" class="formulario">
+              <div class="campo-grupo">
+                <label for="tipoServicio" class="campo-etiqueta">Tipo de Servicio</label>
+                <select id="tipoServicio" class="campo-select" required>
+                  <option value="">Seleccioná un servicio...</option>
+                  <option value="cambio_aceite">Cambio de Aceite y Filtros</option>
+                  <option value="frenos">Revisión y Cambio de Frenos</option>
+                  <option value="distribucion">Kit de Distribución</option>
+                  <option value="mecanica_general">Diagnóstico / Mecánica General</option>
+                </select>
+              </div>
+              <div class="campo-fila">
+                <div class="campo-grupo">
+                  <label for="patenteAuto" class="campo-etiqueta">Patente / Matrícula</label>
+                  <input type="text" id="patenteAuto" class="campo-input" placeholder="Ej: AB123CD" required>
+                </div>
+                <div class="campo-grupo">
+                  <label for="fechaTurno" class="campo-etiqueta">Fecha deseada</label>
+                  <input type="date" id="fechaTurno" class="campo-input" required>
+                </div>
+              </div>
+              <div class="campo-grupo">
+                <label for="horaTurno" class="campo-etiqueta">Horario disponible</label>
+                <select id="horaTurno" class="campo-select" required>
+                  <option value="08:30">08:30 hs</option>
+                  <option value="10:00">10:00 hs</option>
+                  <option value="11:30">11:30 hs</option>
+                  <option value="14:00">14:00 hs</option>
+                  <option value="16:00">16:00 hs</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primario btn-bloque">Confirmar Turno de Prueba</button>
+              <div id="resultadoTurno" class="resultado-mensaje"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="presupuestos" class="presupuestos">
+      <div class="contenedor grid-dos-columnas inverso">
+        <div class="columna-interactiva">
+          <div class="tarjeta-formulario">
+            <h3 class="formulario-titulo">Calculador Rápido de Presupuesto</h3>
+            <form id="formPresupuesto" class="formulario">
+              <div class="campo-grupo">
+                <label class="campo-etiqueta">Servicios requeridos:</label>
+                <div class="opciones-checkbox">
+                  <label class="checkbox-etiqueta">
+                    <input type="checkbox" class="check-item" value="18000" data-nombre="Aceite Sintético + Filtros">
+                    <span>Aceite Sintético + Filtros ($18.000)</span>
+                  </label>
+                  <label class="checkbox-etiqueta">
+                    <input type="checkbox" class="check-item" value="15000" data-nombre="Pastillas de Freno Delanteras">
+                    <span>Pastillas de Freno Delanteras ($15.000)</span>
+                  </label>
+                  <label class="checkbox-etiqueta">
+                    <input type="checkbox" class="check-item" value="32000" data-nombre="Kit Distribución + Bomba">
+                    <span>Kit Distribución + Bomba ($32.000)</span>
+                  </label>
+                  <label class="checkbox-etiqueta">
+                    <input type="checkbox" class="check-item" value="9500" data-nombre="Alineación y Balanceo">
+                    <span>Alineación y Balanceo ($9.500)</span>
+                  </label>
+                </div>
+              </div>
+              <div class="campo-grupo">
+                <label for="horasManoObra" class="campo-etiqueta">Mano de obra estimada (horas)</label>
+                <input type="number" id="horasManoObra" class="campo-input" min="1" max="20" value="2">
+              </div>
+              <div class="resumen-presupuesto">
+                <div class="resumen-fila">
+                  <span>Subtotal Repuestos:</span>
+                  <span id="subtotalRepuestos">$0</span>
+                </div>
+                <div class="resumen-fila">
+                  <span>Mano de Obra ($7.000/h):</span>
+                  <span id="subtotalManoObra">$14.000</span>
+                </div>
+                <div class="resumen-fila total">
+                  <span>Total Estimado:</span>
+                  <span id="totalPresupuesto">$14.000</span>
+                </div>
+              </div>
+              <button type="button" id="btnGenerarPresupuesto" class="btn btn-primario btn-bloque">Generar Vista Previa PDF</button>
+              <div id="mensajePresupuesto" class="resultado-mensaje"></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="columna-info">
+          <span class="etiqueta">Módulo 2</span>
+          <h2 class="seccion-titulo">Presupuestos de Reparaciones Profesionales</h2>
+          <p class="seccion-texto">
+            Acabá con los presupuestos anotados en un papel arrugado. Entregá cotizaciones digitales, detalladas y confiables que tus clientes aprueban desde su teléfono.
+          </p>
+          <div class="beneficios-lista">
+            <div class="beneficio-tarjeta">
+              <h4>Transparencia Total</h4>
+              <p>Diferenciá piezas originales, alternativas y costo de mano de obra para generar confianza inmediata.</p>
+            </div>
+            <div class="beneficio-tarjeta">
+              <h4>Aprobación por WhatsApp</h4>
+              <p>El cliente recibe un enlace con el presupuesto y pulsa "Aprobar", quedando registro con hora y fecha.</p>
+            </div>
+            <div class="beneficio-tarjeta">
+              <h4>Historial por Vehículo</h4>
+              <p>Accedé a presupuestos anteriores con solo ingresar la patente del auto o camioneta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recordatorios" class="recordatorios">
+      <div class="contenedor">
+        <div class="seccion-cabecera">
+          <span class="etiqueta">Módulo 3</span>
+          <h2 class="seccion-titulo">Recordatorios Automáticos de Service</h2>
+          <p class="seccion-subtitulo">Hacé que tus clientes vuelvan siempre a tu taller sin tener que llamarlos uno por uno.</p>
+        </div>
+
+        <div class="grilla-recordatorios">
+          <div class="card-recordatorio">
+            <div class="recordatorio-icono">🛢️</div>
+            <h3>Cambio de Aceite</h3>
+            <p>Calculado automáticamente a los 10.000 km o 12 meses desde la última visita en tu lubricentro.</p>
+            <span class="etiqueta-alerta">Aviso: 15 días antes</span>
+          </div>
+
+          <div class="card-recordatorio">
+            <div class="recordatorio-icono">⚙️</div>
+            <h3>Correa de Distribución</h3>
+            <p>Alerta programada a los 50.000 o 60.000 km para prevenir averías críticas del motor.</p>
+            <span class="etiqueta-alerta">Aviso: 30 días antes</span>
+          </div>
+
+          <div class="card-recordatorio">
+            <div class="recordatorio-icono">🛑</div>
+            <h3>Líquido y Pastillas</h3>
+            <p>Recordatorio preventivo periódico para revisión de frenos y seguridad vial del conductor.</p>
+            <span class="etiqueta-alerta">Aviso: Semestral</span>
+          </div>
+        </div>
+
+        <div class="banner-whatsapp">
+          <div class="banner-contenido">
+            <h3>Envío 100% automático por WhatsApp y SMS</h3>
+            <p>"Hola Juan, según nuestros registros tu Chevrolet Cruze está próximo a cumplir los 10.000 km de su último cambio de aceite. ¡Hacé clic acá para asegurar tu turno esta semana!"</p>
+          </div>
+          <a href="#contacto" class="btn btn-primario">Activar Recordatorios</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <div class="contenedor">
+        <div class="tarjeta-contacto">
+          <div class="seccion-cabecera">
+            <span class="etiqueta">Empezá Hoy</span>
+            <h2 class="seccion-titulo">Llevá tu taller o lubricentro al siguiente nivel</h2>
+            <p class="seccion-subtitulo">Probá MecaniQ gratis por 14 días. Sin tarjeta de crédito ni instalaciones complicadas.</p>
+          </div>
+
+          <form id="formContacto" class="formulario form-contacto">
+            <div class="campo-fila">
+              <div class="campo-grupo">
+                <label for="nombreContacto" class="campo-etiqueta">Nombre y Apellido</label>
+                <input type="text" id="nombreContacto" class="campo-input" placeholder="Tu nombre" required>
+              </div>
+              <div class="campo-grupo">
+                <label for="nombreTaller" class="campo-etiqueta">Nombre del Taller / Lubricentro</label>
+                <input type="text" id="nombreTaller" class="campo-input" placeholder="Ej: Taller San Martín" required>
+              </div>
+            </div>
+
+            <div class="campo-fila">
+              <div class="campo-grupo">
+                <label for="telefonoContacto" class="campo-etiqueta">WhatsApp / Celular</label>
+                <input type="tel" id="telefonoContacto" class="campo-input" placeholder="+54 9 11 2345-6789" required>
+              </div>
+              <div class="campo-grupo">
+                <label for="tipoNegocio" class="campo-etiqueta">Tipo de Negocio</label>
+                <select id="tipoNegocio" class="campo-select" required>
+                  <option value="taller_mecanico">Taller Mecánico</option>
+                  <option value="lubricentro">Lubricentro</option>
+                  <option value="ambos">Taller + Lubricentro</option>
+                  <option value="chapa_pintura">Chapa y Pintura / Especializado</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primario btn-bloque">Solicitar Demostración Gratuita</button>
+            <div id="resultadoContacto" class="resultado-mensaje"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer-contenido">
+      <div class="footer-marca">
+        <a href="#" class="logo">
+          <span class="logo-icono">⚙️</span>
+          <span class="logo-texto">Mecani<strong>Q</strong></span>
+        </a>
+        <p class="footer-descripcion">
+          Sistema integral de gestión de turnos online, presupuestos de reparaciones y recordatorios automáticos de service para talleres mecánicos y lubricentros.
+        </p>
+      </div>
+
+      <div class="footer-enlaces">
+        <h4 class="footer-titulo">Módulos</h4>
+        <ul>
+          <li><a href="#turnos">Turnos Online</a></li>
+          <li><a href="#presupuestos">Presupuestos</a></li>
+          <li><a href="#recordatorios">Recordatorios</a></li>
+          <li><a href="#servicios">Gestión de Clientes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-enlaces">
+        <h4 class="footer-titulo">Contacto</h4>
+        <ul>
+          <li>soporte@mecaniq.com</li>
+          <li>Lunes a Viernes 08:00 - 18:00 hs</li>
+          <li>Buenos Aires, Argentina</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-inferior">
+      <div class="contenedor footer-copy">
+        <p>&copy; 2025 MecaniQ. Todos los derechos reservados.</p>
+        <p>Potenciando talleres mecánicos y lubricentros independientes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/oficios-vehiculos/talleres-lubricentros.js" defer></script>
+</body>
+</html>

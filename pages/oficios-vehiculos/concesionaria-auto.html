@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Motors | Concesionaria Premium</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<!-- Estilos propios -->
+<link href="../../css/oficios-vehiculos/concesionaria-auto.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Header / Navbar Fijo -->
+<header class="header-fijo" id="mainHeader">
+<nav class="navbar navbar-expand-lg navbar-dark nav-principal">
+<div class="container">
+<a class="navbar-brand marca-logo" href="#inicio">
+<span class="logo-icono"><i class="bi bi-shield-shaded"></i></span>
+<span class="logo-texto">AURA<strong>MOTORS</strong></span>
+</a>
+<button aria-controls="navContenido" aria-expanded="false" aria-label="Abrir menú" class="navbar-toggler boton-menu" data-bs-target="#navContenido" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list"></i>
+</button>
+<div class="collapse navbar-collapse" id="navContenido">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-lista">
+<li class="nav-item"><a class="nav-link nav-enlace active" href="#inicio">Inicio</a></li>
+<li class="nav-item"><a class="nav-link nav-enlace" href="#stock">Stock</a></li>
+<li class="nav-item"><a class="nav-link nav-enlace" href="#tasacion">Tasación Online</a></li>
+<li class="nav-item"><a class="nav-link nav-enlace" href="#servicios">Servicios</a></li>
+<li class="nav-item"><a class="nav-link nav-enlace" href="#calculadora">Cotizador</a></li>
+<li class="nav-item"><a class="nav-link nav-enlace" href="#faq">Preguntas</a></li>
+<li class="nav-item"><a class="nav-link nav-enlace" href="#contacto">Contacto</a></li>
+</ul>
+<a class="btn btn-primario ms-lg-3 boton-header d-none d-lg-inline-flex" href="#tasacion">
+<span>Tasar mi auto</span>
+<i class="bi bi-arrow-right-short"></i>
+</a>
+</div>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="hero-seccion" id="inicio">
+<div class="hero-overlay"></div>
+<div class="container hero-contenedor">
+<div class="row align-items-center">
+<div class="col-lg-9 col-xl-8">
+<div class="hero-badge elemento-animado">
+<i class="bi bi-stars"></i>
+<span>Líderes en vehículos seleccionados &amp; 0km</span>
+</div>
+<h1 class="hero-titulo elemento-animado">
+            Experiencia premium en tu próximo vehículo
+          </h1>
+<p class="hero-descripcion elemento-animado">
+            Accedé a la colección más exclusiva de vehículos certificados con garantía oficial, financiación a tasa preferencial y tasación inmediata 100% online.
+          </p>
+<div class="hero-acciones elemento-animado">
+<a class="btn btn-primario boton-hero" href="#stock">
+<span>Explorar Stock</span>
+<i class="bi bi-car-front-fill"></i>
+</a>
+<a class="btn btn-secundario boton-hero" href="#tasacion">
+<span>Tasar mi Usado</span>
+<i class="bi bi-calculator-fill"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Métricas / Contadores -->
+<div class="hero-estadisticas elemento-animado">
+<div class="row g-4">
+<div class="col-6 col-md-3">
+<div class="caja-contador">
+<span class="numero-contador" data-contador="1450">0</span><span class="simbolo-contador">+</span>
+<p class="etiqueta-contador">Autos entregados</p>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="caja-contador">
+<span class="numero-contador" data-contador="18">0</span>
+<p class="etiqueta-contador">Años de trayectoria</p>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="caja-contador">
+<span class="numero-contador" data-contador="99">0</span><span class="simbolo-contador">%</span>
+<p class="etiqueta-contador">Clientes conformes</p>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="caja-contador">
+<span class="numero-contador" data-contador="240">0</span><span class="simbolo-contador">+</span>
+<p class="etiqueta-contador">Unidades en stock</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<main>
+<!-- Stock Filtrable -->
+<section class="seccion-stock" id="stock">
+<div class="container">
+<div class="encabezado-seccion text-center elemento-animado">
+<span class="subtitulo-seccion">Catálogo Seleccionado</span>
+<h2 class="titulo-seccion">Encontrá el auto a tu medida</h2>
+<p class="bajada-seccion">
+            Filtra por categoría, marca o rango de precio y descubrí la ficha técnica completa con inspección de 150 puntos.
+          </p>
+</div>
+<!-- Filtros de Stock -->
+<div class="barra-filtros elemento-animado">
+<div class="row g-3 align-items-center">
+<div class="col-12 col-md-4">
+<div class="input-grupo-icono">
+<i class="bi bi-search icono-campo"></i>
+<input class="form-control campo-filtro" id="filtroBusqueda" placeholder="Buscar por modelo o versión..." type="text"/>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<select class="form-select campo-filtro" id="filtroCategoria">
+<option value="todos">Todas las categorías</option>
+<option value="suv">SUV &amp; Crossover</option>
+<option value="sedan">Sedán Premium</option>
+<option value="hatchback">Hatchback Deportivo</option>
+<option value="pickup">Pick-Up / 4x4</option>
+</select>
+</div>
+<div class="col-6 col-md-3">
+<select class="form-select campo-filtro" id="filtroPrecio">
+<option value="todos">Cualquier precio</option>
+<option value="hasta-30k">Hasta USD 30,000</option>
+<option value="30k-55k">USD 30,000 - USD 55,000</option>
+<option value="mas-55k">Más de USD 55,000</option>
+</select>
+</div>
+<div class="col-12 col-md-2 text-md-end">
+<button class="btn btn-outline-secundario w-100" id="btnLimpiarFiltros">
+<i class="bi bi-arrow-counterclockwise"></i>
+<span>Restablecer</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Grilla de Vehículos -->
+<div class="row g-4 grilla-stock" id="contenedorAutos">
+<!-- Auto 1 -->
+<div class="col-12 col-md-6 col-lg-4 item-auto" data-categoria="suv" data-precio="48500" data-texto="audi q3 sportback tfsi s line quattro 2023">
+<div class="tarjeta-vehiculo">
+<div class="tarjeta-imagen-contenedor">
+<span class="badge-etiqueta-auto badge-destacado">Destacado</span>
+<img alt="Audi Q3 Sportback" class="tarjeta-imagen" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="tarjeta-precio">USD 48,500</span>
+</div>
+<div class="tarjeta-cuerpo">
+<span class="tarjeta-segmento">SUV Premium</span>
+<h3 class="tarjeta-titulo">Audi Q3 Sportback S Line</h3>
+<p class="tarjeta-subtitulo">2.0 TFSI Quattro 230 CV S-Tronic</p>
+<div class="tarjeta-specs">
+<span><i class="bi bi-calendar3"></i> 2023</span>
+<span><i class="bi bi-speedometer2"></i> 14,200 km</span>
+<span><i class="bi bi-fuel-pump"></i> Nafta</span>
+</div>
+<div class="tarjeta-pie">
+<button class="btn btn-primario w-100 btn-ver-ficha" data-auto="audi-q3">
+<i class="bi bi-eye"></i>
+<span>Ver Ficha Detallada</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Auto 2 -->
+<div class="col-12 col-md-6 col-lg-4 item-auto" data-categoria="sedan" data-precio="58900" data-texto="bmw serie 3 330i m sport 2024">
+<div class="tarjeta-vehiculo">
+<div class="tarjeta-imagen-contenedor">
+<span class="badge-etiqueta-auto badge-nuevo">Nuevo Ingreso</span>
+<img alt="BMW 330i M Sport" class="tarjeta-imagen" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="tarjeta-precio">USD 58,900</span>
+</div>
+<div class="tarjeta-cuerpo">
+<span class="tarjeta-segmento">Sedán Ejecutivo</span>
+<h3 class="tarjeta-titulo">BMW Serie 3 330i M Sport</h3>
+<p class="tarjeta-subtitulo">TwinPower Turbo 258 CV Step-Tronic 8v</p>
+<div class="tarjeta-specs">
+<span><i class="bi bi-calendar3"></i> 2024</span>
+<span><i class="bi bi-speedometer2"></i> 6,800 km</span>
+<span><i class="bi bi-fuel-pump"></i> Híbrido MHEV</span>
+</div>
+<div class="tarjeta-pie">
+<button class="btn btn-primario w-100 btn-ver-ficha" data-auto="bmw-330i">
+<i class="bi bi-eye"></i>
+<span>Ver Ficha Detallada</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Auto 3 -->
+<div class="col-12 col-md-6 col-lg-4 item-auto" data-categoria="pickup" data-precio="52000" data-texto="ford ranger limited v6 4wd 2023">
+<div class="tarjeta-vehiculo">
+<div class="tarjeta-imagen-contenedor">
+<span class="badge-etiqueta-auto badge-garantia">Garantía 5 años</span>
+<img alt="Ford Ranger Limited" class="tarjeta-imagen" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="tarjeta-precio">USD 52,000</span>
+</div>
+<div class="tarjeta-cuerpo">
+<span class="tarjeta-segmento">Pick-Up 4x4</span>
+<h3 class="tarjeta-titulo">Ford Ranger V6 Limited+</h3>
+<p class="tarjeta-subtitulo">3.0 V6 Turbodiesel 250 CV 4WD AT10</p>
+<div class="tarjeta-specs">
+<span><i class="bi bi-calendar3"></i> 2023</span>
+<span><i class="bi bi-speedometer2"></i> 21,500 km</span>
+<span><i class="bi bi-fuel-pump"></i> Diésel</span>
+</div>
+<div class="tarjeta-pie">
+<button class="btn btn-primario w-100 btn-ver-ficha" data-auto="ford-ranger">
+<i class="bi bi-eye"></i>
+<span>Ver Ficha Detallada</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Auto 4 -->
+<div class="col-12 col-md-6 col-lg-4 item-auto" data-categoria="suv" data-precio="28500" data-texto="volkswagen taos highline 250 tsi 2022">
+<div class="tarjeta-vehiculo">
+<div class="tarjeta-imagen-contenedor">
+<span class="badge-etiqueta-auto badge-certificado">150 Puntos OK</span>
+<img alt="Volkswagen Taos" class="tarjeta-imagen" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="tarjeta-precio">USD 28,500</span>
+</div>
+<div class="tarjeta-cuerpo">
+<span class="tarjeta-segmento">SUV Familiar</span>
+<h3 class="tarjeta-titulo">Volkswagen Taos Highline</h3>
+<p class="tarjeta-subtitulo">1.4 TSI 150 CV Tiptronic Techo Solar</p>
+<div class="tarjeta-specs">
+<span><i class="bi bi-calendar3"></i> 2022</span>
+<span><i class="bi bi-speedometer2"></i> 29,400 km</span>
+<span><i class="bi bi-fuel-pump"></i> Nafta</span>
+</div>
+<div class="tarjeta-pie">
+<button class="btn btn-primario w-100 btn-ver-ficha" data-auto="vw-taos">
+<i class="bi bi-eye"></i>
+<span>Ver Ficha Detallada</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Auto 5 -->
+<div class="col-12 col-md-6 col-lg-4 item-auto" data-categoria="hatchback" data-precio="27900" data-texto="toyota yaris gr s sport cvt 2023">
+<div class="tarjeta-vehiculo">
+<div class="tarjeta-imagen-contenedor">
+<span class="badge-etiqueta-auto badge-nuevo">Única Mano</span>
+<img alt="Toyota Yaris GR" class="tarjeta-imagen" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="tarjeta-precio">USD 27,900</span>
+</div>
+<div class="tarjeta-cuerpo">
+<span class="tarjeta-segmento">Hatchback Deportivo</span>
+<h3 class="tarjeta-titulo">Toyota Yaris GR-Sport</h3>
+<p class="tarjeta-subtitulo">1.5 Dual VVT-i 107 CV Paddle Shift</p>
+<div class="tarjeta-specs">
+<span><i class="bi bi-calendar3"></i> 2023</span>
+<span><i class="bi bi-speedometer2"></i> 11,800 km</span>
+<span><i class="bi bi-fuel-pump"></i> Nafta</span>
+</div>
+<div class="tarjeta-pie">
+<button class="btn btn-primario w-100 btn-ver-ficha" data-auto="toyota-yaris">
+<i class="bi bi-eye"></i>
+<span>Ver Ficha Detallada</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Auto 6 -->
+<div class="col-12 col-md-6 col-lg-4 item-auto" data-categoria="sedan" data-precio="64000" data-texto="mercedes benz c200 amg line 2023 eq boost">
+<div class="tarjeta-vehiculo">
+<div class="tarjeta-imagen-contenedor">
+<span class="badge-etiqueta-auto badge-destacado">Top Choice</span>
+<img alt="Mercedes-Benz C200" class="tarjeta-imagen" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<span class="tarjeta-precio">USD 64,000</span>
+</div>
+<div class="tarjeta-cuerpo">
+<span class="tarjeta-segmento">Sedán Luxury</span>
+<h3 class="tarjeta-titulo">Mercedes-Benz C200 AMG</h3>
+<p class="tarjeta-subtitulo">EQ Boost 204 CV 9G-Tronic MBUX</p>
+<div class="tarjeta-specs">
+<span><i class="bi bi-calendar3"></i> 2023</span>
+<span><i class="bi bi-speedometer2"></i> 8,400 km</span>
+<span><i class="bi bi-fuel-pump"></i> Mild Hybrid</span>
+</div>
+<div class="tarjeta-pie">
+<button class="btn btn-primario w-100 btn-ver-ficha" data-auto="mercedes-c200">
+<i class="bi bi-eye"></i>
+<span>Ver Ficha Detallada</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mensaje de sin resultados -->
+<div class="alerta-sin-resultados d-none text-center" id="sinResultados">
+<i class="bi bi-emoji-neutral"></i>
+<h4>No encontramos vehículos con esos criterios</h4>
+<p>Probá modificando los filtros de búsqueda o restablecé los valores para ver todo el stock disponible.</p>
+</div>
+</div>
+</section>
+<!-- Tasación Online -->
+<section class="seccion-tasacion" id="tasacion">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-5 elemento-animado">
+<span class="subtitulo-seccion">Tasación Digital Inmediata</span>
+<h2 class="titulo-seccion">Vendé o entregá tu auto al mejor valor real</h2>
+<p class="bajada-seccion">
+              Algoritmo de cotización con base de precios del mercado actualizada a diario. Obtené una oferta preliminar en 2 minutos sin salir de tu casa.
+            </p>
+<div class="lista-beneficios">
+<div class="beneficio-item">
+<div class="beneficio-icono"><i class="bi bi-shield-check"></i></div>
+<div>
+<h5>Cotización segura y transparente</h5>
+<p>Basada en transacciones reales de plaza y estado mecánico comprobable.</p>
+</div>
+</div>
+<div class="beneficio-item">
+<div class="beneficio-icono"><i class="bi bi-cash-stack"></i></div>
+<div>
+<h5>Pago en 24 horas hábiles</h5>
+<p>Transferencia bancaria directa con gestión total de trámites notariales.</p>
+</div>
+</div>
+<div class="beneficio-item">
+<div class="beneficio-icono"><i class="bi bi-arrow-repeat"></i></div>
+<div>
+<h5>Llave por llave</h5>
+<p>Dejás tu unidad usada y retirás tu nuevo vehículo en el mismo acto.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-7 elemento-animado">
+<div class="tarjeta-formulario-tasacion">
+<div class="formulario-encabezado">
+<i class="bi bi-car-front"></i>
+<div>
+<h4>Tasador Online Express</h4>
+<p>Completá los datos técnicos de tu unidad para calcular la cotización.</p>
+</div>
+</div>
+<form id="formTasacion" novalidate="">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="tasacionMarca">Marca *</label>
+<select class="form-select campo-estilizado" id="tasacionMarca" required="">
+<option disabled="" selected="" value="">Seleccioná marca</option>
+<option value="Audi">Audi</option>
+<option value="BMW">BMW</option>
+<option value="Ford">Ford</option>
+<option value="Mercedes-Benz">Mercedes-Benz</option>
+<option value="Toyota">Toyota</option>
+<option value="Volkswagen">Volkswagen</option>
+<option value="Otra">Otra marca</option>
+</select>
+<div class="invalid-feedback">Por favor elegí la marca.</div>
+</div>
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="tasacionModelo">Modelo y versión *</label>
+<input class="form-control campo-estilizado" id="tasacionModelo" placeholder="Ej: Corolla 2.0 SEG" required="" type="text"/>
+<div class="invalid-feedback">Ingresá el modelo y versión.</div>
+</div>
+<div class="col-md-4">
+<label class="form-label etiqueta-campo" for="tasacionAnio">Año *</label>
+<select class="form-select campo-estilizado" id="tasacionAnio" required="">
+<option disabled="" selected="" value="">Año</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+<option value="2017">2017 o anterior</option>
+</select>
+<div class="invalid-feedback">Seleccioná el año.</div>
+</div>
+<div class="col-md-4">
+<label class="form-label etiqueta-campo" for="tasacionKilometros">Kilometraje *</label>
+<input class="form-control campo-estilizado" id="tasacionKilometros" min="0" placeholder="Ej: 35000" required="" type="number"/>
+<div class="invalid-feedback">Ingresá un kilometraje válido.</div>
+</div>
+<div class="col-md-4">
+<label class="form-label etiqueta-campo" for="tasacionEstado">Estado general *</label>
+<select class="form-select campo-estilizado" id="tasacionEstado" required="">
+<option disabled="" selected="" value="">Condición</option>
+<option value="excelente">Excelente (sin detalles)</option>
+<option value="muy-bueno">Muy bueno (mantenimiento al día)</option>
+<option value="bueno">Bueno (detalles menores de uso)</option>
+</select>
+<div class="invalid-feedback">Elegí la condición general.</div>
+</div>
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="tasacionNombre">Tu nombre completo *</label>
+<input class="form-control campo-estilizado" id="tasacionNombre" placeholder="Juan Pérez" required="" type="text"/>
+<div class="invalid-feedback">Ingresá tu nombre.</div>
+</div>
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="tasacionTelefono">Teléfono / WhatsApp *</label>
+<input class="form-control campo-estilizado" id="tasacionTelefono" placeholder="+54 11 4000-0000" required="" type="tel"/>
+<div class="invalid-feedback">Ingresá un teléfono de contacto.</div>
+</div>
+</div>
+<!-- Resultado de Tasación Dinámico -->
+<div class="resultado-tasacion d-none" id="cajaResultadoTasacion">
+<div class="d-flex justify-content-between align-items-center mb-2">
+<span class="resultado-etiqueta">Rango Estimado de Compra</span>
+<span class="badge bg-success">Validez 7 días</span>
+</div>
+<h3 class="resultado-monto" id="resultadoValorEstimado">USD 00,000 - USD 00,000</h3>
+<p class="resultado-texto">
+                    Estimación sujeta a inspección presencial en taller oficial Aura Motors. Te contactaremos vía WhatsApp para coordinar la verificación.
+                  </p>
+</div>
+<div class="mt-4">
+<button class="btn btn-primario w-100 btn-enviar" type="submit">
+<i class="bi bi-speedometer"></i>
+<span>Calcular Tasación Inmediata</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Servicios y Beneficios -->
+<section class="seccion-servicios" id="servicios">
+<div class="container">
+<div class="encabezado-seccion text-center elemento-animado">
+<span class="subtitulo-seccion">Servicios Integrales</span>
+<h2 class="titulo-seccion">Por qué elegir Aura Motors</h2>
+<p class="bajada-seccion">Un estándar superior de atención pensado para cuidar tu inversión y brindarte tranquilidad absoluta.</p>
+</div>
+<div class="row g-4">
+<div class="col-12 col-md-6 col-lg-3 elemento-animado">
+<div class="tarjeta-servicio">
+<div class="icono-servicio"><i class="bi bi-tools"></i></div>
+<h4>Taller &amp; Postventa</h4>
+<p>Mecánica especializada, escaneo computarizado oficial y repuestos legítimos con garantía.</p>
+<a class="enlace-servicio" href="#calculadora">Calcular service <i class="bi bi-chevron-right"></i></a>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-3 elemento-animado">
+<div class="tarjeta-servicio">
+<div class="icono-servicio"><i class="bi bi-bank"></i></div>
+<h4>Financiación a Medida</h4>
+<p>Líneas prendarias con tasa fija o UVA, aprobación crediticia en el acto hasta el 70% del valor.</p>
+<a class="enlace-servicio" href="#contacto">Consultar planes <i class="bi bi-chevron-right"></i></a>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-3 elemento-animado">
+<div class="tarjeta-servicio">
+<div class="icono-servicio"><i class="bi bi-file-earmark-check"></i></div>
+<h4>Gestoría Notarial</h4>
+<p>Transferencias, patentamientos de 0km, informes de dominio y libre deuda sin trámites engorrosos.</p>
+<a class="enlace-servicio" href="#faq">Conocer requisitos <i class="bi bi-chevron-right"></i></a>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-3 elemento-animado">
+<div class="tarjeta-servicio">
+<div class="icono-servicio"><i class="bi bi-shield-lock"></i></div>
+<h4>Garantía Extendida</h4>
+<p>Cobertura mecánica completa de hasta 12 meses o 20.000 km en todos los usados seleccionados.</p>
+<a class="enlace-servicio" href="#stock">Ver catálogo <i class="bi bi-chevron-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cotizador / Calculadora de Mantenimiento y Turno Online -->
+<section class="seccion-calculadora" id="calculadora">
+<div class="container">
+<div class="row g-5 align-items-center">
+<!-- Columna Calculadora de Presupuesto -->
+<div class="col-lg-6 elemento-animado">
+<div class="tarjeta-panel-servicio">
+<div class="panel-cabecera">
+<i class="bi bi-calculator"></i>
+<div>
+<h3 class="panel-titulo">Calculadora de Presupuesto Postventa</h3>
+<p class="panel-subtitulo">Estimá el costo aproximado de mantenimiento para tu vehículo.</p>
+</div>
+</div>
+<div class="formulario-calculadora">
+<div class="mb-3">
+<label class="form-label etiqueta-campo" for="calcSegmento">Gama del vehículo</label>
+<select class="form-select campo-estilizado" id="calcSegmento">
+<option value="compacto">Hatchback / Sedán Compacto</option>
+<option selected="" value="suv">SUV Mediana / Familiar</option>
+<option value="alta-gama">Vehículo Alta Gama / Sedán Luxury</option>
+<option value="pickup">Pick-Up / 4x4 Pesada</option>
+</select>
+</div>
+<div class="mb-3">
+<label class="form-label etiqueta-campo" for="calcServicio">Tipo de Servicio Requerido</label>
+<select class="form-select campo-estilizado" id="calcServicio">
+<option value="service-10k">Service Oficial (10.000 / 20.000 km)</option>
+<option value="service-50k">Service Integral Mayor (50.000 km)</option>
+<option value="frenos">Pastillas y Discos de Freno</option>
+<option value="alineacion">Alineación, Balanceo y Rotación</option>
+<option value="diagnostico">Escaneo Computarizado y Diagnóstico</option>
+</select>
+</div>
+<div class="mb-4">
+<label class="form-label etiqueta-campo">Adicionales sugeridos</label>
+<div class="form-check check-estilizado mb-2">
+<input class="form-check-input check-adicional" id="checkLavado" type="checkbox" value="25"/>
+<label class="form-check-label" for="checkLavado">
+                      Lavado de motor y chasis al detalle (+USD 25)
+                    </label>
+</div>
+<div class="form-check check-estilizado">
+<input class="form-check-input check-adicional" id="checkAlineacion" type="checkbox" value="45"/>
+<label class="form-check-label" for="checkAlineacion">
+                      Desinfección de cabina con ozono (+USD 45)
+                    </label>
+</div>
+</div>
+<div class="panel-presupuesto-total">
+<div class="d-flex justify-content-between align-items-center">
+<div>
+<span class="texto-estimado">Presupuesto Estimado</span>
+<div class="valor-estimado" id="calcTotal">$180 USD</div>
+</div>
+<a class="btn btn-primario btn-sm" data-bs-target="#modalTurno" data-bs-toggle="modal" href="#turno-modal">
+<i class="bi bi-calendar2-check"></i>
+<span>Agendar Turno</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Columna Formulario Recordatorio de Service -->
+<div class="col-lg-6 elemento-animado">
+<div class="tarjeta-panel-servicio">
+<div class="panel-cabecera">
+<i class="bi bi-bell-fill"></i>
+<div>
+<h3 class="panel-titulo">Recordatorio de Mantenimiento</h3>
+<p class="panel-subtitulo">Te avisamos antes de que venza tu próximo service para conservar tu garantía.</p>
+</div>
+</div>
+<form id="formRecordatorio" novalidate="">
+<div class="mb-3">
+<label class="form-label etiqueta-campo" for="recNombre">Nombre y Apellido *</label>
+<input class="form-control campo-estilizado" id="recNombre" placeholder="Ej: Marcela Gómez" required="" type="text"/>
+<div class="invalid-feedback">Por favor completá tu nombre.</div>
+</div>
+<div class="row g-3 mb-3">
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="recEmail">Correo electrónico *</label>
+<input class="form-control campo-estilizado" id="recEmail" placeholder="marcela@correo.com" required="" type="email"/>
+<div class="invalid-feedback">Ingresá un correo electrónico válido.</div>
+</div>
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="recTelefono">WhatsApp *</label>
+<input class="form-control campo-estilizado" id="recTelefono" placeholder="+54 9 11..." required="" type="tel"/>
+<div class="invalid-feedback">Ingresá tu número celular.</div>
+</div>
+</div>
+<div class="row g-3 mb-4">
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="recPatente">Patente / Dominio *</label>
+<input class="form-control campo-estilizado text-uppercase" id="recPatente" placeholder="AE 123 CD" required="" type="text"/>
+<div class="invalid-feedback">Indicá la patente de tu auto.</div>
+</div>
+<div class="col-md-6">
+<label class="form-label etiqueta-campo" for="recFechaEstimada">Mes del próximo service *</label>
+<input class="form-control campo-estilizado" id="recFechaEstimada" required="" type="month"/>
+<div class="invalid-feedback">Seleccioná un mes válido.</div>
+</div>
+</div>
+<button class="btn btn-secundario w-100" type="submit">
+<i class="bi bi-envelope-check"></i>
+<span>Activar Alerta de Service</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Preguntas Frecuentes (Acordeón Bootstrap) -->
+<section class="seccion-faq" id="faq">
+<div class="container">
+<div class="encabezado-seccion text-center elemento-animado">
+<span class="subtitulo-seccion">Resolvé tus inquietudes</span>
+<h2 class="titulo-seccion">Preguntas Frecuentes</h2>
+<p class="bajada-seccion">Todo lo que necesitás saber sobre la compra, venta y postventa en Aura Motors.</p>
+</div>
+<div class="row justify-content-center">
+<div class="col-lg-8 elemento-animado">
+<div class="accordion acordeon-aura" id="acordeonFaq">
+<div class="accordion-item item-faq">
+<h3 class="accordion-header" id="headingUno">
+<button aria-controls="faqUno" aria-expanded="true" class="accordion-button boton-faq" data-bs-target="#faqUno" data-bs-toggle="collapse" type="button">
+                    ¿Qué requisitos necesito para comprar un auto financiado?
+                  </button>
+</h3>
+<div aria-labelledby="headingUno" class="accordion-collapse collapse show" data-bs-parent="#acordeonFaq" id="faqUno">
+<div class="accordion-body cuerpo-faq">
+                    Sólo se requiere DNI vigente, constancia de ingresos (últimos 3 recibos de sueldo o constancia de monotributo/autónomos) y un servicio o impuesto a tu nombre para acreditar domicilio. La pre-aprobación crediticia se gestiona en 30 minutos.
+                  </div>
+</div>
+</div>
+<div class="accordion-item item-faq">
+<h3 class="accordion-header" id="headingDos">
+<button aria-controls="faqDos" aria-expanded="false" class="accordion-button boton-faq collapsed" data-bs-target="#faqDos" data-bs-toggle="collapse" type="button">
+                    ¿Cómo funciona el sistema de toma de usados "Llave por Llave"?
+                  </button>
+</h3>
+<div aria-labelledby="headingDos" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq" id="faqDos">
+<div class="accordion-body cuerpo-faq">
+                    Realizamos la cotización física en nuestro taller y fijamos el valor final. El día que tu nuevo vehículo está listo para retirar con su trámite finalizado, venís en tu auto actual, firmás la documentación y salís manejando tu nueva unidad sin quedarte a pie ni un solo día.
+                  </div>
+</div>
+</div>
+<div class="accordion-item item-faq">
+<h3 class="accordion-header" id="headingTres">
+<button aria-controls="faqTres" aria-expanded="false" class="accordion-button boton-faq collapsed" data-bs-target="#faqTres" data-bs-toggle="collapse" type="button">
+                    ¿Qué incluye la inspección de 150 puntos en los usados seleccionados?
+                  </button>
+</h3>
+<div aria-labelledby="headingTres" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq" id="faqTres">
+<div class="accordion-body cuerpo-faq">
+                    Verificamos estructura de chasis, espesor de pintura original para descartar siniestros graves, estado de tren delantero, amortiguación, frenos, escaneo electrónico integral sin fallas activas y comprobación legal de kilometraje en base al historial de servicios.
+                  </div>
+</div>
+</div>
+<div class="accordion-item item-faq">
+<h3 class="accordion-header" id="headingCuatro">
+<button aria-controls="faqCuatro" aria-expanded="false" class="accordion-button boton-faq collapsed" data-bs-target="#faqCuatro" data-bs-toggle="collapse" type="button">
+                    ¿Aceptan pagos en moneda extranjera o transferencias cripto?
+                  </button>
+</h3>
+<div aria-labelledby="headingCuatro" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq" id="faqCuatro">
+<div class="accordion-body cuerpo-faq">
+                    Sí, recibimos dólares estadounidenses en billete físico o transferencia bancaria en moneda extranjera, pesos argentinos a tipo de cambio vendedor del día y pagos vía stablecoins (USDT/USDC) a través de canales institucionales regulados.
+                  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contacto y Ubicación -->
+<section class="seccion-contacto" id="contacto">
+<div class="container">
+<div class="tarjeta-contacto-principal elemento-animado">
+<div class="row g-4 align-items-center">
+<div class="col-lg-6">
+<span class="subtitulo-seccion">Vení a Conocernos</span>
+<h2 class="titulo-contacto">Casa Central &amp; Salón de Ventas</h2>
+<p class="bajada-contacto">
+                Descubrí nuestros salones de exposición con más de 2.000 m² climatizados y pista de test drive disponible para todos los modelos del catálogo.
+              </p>
+<div class="info-contacto-lista">
+<div class="item-info">
+<i class="bi bi-geo-alt-fill"></i>
+<div>
+<strong>Dirección</strong>
+<p>Av. del Libertador 4850, Nuñez, Buenos Aires</p>
+</div>
+</div>
+<div class="item-info">
+<i class="bi bi-clock-fill"></i>
+<div>
+<strong>Horarios de Atención</strong>
+<p>Lunes a Viernes de 9:00 a 19:30 | Sábados de 10:00 a 16:00</p>
+</div>
+</div>
+<div class="item-info">
+<i class="bi bi-telephone-fill"></i>
+<div>
+<strong>Teléfono Directo</strong>
+<p>+54 11 5263-8899 / WhatsApp Ventas: +54 9 11 6000-1122</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="caja-formulario-contacto">
+<h4 class="mb-3">Escribinos una consulta</h4>
+<form id="formContactoDirecto">
+<div class="mb-3">
+<label class="form-label etiqueta-campo">Nombre</label>
+<input class="form-control campo-estilizado" placeholder="Tu nombre" required="" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label etiqueta-campo">Email</label>
+<input class="form-control campo-estilizado" placeholder="tu@email.com" required="" type="email"/>
+</div>
+<div class="mb-3">
+<label class="form-label etiqueta-campo">Mensaje</label>
+<textarea class="form-control campo-estilizado" placeholder="Contanos qué vehículo te interesa o tu consulta..." required="" rows="3"></textarea>
+</div>
+<button class="btn btn-primario w-100" type="submit">
+<i class="bi bi-send"></i>
+<span>Enviar Mensaje</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="pie-pagina">
+<div class="container">
+<div class="row g-4 align-items-center">
+<div class="col-md-6 text-center text-md-start">
+<div class="marca-footer">
+<i class="bi bi-shield-shaded"></i>
+<span>AURA<strong>MOTORS</strong></span>
+</div>
+<p class="legales-texto">
+            © 2025 Aura Motors S.A. Todos los derechos reservados. Las especificaciones, fotos y valores exhibidos son informativos y no constituyen contrato vinculante.
+          </p>
+</div>
+<div class="col-md-6 text-center text-md-end">
+<div class="redes-sociales">
+<a aria-label="Instagram" class="enlace-red" href="#"><i class="bi bi-instagram"></i></a>
+<a aria-label="Facebook" class="enlace-red" href="#"><i class="bi bi-facebook"></i></a>
+<a aria-label="YouTube" class="enlace-red" href="#"><i class="bi bi-youtube"></i></a>
+<a aria-label="WhatsApp" class="enlace-red" href="#"><i class="bi bi-whatsapp"></i></a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Modal Ficha Detallada del Vehículo -->
+<div aria-hidden="true" aria-labelledby="modalFichaTitulo" class="modal fade modal-aura" id="modalFichaVehiculo" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal-content modal-contenido-aura">
+<div class="modal-header modal-cabecera-aura">
+<div>
+<span class="badge bg-primary mb-1" id="modalFichaCategoria">Categoría</span>
+<h3 class="modal-title h5 mb-0" id="modalFichaTitulo">Título del Vehículo</h3>
+</div>
+<button aria-label="Cerrar" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body modal-cuerpo-aura">
+<div class="row g-4">
+<div class="col-md-6">
+<div class="modal-imagen-wrapper">
+<img alt="Vehículo" class="img-fluid rounded-3" id="modalFichaImg" src=""/>
+</div>
+<div class="modal-precio-box mt-3 text-center">
+<span class="text-muted d-block small">Precio de lista contado</span>
+<h4 class="text-primary mb-0" id="modalFichaPrecio">USD 00,000</h4>
+</div>
+</div>
+<div class="col-md-6">
+<h5 class="ficha-seccion-titulo">Ficha Técnica &amp; Equipamiento</h5>
+<ul class="list-unstyled ficha-especificaciones" id="modalFichaSpecs">
+<!-- Se llena dinámicamente con JS -->
+</ul>
+<div class="mt-4 p-3 caja-destacada-garantia">
+<div class="d-flex align-items-center">
+<i class="bi bi-patch-check-fill text-primary fs-3 me-3"></i>
+<div>
+<h6 class="mb-0 fw-bold">Certificación 150 Puntos</h6>
+<small class="text-muted">Garantía mecánica de 12 meses incluida</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-footer modal-pie-aura">
+<button class="btn btn-outline-secundario" data-bs-dismiss="modal" type="button">Cerrar</button>
+<button class="btn btn-primario" id="btnModalInteres" type="button">
+<i class="bi bi-whatsapp"></i>
+<span>Coordinar Test Drive</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Confirmación de Turno Online -->
+<div aria-hidden="true" aria-labelledby="modalTurnoTitulo" class="modal fade modal-aura" id="modalTurno" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content modal-contenido-aura">
+<div class="modal-header modal-cabecera-aura">
+<h3 class="modal-title h5" id="modalTurnoTitulo">Agendar Turno de Taller</h3>
+<button aria-label="Cerrar" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<form id="formTurnoModal" novalidate="">
+<div class="modal-body modal-cuerpo-aura">
+<div class="mb-3">
+<label class="form-label etiqueta-campo" for="turnoNombre">Nombre y Apellido *</label>
+<input class="form-control campo-estilizado" id="turnoNombre" placeholder="Ej: Carlos Silva" required="" type="text"/>
+<div class="invalid-feedback">Completá tu nombre.</div>
+</div>
+<div class="mb-3">
+<label class="form-label etiqueta-campo" for="turnoCelular">Teléfono Celular *</label>
+<input class="form-control campo-estilizado" id="turnoCelular" placeholder="+54 9 11..." required="" type="tel"/>
+<div class="invalid-feedback">Completá tu teléfono celular.</div>
+</div>
+<div class="row g-3 mb-3">
+<div class="col-6">
+<label class="form-label etiqueta-campo" for="turnoFecha">Fecha deseada *</label>
+<input class="form-control campo-estilizado" id="turnoFecha" required="" type="date"/>
+<div class="invalid-feedback">Elegí una fecha.</div>
+</div>
+<div class="col-6">
+<label class="form-label etiqueta-campo" for="turnoHorario">Horario *</label>
+<select class="form-select campo-estilizado" id="turnoHorario" required="">
+<option disabled="" selected="" value="">Hora</option>
+<option value="09:00">09:00 hs</option>
+<option value="11:00">11:00 hs</option>
+<option value="14:00">14:00 hs</option>
+<option value="16:00">16:00 hs</option>
+</select>
+<div class="invalid-feedback">Seleccioná horario.</div>
+</div>
+</div>
+<div class="mb-2">
+<label class="form-label etiqueta-campo" for="turnoNota">Comentario o falla detectada</label>
+<textarea class="form-control campo-estilizado" id="turnoNota" placeholder="Opcional: detalles del trabajo a realizar..." rows="2"></textarea>
+</div>
+</div>
+<div class="modal-footer modal-pie-aura">
+<button class="btn btn-outline-secundario" data-bs-dismiss="modal" type="button">Cancelar</button>
+<button class="btn btn-primario" type="submit">
+<i class="bi bi-calendar-check"></i>
+<span>Confirmar Turno</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Modal Éxito / Confirmación de Turno -->
+<div aria-hidden="true" class="modal fade modal-aura" id="modalTurnoConfirmado" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content modal-contenido-aura text-center p-4">
+<div class="mb-3">
+<i class="bi bi-check-circle-fill text-success icono-exito-grande"></i>
+</div>
+<h4 class="mb-2">¡Turno Agendado con Éxito!</h4>
+<p class="text-muted mb-4" id="textoDetalleTurno">
+          Hemos recibido tu solicitud. Te enviamos la confirmación con el código de turno a tu WhatsApp.
+        </p>
+<button class="btn btn-primario mx-auto px-4" data-bs-dismiss="modal" type="button">
+<span>Entendido</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contenedor Toasts de Éxito -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3 contenedor-toasts">
+<div aria-atomic="true" aria-live="assertive" class="toast toast-aura align-items-center text-white border-0" id="toastExito" role="alert">
+<div class="d-flex">
+<div class="toast-body d-flex align-items-center">
+<i class="bi bi-check-circle-fill me-2 fs-5 text-accent"></i>
+<span id="toastMensaje">Operación realizada con éxito.</span>
+</div>
+<button aria-label="Cerrar" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" type="button"></button>
+</div>
+</div>
+</div>
+<!-- Bootstrap 5 Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script propio -->
+<script defer="" src="../../js/oficios-vehiculos/concesionaria-auto.js"></script>
+</body>
+</html>

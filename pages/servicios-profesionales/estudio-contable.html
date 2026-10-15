@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio Contable - Portal & Servicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/servicios-profesionales/estudio-contable.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <header class="top-bar">
+    <div class="container top-bar-content">
+      <span><i class="fa-solid fa-shield-halved"></i> Vencimientos AFIP / Rentas al día</span>
+      <a href="#portal" class="badge-link">Acceso Clientes &rarr;</a>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand-logo">
+        <span class="logo-icon"><i class="fa-solid fa-chart-pie"></i></span>
+        <div class="logo-text">
+          <span class="brand-name">Vértice</span>
+          <span class="brand-sub">Contable & Tributario</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="icon-btn" aria-label="Cambiar tema">
+          <i class="fa-regular fa-moon"></i>
+        </button>
+        <button id="mobileMenuBtn" class="menu-toggle-btn" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile dropdown navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#inicio" class="nav-item-link"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="#portal" class="nav-item-link"><i class="fa-solid fa-user-lock"></i> Portal Clientes</a>
+      <a href="#documentacion" class="nav-item-link"><i class="fa-solid fa-file-arrow-up"></i> Carga Documentación</a>
+      <a href="#turnos" class="nav-item-link"><i class="fa-solid fa-calendar-check"></i> Turnos de Consulta</a>
+      <a href="#servicios" class="nav-item-link"><i class="fa-solid fa-briefcase"></i> Servicios</a>
+      <a href="#contacto" class="nav-item-link highlight"><i class="fa-solid fa-headset"></i> Contactar</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+      <div class="container hero-container">
+        <div class="pill-tag">
+          <span class="pill-dot"></span> Gestión Contable 100% Digital
+        </div>
+        <h1 class="hero-title">
+          Tranquilidad fiscal y contable para tu <span>empresa o pyme</span>.
+        </h1>
+        <p class="hero-desc">
+          Liquidación de impuestos, balances, sueldos y asesoría tributaria continua con plataforma exclusiva para clientes.
+        </p>
+
+        <!-- Quick Access Action Tabs -->
+        <div class="quick-action-cards">
+          <a href="#portal" class="quick-card">
+            <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <div class="card-info">
+              <strong>Portal Clientes</strong>
+              <span>Consulta estados y DDJJ</span>
+            </div>
+            <i class="fa-solid fa-arrow-right arrow-icon"></i>
+          </a>
+          <a href="#documentacion" class="quick-card">
+            <div class="card-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+            <div class="card-info">
+              <strong>Subir Comprobantes</strong>
+              <span>Facturas, extractos y F931</span>
+            </div>
+            <i class="fa-solid fa-arrow-right arrow-icon"></i>
+          </a>
+          <a href="#turnos" class="quick-card highlight">
+            <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+            <div class="card-info">
+              <strong>Agendar Turno</strong>
+              <span>Asesoría online o presencial</span>
+            </div>
+            <i class="fa-solid fa-arrow-right arrow-icon"></i>
+          </a>
+        </div>
+
+        <!-- Metrics bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <span class="stat-num">+15</span>
+            <span class="stat-label">Años de trayectoria</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">450+</span>
+            <span class="stat-label">Empresas confían</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">99.8%</span>
+            <span class="stat-label">Presentaciones en término</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: Portal de Clientes -->
+    <section id="portal" class="section-block portal-bg">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-lock"></i> Área Segura</div>
+          <h2 class="section-title">Portal de Clientes</h2>
+          <p class="section-subtitle">
+            Accedé a tus declaraciones juradas, comprobantes de pago de VEPs y liquidaciones impositivas en tiempo real.
+          </p>
+        </div>
+
+        <!-- Interactive Portal Card Demo -->
+        <div class="portal-box" id="portalContainer">
+          <!-- State 1: Login Form -->
+          <div class="portal-login-view" id="portalLoginView">
+            <div class="portal-header-icon">
+              <i class="fa-solid fa-fingerprint"></i>
+            </div>
+            <h3>Ingreso a su Espacio Contable</h3>
+            <p>Ingresá tu CUIT / Identificación fiscal y contraseña</p>
+
+            <form id="portalLoginForm" class="clean-form">
+              <div class="form-group">
+                <label for="cuitInput">CUIT / Clave Fiscal o Legajo</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-id-card"></i>
+                  <input type="text" id="cuitInput" placeholder="20-34567890-9" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pwdInput">Contraseña</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="password" id="pwdInput" placeholder="••••••••" required>
+                </div>
+              </div>
+              <div class="form-row-remember">
+                <label class="checkbox-label">
+                  <input type="checkbox" checked> Recordar credencial
+                </label>
+                <a href="#turnos" class="form-link">¿Olvidó su clave?</a>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Ingresar al Portal</span>
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              </button>
+            </form>
+            <div class="portal-hint">
+              <i class="fa-solid fa-circle-info"></i> Para prueba demostrativa ingresá cualquier dato y hacé clic en <strong>Ingresar al Portal</strong>.
+            </div>
+          </div>
+
+          <!-- State 2: Logged In Dashboard (hidden initially) -->
+          <div class="portal-dashboard-view hidden" id="portalDashboardView">
+            <div class="dash-user-bar">
+              <div class="dash-avatar">
+                <i class="fa-solid fa-building-user"></i>
+              </div>
+              <div class="dash-user-meta">
+                <span class="user-greeting">Bienvenido/a,</span>
+                <h4 id="dashCompanyName">Innovar Soluciones S.R.L.</h4>
+                <span class="badge-active">CUIT: 30-71458921-4 | Régimen General</span>
+              </div>
+              <button id="logoutBtn" class="logout-btn" title="Cerrar sesión">
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+            </div>
+
+            <!-- Tax Alert Status -->
+            <div class="tax-status-banner">
+              <div class="tax-status-icon warning">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="tax-status-text">
+                <strong>Próximo Vencimiento: IVA & Ganancias</strong>
+                <span>Vence el 18 del corriente mes. DDJJ lista para autorizar.</span>
+              </div>
+              <button class="btn btn-sm btn-outline" id="btnVerVep">Ver VEP</button>
+            </div>
+
+            <!-- Dashboard Mini Tabs -->
+            <div class="dash-tabs-nav">
+              <button class="dash-tab active" data-tab="tab-impuestos">Impuestos & VEPs</button>
+              <button class="dash-tab" data-tab="tab-sueldos">Sueldos (F931)</button>
+              <button class="dash-tab" data-tab="tab-balances">Balances</button>
+            </div>
+
+            <div class="dash-tab-content active" id="tab-impuestos">
+              <div class="doc-list">
+                <div class="doc-item">
+                  <div class="doc-icon pdf"><i class="fa-solid fa-file-pdf"></i></div>
+                  <div class="doc-info">
+                    <strong>VEP IVA Periodo 09/2026</strong>
+                    <span>Generado: 12/10/2026 • $ 145.200,00</span>
+                  </div>
+                  <button class="doc-download-btn" onclick="simularDescarga('VEP_IVA_Sep2026.pdf')">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+                <div class="doc-item">
+                  <div class="doc-icon check"><i class="fa-solid fa-file-circle-check"></i></div>
+                  <div class="doc-info">
+                    <strong>Acuse DDJJ Ingresos Brutos (IIBB)</strong>
+                    <span>Presentado y conciliado</span>
+                  </div>
+                  <button class="doc-download-btn" onclick="simularDescarga('IIBB_Acuse_092026.pdf')">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+                <div class="doc-item">
+                  <div class="doc-icon invoice"><i class="fa-solid fa-receipt"></i></div>
+                  <div class="doc-info">
+                    <strong>Régimen Autónomos / Monotributo</strong>
+                    <span>Pagado por débito automático</span>
+                  </div>
+                  <button class="doc-download-btn" onclick="simularDescarga('Recibo_Autonomos.pdf')">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-tab-content" id="tab-sueldos">
+              <div class="doc-list">
+                <div class="doc-item">
+                  <div class="doc-icon"><i class="fa-solid fa-users-gear"></i></div>
+                  <div class="doc-info">
+                    <strong>Libro de Sueldos Digital - F931</strong>
+                    <span>Nómina 12 empleados • Periodo 09/2026</span>
+                  </div>
+                  <button class="doc-download-btn" onclick="simularDescarga('F931_Sueldos.pdf')">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+                <div class="doc-item">
+                  <div class="doc-icon"><i class="fa-solid fa-receipt"></i></div>
+                  <div class="doc-info">
+                    <strong>Recibos de Sueldo Firmados</strong>
+                    <span>Archivo consolidado .ZIP</span>
+                  </div>
+                  <button class="doc-download-btn" onclick="simularDescarga('Recibos_Consolidados.zip')">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-tab-content" id="tab-balances">
+              <div class="doc-list">
+                <div class="doc-item">
+                  <div class="doc-icon balance"><i class="fa-solid fa-scale-balanced"></i></div>
+                  <div class="doc-info">
+                    <strong>Balance General Ejercicio 2025/2026</strong>
+                    <span>Certificado por Consejo Profesional (CPCECABA)</span>
+                  </div>
+                  <button class="doc-download-btn" onclick="simularDescarga('Balance_Certificado.pdf')">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-footer-note">
+              <small><i class="fa-solid fa-lock"></i> Conexión cifrada TLS 256-bit • Estudio Contable Vértice</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Carga de Documentación -->
+    <section id="documentacion" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-cloud-arrow-up"></i> Canal Digital</div>
+          <h2 class="section-title">Carga de Documentación</h2>
+          <p class="section-subtitle">
+            Enviá tus comprobantes, facturas de compras/ventas, extractos bancarios y remitos para que los procesemos sin que tengas que viajar.
+          </p>
+        </div>
+
+        <div class="uploader-container">
+          <!-- Step 1: Client details for docs -->
+          <form id="docsUploadForm">
+            <div class="uploader-fields-grid">
+              <div class="form-group">
+                <label for="docClientName">Razón Social o Nombre Completo</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" id="docClientName" placeholder="Ej: Distribuidora Norte S.A." required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="docPeriodo">Período Contable</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-calendar"></i>
+                  <select id="docPeriodo" required>
+                    <option value="Octubre 2026">Octubre 2026 (En curso)</option>
+                    <option value="Septiembre 2026">Septiembre 2026</option>
+                    <option value="Agosto 2026">Agosto 2026</option>
+                    <option value="Ajustes de Balance">Ajustes Especiales de Balance</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="docTipo">Categoría del Documento</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-folder-open"></i>
+                  <select id="docTipo" required>
+                    <option value="Facturación de Compras">Facturación de Compras / Gastos</option>
+                    <option value="Facturación de Ventas">Facturación de Ventas</option>
+                    <option value="Extractos y Conciliaciones Bancarias">Extractos y Conciliaciones Bancarias</option>
+                    <option value="Novedades de Sueldos y RRHH">Novedades de Personal (Altas/Bajas)</option>
+                    <option value="Otros Comprobantes">Comprobantes Varios / Retenciones</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Drag & Drop Zone -->
+            <div class="dropzone" id="dropZone">
+              <input type="file" id="fileInput" class="file-input-hidden" multiple accept=".pdf,.png,.jpg,.jpeg,.xlsx,.xls,.csv,.zip">
+              <div class="dropzone-content">
+                <div class="dropzone-icon">
+                  <i class="fa-solid fa-file-arrow-up"></i>
+                </div>
+                <h4>Arrastrá tus archivos aquí o <span class="browse-link">examinar</span></h4>
+                <p>Formatos permitidos: PDF, Excel (XLSX, CSV), Imágenes (JPG, PNG) o ZIP comprimido (máx. 25 MB)</p>
+              </div>
+            </div>
+
+            <!-- Files queued list -->
+            <div class="queued-files-box" id="queuedFilesBox" style="display: none;">
+              <h5>Archivos listos para procesar (<span id="fileCount">0</span>)</h5>
+              <ul class="file-items-list" id="fileItemsList"></ul>
+            </div>
+
+            <!-- Upload progress bar -->
+            <div class="upload-progress-wrapper" id="uploadProgressWrapper" style="display: none;">
+              <div class="progress-info">
+                <span id="progressText">Cifrando y enviando archivos...</span>
+                <span id="progressPercent">0%</span>
+              </div>
+              <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group" style="margin-top: 15px;">
+              <label for="docNotes">Comentarios adicionales para tu contador asignado (opcional)</label>
+              <textarea id="docNotes" rows="2" placeholder="Ej: Se adjunta factura 0004-9842 con deducción especial de percepción..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnSubmitFiles">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <span>Enviar Documentación al Estudio</span>
+            </button>
+          </form>
+
+          <!-- Success Alert Message -->
+          <div class="success-banner hidden" id="uploadSuccessBanner">
+            <div class="success-banner-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="success-banner-body">
+              <h4>¡Documentación recibida exitosamente!</h4>
+              <p>Generamos el comprobante de entrega digital <strong id="uploadTicketCode">#EST-8942</strong>. Tu contador responsable fue notificado y comenzará la imputación contable.</p>
+              <button class="btn btn-sm btn-outline" id="btnUploadMore">Subir más archivos</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Turnos de Consulta -->
+    <section id="turnos" class="section-block turnos-bg">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-calendar-check"></i> Agenda Digital</div>
+          <h2 class="section-title">Turnos de Consulta</h2>
+          <p class="section-subtitle">
+            Agendá tu reunión estratégica con nuestros contadores especialistas. Seleccioná modalidad, día y horario disponible.
+          </p>
+        </div>
+
+        <div class="turnos-wrapper">
+          <div class="turnos-steps-tracker">
+            <div class="step-indicator active" id="stepPill1"><span>1</span> Tipo & Profesional</div>
+            <div class="step-indicator" id="stepPill2"><span>2</span> Fecha & Hora</div>
+            <div class="step-indicator" id="stepPill3"><span>3</span> Confirmación</div>
+          </div>
+
+          <form id="bookingForm" class="booking-form-box">
+            <!-- STEP 1: Modalidad y Especialidad -->
+            <div class="booking-step active" id="bookingStep1">
+              <h3 class="step-heading">1. Elegí la modalidad y temática de tu consulta</h3>
+
+              <div class="selection-grid">
+                <label class="choice-card active">
+                  <input type="radio" name="modalidad" value="Online por Google Meet / Zoom" checked>
+                  <div class="choice-icon"><i class="fa-solid fa-video"></i></div>
+                  <div class="choice-text">
+                    <strong>Consulta Virtual</strong>
+                    <span>Vía Google Meet o Zoom con enlace directo</span>
+                  </div>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="modalidad" value="Presencial en Nuestras Oficinas">
+                  <div class="choice-icon"><i class="fa-solid fa-building"></i></div>
+                  <div class="choice-text">
+                    <strong>Reunión Presencial</strong>
+                    <span>Oficinas Centrales (Av. Corrientes 1450, CABA)</span>
+                  </div>
+                </label>
+              </div>
+
+              <div class="form-group mt-20">
+                <label for="consultationArea">Área de Asesoramiento Requerida</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-scale-unbalanced"></i>
+                  <select id="consultationArea" required>
+                    <option value="Planificación Fiscal & Auditoría Impositiva">Planificación Fiscal & Auditoría Impositiva</option>
+                    <option value="Constitución de Sociedades (SAS, SRL, SA)">Constitución de Sociedades (SAS, SRL, SA)</option>
+                    <option value="Liquidación de Sueldos y Convenios Colectivos">Liquidación de Sueldos y Convenios Colectivos</option>
+                    <option value="Readecuación Monotributo y Autónomos">Readecuación Monotributo y Autónomos</option>
+                    <option value="Inspecciones y Requerimientos AFIP / AGIP">Respuesta a Inspecciones AFIP / Rentas</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="btn-group-right">
+                <button type="button" class="btn btn-primary" id="goStep2">
+                  <span>Continuar a Fecha y Hora</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Fecha y Hora -->
+            <div class="booking-step hidden" id="bookingStep2">
+              <h3 class="step-heading">2. Seleccioná día y horario preferido</h3>
+
+              <div class="calendar-picker-box">
+                <label for="bookingDate">Fecha de consulta</label>
+                <input type="date" id="bookingDate" class="custom-date-input" required>
+                <small class="helper-text"><i class="fa-regular fa-clock"></i> Atención de Lunes a Viernes de 9:00 a 18:30 hs.</small>
+              </div>
+
+              <div class="slots-container mt-20">
+                <label>Horarios disponibles:</label>
+                <div class="slots-grid" id="slotsGrid">
+                  <button type="button" class="time-slot" data-time="09:30 hs">09:30 hs</button>
+                  <button type="button" class="time-slot" data-time="11:00 hs">11:00 hs</button>
+                  <button type="button" class="time-slot" data-time="14:00 hs">14:00 hs</button>
+                  <button type="button" class="time-slot active" data-time="15:30 hs">15:30 hs</button>
+                  <button type="button" class="time-slot" data-time="17:00 hs">17:00 hs</button>
+                </div>
+                <input type="hidden" id="selectedTime" value="15:30 hs">
+              </div>
+
+              <div class="btn-group-split mt-25">
+                <button type="button" class="btn btn-secondary" id="backStep1">
+                  <i class="fa-solid fa-arrow-left"></i> <span>Atrás</span>
+                </button>
+                <button type="button" class="btn btn-primary" id="goStep3">
+                  <span>Ingresar mis datos</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3: Datos de Contacto y Confirmación -->
+            <div class="booking-step hidden" id="bookingStep3">
+              <h3 class="step-heading">3. Completá tus datos para agendar</h3>
+
+              <div class="summary-pill-card" id="bookingSummaryReview">
+                <div class="sum-row">
+                  <span class="sum-label"><i class="fa-solid fa-location-dot"></i> Modalidad:</span>
+                  <strong id="sumModalidad">Online por Google Meet</strong>
+                </div>
+                <div class="sum-row">
+                  <span class="sum-label"><i class="fa-regular fa-calendar"></i> Fecha y Hora:</span>
+                  <strong id="sumFechaHora">Seleccione...</strong>
+                </div>
+                <div class="sum-row">
+                  <span class="sum-label"><i class="fa-solid fa-bookmark"></i> Temática:</span>
+                  <strong id="sumArea">Planificación Fiscal</strong>
+                </div>
+              </div>
+
+              <div class="form-grid-inputs mt-20">
+                <div class="form-group">
+                  <label for="bookerName">Nombre y Apellido</label>
+                  <input type="text" id="bookerName" placeholder="Dr./Lic./Sra. Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                  <label for="bookerEmail">Email de contacto (para envío de link/invitación)</label>
+                  <input type="email" id="bookerEmail" placeholder="juan.perez@empresa.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="bookerPhone">Teléfono / WhatsApp</label>
+                  <input type="tel" id="bookerPhone" placeholder="+54 9 11 4589-2311" required>
+                </div>
+                <div class="form-group">
+                  <label for="bookerNotes">Detalle de la consulta (opcional)</label>
+                  <textarea id="bookerNotes" rows="2" placeholder="Breve descripción de la duda impositiva o societaria..."></textarea>
+                </div>
+              </div>
+
+              <div class="btn-group-split mt-25">
+                <button type="button" class="btn btn-secondary" id="backStep2">
+                  <i class="fa-solid fa-arrow-left"></i> <span>Atrás</span>
+                </button>
+                <button type="submit" class="btn btn-success btn-lg">
+                  <i class="fa-solid fa-circle-check"></i> <span>Confirmar y Agendar Turno</span>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Modal / Card de confirmación de turno -->
+          <div class="booking-confirmed-card hidden" id="bookingConfirmedView">
+            <div class="confirmed-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3>¡Turno Agendado con Éxito!</h3>
+            <p>Hemos reservado tu horario y enviamos la confirmación con los detalles y el enlace a tu correo electrónico.</p>
+            
+            <div class="ticket-receipt" id="ticketReceiptBody">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="confirmed-actions">
+              <button class="btn btn-outline" id="btnAddToCalendar">
+                <i class="fa-solid fa-calendar-plus"></i> Añadir a Google Calendar
+              </button>
+              <button class="btn btn-primary" id="btnResetBooking">
+                Agendar otro turno
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive FAQ Section -->
+    <section class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge"><i class="fa-solid fa-circle-question"></i> Respuestas Rápidas</div>
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Cómo recibo las liquidaciones y acuses de AFIP?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Cada vez que tu contador presenta un impuesto o genera un VEP de pago, el archivo se sube automáticamente a tu <strong>Portal de Clientes</strong> y recibís una alerta por correo electrónico y WhatsApp.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Hasta qué día del mes puedo cargar la documentación?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Recomendamos subir las facturas de compras y extractos bancarios antes del día 8 de cada mes para garantizar la liquidación precisa y oportuna de los vencimientos de IVA e Ingresos Brutos.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Puedo cancelar o reprogramar una consulta agendada?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, desde el email de confirmación o ingresando a la sección de turnos podés modificar la fecha y horario hasta con 4 horas de anticipación sin ningún costo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Quick WhatsApp & Help button -->
+    <div class="floating-contact">
+      <a href="https://wa.me/5491100000000?text=Hola,%20quisiera%20hacer%20una%20consulta%20con%20el%20estudio%20contable" target="_blank" class="floating-btn whatsapp" aria-label="Consultar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="floating-tooltip">¿Consultas urgentes? Escribinos</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-main" id="contacto">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-text">
+            <span class="brand-name text-white">Vértice</span>
+            <span class="brand-sub text-white-muted">Estudio Contable, Impositivo & Laboral</span>
+          </div>
+          <p>Especialistas en acompañamiento societario, optimización fiscal responsable y gestión de nóminas para pymes y profesionales en toda la región.</p>
+        </div>
+        <div class="footer-contact-info">
+          <div><i class="fa-solid fa-location-dot"></i> Av. Corrientes 1450, Piso 6, CABA</div>
+          <div><i class="fa-solid fa-phone"></i> +54 (11) 5219-4800</div>
+          <div><i class="fa-solid fa-envelope"></i> contacto@estudiovertice.com.ar</div>
+          <div><i class="fa-solid fa-clock"></i> Lun a Vie: 09:00 - 18:30 hs</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Estudio Contable Vértice. Todos los derechos reservados. Matrícula CPCECABA T° 342 F° 118.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal feedback de descarga / notificación -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Operación realizada con éxito</span>
+  </div>
+
+  <script src="../../js/servicios-profesionales/estudio-contable.js"></script>
+</body>
+</html>

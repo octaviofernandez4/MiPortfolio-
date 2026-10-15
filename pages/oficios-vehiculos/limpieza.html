@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA Facility Care | Limpieza y Mantenimiento Corporativo</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS & Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Estilos Propios -->
+  <link rel="stylesheet" href="../../css/oficios-vehiculos/limpieza.css">
+</head>
+<body>
+  <!-- Barra de progreso de scroll -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <!-- Pantalla de carga (Splash Screen) -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content text-center">
+      <div class="preloader-logo-wrap">
+        <i class="bi bi-shield-check-fill preloader-icon"></i>
+        <i class="bi bi-gear-fill icon-spinner-deco"></i>
+      </div>
+      <h2 class="preloader-title">AURA</h2>
+      <p class="preloader-subtitle">FACILITY CARE & CLEANING</p>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Header Superior Fijo -->
+  <header class="header-main fixed-top" id="headerMain">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="#hero" class="brand-logo text-decoration-none d-flex align-items-center gap-2">
+        <div class="brand-symbol">
+          <i class="bi bi-shield-check-fill"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">AURA</span>
+          <span class="brand-tag">FACILITY CARE</span>
+        </div>
+      </a>
+
+      <!-- Navegación Desktop -->
+      <nav class="nav-desktop d-none d-md-flex align-items-center gap-4">
+        <a href="#hero" class="nav-link-custom active">Inicio</a>
+        <a href="#servicios" class="nav-link-custom">Servicios</a>
+        <a href="#cotizador" class="nav-link-custom">Cotizador</a>
+        <a href="#agenda" class="nav-link-custom">Agenda</a>
+        <a href="#seguimiento" class="nav-link-custom">Seguimiento</a>
+        <a href="#faq" class="nav-link-custom">Preguntas</a>
+      </nav>
+
+      <div class="header-action-wrap d-flex align-items-center gap-2">
+        <a href="#cotizador" class="btn btn-action-header btn-ripple d-none d-sm-inline-flex align-items-center gap-2">
+          <span>COTIZAR AHORA</span>
+          <i class="bi bi-arrow-right-short"></i>
+        </a>
+        <a href="tel:+5491123456789" class="btn btn-contact-icon d-inline-flex align-items-center justify-content-center" aria-label="Llamar">
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section position-relative d-flex align-items-center" id="hero">
+    <div class="hero-bg-parallax" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container position-relative hero-content-container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 text-start">
+          <div class="hero-badge d-inline-flex align-items-center gap-2 mb-3">
+            <span class="badge-dot"></span>
+            <span class="badge-text">SERVICIOS INTEGRALES CLASE A+</span>
+          </div>
+          <h1 class="hero-title" id="heroAnimatedTitle">
+            LIMPIEZA Y MANTENIMIENTO CORPORATIVO DE <span class="text-destacado">ALTO NIVEL</span>
+          </h1>
+          <p class="hero-subtitle mb-4">
+            Soluciones operativas integradas con seguimiento digital en tiempo real para oficinas, industrias y flotas comerciales.
+          </p>
+
+          <div class="hero-cta-group d-flex flex-wrap gap-3 mb-5">
+            <a href="#cotizador" class="btn btn-cta-primary btn-ripple">
+              <i class="bi bi-calculator-fill"></i>
+              <span>COTIZAR SERVICIO</span>
+            </a>
+            <a href="#agenda" class="btn btn-cta-secondary btn-ripple">
+              <i class="bi bi-calendar-check-fill"></i>
+              <span>AGENDAR VISITA</span>
+            </a>
+          </div>
+
+          <!-- Contadores Numéricos Animados -->
+          <div class="hero-stats-row row g-3">
+            <div class="col-4 stat-col">
+              <div class="stat-number-wrap">
+                <span class="stat-number counter" data-target="1450">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-label">SERVICIOS REALIZADOS</span>
+            </div>
+            <div class="col-4 stat-col">
+              <div class="stat-number-wrap">
+                <span class="stat-number counter" data-target="99">0</span><span class="stat-plus">%</span>
+              </div>
+              <span class="stat-label">SATISFACCIÓN CLIENTE</span>
+            </div>
+            <div class="col-4 stat-col">
+              <div class="stat-number-wrap">
+                <span class="stat-number counter" data-target="12">0</span><span class="stat-plus">AÑOS</span>
+              </div>
+              <span class="stat-label">TRAYECTORIA ACTIVA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section (Mobile Scroll-Snap Carousel / Desktop Grid) -->
+  <section class="section-padding section-servicios" id="servicios">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag">CATÁLOGO OPERATIVO</span>
+        <h2 class="section-title">SERVICIOS DE <span class="text-destacado">PRECISIÓN</span> Y CUIDADO</h2>
+        <p class="section-desc">Especialistas certificados con equipamiento industrial de última generación.</p>
+      </div>
+
+      <div class="services-carousel-snap d-flex flex-nowrap flex-md-wrap row-cols-md-3 g-md-4">
+        <div class="service-col-item">
+          <div class="card-servicio h-100 tilt-card">
+            <div class="card-icon-wrap">
+              <i class="bi bi-building-check"></i>
+            </div>
+            <h3 class="card-title">Mantenimiento Edilicio</h3>
+            <p class="card-text">Limpieza profunda de fachadas, cristales en altura, desinfección ambiental y control de áreas comunes.</p>
+            <ul class="card-features list-unstyled">
+              <li><i class="bi bi-check2-circle"></i> Protocolos hospitalarios</li>
+              <li><i class="bi bi-check2-circle"></i> Equipos certificados IRAM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-col-item">
+          <div class="card-servicio h-100 tilt-card">
+            <div class="card-icon-wrap">
+              <i class="bi bi-truck-front-fill"></i>
+            </div>
+            <h3 class="card-title">Lavado & Detailing de Flotas</h3>
+            <p class="card-text">Higiene interior y exterior a vapor para flotas ejecutivas, utilitarios comerciales y camiones logísticos.</p>
+            <ul class="card-features list-unstyled">
+              <li><i class="bi bi-check2-circle"></i> Limpieza ecológica en seco</li>
+              <li><i class="bi bi-check2-circle"></i> Desinfección de conductos UV</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-col-item">
+          <div class="card-servicio h-100 tilt-card">
+            <div class="card-icon-wrap">
+              <i class="bi bi-tools"></i>
+            </div>
+            <h3 class="card-title">Servicios Técnicos & HVAC</h3>
+            <p class="card-text">Mantenimiento preventivo electromecánico, filtros de aire acondicionado, plomería y seguridad industrial.</p>
+            <ul class="card-features list-unstyled">
+              <li><i class="bi bi-check2-circle"></i> Guardias 24/7 urgencias</li>
+              <li><i class="bi bi-check2-circle"></i> Informes técnicos digitales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cotizador Interactivo (Calculadora en Wizard por pasos) -->
+  <section class="section-padding section-cotizador bg-surface-alt" id="cotizador">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-4">
+        <span class="section-tag">PRESUPUESTO INSTANTÁNEO</span>
+        <h2 class="section-title">CALCULÁ TU <span class="text-destacado">COTIZACIÓN</span> ONLINE</h2>
+        <p class="section-desc">Seleccioná tu servicio y características para obtener un valor estimado en el acto.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="wizard-card shadow-sm">
+            <!-- Barra de Progreso del Wizard -->
+            <div class="wizard-header mb-4">
+              <div class="wizard-progress-track">
+                <div class="wizard-progress-bar" id="wizardProgress" style="width: 33.33%;"></div>
+              </div>
+              <div class="wizard-steps-indicators d-flex justify-content-between mt-2">
+                <span class="step-label active" id="stepIndicator1">1. Servicio</span>
+                <span class="step-label" id="stepIndicator2">2. Alcance</span>
+                <span class="step-label" id="stepIndicator3">3. Resumen</span>
+              </div>
+            </div>
+
+            <form id="cotizadorForm" novalidate>
+              <!-- Paso 1: Selección de Servicio -->
+              <div class="wizard-step-pane active" id="wizardStep1">
+                <h4 class="wizard-step-title mb-3">Paso 1: ¿Qué tipo de servicio necesitás?</h4>
+                <div class="row g-3 selectable-grid mb-4">
+                  <div class="col-sm-4">
+                    <label class="touchable-card-option w-100">
+                      <input type="radio" name="cotizServicio" value="edilicio" data-base="150" checked>
+                      <div class="touchable-card-inner">
+                        <i class="bi bi-building"></i>
+                        <h5>Oficinas & Edificios</h5>
+                        <small>Desde $150/h</small>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-sm-4">
+                    <label class="touchable-card-option w-100">
+                      <input type="radio" name="cotizServicio" value="flota" data-base="90">
+                      <div class="touchable-card-inner">
+                        <i class="bi bi-truck"></i>
+                        <h5>Flotas Comerciales</h5>
+                        <small>Desde $90/unidad</small>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-sm-4">
+                    <label class="touchable-card-option w-100">
+                      <input type="radio" name="cotizServicio" value="integral" data-base="220">
+                      <div class="touchable-card-inner">
+                        <i class="bi bi-gear-wide-connected"></i>
+                        <h5>Mantenimiento Integral</h5>
+                        <small>Desde $220/abono</small>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button type="button" class="btn btn-wizard-next btn-ripple" id="btnNext1">
+                    <span>CONTINUAR</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Paso 2: Escala / Alcance -->
+              <div class="wizard-step-pane" id="wizardStep2">
+                <h4 class="wizard-step-title mb-3">Paso 2: Dimensiones o Cantidad de Unidades</h4>
+                <div class="mb-4">
+                  <label for="cotizDimensiones" class="form-label-custom">Metros cuadrados aproximados o unidades:</label>
+                  <select class="form-select form-input-lg" id="cotizDimensiones" required>
+                    <option value="1" selected>Pequeño (Hasta 150 m² / 1 a 3 vehículos) - Base x1</option>
+                    <option value="1.8">Mediano (151 a 400 m² / 4 a 10 vehículos) - Base x1.8</option>
+                    <option value="2.6">Grande (401 a 1000 m² / 11 a 25 vehículos) - Base x2.6</option>
+                    <option value="3.8">Corporativo Industrial (+1000 m² / Gran flota) - Base x3.8</option>
+                  </select>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label-custom">Frecuencia del Servicio:</label>
+                  <div class="row g-2">
+                    <div class="col-4">
+                      <label class="touchable-card-option w-100">
+                        <input type="radio" name="cotizFrecuencia" value="unica" data-factor="1.2" checked>
+                        <div class="touchable-card-inner py-2">
+                          <small>Única vez</small>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-4">
+                      <label class="touchable-card-option w-100">
+                        <input type="radio" name="cotizFrecuencia" value="quincenal" data-factor="1.0">
+                        <div class="touchable-card-inner py-2">
+                          <small>Quincenal (-10%)</small>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-4">
+                      <label class="touchable-card-option w-100">
+                        <input type="radio" name="cotizFrecuencia" value="abono" data-factor="0.85">
+                        <div class="touchable-card-inner py-2">
+                          <small>Abono Mensual (-25%)</small>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <button type="button" class="btn btn-wizard-back" id="btnBack2">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>ATRÁS</span>
+                  </button>
+                  <button type="button" class="btn btn-wizard-next btn-ripple" id="btnNext2">
+                    <span>VER ESTIMACIÓN</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Paso 3: Resumen y Datos de Contacto -->
+              <div class="wizard-step-pane" id="wizardStep3">
+                <div class="row g-4 align-items-center mb-4">
+                  <div class="col-md-6">
+                    <div class="price-quote-box text-center p-4">
+                      <span class="quote-header">ESTIMACIÓN APROXIMADA</span>
+                      <div class="quote-amount-wrap my-2">
+                        <span class="quote-currency">USD</span>
+                        <span class="quote-price" id="quotePriceOutput">180</span>
+                      </div>
+                      <small class="quote-note">Sujeto a validación técnica en visita previa.</small>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <label for="cotizNombre" class="form-label-custom">Nombre y Empresa:</label>
+                      <input type="text" class="form-control form-input-lg" id="cotizNombre" placeholder="Ej: Ing. Martín Gómez - Logix SRL" required>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="cotizEmail" class="form-label-custom">Correo Corporativo:</label>
+                      <input type="email" class="form-control form-input-lg" id="cotizEmail" placeholder="martin@empresa.com" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <button type="button" class="btn btn-wizard-back" id="btnBack3">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>ATRÁS</span>
+                  </button>
+                  <button type="submit" class="btn btn-cta-primary btn-ripple" id="btnSubmitQuote">
+                    <i class="bi bi-send-check"></i>
+                    <span>DESCARGAR / RECIBIR COTIZACIÓN</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agenda de Visitas Técnicas -->
+  <section class="section-padding section-agenda" id="agenda">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag">COORDINACIÓN OPERATIVA</span>
+        <h2 class="section-title">AGENDÁ UNA <span class="text-destacado">VISITA TÉCNICA</span></h2>
+        <p class="section-desc">Un supervisor especializado visitará tus instalaciones para un diagnóstico sin cargo.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="agenda-form-card shadow-sm p-4 p-md-5">
+            <form id="agendaForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="agendaNombre" class="form-label-custom">Responsable de Contacto *</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                    <input type="text" class="form-control form-input-lg" id="agendaNombre" placeholder="Nombre completo" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="agendaTelefono" class="form-label-custom">Teléfono Directo / WhatsApp *</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-whatsapp"></i></span>
+                    <input type="tel" class="form-control form-input-lg" id="agendaTelefono" placeholder="+54 9 11 ..." required>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label for="agendaDireccion" class="form-label-custom">Dirección del Inmueble / Planta Operativa *</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-geo-alt-fill"></i></span>
+                    <input type="text" class="form-control form-input-lg" id="agendaDireccion" placeholder="Av. Libertador 4400, CABA" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="agendaFecha" class="form-label-custom">Fecha Preferente *</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+                    <input type="date" class="form-control form-input-lg" id="agendaFecha" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="agendaTurno" class="form-label-custom">Franja Horaria *</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-clock-history"></i></span>
+                    <select class="form-select form-input-lg" id="agendaTurno" required>
+                      <option value="" disabled selected>Elegí una franja</option>
+                      <option value="Mañana (08:00 a 12:00)">Mañana (08:00 a 12:00)</option>
+                      <option value="Tarde (13:00 a 17:00)">Tarde (13:00 a 17:00)</option>
+                      <option value="Vespertino / Nocturno (18:00 a 22:00)">Vespertino / Nocturno (18:00 a 22:00)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-cta-primary w-100 btn-ripple py-3">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>CONFIRMAR AGENDAMIENTO TÉCNICO</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seguimiento de Órdenes en Tiempo Real -->
+  <section class="section-padding section-seguimiento bg-surface-alt" id="seguimiento">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag">TRACKING DIGITAL</span>
+        <h2 class="section-title">SEGUIMIENTO DE <span class="text-destacado">ÓRDENES ACTIVAS</span></h2>
+        <p class="section-desc">Consultá el estado y las bitácoras operativas con tu código de servicio.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="tracking-search-box p-4 shadow-sm mb-4">
+            <form id="trackingForm" class="d-flex flex-column flex-sm-row gap-2">
+              <div class="input-group flex-grow-1">
+                <span class="input-group-text"><i class="bi bi-qr-code-scan"></i></span>
+                <input type="text" class="form-control form-input-lg" id="trackingInput" placeholder="Ej: ORD-8842 o PRO-102" required>
+              </div>
+              <button type="submit" class="btn btn-cta-primary btn-ripple px-4">
+                <i class="bi bi-search"></i>
+                <span>CONSULTAR</span>
+              </button>
+            </form>
+            <div class="mt-2 text-muted small">
+              Prueba códigos de demo: <strong>ORD-8842</strong>, <strong>PRO-102</strong> o <strong>LIM-550</strong>.
+            </div>
+          </div>
+
+          <!-- Resultado del Seguimiento -->
+          <div class="tracking-result-card p-4 shadow-sm" id="trackingResult" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+              <div>
+                <span class="badge bg-status" id="trackingStatusBadge">En Curso</span>
+                <h4 class="mb-0 mt-1 font-rajdhani" id="trackingCodeDisplay">ORD-8842</h4>
+              </div>
+              <div class="text-end">
+                <small class="text-muted d-block">Cuadrilla Asignada</small>
+                <strong id="trackingTeamDisplay">Equipo Alfa-3</strong>
+              </div>
+            </div>
+
+            <!-- Línea de tiempo / Stepper de Estado -->
+            <div class="tracking-timeline d-flex justify-content-between my-4 position-relative">
+              <div class="timeline-step completed">
+                <div class="step-circle"><i class="bi bi-check"></i></div>
+                <span class="step-text">Recepcionada</span>
+              </div>
+              <div class="timeline-step completed">
+                <div class="step-circle"><i class="bi bi-check"></i></div>
+                <span class="step-text">Supervisor en Ruta</span>
+              </div>
+              <div class="timeline-step active">
+                <div class="step-circle"><i class="bi bi-gear-fill icon-spinner-deco"></i></div>
+                <span class="step-text">En Ejecución</span>
+              </div>
+              <div class="timeline-step">
+                <div class="step-circle"><i class="bi bi-clipboard2-check"></i></div>
+                <span class="step-text">Auditoría Final</span>
+              </div>
+            </div>
+
+            <div class="tracking-details-box p-3 rounded">
+              <p class="mb-1"><i class="bi bi-geo-alt text-primary"></i> <strong>Ubicación:</strong> Complejo Logístico Norte - Depósito Central</p>
+              <p class="mb-1"><i class="bi bi-clock-history text-primary"></i> <strong>Hora de Inicio:</strong> 08:30 AM | Fin estimado: 16:45 PM</p>
+              <p class="mb-0"><i class="bi bi-shield-lock text-primary"></i> <strong>Control de Calidad:</strong> Certificado Digital en proceso</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recordatorios de Service Periódico -->
+  <section class="section-padding section-recordatorio" id="recordatorios">
+    <div class="container">
+      <div class="row align-items-center g-4 justify-content-center">
+        <div class="col-lg-5">
+          <span class="section-tag">PREVENCIÓN INTELIGENTE</span>
+          <h2 class="section-title">ALERTAS AUTOMÁTICAS DE <span class="text-destacado">SERVICE</span></h2>
+          <p class="section-desc">Suscribí tu empresa o flota para recibir avisos programados por WhatsApp y correo antes de que venza tu inspección técnica o mantenimiento preventivo.</p>
+          <div class="d-flex align-items-center gap-3 mt-4">
+            <div class="icon-bubble">
+              <i class="bi bi-bell-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-0 font-barlow">Sin sorpresas operativas</h5>
+              <small class="text-muted">Cumplí con normas ISO y de higiene laboral a tiempo.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="reminder-card p-4 p-md-5 shadow-sm">
+            <form id="reminderForm" novalidate>
+              <div class="mb-3">
+                <label for="reminderEmail" class="form-label-custom">Email de Notificaciones *</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-envelope-at-fill"></i></span>
+                  <input type="email" class="form-control form-input-lg" id="reminderEmail" placeholder="mantenimiento@empresa.com" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="reminderWhatsapp" class="form-label-custom">Número WhatsApp de Aviso *</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-whatsapp"></i></span>
+                  <input type="tel" class="form-control form-input-lg" id="reminderWhatsapp" placeholder="+54 9 11 9876 5432" required>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="reminderPeriodo" class="form-label-custom">Frecuencia de Mantenimiento Requerida *</label>
+                <select class="form-select form-input-lg" id="reminderPeriodo" required>
+                  <option value="Mensual">Aviso Mensual (Filtros & Limpieza Técnica)</option>
+                  <option value="Trimestral" selected>Aviso Trimestral (Inspección General)</option>
+                  <option value="Semestral">Aviso Semestral (Auditoría IRAM / Seguridad)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-cta-primary w-100 btn-ripple py-3">
+                <i class="bi bi-send-plus"></i>
+                <span>ACTIVAR RECORDATORIOS INTELIGENTES</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas Frecuentes (Acordeón Bootstrap) -->
+  <section class="section-padding section-faq bg-surface-alt" id="faq">
+    <div class="container">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="section-tag">RESOLUCIÓN DE DUDAS</span>
+        <h2 class="section-title">PREGUNTAS <span class="text-destacado">FRECUENTES</span></h2>
+        <p class="section-desc">Todo lo que necesitás saber sobre la contratación y protocolos de AURA.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion custom-accordion" id="accordionFaq">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  ¿El personal cuenta con seguros de ART y certificaciones de altura?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                <div class="accordion-body">
+                  Absolutamente. Todo nuestro plantel técnico y operativo cuenta con pólizas de ART al día con cláusula de no repetición, seguro de vida obligatorio y certificaciones específicas para trabajos en altura (IRATA / IRAM).
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  ¿Cómo funciona el seguimiento de órdenes digitales?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                <div class="accordion-body">
+                  Al confirmar un servicio se genera un código único (ej: ORD-8842). Desde esta misma plataforma podrás verificar en qué etapa se encuentra la cuadrilla, ver fotos de la auditoría y validar el checklist de entrega.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  ¿Tienen cobertura de urgencias fuera de horario comercial?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                <div class="accordion-body">
+                  Sí, disponemos de guardias técnicas 24/7 para abonos corporativos ante contingencias edilicias, rotura de cañerías o sanitización prioritaria.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="row g-4 justify-content-between mb-4">
+        <div class="col-lg-4">
+          <div class="brand-logo mb-3 d-flex align-items-center gap-2">
+            <div class="brand-symbol">
+              <i class="bi bi-shield-check-fill"></i>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">AURA</span>
+              <span class="brand-tag">FACILITY CARE</span>
+            </div>
+          </div>
+          <p class="footer-desc">Líderes en gestión operativa, sanitización y mantenimiento preventivo para el sector corporativo e industrial.</p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-title">ACCESOS</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#cotizador">Cotizador</a></li>
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#seguimiento">Seguimiento</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h5 class="footer-title">CONTACTO DIRECTO</h5>
+          <ul class="list-unstyled footer-contact">
+            <li><i class="bi bi-geo-alt"></i> Av. Corrientes 1500, CABA</li>
+            <li><i class="bi bi-telephone"></i> +54 (11) 5234-9000</li>
+            <li><i class="bi bi-envelope"></i> operaciones@aurafacility.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center pt-3 border-top">
+        <p class="mb-0 small text-muted">&copy; 2025 AURA Facility Care. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/5491123456789?text=Hola%20AURA,%20quiero%20consultar%20por%20un%20servicio" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Mobile Bottom Navigation (Fija en dispositivos < 768px) -->
+  <nav class="bottom-nav-mobile d-md-none fixed-bottom" id="bottomNav">
+    <a href="#hero" class="bottom-nav-item active" data-target="hero">
+      <i class="bi bi-house-door-fill"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="#agenda" class="bottom-nav-item" data-target="agenda">
+      <i class="bi bi-calendar2-week-fill"></i>
+      <span>Turnos</span>
+    </a>
+    <a href="#cotizador" class="bottom-nav-item" data-target="cotizador">
+      <i class="bi bi-calculator-fill"></i>
+      <span>Presupuesto</span>
+    </a>
+    <a href="#seguimiento" class="bottom-nav-item" data-target="seguimiento">
+      <i class="bi bi-bell-fill"></i>
+      <span>Seguimiento</span>
+    </a>
+  </nav>
+
+  <!-- Bottom Sheet / Offcanvas de Confirmación (Bootstrap 5) -->
+  <div class="offcanvas offcanvas-bottom custom-bottom-sheet" tabindex="-1" id="confirmationBottomSheet" aria-labelledby="confirmationSheetLabel">
+    <div class="offcanvas-header pb-0">
+      <div class="drag-handle mx-auto"></div>
+    </div>
+    <div class="offcanvas-body text-center pt-2">
+      <div class="success-icon-wrap mx-auto mb-3">
+        <i class="bi bi-check-circle-fill"></i>
+      </div>
+      <h3 class="font-bebas h2 mb-1" id="confirmationSheetLabel">¡VISITA TÉCNICA AGENDADA!</h3>
+      <p class="text-muted mb-3" id="confirmationSheetMessage">Hemos coordinado la visita del supervisor para la fecha solicitada.</p>
+      <div class="appointment-summary-box p-3 mb-3 text-start">
+        <div class="d-flex justify-content-between mb-1">
+          <span class="text-muted">Código de Visita:</span>
+          <strong class="font-rajdhani" id="sheetTurnoCodigo">VIS-9021</strong>
+        </div>
+        <div class="d-flex justify-content-between mb-1">
+          <span class="text-muted">Titular:</span>
+          <strong id="sheetTurnoNombre">-</strong>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span class="text-muted">Fecha y Franja:</span>
+          <strong id="sheetTurnoFecha">-</strong>
+        </div>
+      </div>
+      <button type="button" class="btn btn-cta-primary w-100 py-3 btn-ripple" data-bs-dismiss="offcanvas">
+        <span>ENTENDIDO, GRACIAS</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast de Notificaciones de Bootstrap -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1090;">
+    <div id="statusToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2">
+          <i class="bi bi-info-circle-fill fs-5" id="toastIcon"></i>
+          <span id="toastMessage">Operación realizada con éxito.</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Bootstrap Bundle & Script Propio -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="" src="../../js/oficios-vehiculos/limpieza.js"></script>
+
+</body>
+</html>
