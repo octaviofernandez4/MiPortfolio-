@@ -84,7 +84,6 @@
         padding: 0 18px;
         overflow-x: auto;
         scrollbar-width: none;
-        touch-action: pan-x;
     }
 
     .footer-process-list::-webkit-scrollbar { display: none; }

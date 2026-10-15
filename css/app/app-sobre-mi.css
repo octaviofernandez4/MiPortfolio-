@@ -113,7 +113,6 @@
         scroll-snap-type: x mandatory;
         scroll-padding: 0 var(--app-gutter);
         scrollbar-width: none;
-        touch-action: pan-x;
     }
 
     .soft-skills-list::-webkit-scrollbar { display: none; }

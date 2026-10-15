@@ -60,7 +60,6 @@
         scroll-padding: 0 var(--app-gutter);
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
-        touch-action: pan-x;
         counter-reset: modulo;
     }
 

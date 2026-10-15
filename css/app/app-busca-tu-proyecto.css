@@ -73,7 +73,6 @@
         overflow-x: auto;
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
-        touch-action: pan-x;
     }
 
     .rubro-filters::-webkit-scrollbar { display: none; }
@@ -171,8 +170,6 @@
         scroll-padding: 0 var(--app-gutter);
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
-        /* El carrusel solo captura el gesto horizontal; el vertical pasa de largo y scrollea la página */
-        touch-action: pan-x;
     }
 
     .rubro-card-grid::-webkit-scrollbar { display: none; }
