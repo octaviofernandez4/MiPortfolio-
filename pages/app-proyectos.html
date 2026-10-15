@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>if (window.innerWidth >= 768) location.replace('./proyectos.html');</script>
+    <title>Proyectos | Octavio Fernandez</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css?v=2">
+    <link rel="stylesheet" href="../css/proyectos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+    <!-- Capa mobile app -->
+    <link rel="stylesheet" href="../css/app/app-base.css">
+    <link rel="stylesheet" href="../css/app/app-proyectos.css">
+    <link rel="stylesheet" href="../css/app/app-footer.css">
+</head>
+<body id="top">
+    <header>
+        <nav class="navbar">
+            <a href="../aplicacion.html" class="logo">
+                <img src="../assets/img/logo-footer.png" alt="Octavio Studio" width="46" height="46" class="logo-icon" decoding="async">
+                <span class="logo-text"><span class="logo-name"><strong>Octavio</strong> Studio</span><span class="logo-tag">CREATIVE DIGITAL AGENCY</span></span>
+            </a>
+            <ul class="nav-links" id="primary-nav">
+                <li><a href="../aplicacion.html">Inicio</a></li>
+                <li><a href="./app-sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="./app-proyectos.html" class="active">Proyectos</a></li>
+                <li><a href="./app-contacto.html">Contacto</a></li>
+                <li><a href="./app-busca-tu-proyecto.html" class="btn btn-primary nav-links-cta">Busca tu proyecto<span class="cta-arrow">&rarr;</span></a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="./app-busca-tu-proyecto.html" class="btn btn-primary">Busca tu proyecto<span class="cta-arrow">&rarr;</span></a>
+                <div class="hamburger" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="projects-hero reveal">
+            <h1>Trabajos <span class="text-gradient">Seleccionados</span></h1>
+            <p>Una colección de artefactos digitales que exploran la intersección entre la ingeniería de diseño, el desarrollo full stack y la experiencia de usuario.</p>
+        </section>
+
+        <section class="bento-grid">
+
+            <article class="project-card span-2 reveal">
+                <div class="project-visual">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="../assets/img/viajerox-home.png" alt="Página de inicio de ViajeroX" width="2522" height="1037" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/viajerox-comunidad.png" alt="Sección de comunidad de ViajeroX" width="2487" height="1159" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/viajerox-gastronomia.png" alt="Sección de gastronomía de ViajeroX" width="2020" height="1179" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-arrow carousel-next" aria-label="Foto siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Bootstrap 5</span>
+                    </div>
+                    <h3>ViajeroX</h3>
+                    <p class="desc">Sitio web temático sobre las 7 maravillas del mundo, desarrollado en equipo (4 personas) con HTML5, CSS3, Bootstrap 5, FontAwesome y AOS para animaciones de scroll.</p>
+                    <button type="button" class="btn-more" aria-expanded="false" aria-controls="desc-more-viajerox">
+                        <span class="btn-more-label">Ver más</span>
+                        <svg class="btn-more-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="desc-more" id="desc-more-viajerox">
+                        <ul class="desc-list desc-list-spaced">
+                            <li><strong>Arquitectura multi-página:</strong> +25 páginas HTML organizadas por dominio funcional (autenticación, comunidad, servicios, panel admin, detalle de producto).</li>
+                            <li><strong>Diseño responsive:</strong> adaptado a mobile, tablet y desktop con Bootstrap grid y 16 hojas de estilo modulares por sección.</li>
+                            <li><strong>UI interactiva sin frameworks JS:</strong> cards, modales de video/información y navbar adaptativo resueltos con Bootstrap y CSS puro.</li>
+                            <li><strong>Flujos de producto simulados:</strong> login, registro, contacto y panel de administración funcionales a nivel de frontend.</li>
+                            <li><strong>Trabajo colaborativo con Git:</strong> desarrollo por ramas de feature, con pull requests y merges — ~680 commits totales en equipo.</li>
+                            <li><strong>Validación de formularios nativa:</strong> patrones regex en registro, login y contacto (contraseñas con letra, número y carácter especial) junto con <code>minlength</code> y <code>required</code>, sin depender de JS.</li>
+                            <li><strong>Contenido enriquecido por destino:</strong> cada maravilla tiene su propia página de detalle con historia, tips de viaje, fotos, video y opiniones de viajeros.</li>
+                            <li><strong>Servicios complementarios como secciones propias:</strong> transporte, alojamiento, gastronomía y asistencia al viajero, pensados como plataforma y no como una landing.</li>
+                            <li><strong>Gamificación:</strong> sección de millas con objetivos y recompensas para fomentar el retorno de usuarios.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>2025 · EN PRODUCCIÓN</span>
+                        <a href="https://rad-bubblegum-a9e13eeoc.netlify.app/" target="_blank" rel="noopener" class="cta">VER DEMO →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card tall reveal">
+                <div class="project-visual visual-mercedes">
+                    <div class="carousel-track">
+                        <div class="carousel-slide contain">
+                            <img src="../assets/img/mercedes-clone-mobile.png" alt="Vista mobile del clon de Mercedes-Benz" width="716" height="1145" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide contain">
+                            <img src="../assets/img/mercedes-configurador.png" alt="Configurador interactivo de vehículo con precio en vivo" width="698" height="1137" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide contain">
+                            <img src="../assets/img/mercedes-interior.png" alt="Vista de interior del vehículo configurado" width="725" height="1135" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-arrow carousel-next" aria-label="Foto siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <h3>Mercedes-Benz (Clon)</h3>
+                    <p class="desc">Clon no oficial del sitio de Mercedes-Benz — proyecto de práctica sin afiliación con la marca — construido desde cero con HTML, CSS y JavaScript vanilla. Incluye un configurador de vehículo interactivo con cálculo de precio en tiempo real y un diseño mobile-first pensado para sentirse como una app.</p>
+                    <button type="button" class="btn-more" aria-expanded="false" aria-controls="desc-more-mercedes">
+                        <span class="btn-more-label">Ver más</span>
+                        <svg class="btn-more-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="desc-more" id="desc-more-mercedes">
+                        <ul class="desc-list">
+                            <li><strong>Configurador interactivo:</strong> elegís color, llantas e interior y el precio se recalcula en vivo, sin frameworks.</li>
+                            <li><strong>Catálogo multi-página:</strong> home, modelos, sub-marcas (AMG, Maybach, Clase Eléctrica) y fichas técnicas por modelo.</li>
+                            <li><strong>Diseño mobile-first:</strong> menú a pantalla completa y tipografía/espaciados adaptados por breakpoint, con ajustes específicos para Safari/iOS.</li>
+                            <li><strong>JavaScript vanilla puro:</strong> slider táctil, validación de formularios y lógica de estado sin depender de ningún framework.</li>
+                            <li><strong>Despliegue continuo en Vercel:</strong> integrado con Git/GitHub para publicar cada cambio automáticamente.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>2025 · EN PRODUCCIÓN</span>
+                        <a href="https://mercedesbenz-clonereplica-octavio.vercel.app/" target="_blank" rel="noopener" class="cta">VER DEMO →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card span-3 reveal">
+                <div class="project-visual">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="../assets/img/padeltime-home.png" alt="Home de PadelTime" width="2513" height="1208" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/padeltime-agenda.png" alt="Agenda de reservas de PadelTime" width="2345" height="1138" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/padeltime-catalogo.png" alt="Catálogo de canchas de PadelTime" width="2156" height="1211" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-arrow carousel-next" aria-label="Foto siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <h3>PadelTime</h3>
+                    <p class="desc">Plataforma SaaS para la gestión integral de complejos de pádel: los jugadores buscan canchas y reservan turnos, los dueños administran su negocio (canchas, horarios, torneos, pagos, reportes) y un superadmin gobierna la plataforma aprobando y suspendiendo complejos.</p>
+                    <button type="button" class="btn-more" aria-expanded="false" aria-controls="desc-more-padeltime">
+                        <span class="btn-more-label">Ver más</span>
+                        <svg class="btn-more-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="desc-more" id="desc-more-padeltime">
+                        <ul class="desc-list">
+                            <li><strong>Tres paneles por rol con rutas protegidas:</strong> cliente (reservas, favoritos), dueño con 10 secciones (agenda, canchas, torneos, reportes) y superadmin.</li>
+                            <li><strong>Motor de disponibilidad en tiempo real:</strong> cruza horarios, reservas, mantenimientos y bloqueos, con expiración automática de reservas pendientes.</li>
+                            <li><strong>Pagos multi-tenant con Mercado Pago:</strong> cada dueño conecta su cuenta; el token se cifra con AES-256-GCM y la confirmación llega por webhook, polling y redirect.</li>
+                            <li><strong>Chatbot con IA (Llama 3.3 70B vía Groq):</strong> usa function calling para consultar disponibilidad real en MongoDB y sugerir turnos.</li>
+                            <li><strong>Generador de PDF y analítica propios:</strong> reportes construidos a mano y agregaciones en MongoDB para ingresos, ocupación y ranking de canchas.</li>
+                            <li><strong>Frontend SPA con React 19:</strong> Vite, React Router 7, Zustand para estado global, React Hook Form + Zod para validación y Axios con interceptores JWT.</li>
+                            <li><strong>Backend en arquitectura de capas:</strong> routes → validación con express-validator → controllers → modelos, con JWT + bcrypt y RBAC de 3 roles.</li>
+                            <li><strong>Analítica con mapa de calor:</strong> tendencias período a período y heatmap de ocupación por día y hora, además de ranking de canchas.</li>
+                            <li><strong>Auditoría e integraciones:</strong> subida de imágenes a Cloudinary, emails transaccionales con Nodemailer y registro de acciones del superadmin (ActivityLog).</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>2026 · EN PRODUCCIÓN</span>
+                        <a href="https://padel-time-roan.vercel.app/" target="_blank" rel="noopener" class="cta">VER DEMO →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card span-3 reveal">
+                <div class="project-visual">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="../assets/img/elgarage-home.png" alt="Home de El Garage Automóviles" width="2533" height="1237" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/elgarage-stock.png" alt="Stock de vehículos de El Garage Automóviles con filtros" width="2522" height="1203" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/elgarage-tasacion.png" alt="Formulario de tasación online de El Garage Automóviles" width="2328" height="1077" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-arrow carousel-next" aria-label="Foto siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Claude API</span>
+                    </div>
+                    <h3>El Garage Automóviles</h3>
+                    <p class="desc">Plataforma web para una concesionaria de autos usados: los clientes exploran el stock, filtran por marca/carrocería/precio, consultan la ficha de cada unidad y tasan su auto actual online, mientras el dueño gestiona todo el inventario, las tasaciones recibidas y las conversaciones del chat desde un panel propio.</p>
+                    <button type="button" class="btn-more" aria-expanded="false" aria-controls="desc-more-elgarage">
+                        <span class="btn-more-label">Ver más</span>
+                        <svg class="btn-more-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="desc-more" id="desc-more-elgarage">
+                        <ul class="desc-list">
+                            <li><strong>Dos experiencias con rutas protegidas:</strong> sitio público (stock, ficha de auto, tasación, chat) y panel admin detrás de login con JWT, sin exponer ninguna ruta de gestión sin autenticar.</li>
+                            <li><strong>Carga de vehículos con moneda dual (USD/ARS):</strong> cada auto se publica en dólares o en pesos según convenga, con selector de moneda en el formulario y precio formateado correctamente en toda la web.</li>
+                            <li><strong>Chatbot con IA (Claude Haiku vía Anthropic SDK):</strong> usa function calling para consultar el stock real en MongoDB y responder con datos concretos (marca, precio, disponibilidad) en vez de inventar información.</li>
+                            <li><strong>Carga de fotos directa a Cloudinary:</strong> subida sin pasar por el servidor (unsigned upload), hasta 7 fotos por vehículo, con reordenamiento y selección de portada desde el panel.</li>
+                            <li><strong>SEO técnico completo:</strong> metadata dinámica por página (hook propio useSeo), datos estructurados JSON-LD (AutomotiveBusiness), sitemap.xml generado en cada build consultando la API en vivo, y robots.txt.</li>
+                            <li><strong>Backend en Express + MongoDB:</strong> autenticación con JWT y bcrypt, rate limiting propio por IP (con trust proxy para Render), CORS multi-origen para soportar dominio propio y subdominios.</li>
+                            <li><strong>Notificaciones automáticas por email (Nodemailer):</strong> el dueño recibe un correo apenas entra una tasación nueva, sin tener que estar pendiente del panel.</li>
+                            <li><strong>Frontend SPA con React 18 + Vite + React Router 7:</strong> sin librerías de UI, diseño propio con tokens de color/tipografía consistentes en todo el sitio.</li>
+                            <li><strong>Infraestructura productiva real:</strong> frontend en Vercel, backend en Render, base de datos en MongoDB Atlas y dominio propio conectado a mano (DNS, SSL, verificación en Google Search Console).</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>2026 · EN PRODUCCIÓN</span>
+                        <a href="https://elgarageautomovilesyb.com/" target="_blank" rel="noopener" class="cta">VER DEMO →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card span-3 reveal">
+                <div class="project-visual">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="../assets/img/focusonweb-hero.png" alt="Pantalla principal de FocusOnWeb" width="2529" height="1226" loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../assets/img/focusonweb-features.png" alt="Funcionalidades de FocusOnWeb" width="2526" height="1224" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-arrow carousel-next" aria-label="Foto siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="card-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <h3>FocusOnWeb</h3>
+                    <p class="desc">Plataforma SaaS multi-tenant de gestión de tareas para equipos: cada empresa administra su propia organización con proyectos, tareas y empleados, mientras cada empleado ve y actualiza únicamente lo que tiene asignado. Todo el ciclo de vida de una tarea —asignación, revisión, aprobación, aclaraciones, reapertura— queda modelado de punta a punta, con notificaciones automáticas por email que cada empresa configura con su propio Gmail.</p>
+                    <button type="button" class="btn-more" aria-expanded="false" aria-controls="desc-more-focusonweb">
+                        <span class="btn-more-label">Ver más</span>
+                        <svg class="btn-more-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="desc-more" id="desc-more-focusonweb">
+                        <ul class="desc-list">
+                            <li><strong>Multi-tenant real:</strong> cuentas "empresa" (dueñas de su organización) y "empleado" (miembros), con permisos separados del rol técnico de membresía (admin/miembro) — nunca se mezclan.</li>
+                            <li><strong>Ciclo de vida completo de tareas:</strong> pendiente → en progreso → en revisión → completada, con aprobación por nivel de calidad, reapertura con motivo, extensión de plazos vencidos y solicitud de aclaraciones entre empresa y empleado.</li>
+                            <li><strong>Emails automáticos por organización:</strong> cada empresa conecta su propio Gmail (contraseña de aplicación cifrada con AES-256-GCM) para avisos e invitaciones; la recuperación de contraseña usa una cuenta de sistema separada.</li>
+                            <li><strong>Gestión de equipo:</strong> invitación por email, WhatsApp o link compartible, eliminación con confirmación y borrado en cascada de tareas, y departamentos derivados de los proyectos reales de cada persona.</li>
+                            <li><strong>Tablero Kanban:</strong> filtros por miembro y estadísticas en vivo por columna.</li>
+                            <li><strong>Onboarding guiado:</strong> crear el primer proyecto, invitar al primer empleado y activar los avisos automáticos, con acciones reales contra el backend en cada paso.</li>
+                            <li><strong>Seguridad end-to-end:</strong> contraseñas con bcrypt (select:false a nivel de schema), JWT con expiración, rate limiting en login/registro/recuperación, CORS restringido y mensajes de error que no revelan qué emails existen.</li>
+                            <li><strong>Frontend con React 19 + Vite:</strong> React Router 7, React Hook Form + Zod, Framer Motion y un sistema de diseño oscuro construido a mano, sin Tailwind ni UI kit.</li>
+                            <li><strong>Backend en capas con Express 5 + MongoDB:</strong> rutas → validadores → controllers → modelos, Nodemailer, Cloudinary y un job de limpieza automática de tareas antiguas.</li>
+                            <li><strong>Testing y deploy real:</strong> 22 tests de backend (Jest) y 18 de frontend (Vitest + Testing Library), desplegado en Render (API) y Vercel (frontend).</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <span>2026 · EN PRODUCCIÓN</span>
+                        <a href="https://focus-on-web.vercel.app/" target="_blank" rel="noopener" class="cta">VER DEMO →</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <div class="footer-col footer-brand">
+                <a href="../aplicacion.html" class="footer-logo">
+                    <img src="../assets/img/logo-footer.png" alt="Octavio Studio" width="200" height="200" loading="lazy" decoding="async">
+                    <span>Octavio Studio</span>
+                </a>
+                <p class="footer-tagline">Software a medida, de la idea a producción.</p>
+                <p class="footer-location">Tucumán, Argentina · Trabajo con clientes de todo el mundo.</p>
+                <p class="footer-availability"><span class="footer-dot"></span>Disponible para nuevos proyectos</p>
+            </div>
+            <nav class="footer-col footer-accordion" aria-label="Servicios">
+                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-servicios">
+                    Servicios
+                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <ul class="footer-accordion-panel" id="footer-panel-servicios">
+                    <li><a href="./app-contacto.html">Landing pages</a></li>
+                    <li><a href="./app-contacto.html">Sitios web institucionales</a></li>
+                    <li><a href="./app-contacto.html">Tiendas online (Shopify / Tiendanube)</a></li>
+                    <li><a href="./app-contacto.html">Sistemas y SaaS a medida</a></li>
+                    <li><a href="./app-contacto.html">Mantenimiento y soporte</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col footer-accordion" aria-label="Navegación del sitio">
+                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-nav">
+                    Navegación
+                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <ul class="footer-accordion-panel" id="footer-panel-nav">
+                    <li><a href="../aplicacion.html">Inicio</a></li>
+                    <li><a href="./app-sobre-mi.html">Sobre mí</a></li>
+                    <li><a href="./app-proyectos.html">Proyectos</a></li>
+                    <li><a href="./app-contacto.html">Contacto</a></li>
+                    <li><a href="./preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col footer-accordion">
+                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-contacto">
+                    Contacto
+                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <ul class="footer-accordion-panel" id="footer-panel-contacto">
+                    <li><a href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer">WhatsApp +54 9 381 301-9932</a></li>
+                    <li><a href="mailto:octaviofernandez40999@gmail.com">octaviofernandez40999@gmail.com</a></li>
+                    <li class="footer-plain">Lun a Vie 9 a 18 hs (GMT-3)</li>
+                    <li class="footer-plain">Respondo en menos de 24 hs</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-strip">
+            <ol class="footer-process-list">
+                <li>Consulta</li>
+                <li>Propuesta</li>
+                <li>Diseño</li>
+                <li>Desarrollo</li>
+                <li>Entrega</li>
+                <li>Soporte</li>
+            </ol>
+            <ul class="footer-stack" aria-label="Tecnologías principales">
+                <li title="HTML5"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span class="sr-only">HTML5</span></li>
+                <li title="CSS3"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span class="sr-only">CSS3</span></li>
+                <li title="JavaScript"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span class="sr-only">JavaScript</span></li>
+                <li title="React"><i class="devicon-react-original colored" aria-hidden="true"></i><span class="sr-only">React</span></li>
+                <li title="Node.js"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i><span class="sr-only">Node.js</span></li>
+                <li title="Express"><i class="devicon-express-original colored" aria-hidden="true"></i><span class="sr-only">Express</span></li>
+                <li title="MongoDB"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i><span class="sr-only">MongoDB</span></li>
+            </ul>
+        </div>
+        <div class="container footer-bottom">
+            <p class="footer-copy">© 2026 Octavio Studio. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <a href="./app-privacidad.html">Política de privacidad</a>
+                <a href="./app-terminos.html">Términos del servicio</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/octaviofernandez4" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/octavio.fernandez._/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l1.5-4A8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+                </a>
+            </div>
+            <a href="#top" class="footer-top">Volver arriba ↑</a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js?v=1"></script>
+    <script src="../js/carousel.js?v=1"></script>
+</body>
+</html>

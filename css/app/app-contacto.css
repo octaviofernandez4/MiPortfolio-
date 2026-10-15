@@ -1,0 +1,108 @@
+/* =========================================================
+   OCTAVIO STUDIO · MOBILE APP LAYER — CONTACTO
+   ========================================================= */
+@media (max-width: 767px) {
+
+    section.contact { padding: calc(var(--app-bar-h) + var(--app-safe-top) + 26px) var(--app-gutter) 0; }
+
+    .contact-grid { gap: 22px; padding-top: 0; }
+
+    .contact-intro h2 { font-size: clamp(2.05rem, 9.4vw, 2.6rem); line-height: 1.04; letter-spacing: -0.04em; margin: 0 0 12px; }
+    .contact-intro > p { font-size: 14.5px; line-height: 1.6; margin-bottom: 20px; }
+
+    /* Canales: lista agrupada con chevrons */
+    .contact-channels {
+        gap: 0;
+        overflow: hidden;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius);
+    }
+
+    .channel-card {
+        gap: 14px;
+        min-height: 70px;
+        padding: 14px 16px;
+        border: 0;
+        border-radius: 0;
+        background: none;
+    }
+
+    .channel-card + .channel-card { border-top: 1px solid var(--app-line); }
+    .channel-card:hover { transform: none; border-color: var(--app-line); }
+    .channel-card:active { background: rgba(255, 255, 255, 0.04); }
+
+    .channel-card::after {
+        content: '';
+        flex: none;
+        width: 18px;
+        height: 18px;
+        margin-left: auto;
+        background: var(--app-dim);
+        -webkit-mask: var(--i-chevron) center / contain no-repeat;
+        mask: var(--i-chevron) center / contain no-repeat;
+    }
+
+    .channel-text { flex: 1; }
+    .channel-icon { width: 42px; height: 42px; border-radius: 13px; }
+    .channel-card:nth-child(2) .channel-icon { color: var(--app-green); background: rgba(50, 232, 122, 0.1); }
+    .channel-card:nth-child(3) .channel-icon { color: var(--app-text); background: var(--app-surface-2); }
+    .channel-label { font-size: 10.5px; }
+    .channel-value { font-size: 14px; }
+
+    /* Formulario */
+    .contact-form-card {
+        padding: 20px 18px 18px;
+        border-radius: var(--app-radius);
+        background: var(--app-surface);
+        border-color: var(--app-line);
+    }
+
+    .contact-form-card::before {
+        content: 'Escribime';
+        display: block;
+        margin-bottom: 4px;
+        font-family: var(--app-font);
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: var(--app-text);
+    }
+
+    .contact-form-card::after {
+        content: 'Respondo en menos de 24 hs';
+        position: absolute;
+        top: 24px;
+        right: 18px;
+        font-family: var(--app-mono);
+        font-size: 10px;
+        color: var(--app-dim);
+    }
+
+    .contact-form-card { position: relative; }
+    .contact-form-card .form-group:first-child { margin-top: 16px; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label { margin-bottom: 8px; font-size: 10.5px; }
+
+    .form-group input,
+    .form-group textarea {
+        min-height: 52px;
+        padding: 14px 16px;
+        font-size: 16px; /* evita el zoom automático en iOS */
+        border-radius: var(--app-radius-sm);
+        background: var(--app-surface-2);
+        border-color: var(--app-line-2);
+    }
+
+    .form-group textarea { min-height: 140px; }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--app-cyan);
+        background: var(--app-surface-2);
+        box-shadow: 0 0 0 4px rgba(47, 216, 232, 0.12);
+    }
+
+    .form-submit { min-height: 54px; font-size: 15px; margin-top: 4px; }
+}

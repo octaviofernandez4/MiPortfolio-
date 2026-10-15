@@ -1,0 +1,129 @@
+/* =========================================================
+   OCTAVIO STUDIO · MOBILE APP LAYER — INICIO (index.html)
+   ========================================================= */
+@media (max-width: 767px) {
+
+    .hero { padding: calc(var(--app-bar-h) + var(--app-safe-top) + 28px) 0 6px; }
+
+    .hero-inner { align-items: flex-start; text-align: left; }
+
+    .hero h1 {
+        font-size: clamp(2.05rem, 9.4vw, 2.6rem);
+        line-height: 1.04;
+        letter-spacing: -0.04em;
+        margin-bottom: 16px;
+    }
+
+    .hero h1 .text-gradient { display: block; padding-bottom: 2px; }
+
+    .hero > .hero-inner > p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--app-muted);
+        margin-bottom: 24px;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        max-width: none;
+        margin-bottom: 14px;
+    }
+
+    /* Widget de métricas */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        width: 100%;
+        padding: 16px 0;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius);
+    }
+
+    .hero-stats .stat { min-width: 0; padding: 0 14px; text-align: left; }
+    .hero-stats .stat + .stat { border-left: 1px solid var(--app-line); }
+    .hero-stats .num { font-size: 22px; line-height: 1.1; background: var(--app-grad-text); -webkit-background-clip: text; background-clip: text; }
+    .hero-stats .label { font-size: 9.5px; line-height: 1.35; letter-spacing: 0.07em; margin-top: 6px; }
+
+    /* Módulos: carrusel horizontal con snap */
+    .container.modules-section { padding: 30px 0 4px; }
+
+    .section-heading {
+        justify-content: space-between;
+        padding: 0 var(--app-gutter);
+        margin-bottom: 14px;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--app-muted);
+        text-align: left;
+    }
+
+    .section-heading .icon { display: none; }
+
+    .section-heading::after {
+        content: 'Deslizá →';
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        text-transform: none;
+        color: var(--app-dim);
+    }
+
+    .home-preview {
+        display: flex;
+        gap: 12px;
+        padding: 0 var(--app-gutter) 6px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 var(--app-gutter);
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        counter-reset: modulo;
+    }
+
+    .home-preview::-webkit-scrollbar { display: none; }
+
+    .preview-card {
+        position: relative;
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+        padding: 20px;
+        border-radius: var(--app-radius);
+        background: var(--app-surface);
+        border-color: var(--app-line);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        counter-increment: modulo;
+    }
+
+    .preview-card::before {
+        content: counter(modulo, decimal-leading-zero);
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-family: var(--app-mono);
+        font-size: 11px;
+        color: var(--app-dim);
+    }
+
+    .glass-card:hover { transform: none; border-color: var(--app-line); }
+    .glass-card:active { transform: scale(0.98); }
+
+    .preview-card .icon {
+        display: grid;
+        place-items: center;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 26px;
+        font-size: 22px;
+        border-radius: 15px;
+        background: var(--app-surface-2);
+        border: 1px solid var(--app-line-2);
+    }
+
+    .preview-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .preview-card p { font-size: 13.5px; line-height: 1.55; }
+}

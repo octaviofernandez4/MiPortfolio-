@@ -1,0 +1,41 @@
+/* =========================================================
+   OCTAVIO STUDIO · MOBILE APP LAYER — LEGALES
+   privacidad.html y terminos.html
+   ========================================================= */
+@media (max-width: 767px) {
+
+    main > section.reveal { padding: calc(var(--app-bar-h) + var(--app-safe-top) + 26px) var(--app-gutter) 0; }
+
+    main > section.reveal > .page-header { max-width: none; margin: 0 0 18px; padding-top: 0; text-align: left; }
+    main > section.reveal > .page-header h2 { font-size: clamp(1.9rem, 8.6vw, 2.4rem); letter-spacing: -0.04em; margin-bottom: 8px; }
+
+    main > section.reveal > .page-header p {
+        display: inline-flex;
+        padding: 5px 10px;
+        font-family: var(--app-mono);
+        font-size: 10.5px;
+        border-radius: 999px;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+    }
+
+    .legal-content {
+        gap: 12px;
+        max-width: none;
+        padding: 20px 18px;
+        border-radius: var(--app-radius);
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+    }
+
+    .legal-content h3 {
+        margin-top: 10px;
+        padding-top: 16px;
+        font-size: 17px;
+        letter-spacing: -0.02em;
+        border-top: 1px solid var(--app-line);
+    }
+
+    .legal-content p,
+    .legal-content li { font-size: 14px; line-height: 1.65; color: var(--app-muted); }
+}

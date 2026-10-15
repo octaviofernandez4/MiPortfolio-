@@ -1,0 +1,275 @@
+/* =========================================================
+   OCTAVIO STUDIO · MOBILE APP LAYER — BUSCA TU PROYECTO
+   Pantalla tipo "Explorar" / tienda de apps.
+   ========================================================= */
+@media (max-width: 767px) {
+
+    /* Arregla el filtro: .rubro-card tiene display:flex y pisaba [hidden] */
+    .rubro-card[hidden],
+    .rubro-group[hidden],
+    .search-empty[hidden] { display: none !important; }
+
+    /* ---------- Cabecera ---------- */
+    .matchmaker-hero { padding: calc(var(--app-bar-h) + var(--app-safe-top) + 26px) 0 0; text-align: left; }
+    .matchmaker-hero .container { align-items: stretch; }
+    .matchmaker-hero .badge { align-self: flex-start; }
+
+    .matchmaker-hero h1 {
+        font-size: clamp(2.05rem, 9.4vw, 2.6rem);
+        line-height: 1.04;
+        letter-spacing: -0.04em;
+        margin-bottom: 12px;
+    }
+
+    .matchmaker-hero h1 .text-gradient { display: block; }
+    .matchmaker-hero > .container > p { font-size: 14.5px; line-height: 1.6; margin-bottom: 20px; }
+
+    /* ---------- Buscador ---------- */
+    .search-panel {
+        max-width: none;
+        margin-bottom: 14px;
+        padding: 0;
+        background: none;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .search-bar {
+        flex-wrap: nowrap;
+        gap: 8px;
+        height: 56px;
+        padding: 0 6px 0 16px;
+        margin-bottom: 12px;
+        border-radius: 18px;
+        background: var(--app-surface);
+        border-color: var(--app-line-2);
+        transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .search-bar:focus-within { border-color: var(--app-cyan); box-shadow: 0 0 0 4px rgba(47, 216, 232, 0.12); }
+
+    .search-icon { width: 20px; height: 20px; }
+
+    .search-bar input { min-width: 0; height: 100%; font-size: 16px; /* evita zoom iOS */ }
+
+    .search-btn {
+        flex: none;
+        width: 44px;
+        min-height: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 13px;
+        font-size: 0;
+    }
+
+    .search-btn svg { width: 18px; height: 18px; }
+
+    /* Rubros: chips con scroll horizontal */
+    .rubro-filters {
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin: 0 calc(var(--app-gutter) * -1);
+        padding: 0 var(--app-gutter) 2px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .rubro-filters::-webkit-scrollbar { display: none; }
+
+    .rubro-pill {
+        flex: none;
+        min-height: 40px;
+        padding: 0 16px;
+        font-family: var(--app-font);
+        font-size: 13px;
+        white-space: nowrap;
+        border-radius: 999px;
+        color: var(--app-muted);
+        background: var(--app-surface);
+        border-color: var(--app-line-2);
+    }
+
+    .rubro-pill:hover { border-color: var(--app-line-2); color: var(--app-muted); }
+    .rubro-pill:active { transform: scale(0.95); }
+
+    .rubro-pill.active {
+        color: #06080f;
+        background: var(--app-text);
+        border-color: var(--app-text);
+    }
+
+    .search-empty {
+        margin-top: 14px;
+        padding: 18px;
+        font-size: 13.5px;
+        border: 1px dashed var(--app-line-2);
+        border-radius: var(--app-radius);
+    }
+
+    /* Métricas 2x2 */
+    .matchmaker-hero .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        width: 100%;
+        overflow: hidden;
+        background: var(--app-line);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius);
+    }
+
+    .matchmaker-hero .hero-stats .stat { min-width: 0; padding: 14px 16px; text-align: left; background: var(--app-surface); }
+    .matchmaker-hero .hero-stats .num { font-size: 22px; line-height: 1.1; background: var(--app-grad-text); -webkit-background-clip: text; background-clip: text; }
+    .matchmaker-hero .hero-stats .label { font-size: 9.5px; line-height: 1.35; letter-spacing: 0.07em; margin-top: 6px; }
+
+    /* ---------- Catálogo ---------- */
+    .catalog-section { padding: 34px 0 0; }
+
+    .catalog-header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 22px;
+        text-align: left;
+    }
+
+    .catalog-header h2 { font-size: 24px; letter-spacing: -0.03em; }
+    .catalog-header .eyebrow { margin-bottom: 6px; }
+
+    .catalog-count {
+        flex: none;
+        padding: 6px 10px;
+        font-size: 10.5px;
+        border-radius: 999px;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+    }
+
+    .rubro-groups { gap: 30px; }
+
+    .rubro-group-header {
+        gap: 10px;
+        margin-bottom: 12px;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .rubro-group-icon { width: 34px; height: 34px; border-radius: 11px; }
+    .rubro-group-header h3 { font-size: 18px; letter-spacing: -0.02em; }
+
+    /* Cada rubro: carrusel horizontal tipo tienda de apps */
+    .rubro-card-grid {
+        display: flex;
+        gap: 12px;
+        margin: 0 calc(var(--app-gutter) * -1);
+        padding: 0 var(--app-gutter) 4px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 var(--app-gutter);
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .rubro-card-grid::-webkit-scrollbar { display: none; }
+
+    .rubro-card {
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+        border-radius: var(--app-radius);
+        background: var(--app-surface);
+        border-color: var(--app-line);
+    }
+
+    .rubro-card:hover,
+    [class*="cat-"] .rubro-card:hover { transform: none; border-color: var(--app-line); }
+
+    .rubro-card-media { margin: 8px 8px 0; border-radius: 16px; aspect-ratio: 16 / 10; background: var(--app-surface-2); }
+
+    .rubro-card-badge { padding: 5px 10px; font-size: 10.5px; }
+    .rubro-card-badge-category { -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
+    .rubro-card-body { padding: 14px 16px 14px; }
+    .rubro-card-body h3 { font-size: 17px; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .rubro-card-body p { font-size: 13px; line-height: 1.55; margin-bottom: 12px; }
+
+    .rubro-card-tags { gap: 6px; margin-bottom: 14px; }
+
+    .rubro-card-tags .tag {
+        padding: 4px 10px;
+        font-size: 10.5px;
+        color: var(--app-muted);
+        background: var(--app-surface-2);
+        border: 1px solid var(--app-line);
+    }
+
+    .rubro-card-links {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        padding-top: 12px;
+    }
+
+    .rubro-card-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        min-height: 42px;
+        padding: 0 14px;
+        font-size: 13px;
+        border-radius: 13px;
+        background: var(--app-surface-2);
+        border: 1px solid var(--app-line-2);
+    }
+
+    .rubro-card-link-secondary {
+        flex: 1;
+        min-height: 42px;
+        padding: 0 12px;
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #fff;
+        border: 0;
+        border-radius: 13px;
+        background: var(--app-grad);
+    }
+
+    .rubro-card-link-secondary:hover { color: #fff; }
+    .rubro-card-link:active,
+    .rubro-card-link-secondary:active { transform: scale(0.96); }
+
+    /* ---------- Banner final ---------- */
+    .cta-banner-section { padding: 34px 0 0; }
+
+    .cta-banner {
+        position: relative;
+        gap: 20px;
+        padding: 22px 18px 18px;
+        overflow: hidden;
+        border-radius: 26px;
+        background:
+            radial-gradient(120% 80% at 100% 0%, rgba(138, 92, 240, 0.22), transparent 60%),
+            var(--app-surface);
+        border-color: var(--app-line-2);
+    }
+
+    .cta-banner-text h2 { font-size: 23px; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 10px; }
+    .cta-banner-text p { font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+
+    .cta-features { gap: 0; border-top: 1px solid var(--app-line); }
+    .cta-features span { min-height: 46px; font-size: 14px; border-bottom: 1px solid var(--app-line); }
+
+    .cta-features svg {
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+        border-radius: 9px;
+        background: rgba(47, 216, 232, 0.1);
+    }
+
+    .cta-banner-actions { gap: 10px; }
+    .cta-banner-actions .btn { width: 100%; }
+    .cta-banner-actions .btn-secondary { font-size: 12.5px; overflow-wrap: anywhere; }
+}

@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>if (window.innerWidth >= 768) location.replace('./busca-tu-proyecto.html');</script>
+    <title>Busca tu Proyecto | OctavioStudio</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css?v=2">
+    <link rel="stylesheet" href="../css/busca-tu-proyecto.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+    <!-- Capa mobile app -->
+    <link rel="stylesheet" href="../css/app/app-base.css">
+    <link rel="stylesheet" href="../css/app/app-busca-tu-proyecto.css">
+    <link rel="stylesheet" href="../css/app/app-footer.css">
+</head>
+<body id="top">
+    <header>
+        <nav class="navbar">
+            <a href="../aplicacion.html" class="logo">
+                <img src="../assets/img/logo-footer.png" alt="Octavio Studio" width="46" height="46" class="logo-icon" decoding="async">
+                <span class="logo-text"><span class="logo-name"><strong>Octavio</strong> Studio</span><span class="logo-tag">CREATIVE DIGITAL AGENCY</span></span>
+            </a>
+            <ul class="nav-links" id="primary-nav">
+                <li><a href="../aplicacion.html">Inicio</a></li>
+                <li><a href="./app-sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="./app-proyectos.html">Proyectos</a></li>
+                <li><a href="./app-contacto.html">Contacto</a></li>
+                <li><a href="./app-busca-tu-proyecto.html" class="btn btn-primary nav-links-cta active">Busca tu proyecto<span class="cta-arrow">&rarr;</span></a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="./app-busca-tu-proyecto.html" class="btn btn-primary">Busca tu proyecto<span class="cta-arrow">&rarr;</span></a>
+                <div class="hamburger" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="matchmaker-hero reveal">
+            <div class="container">
+                <span class="badge"><span class="dot"></span> Matchmaker de proyectos · Descubrí tu solución ideal</span>
+                <h1>Encontrá la solución exacta para <span class="text-gradient">impulsar tu negocio</span></h1>
+                <p>Explorá casos reales, arquitecturas a medida y estimaciones según tu industria. Filtrá por rubro o tipo de entrega y recibí una hoja de ruta precisa.</p>
+
+                <div class="search-panel">
+                    <div class="search-bar">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="rubro-search-input" placeholder="Buscar por rubro o palabra clave (ej. restaurantes, turnos, tienda online)...">
+                        <button type="button" class="btn btn-primary search-btn" id="rubro-search-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            Buscar
+                        </button>
+                    </div>
+
+                    <div class="rubro-filters" id="rubro-filters">
+                        <button type="button" class="rubro-pill active" data-cat="all">Todos los rubros</button>
+                        <button type="button" class="rubro-pill" data-cat="cat-gastronomia">Gastronomía y Ocio</button>
+                        <button type="button" class="rubro-pill" data-cat="cat-salud">Salud y Bienestar</button>
+                        <button type="button" class="rubro-pill" data-cat="cat-comercio">Comercio y Retail</button>
+                        <button type="button" class="rubro-pill" data-cat="cat-servicios">Servicios Profesionales</button>
+                        <button type="button" class="rubro-pill" data-cat="cat-educacion">Educación y Formación</button>
+                        <button type="button" class="rubro-pill" data-cat="cat-oficios">Oficios y Vehículos</button>
+                        <button type="button" class="rubro-pill" data-cat="cat-entretenimiento">Entretenimiento y Eventos</button>
+                    </div>
+
+                    <p class="search-empty" id="rubro-search-empty" hidden>No encontramos rubros que coincidan. Probá con otra palabra o <a href="./app-contacto.html">contanos qué necesitás</a>.</p>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="num">50+</div>
+                        <div class="label">Proyectos en Producción</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">15+</div>
+                        <div class="label">Tecnologías Dominadas</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">100%</div>
+                        <div class="label">Código Propio</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">24hs</div>
+                        <div class="label">Tiempo de Respuesta</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <div class="container">
+                <div class="catalog-header">
+                    <div>
+                        <span class="eyebrow">Rubros que ya transformamos</span>
+                        <h2>Encontrá tu industria</h2>
+                    </div>
+                    <span class="catalog-count">Mostrando: <strong id="rubro-count">39</strong> rubros</span>
+                </div>
+
+                <div class="rubro-groups">
+
+                    <div class="rubro-group cat-gastronomia">
+                        <div class="rubro-group-header">
+                            <span class="rubro-group-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                            </span>
+                            <h3>Gastronomía y Ocio</h3>
+                        </div>
+                        <div class="rubro-card-grid">
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/Restaurante.png" alt="Para restaurantes" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Gastronomía y Ocio</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para restaurantes</h3>
+                                    <p>Menú digital, reservas online y gestión de mesas en un solo sistema.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Menú QR</span>
+                                <span class="tag">Reservas</span>
+                                <span class="tag">Delivery</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./gastronomia/restaurante.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/pasteleria.png" alt="Para cafeterías y pastelerías" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Gastronomía y Ocio</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para cafeterías y pastelerías</h3>
+                                    <p>Catálogo de productos, pedidos para retirar y presencia online cuidada.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo</span>
+                                <span class="tag">Pedidos online</span>
+                                <span class="tag">Instagram Shop</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./gastronomia/cafeteria.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/Bar.png" alt="Para bares y cervecerías" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Gastronomía y Ocio</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para bares y cervecerías</h3>
+                                    <p>Carta digital, eventos y reservas de mesas para noches con buena rotación.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Carta digital</span>
+                                <span class="tag">Eventos</span>
+                                <span class="tag">Reservas</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./gastronomia/bar.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/comida-rapida.png" alt="Para food trucks y comida rápida" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Gastronomía y Ocio</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para food trucks y comida rápida</h3>
+                                    <p>Pedidos online, ubicación en vivo y menú siempre actualizado.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Pedidos online</span>
+                                <span class="tag">Geolocalización</span>
+                                <span class="tag">Menú dinámico</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./gastronomia/comida-rapida.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/hoteles.png" alt="Para hoteles y alojamientos boutique" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Gastronomía y Ocio</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para hoteles y alojamientos boutique</h3>
+                                    <p>Motor de reservas propio, disponibilidad en tiempo real y pasarela de pagos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Motor de reservas</span>
+                                <span class="tag">Pagos online</span>
+                                <span class="tag">Multilenguaje</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./gastronomia/hoteles.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/Catering.png" alt="Para servicios de catering" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Gastronomía y Ocio</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para servicios de catering</h3>
+                                    <p>Catálogo de menús por evento, cotizador online y seguimiento de pedidos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Cotizador</span>
+                                <span class="tag">Catálogo de menús</span>
+                                <span class="tag">Seguimiento</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./gastronomia/catering.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="rubro-group cat-salud">
+                        <div class="rubro-group-header">
+                            <span class="rubro-group-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            </span>
+                            <h3>Salud y Bienestar</h3>
+                        </div>
+                        <div class="rubro-card-grid">
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/gimnasio.png" alt="Para gimnasios y centros de entrenamiento" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Salud y Bienestar</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para gimnasios y centros de entrenamiento</h3>
+                                    <p>Reserva de clases, planes de membresía y seguimiento de turnos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Reserva de clases</span>
+                                <span class="tag">Membresías</span>
+                                <span class="tag">Panel de turnos</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./salud/gimnasio.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/estetica.png" alt="Para centros de estética y spas" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Salud y Bienestar</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para centros de estética y spas</h3>
+                                    <p>Agenda online, catálogo de tratamientos y recordatorios automáticos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Agenda online</span>
+                                <span class="tag">Catálogo</span>
+                                <span class="tag">Recordatorios</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./salud/estetica.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/consultorio.png" alt="Para clínicas y consultorios médicos" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Salud y Bienestar</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para clínicas y consultorios médicos</h3>
+                                    <p>Turnos online, ficha de pacientes y recordatorios por WhatsApp o email.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Turnos online</span>
+                                <span class="tag">Ficha de paciente</span>
+                                <span class="tag">Notificaciones</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./salud/clinicas.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/yoga.png" alt="Para estudios de yoga y pilates" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Salud y Bienestar</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para estudios de yoga y pilates</h3>
+                                    <p>Calendario de clases, cupos limitados y pagos de membresía online.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Calendario</span>
+                                <span class="tag">Cupos</span>
+                                <span class="tag">Pagos online</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./salud/yoga.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/psicologia.png" alt="Para psicólogos y terapeutas" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Salud y Bienestar</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para psicólogos y terapeutas</h3>
+                                    <p>Agenda de sesiones, videollamada integrada y recordatorios automáticos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Agenda</span>
+                                <span class="tag">Videollamada</span>
+                                <span class="tag">Recordatorios</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./salud/psicologia.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/nutricionista.png" alt="Para nutricionistas" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Salud y Bienestar</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para nutricionistas</h3>
+                                    <p>Turnos online, seguimiento de planes y portal privado para pacientes.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Turnos</span>
+                                <span class="tag">Portal privado</span>
+                                <span class="tag">Seguimiento</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./salud/nutricionista.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/odontologia.png" alt="Para clínicas odontológicas" loading="lazy" decoding="async">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Salud y Bienestar</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para clínicas odontológicas</h3>
+                                    <p>Turnos online, historial clínico digital y recordatorios de control.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Turnos online</span>
+                                <span class="tag">Historial digital</span>
+                                <span class="tag">Recordatorios</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./salud/odontologia.html" class="rubro-card-link" target="_blank" rel="noopener">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="rubro-group cat-comercio">
+                        <div class="rubro-group-header">
+                            <span class="rubro-group-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                            </span>
+                            <h3>Comercio y Retail</h3>
+                        </div>
+                        <div class="rubro-card-grid">
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/tiendas-ropa.jpg" alt="Para tiendas de ropa y moda" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Comercio y Retail</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para tiendas de ropa y moda</h3>
+                                    <p>Tienda online con talles, variantes de color y checkout rápido.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">Variantes</span>
+                                <span class="tag">Checkout rápido</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/tiendas-ropa.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/tecnologia-celulares.jpg" alt="Para negocios de tecnología y celulares" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Comercio y Retail</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para negocios de tecnología y celulares</h3>
+                                    <p>Catálogo con fichas técnicas, comparador y stock en tiempo real.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo técnico</span>
+                                <span class="tag">Comparador</span>
+                                <span class="tag">Stock en vivo</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/tecnologia-celulares.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/supermercados.jpg" alt="Para supermercados y minimarkets" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Comercio y Retail</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para supermercados y minimarkets</h3>
+                                    <p>Catálogo online, pedidos con delivery y carrito de compra simple.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo</span>
+                                <span class="tag">Delivery</span>
+                                <span class="tag">Carrito de compra</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/supermercados.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/ferreterias.jpg" alt="Para ferreterías y corralones" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Comercio y Retail</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para ferreterías y corralones</h3>
+                                    <p>Catálogo por categorías, cotizador de materiales y pedidos a medida.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo</span>
+                                <span class="tag">Cotizador</span>
+                                <span class="tag">Pedidos a medida</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/ferreterias.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/decoracion-hogar.jpg" alt="Para tiendas de decoración y hogar" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Comercio y Retail</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para tiendas de decoración y hogar</h3>
+                                    <p>Tienda online con galería de productos y gestión de stock simple.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">Galería</span>
+                                <span class="tag">Gestión de stock</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/decoracion-hogar.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/joyerias.jpg" alt="Para joyerías y accesorios" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Comercio y Retail</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para joyerías y accesorios</h3>
+                                    <p>Catálogo premium, fichas de producto detalladas y pagos seguros.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo premium</span>
+                                <span class="tag">Fichas de producto</span>
+                                <span class="tag">Pagos seguros</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/joyerias.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/pet-shops.jpg" alt="Para pet shops y veterinarias" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Comercio y Retail</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para pet shops y veterinarias</h3>
+                                    <p>Turnos para consultas, tienda online y recordatorios de vacunación.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Turnos</span>
+                                <span class="tag">Tienda online</span>
+                                <span class="tag">Recordatorios</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/pet-shops.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="rubro-group cat-servicios">
+                        <div class="rubro-group-header">
+                            <span class="rubro-group-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            </span>
+                            <h3>Servicios Profesionales</h3>
+                        </div>
+                        <div class="rubro-card-grid">
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/inmobiliarias.jpg" alt="Para inmobiliarias y bienes raíces" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Servicios Profesionales</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para inmobiliarias y bienes raíces</h3>
+                                    <p>Catálogo de propiedades, filtros avanzados y contacto directo por consulta.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo de propiedades</span>
+                                <span class="tag">Filtros</span>
+                                <span class="tag">Leads</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/inmobiliarias.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/estudios-abogados.jpg" alt="Para estudios de abogados" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Servicios Profesionales</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para estudios de abogados</h3>
+                                    <p>Sitio institucional, consulta online y gestión de casos para el equipo.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Sitio institucional</span>
+                                <span class="tag">Consulta online</span>
+                                <span class="tag">Gestión de casos</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/estudios-abogados.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/estudios-contables.jpg" alt="Para estudios contables" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Servicios Profesionales</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para estudios contables</h3>
+                                    <p>Portal de clientes, carga de documentación y turnos de consulta.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Portal de clientes</span>
+                                <span class="tag">Documentación</span>
+                                <span class="tag">Turnos</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/estudios-contables.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/arquitectos-constructoras.jpg" alt="Para arquitectos y constructoras" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Servicios Profesionales</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para arquitectos y constructoras</h3>
+                                    <p>Portfolio de obras, cotizador de proyectos y formulario de consulta.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Portfolio</span>
+                                <span class="tag">Cotizador</span>
+                                <span class="tag">Formulario</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/arquitectos-constructoras.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/agencias-viaje.jpg" alt="Para agencias de viaje y turismo" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Servicios Profesionales</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para agencias de viaje y turismo</h3>
+                                    <p>Catálogo de paquetes, cotizador y reservas con seña online.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo de paquetes</span>
+                                <span class="tag">Cotizador</span>
+                                <span class="tag">Reservas</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/agencias-viaje.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/consultoras-rrhh.jpg" alt="Para consultoras de recursos humanos" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Servicios Profesionales</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para consultoras de recursos humanos</h3>
+                                    <p>Portal de búsquedas laborales, postulación online y panel de candidatos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Portal de empleo</span>
+                                <span class="tag">Postulación online</span>
+                                <span class="tag">Panel de candidatos</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/consultoras-rrhh.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="rubro-group cat-educacion">
+                        <div class="rubro-group-header">
+                            <span class="rubro-group-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
+                            </span>
+                            <h3>Educación y Formación</h3>
+                        </div>
+                        <div class="rubro-card-grid">
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/academias-idiomas.jpg" alt="Para academias de idiomas" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Educación y Formación</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para academias de idiomas</h3>
+                                    <p>Inscripción online, niveles y horarios, y portal de alumnos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Inscripción online</span>
+                                <span class="tag">Horarios</span>
+                                <span class="tag">Portal de alumnos</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/academias-idiomas.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/colegios-institutos.jpg" alt="Para colegios e institutos" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Educación y Formación</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para colegios e institutos</h3>
+                                    <p>Sitio institucional, inscripciones y comunicación con familias.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Sitio institucional</span>
+                                <span class="tag">Inscripciones</span>
+                                <span class="tag">Comunicación</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/colegios-institutos.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/academias-manejo.jpg" alt="Para academias de manejo" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Educación y Formación</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para academias de manejo</h3>
+                                    <p>Reserva de clases prácticas, turnos de examen y pagos online.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Reserva de clases</span>
+                                <span class="tag">Turnos de examen</span>
+                                <span class="tag">Pagos online</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/academias-manejo.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/cursos-online.jpg" alt="Para creadores de cursos online" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Educación y Formación</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para creadores de cursos online</h3>
+                                    <p>Plataforma de cursos, pagos y acceso a contenido por membresía.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Plataforma de cursos</span>
+                                <span class="tag">Pagos</span>
+                                <span class="tag">Membresías</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/cursos-online.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="rubro-group cat-oficios">
+                        <div class="rubro-group-header">
+                            <span class="rubro-group-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            </span>
+                            <h3>Oficios y Vehículos</h3>
+                        </div>
+                        <div class="rubro-card-grid">
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/talleres-mecanicos.jpg" alt="Para talleres mecánicos y lubricentros" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Oficios y Vehículos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para talleres mecánicos y lubricentros</h3>
+                                    <p>Turnos online, presupuesto de reparaciones y recordatorios de service.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Turnos online</span>
+                                <span class="tag">Presupuestos</span>
+                                <span class="tag">Recordatorios</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/talleres-mecanicos.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/concesionarias.jpg" alt="Para concesionarias de autos" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Oficios y Vehículos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para concesionarias de autos</h3>
+                                    <p>Stock filtrable, tasación online y ficha detallada por vehículo.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Stock filtrable</span>
+                                <span class="tag">Tasación online</span>
+                                <span class="tag">Fichas de vehículo</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/concesionarias.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/limpieza-mantenimiento.jpg" alt="Para empresas de limpieza y mantenimiento" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Oficios y Vehículos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para empresas de limpieza y mantenimiento</h3>
+                                    <p>Cotizador de servicios, agenda de visitas y seguimiento de órdenes.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Cotizador</span>
+                                <span class="tag">Agenda</span>
+                                <span class="tag">Seguimiento</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/limpieza-mantenimiento.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/logistica-fletes.jpg" alt="Para empresas de logística y fletes" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Oficios y Vehículos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para empresas de logística y fletes</h3>
+                                    <p>Cotizador de envíos, seguimiento en vivo y gestión de pedidos.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Cotizador de envíos</span>
+                                <span class="tag">Seguimiento</span>
+                                <span class="tag">Gestión de pedidos</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/logistica-fletes.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/seguridad.jpg" alt="Para servicios de seguridad" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Oficios y Vehículos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para servicios de seguridad</h3>
+                                    <p>Sitio institucional, cotizador de planes y formulario de contacto directo.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Sitio institucional</span>
+                                <span class="tag">Cotizador</span>
+                                <span class="tag">Contacto directo</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/seguridad.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="rubro-group cat-entretenimiento">
+                        <div class="rubro-group-header">
+                            <span class="rubro-group-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path></svg>
+                            </span>
+                            <h3>Entretenimiento y Eventos</h3>
+                        </div>
+                        <div class="rubro-card-grid">
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/fiestas-infantiles.jpg" alt="Para salones de fiestas infantiles" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Entretenimiento y Eventos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para salones de fiestas infantiles</h3>
+                                    <p>Catálogo de salones y paquetes, calendario de disponibilidad y reservas.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Catálogo de paquetes</span>
+                                <span class="tag">Calendario</span>
+                                <span class="tag">Reservas</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/fiestas-infantiles.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/eventos-bodas.jpg" alt="Para organizadores de eventos y bodas" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Entretenimiento y Eventos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para organizadores de eventos y bodas</h3>
+                                    <p>Portfolio de eventos, cotizador y formulario de consulta por fecha.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Portfolio</span>
+                                <span class="tag">Cotizador</span>
+                                <span class="tag">Consulta por fecha</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/eventos-bodas.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/productoras-audiovisuales.jpg" alt="Para productoras audiovisuales" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Entretenimiento y Eventos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para productoras audiovisuales</h3>
+                                    <p>Portfolio de proyectos, reel de trabajos y formulario de presupuesto.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Portfolio</span>
+                                <span class="tag">Reel</span>
+                                <span class="tag">Presupuesto</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/productoras-audiovisuales.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="rubro-card reveal">
+                                <div class="rubro-card-media">
+                                    <img src="../assets/img/rubros/discotecas.jpg" alt="Para discotecas y clubes nocturnos" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                                    <span class="rubro-card-badge rubro-card-badge-category">Entretenimiento y Eventos</span>
+                                    <span class="rubro-card-badge rubro-card-badge-time">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        A medida
+                                    </span>
+                                </div>
+                                <div class="rubro-card-body">
+                                    <h3>Para discotecas y clubes nocturnos</h3>
+                                    <p>Cartelera de eventos, venta de entradas online y reserva de mesas.</p>
+                                    <div class="rubro-card-tags">
+                                <span class="tag">Cartelera</span>
+                                <span class="tag">Venta de entradas</span>
+                                <span class="tag">Reserva de mesas</span>
+                                    </div>
+                                    <div class="rubro-card-links">
+                                        <a href="./ejemplos/discotecas.html" class="rubro-card-link">Ver &rarr;</a>
+                                        <a href="./app-contacto.html" class="rubro-card-link-secondary">Quiero esto para mi negocio</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner-section reveal">
+            <div class="container">
+                <div class="cta-banner">
+                    <div class="cta-banner-text">
+                        <span class="eyebrow cta-eyebrow">¿No encontrás tu rubro específico?</span>
+                        <h2>Diseñamos software e identidades digitales a medida para cualquier industria.</h2>
+                        <p>Desde Tucumán, Argentina, para el mundo. Si tu modelo de negocio es disruptivo o no encaja en plantillas tradicionales, co-creamos la solución desde cero con estándares de clase mundial.</p>
+                        <div class="cta-features">
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"></path></svg>
+                                Código 100% propio
+                            </span>
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                Respondo en menos de 24 hs
+                            </span>
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"></path></svg>
+                                Mantenimiento y soporte incluido
+                            </span>
+                        </div>
+                    </div>
+                    <div class="cta-banner-actions">
+                        <a href="./app-contacto.html" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            Cotizar mi proyecto
+                        </a>
+                        <a href="mailto:octaviofernandez40999@gmail.com" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z"></path><polyline points="22 6 12 13 2 6"></polyline></svg>
+                            octaviofernandez40999@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <div class="footer-col footer-brand">
+                <a href="../aplicacion.html" class="footer-logo">
+                    <img src="../assets/img/logo-footer.png" alt="Octavio Studio" width="200" height="200" loading="lazy" decoding="async">
+                    <span>Octavio Studio</span>
+                </a>
+                <p class="footer-tagline">Software a medida, de la idea a producción.</p>
+                <p class="footer-location">Tucumán, Argentina · Trabajo con clientes de todo el mundo.</p>
+                <p class="footer-availability"><span class="footer-dot"></span>Disponible para nuevos proyectos</p>
+            </div>
+            <nav class="footer-col footer-accordion" aria-label="Servicios">
+                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-servicios">
+                    Servicios
+                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <ul class="footer-accordion-panel" id="footer-panel-servicios">
+                    <li><a href="./app-contacto.html">Landing pages</a></li>
+                    <li><a href="./app-contacto.html">Sitios web institucionales</a></li>
+                    <li><a href="./app-contacto.html">Tiendas online (Shopify / Tiendanube)</a></li>
+                    <li><a href="./app-contacto.html">Sistemas y SaaS a medida</a></li>
+                    <li><a href="./app-contacto.html">Mantenimiento y soporte</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-col footer-accordion" aria-label="Navegación del sitio">
+                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-nav">
+                    Navegación
+                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <ul class="footer-accordion-panel" id="footer-panel-nav">
+                    <li><a href="../aplicacion.html">Inicio</a></li>
+                    <li><a href="./app-sobre-mi.html">Sobre mí</a></li>
+                    <li><a href="./app-proyectos.html">Proyectos</a></li>
+                    <li><a href="./app-contacto.html">Contacto</a></li>
+                    <li><a href="./preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                </ul>
+            </nav>
+            <div class="footer-col footer-accordion">
+                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-contacto">
+                    Contacto
+                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <ul class="footer-accordion-panel" id="footer-panel-contacto">
+                    <li><a href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer">WhatsApp +54 9 381 301-9932</a></li>
+                    <li><a href="mailto:octaviofernandez40999@gmail.com">octaviofernandez40999@gmail.com</a></li>
+                    <li class="footer-plain">Lun a Vie 9 a 18 hs (GMT-3)</li>
+                    <li class="footer-plain">Respondo en menos de 24 hs</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-strip">
+            <ol class="footer-process-list">
+                <li>Consulta</li>
+                <li>Propuesta</li>
+                <li>Diseño</li>
+                <li>Desarrollo</li>
+                <li>Entrega</li>
+                <li>Soporte</li>
+            </ol>
+            <ul class="footer-stack" aria-label="Tecnologías principales">
+                <li title="HTML5"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span class="sr-only">HTML5</span></li>
+                <li title="CSS3"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span class="sr-only">CSS3</span></li>
+                <li title="JavaScript"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span class="sr-only">JavaScript</span></li>
+                <li title="React"><i class="devicon-react-original colored" aria-hidden="true"></i><span class="sr-only">React</span></li>
+                <li title="Node.js"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i><span class="sr-only">Node.js</span></li>
+                <li title="Express"><i class="devicon-express-original colored" aria-hidden="true"></i><span class="sr-only">Express</span></li>
+                <li title="MongoDB"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i><span class="sr-only">MongoDB</span></li>
+            </ul>
+        </div>
+        <div class="container footer-bottom">
+            <p class="footer-copy">© 2026 Octavio Studio. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <a href="./app-privacidad.html">Política de privacidad</a>
+                <a href="./app-terminos.html">Términos del servicio</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/octaviofernandez4" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+                </a>
+                <a href="https://www.instagram.com/octavio.fernandez._/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l1.5-4A8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+                </a>
+            </div>
+            <a href="#top" class="footer-top">Volver arriba ↑</a>
+        </div>
+    </footer>
+    <script src="../js/main.js?v=1"></script>
+    <script src="../js/rubro-search.js?v=1"></script>
+</body>
+</html>

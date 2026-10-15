@@ -1,0 +1,131 @@
+* =========================================================
+   OCTAVIO STUDIO · MOBILE APP LAYER — SOBRE MÍ
+   ========================================================= */
+@media (max-width: 767px) {
+
+    section.about { padding: calc(var(--app-bar-h) + var(--app-safe-top) + 26px) var(--app-gutter) 0; }
+
+    .page-header { max-width: none; margin: 0 0 18px; padding-top: 0; text-align: left; }
+    .page-header h2 { font-size: clamp(2.05rem, 9.4vw, 2.6rem); letter-spacing: -0.04em; margin: 0; }
+
+    /* Tarjeta de perfil */
+    .about-container {
+        position: relative;
+        align-items: stretch;
+        gap: 0;
+        padding: 20px 18px 18px;
+        text-align: left;
+        overflow: hidden;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius);
+    }
+
+    .about-container::before {
+        content: '';
+        position: absolute;
+        inset: 0 0 auto;
+        height: 2px;
+        background: var(--app-grad);
+    }
+
+    .about-handle {
+        align-self: flex-start;
+        padding: 6px 11px;
+        margin-bottom: 14px;
+        font-size: 11px;
+        border-radius: 999px;
+        background: var(--app-surface-2);
+        border: 1px solid var(--app-line-2);
+    }
+
+    .about-text { align-items: stretch; max-width: none; }
+    .about-text p { font-size: 14.5px; line-height: 1.6; margin-bottom: 0; }
+
+    .about-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 12px; }
+    .about-buttons .btn { width: 100%; }
+
+    .stats-row { grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; }
+
+    .stat-box { padding: 14px; text-align: left; border-radius: var(--app-radius-sm); background: var(--app-surface-2); }
+    .stat-box .stat-number { font-size: 22px; background: var(--app-grad-text); -webkit-background-clip: text; background-clip: text; }
+    .stat-box .stat-label { font-size: 9.5px; line-height: 1.35; letter-spacing: 0.07em; }
+
+    /* Arsenal técnico: listas agrupadas tipo ajustes */
+    .arsenal-heading { margin: 36px 0 6px; font-size: 21px; letter-spacing: -0.025em; }
+    .arsenal-intro { margin-bottom: 16px; font-size: 14px; line-height: 1.6; }
+
+    .stack-columns { grid-template-columns: 1fr; gap: 14px; margin-bottom: 0; }
+
+    .stack-card { padding: 0; border-radius: var(--app-radius); background: var(--app-surface); }
+    .stack-card:hover { transform: none; border-color: var(--app-line); }
+    .stack-card::before { width: 100%; height: 2px; }
+
+    .stack-title {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding: 16px 16px 14px;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .stack-list { gap: 0; }
+
+    .stack-list li {
+        padding: 13px 16px 13px 56px;
+        border-radius: 0;
+        transition: background .2s ease, opacity .6s var(--app-ease), transform .6s var(--app-ease);
+    }
+
+    .stack-list li + li { border-top: 1px solid var(--app-line); }
+
+    .stack-list li::before {
+        left: 16px;
+        top: 13px;
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        font-size: 10.5px;
+        border-radius: 9px;
+        background: var(--app-surface-2);
+        border: 1px solid var(--app-line);
+    }
+
+    .stack-list li:hover { transform: none; background: none; }
+    .stack-list li:active { background: rgba(255, 255, 255, 0.04); }
+    .stack-list li:hover strong { color: var(--app-text); }
+
+    .stack-list strong { font-size: 14px; letter-spacing: -0.005em; }
+    .stack-list span { font-size: 12.5px; }
+
+    /* Habilidades blandas: carrusel horizontal */
+    .soft-skills { margin-top: 0; }
+
+    .soft-skills-list {
+        display: flex;
+        gap: 10px;
+        margin: 0 calc(var(--app-gutter) * -1);
+        padding: 0 var(--app-gutter) 4px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 var(--app-gutter);
+        scrollbar-width: none;
+    }
+
+    .soft-skills-list::-webkit-scrollbar { display: none; }
+
+    .soft-skills-list li {
+        flex: 0 0 72%;
+        scroll-snap-align: start;
+        padding: 18px;
+        font-size: 13.5px;
+        line-height: 1.5;
+        border-radius: var(--app-radius);
+        background: var(--app-surface);
+    }
+
+    .soft-skills-list li strong { margin-bottom: 8px; font-size: 12px; color: var(--app-cyan); letter-spacing: 0.02em; }
+}

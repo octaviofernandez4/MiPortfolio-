@@ -1,0 +1,121 @@
+/* =========================================================
+   OCTAVIO STUDIO · MOBILE APP LAYER — FOOTER
+   El footer pasa a ser una tarjeta tipo "Más / Ajustes".
+   ========================================================= */
+@media (max-width: 767px) {
+
+    .site-footer {
+        margin: 34px 12px 0;
+        padding: 20px 18px 18px;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: 26px;
+    }
+
+    .footer-main { gap: 0; }
+
+    .footer-brand { padding-bottom: 16px; border-bottom: 1px solid var(--app-line); }
+
+    .footer-logo { margin-bottom: 12px; }
+    .footer-logo img { width: 42px; height: 42px; border-radius: 12px; background: var(--app-surface-2); }
+    .footer-logo span { font-family: var(--app-font); font-size: 17px; font-weight: 800; letter-spacing: -0.02em; }
+
+    .footer-tagline { font-size: 14px; color: var(--app-text); margin-bottom: 4px; max-width: none; }
+    .footer-location { font-size: 12.5px; margin-bottom: 12px; max-width: none; }
+
+    .footer-availability {
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 10.5px;
+        color: #b9f5cf;
+        background: rgba(50, 232, 122, 0.08);
+        border: 1px solid rgba(50, 232, 122, 0.2);
+    }
+
+    /* Acordeones como lista agrupada */
+    .footer-accordion { border-bottom: 1px solid var(--app-line); }
+
+    .footer-accordion-trigger {
+        min-height: 56px;
+        font-family: var(--app-font);
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+    }
+
+    .footer-accordion-chevron {
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+        border-radius: 10px;
+        background: var(--app-surface-2);
+    }
+
+    .footer-accordion-panel { gap: 0; }
+    .js-footer-enhanced .footer-accordion-panel.expanded { padding: 0 0 10px; }
+
+    .footer-accordion-panel a,
+    .footer-plain {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        font-size: 14px;
+        color: var(--app-muted);
+    }
+
+    /* Proceso: chips numerados con scroll horizontal */
+    .footer-strip { gap: 16px; margin-top: 18px; padding: 0 0 18px; border-top: 0; }
+
+    .footer-strip::before {
+        content: 'Cómo trabajo';
+        font-family: var(--app-mono);
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--app-dim);
+        margin-bottom: -6px;
+    }
+
+    .footer-process-list {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 8px;
+        margin: 0 -18px;
+        padding: 0 18px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        counter-reset: paso;
+    }
+
+    .footer-process-list::-webkit-scrollbar { display: none; }
+
+    .footer-process-list li {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 12px;
+        font-size: 11px;
+        color: var(--app-text);
+        border-radius: 999px;
+        background: var(--app-surface-2);
+        border: 1px solid var(--app-line);
+        counter-increment: paso;
+    }
+
+    .footer-process-list li::before { content: counter(paso, decimal-leading-zero); color: var(--app-cyan); }
+    .footer-process-list li:not(:last-child)::after { content: none; }
+
+    .footer-stack { flex-wrap: nowrap; justify-content: space-between; gap: 6px; }
+    .footer-stack li { width: 40px; height: 40px; border-radius: 12px; background: var(--app-surface-2); }
+    .footer-stack i { font-size: 19px; }
+
+    /* Cierre */
+    .footer-bottom { gap: 14px; padding-top: 18px; border-top: 1px solid var(--app-line); }
+    .footer-social { order: -1; gap: 10px; }
+    .footer-social a { width: 46px; height: 46px; border-radius: 15px; background: var(--app-surface-2); }
+    .footer-legal { gap: 16px; }
+    .footer-legal a { display: inline-flex; align-items: center; min-height: 32px; font-size: 12px; }
+    .footer-copy { font-size: 10.5px; color: var(--app-dim); }
+    .footer-top { min-height: 40px; font-size: 11px; background: var(--app-surface-2); border-color: var(--app-line-2); }
+}
