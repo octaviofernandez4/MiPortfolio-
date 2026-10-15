@@ -151,16 +151,6 @@
     font-size: 1.6rem;
 }
 
-.catalog-count {
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 0.72rem;
-    color: #93a0b4;
-}
-
-.catalog-count strong {
-    color: #2fd8e8;
-}
-
 .rubro-groups {
     display: flex;
     flex-direction: column;

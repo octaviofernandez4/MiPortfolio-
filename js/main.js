@@ -15,6 +15,36 @@ reveals.forEach(reveal => {
 });
 
 // ------------------------------------------------------------
+// Navbar "liquid glass": brillo que sigue el dedo/mouse y
+// squish elástico al tocar, estilo Liquid Glass de Apple.
+// ------------------------------------------------------------
+const liquidNavbar = document.querySelector('.navbar');
+
+if (liquidNavbar) {
+    const updateGlow = (e) => {
+        const rect = liquidNavbar.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        liquidNavbar.style.setProperty('--mx', x + '%');
+        liquidNavbar.style.setProperty('--my', y + '%');
+    };
+
+    const endTouch = () => liquidNavbar.classList.remove('is-touching');
+
+    liquidNavbar.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('.hamburger')) return;
+        liquidNavbar.classList.add('is-touching');
+        updateGlow(e);
+    });
+    liquidNavbar.addEventListener('pointermove', (e) => {
+        if (liquidNavbar.classList.contains('is-touching')) updateGlow(e);
+    });
+    liquidNavbar.addEventListener('pointerup', endTouch);
+    liquidNavbar.addEventListener('pointercancel', endTouch);
+    liquidNavbar.addEventListener('pointerleave', endTouch);
+}
+
+// ------------------------------------------------------------
 // Navegación mobile: hamburguesa con focus trap, cierre con
 // Escape y bloqueo de scroll del body (a prueba de iOS Safari).
 // ------------------------------------------------------------

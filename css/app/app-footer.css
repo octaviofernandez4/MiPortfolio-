@@ -84,7 +84,6 @@
         padding: 0 18px;
         overflow-x: auto;
         scrollbar-width: none;
-        counter-reset: paso;
     }
 
     .footer-process-list::-webkit-scrollbar { display: none; }
@@ -100,10 +99,8 @@
         border-radius: 999px;
         background: var(--app-surface-2);
         border: 1px solid var(--app-line);
-        counter-increment: paso;
     }
 
-    .footer-process-list li::before { content: counter(paso, decimal-leading-zero); color: var(--app-cyan); }
     .footer-process-list li:not(:last-child)::after { content: none; }
 
     .footer-stack { flex-wrap: nowrap; justify-content: space-between; gap: 6px; }

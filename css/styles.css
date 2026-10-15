@@ -262,22 +262,6 @@ ul, ol {
     padding-bottom: 20px;
 }
 
-.section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 1.02rem;
-    color: #e7ebf1;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.section-heading .icon {
-    color: #2fd8e8;
-}
-
 .home-preview {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

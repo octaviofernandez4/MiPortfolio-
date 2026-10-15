@@ -193,6 +193,17 @@
     color: rgba(255, 255, 255, 0.16);
 }
 
+.footer-process-pinned a {
+    color: #f70101;
+    font-weight: 700;
+}
+
+.footer-process-pinned a:hover {
+    color: #e7ebf1;
+    box-shadow: #f70101 2px 2px 8px 2px;
+
+}
+
 /* ========================================================== */
 /* SECCIÓN DE ICONOS DE TECNOLOGÍA (.footer-stack)            */
 /* ========================================================== */

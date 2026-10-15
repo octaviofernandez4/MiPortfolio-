@@ -18,7 +18,7 @@
         --app-cyan: #2fd8e8;
         --app-green: #32e87a;
         --app-grad: linear-gradient(135deg, #3b5bff 0%, #8a5cf0 55%, #e866c8 100%);
-        --app-grad-text: linear-gradient(90deg, #5a82ff, #e866c8);
+        --app-grad-text: linear-gradient(135deg, #2952e3, #ff0000);
         --app-radius: 22px;
         --app-radius-sm: 14px;
         --app-bar-h: 60px;
