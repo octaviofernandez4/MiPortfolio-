@@ -7,18 +7,18 @@
 @media (max-width: 767px) {
 
     :root {
-        --app-bg: #060810;
-        --app-surface: #0e121c;
-        --app-surface-2: #141a27;
-        --app-line: rgba(255, 255, 255, 0.07);
-        --app-line-2: rgba(255, 255, 255, 0.12);
-        --app-text: #e7ebf1;
-        --app-muted: #93a0b4;
-        --app-dim: #6f7a8e;
-        --app-cyan: #2fd8e8;
-        --app-green: #32e87a;
-        --app-grad: linear-gradient(135deg, #3b5bff 0%, #8a5cf0 55%, #e866c8 100%);
-        --app-grad-text: linear-gradient(135deg, #2952e3, #ff0000);
+        --app-bg: var(--color-bg);
+        --app-surface: var(--color-surface);
+        --app-surface-2: var(--color-surface-2);
+        --app-line: var(--color-border-soft);
+        --app-line-2: var(--color-border-soft);
+        --app-text: var(--color-text);
+        --app-muted: var(--color-text-muted);
+        --app-dim: var(--color-text-muted);
+        --app-cyan: var(--color-accent);
+        --app-green: var(--color-accent);
+        --app-grad: var(--color-accent);
+        --app-grad-text: var(--color-accent-text);
         --app-radius: 22px;
         --app-radius-sm: 14px;
         --app-bar-h: 60px;
@@ -43,17 +43,27 @@
     html { scroll-padding-top: calc(var(--app-bar-h) + var(--app-safe-top) + 12px); }
 
     body {
+        position: relative;
+        isolation: isolate;
         font-size: 15px;
         line-height: 1.55;
         background-color: var(--app-bg);
-        background-image:
-            radial-gradient(110% 420px at 100% -60px, rgba(59, 91, 255, 0.16), transparent 70%),
-            radial-gradient(90% 360px at -10% -40px, rgba(232, 102, 200, 0.09), transparent 70%);
-        background-size: auto;
-        background-repeat: no-repeat;
         padding-bottom: calc(var(--app-tab-h) + 28px + var(--app-safe-bottom));
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Fondo fijo al tamaño de pantalla: no se estira ni pixela en páginas largas */
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: var(--pattern-bg-app);
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        pointer-events: none;
     }
 
     body.nav-open { position: static; overflow: visible; }
@@ -71,7 +81,7 @@
 
     p { text-wrap: pretty; }
 
-    ::selection { background: rgba(47, 216, 232, 0.3); }
+    ::selection { background: var(--color-accent-soft); }
 
     .container { padding: 0 var(--app-gutter); }
 
@@ -90,8 +100,8 @@
 
     .btn-primary {
         background: var(--app-grad);
-        color: #fff;
-        box-shadow: 0 10px 26px rgba(110, 80, 240, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        color: var(--color-on-accent);
+        box-shadow: 0 10px 26px var(--shadow-color), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .btn-secondary,
@@ -112,8 +122,8 @@
         font-size: 11px;
         letter-spacing: 0.04em;
         color: var(--app-cyan);
-        background: rgba(47, 216, 232, 0.08);
-        border-color: rgba(47, 216, 232, 0.22);
+        background: var(--color-accent-soft);
+        border-color: var(--color-accent-soft);
     }
 
     .badge .dot { width: 7px; height: 7px; animation: app-pulse 1.8s ease-in-out infinite; }
@@ -138,7 +148,7 @@
         position: absolute;
         inset: 0;
         z-index: -1;
-        background: rgba(6, 8, 16, 0.72);
+        background: var(--color-bg);
         -webkit-backdrop-filter: blur(18px) saturate(160%);
         backdrop-filter: blur(18px) saturate(160%);
         border-bottom: 1px solid var(--app-line);
@@ -160,7 +170,7 @@
     }
 
     .logo { gap: 10px; }
-    .logo-icon { height: 32px; filter: drop-shadow(0 0 12px rgba(110, 80, 255, .5)); }
+    .logo-icon { height: 32px; filter: drop-shadow(0 0 12px var(--shadow-color)); }
     .logo-name { font-size: 20px; letter-spacing: 0.01em; }
 
     .hamburger,
@@ -177,16 +187,16 @@
         font-family: var(--app-mono);
         font-size: 10.5px;
         letter-spacing: 0.04em;
-        color: #b9f5cf;
+        color: var(--color-accent-text);
         background:
-            radial-gradient(circle at 13px 50%, var(--app-green) 0 3.5px, rgba(50, 232, 122, .25) 4.5px 6px, transparent 6.5px),
-            rgba(50, 232, 122, 0.08);
-        border: 1px solid rgba(50, 232, 122, 0.22);
+            radial-gradient(circle at 13px 50%, var(--app-green) 0 3.5px, var(--color-accent-soft) 4.5px 6px, transparent 6.5px),
+            var(--color-accent-soft);
+        border: 1px solid var(--color-accent-soft);
     }
 
     /* =========================================================
        TAB BAR INFERIOR (reutiliza .nav-links, sin tocar el HTML)
-       Orden: Inicio · Sobre mí · [Buscar] · Proyectos · Contacto
+       Orden: Inicio · Nosotros · [Buscar] · Proyectos · Contacto
        ========================================================= */
     .nav-links {
         position: fixed;
@@ -206,7 +216,7 @@
         /* LIQUID GLASS: vidrio muy translúcido que refracta y satura lo que pasa por detrás */
         background:
             linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 55%, rgba(255, 255, 255, 0.05) 100%),
-            rgba(16, 20, 32, 0.32);
+            var(--color-surface);
         -webkit-backdrop-filter: blur(14px) saturate(200%) brightness(1.12) contrast(1.05);
         backdrop-filter: blur(14px) saturate(200%) brightness(1.12) contrast(1.05);
         border: 0;
@@ -215,9 +225,9 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.32),
             inset 0 -1px 0 rgba(255, 255, 255, 0.06),
             inset 0 12px 22px -14px rgba(255, 255, 255, 0.28),
-            inset 0 -14px 22px -16px rgba(120, 140, 255, 0.25),
-            0 22px 44px rgba(0, 0, 0, 0.45),
-            0 2px 6px rgba(0, 0, 0, 0.25);
+            inset 0 -14px 22px -16px var(--shadow-color),
+            0 22px 44px var(--shadow-color),
+            0 2px 6px var(--shadow-color);
     }
 
     /* Brillo especular que recorre el vidrio */
@@ -230,7 +240,7 @@
         pointer-events: none;
         background:
             radial-gradient(60% 120% at 18% -30%, rgba(255, 255, 255, 0.22), transparent 60%),
-            radial-gradient(50% 100% at 92% 130%, rgba(232, 102, 200, 0.16), transparent 60%),
+            radial-gradient(50% 100% at 92% 130%, rgba(255, 255, 255, 0.12), transparent 60%),
             linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.09) 45%, transparent 58%);
         background-size: 100% 100%, 100% 100%, 260% 100%;
         animation: app-glass-sheen 9s ease-in-out infinite;
@@ -256,7 +266,7 @@
     }
 
     @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-        .nav-links { background: rgba(16, 20, 32, 0.94); }
+        .nav-links { background: var(--color-surface); }
     }
 
     .nav-links li { flex: 1 1 0; display: flex; justify-content: center; min-width: 0; }
@@ -278,7 +288,7 @@
         font-weight: 600;
         letter-spacing: 0.01em;
         white-space: nowrap;
-        color: rgba(231, 235, 241, 0.62);
+        color: var(--color-text-muted);
         background: none;
         box-shadow: none;
         transition: color .2s ease, background .3s ease, box-shadow .3s ease, transform .45s cubic-bezier(.34, 1.56, .64, 1);
@@ -298,35 +308,35 @@
     .nav-links li:nth-child(3) a::before { -webkit-mask-image: var(--i-grid); mask-image: var(--i-grid); }
     .nav-links li:nth-child(4) a::before { -webkit-mask-image: var(--i-chat); mask-image: var(--i-chat); }
 
-    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover { color: var(--color-text); }
 
     /* Al tocar, la pestaña se "infla" como una gota de vidrio */
     .nav-links a:active {
         transform: scale(1.12);
         transition-duration: .12s;
         background: radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04));
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 6px 16px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 6px 16px var(--shadow-color);
     }
 
     /* Pestaña activa: lente de vidrio interior */
     .nav-links a.active {
         width: calc(100% - 4px);
         min-height: 54px;
-        color: #fff;
+        color: var(--color-text);
         border-radius: 22px;
         background:
             radial-gradient(120% 90% at 50% 0%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.03) 70%),
             rgba(255, 255, 255, 0.04);
         box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.38),
-            inset 0 -1px 1px rgba(0, 0, 0, 0.25),
-            inset 0 -8px 14px -10px rgba(47, 216, 232, 0.45),
-            0 4px 14px rgba(0, 0, 0, 0.28);
+            inset 0 -1px 1px var(--shadow-color),
+            inset 0 -8px 14px -10px var(--color-accent-soft),
+            0 4px 14px var(--shadow-color);
     }
 
     .nav-links a.active::before {
         background: var(--app-cyan);
-        filter: drop-shadow(0 0 6px rgba(47, 216, 232, 0.7));
+        filter: drop-shadow(0 0 6px var(--color-accent));
         transform: translateY(-1px) scale(1.05);
     }
 
@@ -340,15 +350,15 @@
         gap: 0;
         border-radius: 19px;
         font-size: 0;
-        color: #fff;
+        color: var(--color-on-accent);
         background: var(--app-grad);
         transform: translateY(-18px);
         box-shadow:
             0 0 0 1px rgba(255, 255, 255, 0.28),
             inset 0 1px 0 rgba(255, 255, 255, 0.55),
-            inset 0 -10px 16px -8px rgba(40, 10, 90, 0.45),
+            inset 0 -10px 16px -8px var(--shadow-color),
             inset 0 10px 14px -8px rgba(255, 255, 255, 0.35),
-            0 12px 26px rgba(138, 92, 240, 0.55);
+            0 12px 26px var(--shadow-color);
     }
 
     .nav-links a.nav-links-cta::before,
@@ -360,11 +370,11 @@
         border-radius: 19px;
         background: var(--app-grad);
         box-shadow:
-            0 0 0 1.5px rgba(47, 216, 232, 0.7),
+            0 0 0 1.5px var(--color-accent),
             inset 0 1px 0 rgba(255, 255, 255, 0.55),
-            inset 0 -10px 16px -8px rgba(40, 10, 90, 0.45),
+            inset 0 -10px 16px -8px var(--shadow-color),
             inset 0 10px 14px -8px rgba(255, 255, 255, 0.35),
-            0 12px 26px rgba(138, 92, 240, 0.55);
+            0 12px 26px var(--shadow-color);
     }
 
     .nav-links a.nav-links-cta:hover { transform: translateY(-18px); }
@@ -375,7 +385,7 @@
         height: 24px;
         border-radius: 0;
         font-size: 0;
-        background: #fff;
+        background: var(--color-on-accent);
         -webkit-mask: var(--i-search) center / contain no-repeat;
         mask: var(--i-search) center / contain no-repeat;
     }

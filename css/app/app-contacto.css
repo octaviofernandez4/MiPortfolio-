@@ -45,7 +45,7 @@
 
     .channel-text { flex: 1; }
     .channel-icon { width: 42px; height: 42px; border-radius: 13px; }
-    .channel-card:nth-child(2) .channel-icon { color: var(--app-green); background: rgba(50, 232, 122, 0.1); }
+    .channel-card:nth-child(2) .channel-icon { color: var(--app-green); background: var(--color-accent-soft); }
     .channel-card:nth-child(3) .channel-icon { color: var(--app-text); background: var(--app-surface-2); }
     .channel-label { font-size: 10.5px; }
     .channel-value { font-size: 14px; }
@@ -101,7 +101,7 @@
     .form-group textarea:focus {
         border-color: var(--app-cyan);
         background: var(--app-surface-2);
-        box-shadow: 0 0 0 4px rgba(47, 216, 232, 0.12);
+        box-shadow: 0 0 0 4px var(--color-accent-soft);
     }
 
     .form-submit { min-height: 54px; font-size: 15px; margin-top: 4px; }

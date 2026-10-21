@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>if (window.innerWidth >= 768) location.replace('./proyectos.html');</script>
     <title>Proyectos | Octavio Fernandez</title>
+    <link rel="stylesheet" href="../css/paleta.css">
+    <script src="../js/theme-toggle.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css?v=2">
@@ -24,13 +26,17 @@
             </a>
             <ul class="nav-links" id="primary-nav">
                 <li><a href="../aplicacion.html">Inicio</a></li>
-                <li><a href="./app-sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="./app-sobre-mi.html">Nosotros</a></li>
                 <li><a href="./app-proyectos.html" class="active">Proyectos</a></li>
                 <li><a href="./app-contacto.html">Contacto</a></li>
                 <li><a href="./app-busca-tu-proyecto.html" class="btn btn-primary nav-links-cta">Busca tu proyecto<span class="cta-arrow">&rarr;</span></a></li>
             </ul>
             <div class="nav-cta">
                 <a href="./app-busca-tu-proyecto.html" class="btn btn-primary">Busca tu proyecto<span class="cta-arrow">&rarr;</span></a>
+                <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Cambiar tema" aria-pressed="false">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
                 <div class="hamburger" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-nav">
                     <span></span>
                     <span></span>
@@ -338,7 +344,7 @@
                 </button>
                 <ul class="footer-accordion-panel" id="footer-panel-nav">
                     <li><a href="../aplicacion.html">Inicio</a></li>
-                    <li><a href="./app-sobre-mi.html">Sobre mí</a></li>
+                    <li><a href="./app-sobre-mi.html">Nosotros</a></li>
                     <li><a href="./app-proyectos.html">Proyectos</a></li>
                     <li><a href="./app-contacto.html">Contacto</a></li>
                 </ul>

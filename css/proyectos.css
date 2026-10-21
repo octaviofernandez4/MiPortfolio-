@@ -18,7 +18,7 @@ main.container {
 }
 
 .projects-hero p {
-    color: #93a0b4;
+    color: var(--color-text-muted);
     font-size: 1.02rem;
 }
 
@@ -31,8 +31,8 @@ main.container {
 
 .project-card {
     min-width: 0;
-    background: #10141f;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     border-radius: 16px;
     overflow: hidden;
     display: flex;
@@ -43,7 +43,7 @@ main.container {
 
 .project-card:hover {
     transform: translateY(-6px);
-    border-color: #2952e3;
+    border-color: var(--color-accent);
 }
 
 .project-visual {
@@ -82,7 +82,7 @@ main.container {
 }
 
 .carousel-slide.contain {
-    background-color: #1c1c1e;
+    background-color: var(--color-surface-2);
 }
 
 .carousel-slide.contain img {
@@ -101,7 +101,7 @@ main.container {
     background: rgba(6, 8, 16, 0.55);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    color: #e7ebf1;
+    color: var(--color-text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,7 +112,7 @@ main.container {
 
 .carousel-arrow:hover {
     background: rgba(6, 8, 16, 0.85);
-    color: #2fd8e8;
+    color: var(--color-accent);
 }
 
 .carousel-arrow svg {
@@ -162,7 +162,7 @@ main.container {
 }
 
 .carousel-dot.active::before {
-    background: #2fd8e8;
+    background: var(--color-accent);
     width: 16px;
     border-radius: 3px;
 }
@@ -188,8 +188,8 @@ main.container {
 }
 
 .card-tags .tag {
-    background: rgba(47, 216, 232, 0.1);
-    color: #2fd8e8;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.72rem;
@@ -202,7 +202,7 @@ main.container {
 }
 
 .card-body .desc {
-    color: #93a0b4;
+    color: var(--color-text-muted);
     font-size: 0.82rem;
     line-height: 1.65;
     max-width: 68ch;
@@ -219,7 +219,7 @@ main.container {
     margin-bottom: 6px;
     background: transparent;
     border: none;
-    color: #2fd8e8;
+    color: var(--color-accent);
     font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 0.72rem;
     letter-spacing: 0.04em;
@@ -263,7 +263,7 @@ main.container {
 .desc-list li {
     position: relative;
     padding-left: 18px;
-    color: #93a0b4;
+    color: var(--color-text-muted);
     font-size: 0.82rem;
     line-height: 1.6;
     max-width: 68ch;
@@ -277,17 +277,17 @@ main.container {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #2fd8e8;
+    background: var(--color-accent);
 }
 
 .desc-list li strong {
-    color: #e7ebf1;
+    color: var(--color-text);
     font-weight: 600;
 }
 
 .desc-list li code {
-    background: rgba(255, 255, 255, 0.08);
-    color: #2fd8e8;
+    background: var(--color-surface-2);
+    color: var(--color-accent);
     font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 0.82em;
     padding: 2px 6px;
@@ -302,8 +302,8 @@ main.container {
     margin-top: auto;
     font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 0.72rem;
-    color: #93a0b4;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border-soft);
     padding-top: 14px;
 }
 
@@ -312,18 +312,18 @@ main.container {
     align-items: center;
     justify-content: center;
     min-height: 44px;
-    color: #e7ebf1;
+    color: var(--color-text);
     font-weight: 600;
     letter-spacing: 0.03em;
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border: 1px solid var(--color-border-soft);
     border-radius: 10px;
     padding: 10px 16px;
 }
 
 .project-card:hover .card-footer .cta,
 .card-footer .cta:hover {
-    color: #2fd8e8;
-    border-color: #2fd8e8;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 @media (min-width: 768px) {

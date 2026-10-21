@@ -1,0 +1,74 @@
+/* Paleta "Rojo suizo" — Octavio Studio
+   Modo claro: blanco hueso, tinta y bermellón
+   Modo oscuro: carbón cálido, hueso y bermellón
+   Uso: <html data-theme="light"> o <html data-theme="dark">.
+   Sin atributo, sigue la preferencia del sistema. */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --pattern-bg: url('/assets/img/nodos-obra.svg');
+  --pattern-bg-app: url('/assets/img/nodos-obra-movil.png');
+  --color-bg: #f3f2f2;            /* fondo general */
+  --color-surface: #e6e4e2;       /* tarjetas, footer, bloques */
+  --color-surface-2: #dad7d4;     /* hover de tarjetas, inputs */
+  --color-text: #201e1d;          /* texto principal y títulos */
+  --color-text-muted: #5a5654;    /* párrafos secundarios, labels */
+  --color-border: #201e1d;        /* reglas fuertes 2px */
+  --color-border-soft: #c9c5c2;   /* separadores finos dentro de listas */
+  --color-accent: #ec3013;        /* botón primario, puntos, énfasis */
+  --color-accent-hover: #c92710;  /* hover del botón primario */
+  --color-accent-active: #a8200c; /* pressed */
+  --color-accent-text: #b3240e;   /* texto rojo de tamaño párrafo (contraste AA) */
+  --color-accent-soft: #fbe1dc;   /* fondos tintados, tags, selección */
+  --color-on-accent: #ffffff;     /* texto sobre rojo */
+  --color-focus: #ec3013;
+  --shadow-color: rgba(32, 30, 29, 0.12);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --pattern-bg: url('/assets/img/nodos-tinta.svg');
+  --pattern-bg-app: url('/assets/img/nodos-tinta-movil.png');
+  --color-bg: #171615;
+  --color-surface: #211f1d;
+  --color-surface-2: #2b2826;
+  --color-text: #f0ebe3;
+  --color-text-muted: #a59f96;
+  --color-border: #f0ebe3;
+  --color-border-soft: #3a3633;
+  --color-accent: #f2462a;
+  --color-accent-hover: #ff6347;
+  --color-accent-active: #d93a1f;
+  --color-accent-text: #ff7a5c;
+  --color-accent-soft: #3a1a14;
+  --color-on-accent: #ffffff;
+  --color-focus: #ff6347;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --pattern-bg: url('/assets/img/nodos-tinta.svg');
+    --pattern-bg-app: url('/assets/img/nodos-tinta-movil.png');
+    --color-bg: #171615;
+    --color-surface: #211f1d;
+    --color-surface-2: #2b2826;
+    --color-text: #f0ebe3;
+    --color-text-muted: #a59f96;
+    --color-border: #f0ebe3;
+    --color-border-soft: #3a3633;
+    --color-accent: #f2462a;
+    --color-accent-hover: #ff6347;
+    --color-accent-active: #d93a1f;
+    --color-accent-text: #ff7a5c;
+    --color-accent-soft: #3a1a14;
+    --color-on-accent: #ffffff;
+    --color-focus: #ff6347;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+::selection { background: var(--color-accent-soft); color: var(--color-text); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }

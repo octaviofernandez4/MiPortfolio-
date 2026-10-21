@@ -19,7 +19,7 @@
 }
 
 .contact-intro > p {
-    color: #93a0b4;
+    color: var(--color-text-muted);
     font-size: 1.02rem;
     max-width: 68ch;
     margin-bottom: 30px;
@@ -36,8 +36,8 @@
     align-items: center;
     gap: 16px;
     min-height: 44px;
-    background: #10141f;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     border-radius: 14px;
     padding: 16px 18px;
     transition: all 0.3s ease;
@@ -45,7 +45,7 @@
 
 .channel-card:hover {
     transform: translateY(-4px);
-    border-color: #2fd8e8;
+    border-color: var(--color-accent);
 }
 
 .channel-icon {
@@ -53,11 +53,11 @@
     height: 40px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: rgba(47, 216, 232, 0.1);
+    background: var(--color-accent-soft);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #2fd8e8;
+    color: var(--color-accent);
 }
 
 .channel-text {
@@ -73,7 +73,7 @@
     display: block;
     font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 0.72rem;
-    color: #93a0b4;
+    color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 3px;
@@ -81,7 +81,7 @@
 
 .channel-value {
     display: block;
-    color: #e7ebf1;
+    color: var(--color-text);
     font-weight: 600;
     font-size: 0.82rem;
     overflow-wrap: anywhere;
@@ -90,8 +90,8 @@
 /* Formulario de contacto */
 .contact-form-card {
     min-width: 0;
-    background: #10141f;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
     border-radius: 18px;
     padding: 24px;
 }
@@ -106,7 +106,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #93a0b4;
+    color: var(--color-text-muted);
     margin-bottom: 10px;
 }
 
@@ -115,10 +115,10 @@
     width: 100%;
     min-height: 44px;
     padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border-soft);
     border-radius: 10px;
-    color: #e7ebf1;
+    color: var(--color-text);
     font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
     font-size: 0.92rem;
     outline: none;
@@ -132,13 +132,13 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(147, 160, 180, 0.5);
+    color: var(--color-text-muted);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #2fd8e8;
-    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent);
+    background: var(--color-surface-2);
 }
 
 .form-submit {
@@ -156,11 +156,11 @@
 }
 
 .form-status.success {
-    color: #2fd8e8;
+    color: var(--color-accent);
 }
 
 .form-status.error {
-    color: #ec6bd0;
+    color: var(--color-accent-text);
 }
 
 @media (min-width: 768px) {

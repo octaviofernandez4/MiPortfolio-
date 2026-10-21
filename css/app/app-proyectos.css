@@ -26,7 +26,7 @@
         aspect-ratio: 16 / 10;
         margin: 8px 8px 0;
         border-radius: 18px;
-        background: #1c1c1e;
+        background: var(--color-surface-2);
     }
 
     .project-card.tall .project-visual { aspect-ratio: 4 / 4.2; }
@@ -49,7 +49,7 @@
         border: 1px solid var(--app-line);
     }
 
-    .card-tags .tag:first-child { color: var(--app-cyan); background: rgba(47, 216, 232, 0.08); border-color: rgba(47, 216, 232, 0.2); }
+    .card-tags .tag:first-child { color: var(--app-cyan); background: var(--color-accent-soft); border-color: var(--color-accent-soft); }
 
     .card-body h3 { font-size: 21px; letter-spacing: -0.025em; margin-bottom: 8px; }
 
@@ -95,15 +95,15 @@
         min-height: 40px;
         padding: 0 16px;
         font-size: 11px;
-        color: #fff;
+        color: var(--color-on-accent);
         border: 0;
         border-radius: 999px;
         background: var(--app-grad);
-        box-shadow: 0 8px 20px rgba(110, 80, 240, 0.3);
+        box-shadow: 0 8px 20px var(--shadow-color);
     }
 
     .project-card:hover .card-footer .cta,
-    .card-footer .cta:hover { color: #fff; }
+    .card-footer .cta:hover { color: var(--color-on-accent); }
 
     .card-footer .cta:active { transform: scale(0.95); }
 }

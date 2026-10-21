@@ -46,7 +46,7 @@
         transition: border-color .2s ease, box-shadow .2s ease;
     }
 
-    .search-bar:focus-within { border-color: var(--app-cyan); box-shadow: 0 0 0 4px rgba(47, 216, 232, 0.12); }
+    .search-bar:focus-within { border-color: var(--app-cyan); box-shadow: 0 0 0 4px var(--color-accent-soft); }
 
     .search-icon { width: 20px; height: 20px; }
 
@@ -94,7 +94,7 @@
     .rubro-pill:active { transform: scale(0.95); }
 
     .rubro-pill.active {
-        color: #06080f;
+        color: var(--color-bg);
         background: var(--app-text);
         border-color: var(--app-text);
     }
@@ -230,13 +230,13 @@
         padding: 0 12px;
         font-size: 12.5px;
         font-weight: 700;
-        color: #fff;
+        color: var(--color-on-accent);
         border: 0;
         border-radius: 13px;
         background: var(--app-grad);
     }
 
-    .rubro-card-link-secondary:hover { color: #fff; }
+    .rubro-card-link-secondary:hover { color: var(--color-on-accent); }
     .rubro-card-link:active,
     .rubro-card-link-secondary:active { transform: scale(0.96); }
 
@@ -250,7 +250,7 @@
         overflow: hidden;
         border-radius: 26px;
         background:
-            radial-gradient(120% 80% at 100% 0%, rgba(138, 92, 240, 0.22), transparent 60%),
+            radial-gradient(120% 80% at 100% 0%, var(--color-accent-soft), transparent 60%),
             var(--app-surface);
         border-color: var(--app-line-2);
     }
@@ -266,7 +266,7 @@
         height: 30px;
         padding: 6px;
         border-radius: 9px;
-        background: rgba(47, 216, 232, 0.1);
+        background: var(--color-accent-soft);
     }
 
     .cta-banner-actions { gap: 10px; }

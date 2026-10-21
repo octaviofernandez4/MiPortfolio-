@@ -12,6 +12,6 @@
 }
 
 .legal-content p {
-    color: #93a0b4;
+    color: var(--color-text-muted);
     line-height: 1.7;
 }
