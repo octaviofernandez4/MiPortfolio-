@@ -1,0 +1,274 @@
+/* =========================================================
+   OCTAVIO STUDIO · SECCIONES GRANDES (PC)
+   Hero (index.html) y Nosotros (sobre-mi.html) rediseñados más
+   grandes. Prefijo "sec-" en todas las clases para no pisar los
+   estilos existentes (.hero, .about, .btn, .stat, .reveal, etc.).
+   El fondo de la página (patrón + efecto andamio al pasar el
+   mouse) ya lo pone <body>; estas secciones quedan transparentes.
+   ========================================================= */
+@media (min-width: 768px) {
+
+    .sec-container { width: min(1400px, 92%); margin: 0 auto; }
+    .sec-container.sec-wide { width: min(1600px, 92%); }
+    .sec-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+    .sec-accent { color: var(--color-accent-text); }
+
+    .sec-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 48px; }
+    .sec-btn {
+        display: inline-flex;
+        align-items: center;
+        height: 64px;
+        padding: 0 34px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: clamp(17px, 1.1vw, 20px);
+        text-decoration: none;
+        transition: transform .2s, background .2s, border-color .2s, box-shadow .2s, color .2s;
+    }
+    .sec-btn--primary {
+        background: var(--color-accent);
+        color: var(--color-on-accent);
+        box-shadow: 0 10px 28px var(--shadow-color);
+    }
+    .sec-btn--primary:hover {
+        background: var(--color-accent-hover);
+        transform: translateY(-2px);
+    }
+    .sec-btn--ghost {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border-soft);
+        color: var(--color-text);
+    }
+    .sec-btn--ghost:hover {
+        border-color: var(--color-accent);
+        transform: translateY(-2px);
+    }
+
+    .sec-stat__num {
+        display: block;
+        font-family: 'Space Mono', 'Courier New', monospace;
+        font-weight: 700;
+        font-size: clamp(34px, 2.6vw, 48px);
+        color: var(--color-accent-text);
+        line-height: 1;
+    }
+    .sec-stat__label {
+        display: block;
+        margin-top: 10px;
+        font-size: clamp(13px, 0.9vw, 15px);
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+    }
+
+    /* ---------- hero ---------- */
+    .sec-hero { padding: 160px 0 clamp(64px, 6vw, 110px); }
+
+    .sec-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 24px;
+        border: 1px solid var(--color-border-soft);
+        border-radius: 999px;
+        background: var(--color-surface);
+        font-family: 'Space Mono', 'Courier New', monospace;
+        font-size: clamp(13px, 0.9vw, 15px);
+        color: var(--color-text-muted);
+    }
+
+    .sec-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        box-shadow: 0 0 8px var(--color-accent);
+        animation: sec-pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes sec-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: .5; transform: scale(1.3); }
+    }
+
+    .sec-hero__title {
+        margin-top: 36px;
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: clamp(38px, 3.6vw, 68px);
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        max-width: 18em;
+        color: var(--color-text);
+    }
+
+    .sec-hero__text {
+        margin-top: 32px;
+        max-width: 38em;
+        font-size: clamp(17px, 1.25vw, 21px);
+        line-height: 1.6;
+        color: var(--color-text-muted);
+    }
+
+    .sec-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px clamp(48px, 5vw, 96px);
+        margin-top: 64px;
+    }
+    .sec-stat { display: flex; flex-direction: column; align-items: center; }
+
+    .sec-services {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: clamp(64px, 6vw, 110px);
+    }
+    .sec-service {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border-soft);
+        border-radius: 20px;
+        padding: clamp(32px, 2.6vw, 48px);
+        text-align: left;
+        transition: transform .25s, border-color .25s;
+    }
+    .sec-service:hover { transform: translateY(-6px); border-color: var(--color-accent); }
+    .sec-service__icon { display: block; font-size: 38px; margin-bottom: 28px; }
+    .sec-service__title {
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: clamp(22px, 1.6vw, 28px);
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+        color: var(--color-text);
+    }
+    .sec-service__text { font-size: clamp(15px, 1.05vw, 17px); line-height: 1.55; color: var(--color-text-muted); }
+
+    /* ---------- nosotros ---------- */
+    .sec-about { padding: 160px 0 clamp(64px, 6vw, 110px); }
+
+    .sec-section-title {
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: clamp(36px, 3vw, 58px);
+        letter-spacing: -0.01em;
+        color: var(--color-text);
+    }
+    .sec-about__role {
+        margin-top: 48px;
+        font-family: 'Space Mono', 'Courier New', monospace;
+        font-weight: 700;
+        font-size: clamp(22px, 1.8vw, 32px);
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: var(--color-text);
+    }
+    .sec-about__text {
+        margin-top: 32px;
+        max-width: 44em;
+        font-size: clamp(16px, 1.2vw, 20px);
+        line-height: 1.6;
+        color: var(--color-text-muted);
+    }
+
+    .sec-stat-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        width: min(760px, 100%);
+        margin-top: 48px;
+    }
+    .sec-stat-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 36px 20px;
+        background: var(--color-surface);
+        border: 1px solid var(--color-border-soft);
+        border-radius: 18px;
+    }
+
+    .sec-arsenal { margin-top: clamp(72px, 7vw, 120px); max-width: 1200px; }
+    .sec-arsenal__title {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: clamp(26px, 2vw, 38px);
+        letter-spacing: -0.01em;
+        color: var(--color-text);
+    }
+    .sec-arsenal__text {
+        margin-top: 24px;
+        font-size: clamp(16px, 1.2vw, 20px);
+        line-height: 1.6;
+        color: var(--color-text-muted);
+    }
+
+    .sec-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: 44px;
+        align-items: start;
+    }
+    .sec-panel {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border-soft);
+        border-top: 3px solid transparent;
+        border-radius: 20px;
+        padding: clamp(26px, 2.2vw, 40px);
+        transition: border-color .3s;
+    }
+    .sec-panel:hover { border-top-color: var(--color-accent); }
+    .sec-panel__title {
+        display: flex;
+        align-items: center;
+        font-family: 'Space Mono', 'Courier New', monospace;
+        font-weight: 700;
+        font-size: clamp(18px, 1.3vw, 23px);
+        color: var(--color-accent-text);
+        padding-bottom: 22px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid var(--color-border-soft);
+    }
+    .sec-slashes { margin-right: 10px; }
+    .sec-cursor { animation: sec-blink 1s steps(1) infinite; }
+    @keyframes sec-blink { 50% { opacity: 0; } }
+
+    .sec-list { list-style: none; margin: 0; padding: 0; }
+    .sec-list li {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        padding: 18px 12px;
+        border-radius: 12px;
+        transition: background .2s;
+    }
+    .sec-list li:hover { background: var(--color-surface-2); }
+    .sec-list li:hover b { color: var(--color-accent-text); }
+    .sec-n {
+        font-family: 'Space Mono', 'Courier New', monospace;
+        font-size: clamp(13px, 0.85vw, 15px);
+        color: var(--color-text-muted);
+        padding-top: 4px;
+    }
+    .sec-list b {
+        display: block;
+        font-weight: 700;
+        font-size: clamp(17px, 1.15vw, 20px);
+        line-height: 1.3;
+        margin-bottom: 6px;
+        color: var(--color-text);
+        transition: color .2s;
+    }
+    .sec-list p { font-size: clamp(14px, 0.95vw, 16px); line-height: 1.5; color: var(--color-text-muted); }
+
+    @media (max-width: 1100px) {
+        .sec-services { grid-template-columns: 1fr; }
+        .sec-stack-grid { grid-template-columns: 1fr; }
+    }
+}

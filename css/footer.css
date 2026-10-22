@@ -15,8 +15,45 @@
 
 .site-footer {
     padding: 40px 20px 24px;
-    background: var(--color-accent);
+    background: var(--color-surface);
     border-top: 1px solid var(--color-border-soft);
+}
+
+/* FOOTER EN PC: grilla fina de fondo, distinta por tema (oscuro:
+   reticula-tinta sobre casi-negro; claro: reticula-blanco sobre
+   blanco puro) y letras en rojo intenso en los dos modos. Va antes
+   que las reglas de cada link para que su :hover siga ganando. */
+@media (min-width: 768px) {
+    [data-theme="dark"] .site-footer {
+        background-color: #201e1d;
+        background-image: url('/assets/img/reticula-tinta.svg');
+        background-size: 48px 48px;
+        background-repeat: repeat;
+    }
+
+    [data-theme="light"] .site-footer {
+        background-color: #ffffff;
+        background-image: url('/assets/img/reticula-blanco.svg');
+        background-size: 48px 48px;
+        background-repeat: repeat;
+    }
+
+    .site-footer .footer-logo span,
+    .site-footer .footer-tagline,
+    .site-footer .footer-location,
+    .site-footer .footer-availability,
+    .site-footer .footer-accordion-trigger,
+    .site-footer .footer-accordion-chevron,
+    .site-footer .footer-accordion-panel a,
+    .site-footer .footer-plain,
+    .site-footer .footer-process-list li,
+    .site-footer .footer-process-pinned a,
+    .site-footer .footer-copy,
+    .site-footer .footer-legal a,
+    .site-footer .footer-social a,
+    .site-footer .footer-top {
+        color: var(--color-accent-text);
+    }
 }
 
 .site-footer .container {
@@ -411,59 +448,11 @@
 }
 
 /* ========================================================== */
-/* FOOTER EN PC: fondo rojo (--color-accent). El texto se      */
-/* invierte por tema (negro en oscuro, blanco en claro) y el   */
-/* hover ya no cambia a rojo (quedaba invisible contra el      */
-/* propio fondo): ahora resalta con un glow.                   */
+/* FOOTER EN PC: hover que agranda el link (los colores y el   */
+/* fondo con textura están arriba, cerca de .site-footer, para */
+/* que el :hover de cada link siga ganando por orden).          */
 /* ========================================================== */
 @media (min-width: 768px) {
-    [data-theme="dark"] .site-footer,
-    [data-theme="dark"] .site-footer * {
-        color: #000;
-    }
-
-    [data-theme="light"] .site-footer,
-    [data-theme="light"] .site-footer * {
-        color: #fff;
-    }
-
-    [data-theme="dark"] .site-footer .footer-dot {
-        background: #000;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.55);
-    }
-
-    [data-theme="light"] .site-footer .footer-dot {
-        background: #fff;
-        box-shadow: 0 0 8px rgba(255, 255, 255, 0.65);
-    }
-
-    [data-theme="dark"] .site-footer a:hover,
-    [data-theme="dark"] .site-footer .footer-top:hover {
-        color: #000;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
-        box-shadow: none;
-    }
-
-    [data-theme="light"] .site-footer a:hover,
-    [data-theme="light"] .site-footer .footer-top:hover {
-        color: #fff;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.65);
-        box-shadow: none;
-    }
-
-    [data-theme="dark"] .site-footer .footer-social a:hover,
-    [data-theme="dark"] .site-footer .footer-top:hover {
-        border-color: #000;
-        box-shadow: 0 0 14px rgba(0, 0, 0, 0.55);
-    }
-
-    [data-theme="light"] .site-footer .footer-social a:hover,
-    [data-theme="light"] .site-footer .footer-top:hover {
-        border-color: #fff;
-        box-shadow: 0 0 14px rgba(255, 255, 255, 0.65);
-    }
-
-    /* Hover que agranda el link (solo PC) */
     .site-footer .footer-legal a,
     .site-footer .footer-process-pinned a {
         display: inline-block;

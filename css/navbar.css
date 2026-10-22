@@ -11,6 +11,7 @@ header {
 }
 
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,6 +44,8 @@ header {
     filter: drop-shadow(0 0 14px var(--shadow-color));
 }
 
+.logo-icon--desktop { display: none; }
+
 .logo-text {
     display: flex;
     flex-direction: column;
@@ -65,6 +68,10 @@ header {
 }
 
 .logo-tag {
+    display: none;
+}
+
+.logo-name-suffix {
     display: none;
 }
 
@@ -244,17 +251,78 @@ header {
 }
 
 @media (min-width: 768px) {
-    .navbar { padding: 12px 12px 12px 22px; gap: 12px; }
+    .navbar {
+        display: flex;
+        align-items: center;
+        gap: clamp(40px, 4vw, 56px);
+        height: clamp(104px, 8vw, 132px);
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 clamp(40px, 4vw, 64px);
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: var(--color-accent);
+        background-image: url('/assets/img/reticula-rojo.svg');
+        background-size: 48px 48px;
+        background-repeat: repeat;
+    }
 
     .nav-cta .btn { display: inline-flex; }
 
-    .logo { gap: 14px; overflow: visible; }
+    .logo { gap: 18px; overflow: visible; }
 
-    .logo-icon { height: 46px; }
+    .logo-icon { height: 52px; }
 
-    .logo-name { font-size: 30px; white-space: normal; }
+    .logo-icon--mobile { display: none; }
+    .logo-icon--desktop { display: block; }
 
-    .logo-tag { display: block; }
+    .logo-mark { width: clamp(52px, 4.2vw, 64px); height: clamp(52px, 4.2vw, 64px); flex: none; }
+    .logo-mark__frame { fill: var(--color-on-accent); }
+    .logo-mark__brace {
+        fill: #201e1d;
+        transform: scale(0);
+        transition: transform .55s cubic-bezier(.22, 1, .36, 1);
+        animation: logo-brace-in .55s cubic-bezier(.22, 1, .36, 1) .35s forwards;
+    }
+    .logo-mark__brace--1 { transform-origin: 12px 66px; }
+    .logo-mark__brace--2 { transform-origin: 54px 66px; animation-delay: .47s; }
+    .logo.is-replay .logo-mark__brace { animation: logo-brace-replay .6s cubic-bezier(.22, 1, .36, 1); }
+    .logo.is-replay .logo-mark__brace--2 { animation-delay: .12s; animation-fill-mode: backwards; }
+    .logo.is-loaded .logo-mark__brace { animation: none; transform: scale(1); }
+    .logo.is-loaded.is-replay .logo-mark__brace { animation: logo-brace-replay .6s cubic-bezier(.22, 1, .36, 1); }
+    .logo.is-loaded.is-replay .logo-mark__brace--2 { animation-delay: .12s; animation-fill-mode: backwards; }
+
+    @keyframes logo-brace-in { to { transform: scale(1); } }
+    @keyframes logo-brace-replay {
+        0% { transform: scale(1); }
+        40% { transform: scale(0); }
+        100% { transform: scale(1); }
+    }
+
+    .logo-name {
+        display: block;
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-size: clamp(26px, 2.2vw, 34px);
+        font-weight: 700;
+        color: var(--color-on-accent);
+        white-space: normal;
+    }
+
+    .logo-name strong { color: var(--color-on-accent); }
+
+    .logo-name-suffix { display: inline; }
+
+    .logo-tag {
+        display: block;
+        font-size: clamp(12px, .9vw, 14px);
+        color: var(--color-on-accent);
+        opacity: .85;
+        letter-spacing: .2em;
+    }
 
     .hamburger {
         display: none;
@@ -268,35 +336,106 @@ header {
         position: static;
         inset: auto;
         flex-direction: row;
-        background: transparent;
         width: auto;
         height: auto;
         text-align: left;
         justify-content: flex-start;
-        padding: 5px;
-        gap: 4px;
+        padding: 0;
+        gap: clamp(32px, 3vw, 44px);
         transform: none;
         transition: none;
-        border-radius: 999px;
-        background: var(--color-surface);
-        border: 1px solid var(--color-border-soft);
+        border-radius: 0;
+        background: transparent;
+        border: none;
     }
 
     .nav-links a {
-        font-size: 15px;
-        font-weight: 500;
+        position: relative;
+        font-size: clamp(17px, 1.1vw, 20px);
+        font-weight: 800;
         min-height: auto;
-        padding: 11px 22px;
+        padding: 0;
+        color: var(--color-on-accent);
+        border-radius: 0;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -8px;
+        height: 3px;
+        background: var(--color-text);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: none;
+        box-shadow: none;
+        color: var(--color-on-accent);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+        transform: scaleX(1);
+    }
+
+    .nav-cta {
+        margin-left: auto;
     }
 
     .nav-cta .btn {
-        gap: 10px;
-        padding: 14px 26px;
-        font-size: 15px;
+        gap: 12px;
+        padding: 0 clamp(18px, 1.8vw, 26px);
+        height: clamp(48px, 4.5vw, 60px);
+        font-size: clamp(15px, 1vw, 17px);
+        border-radius: 0;
+        background: transparent;
+        border: 2px solid var(--color-on-accent);
+        box-shadow: none;
+    }
+
+    .nav-cta .btn::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .nav-cta .btn:hover {
+        transform: none;
+        background: var(--color-accent-hover);
+        box-shadow: none;
     }
 
     .cta-arrow {
-        width: 24px;
-        height: 24px;
+        display: none;
+    }
+
+    .theme-toggle-btn {
+        width: clamp(44px, 4vw, 56px);
+        height: clamp(44px, 4vw, 56px);
+        border-radius: 0;
+        border: 2px solid var(--color-on-accent);
+        background: #201e1d;
+        color: var(--color-on-accent);
+    }
+
+    .theme-toggle-btn svg {
+        width: clamp(20px, 1.6vw, 24px);
+        height: clamp(20px, 1.6vw, 24px);
+    }
+
+    .theme-toggle-btn:hover {
+        border-color: var(--color-on-accent);
+        color: var(--color-on-accent);
+        background: #000;
     }
 }

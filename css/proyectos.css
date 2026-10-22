@@ -329,7 +329,7 @@ main.container {
 @media (min-width: 768px) {
     .bento-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        gap: 28px;
     }
 
     .project-card.span-2,
@@ -337,7 +337,9 @@ main.container {
         grid-column: span 2;
     }
 
-    .card-body { padding: 26px; }
+    .project-card { border-radius: 20px; }
+
+    .card-body { padding: clamp(28px, 2.4vw, 44px); }
 
     .btn-more { display: none; }
 
@@ -346,16 +348,68 @@ main.container {
         overflow: visible;
     }
 
+    .card-tags {
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .card-tags .tag {
+        padding: 7px 16px;
+        font-size: 0.85rem;
+    }
+
+    .card-body h3 {
+        font-size: clamp(22px, 1.7vw, 28px);
+        margin-bottom: 16px;
+    }
+
+    .card-body .desc {
+        font-size: clamp(15px, 1.05vw, 17px);
+        line-height: 1.65;
+        margin-bottom: 22px;
+    }
+
+    .desc-list {
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .desc-list-spaced { gap: 26px; }
+
+    .desc-list li {
+        font-size: clamp(14.5px, 1vw, 16px);
+        line-height: 1.6;
+        padding-left: 22px;
+    }
+
+    .desc-list li::before {
+        width: 7px;
+        height: 7px;
+        top: 9px;
+    }
+
     .card-footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        font-size: 0.8rem;
+        padding-top: 20px;
     }
 
     .card-footer .cta {
         min-height: auto;
         border: none;
         padding: 0;
+    }
+
+    .carousel-arrow {
+        width: 52px;
+        height: 52px;
+    }
+
+    .carousel-arrow svg {
+        width: 22px;
+        height: 22px;
     }
 }
 
@@ -372,5 +426,31 @@ main.container {
 
     .project-card.span-3 {
         grid-column: span 3;
+    }
+}
+
+/* Intro más grande (PC), misma escala que Inicio/Nosotros */
+@media (min-width: 768px) {
+    main.container { padding-top: 160px; }
+
+    .projects-hero {
+        max-width: 900px;
+        margin: 0 auto 64px;
+    }
+
+    .projects-hero h1 {
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: clamp(32px, 3.4vw, 58px);
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        margin-bottom: 22px;
+    }
+
+    .projects-hero p {
+        font-size: clamp(16px, 1.15vw, 19px);
+        line-height: 1.6;
+        max-width: 48em;
+        margin: 0 auto;
     }
 }

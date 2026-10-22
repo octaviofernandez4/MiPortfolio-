@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>if (window.innerWidth < 768) location.replace('./aplicacion.html');</script>
-    <title>Octavio Fernandez | Desarrollador Full Stack</title>
+    <title>Andamio Studio | Agencia de Software</title>
+    <link rel="icon" href="/assets/img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/img/favicon/favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/favicon-180.png">
     <link rel="stylesheet" href="./css/paleta.css">
     <script src="./js/theme-toggle.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/footer.css?v=2">
+    <link rel="stylesheet" href="./css/footer-pc.css">
+    <link rel="stylesheet" href="./css/secciones-pc.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
 </head>
 <body id="top">
     <header>
         <nav class="navbar">
             <a href="./index.html" class="logo">
-                <img src="./assets/img/logo-footer.png" alt="Octavio Studio" width="46" height="46" class="logo-icon" decoding="async">
-                <span class="logo-text"><span class="logo-name"><strong>Octavio</strong> Studio</span><span class="logo-tag">CREATIVE DIGITAL AGENCY</span></span>
+                <img src="./assets/img/andamio-icono-app-oscuro.svg" alt="Andamio Studio" width="46" height="46" class="logo-icon logo-icon--mobile" decoding="async">
+                <svg class="logo-icon logo-icon--desktop logo-mark" viewBox="0 0 96 96" aria-hidden="true"><path class="logo-mark__frame" d="M0 0H12V96H0Z M42 0H54V96H42Z M84 0H96V96H84Z M0 30H96V38H0Z M0 66H96V74H0Z"/><path class="logo-mark__brace logo-mark__brace--1" d="M12 66L42 38V46L20 66Z"/><path class="logo-mark__brace logo-mark__brace--2" d="M54 66L84 38V46L62 66Z"/></svg>
+                <span class="logo-text"><span class="logo-name"><strong>Andamio</strong><span class="logo-name-suffix"> Studio</span></span><span class="logo-tag">CREATIVE DIGITAL AGENCY</span></span>
             </a>
             <ul class="nav-links" id="primary-nav">
                 <li><a href="./index.html" class="active">Inicio</a></li>
@@ -41,138 +47,142 @@
         </nav>
     </header>
     <main>
-        <section id="inicio" class="hero">
-            <div class="container hero-inner">
-                <span class="badge reveal"><span class="dot"></span> Sistema en línea</span>
-                <h1 class="reveal">Desarrollo de Software & <span class="text-gradient">Experiencias Digitales</span></h1>
-                <p class="reveal">Creo experiencias digitales únicas que combinan diseño atractivo y funcionalidad excepcional tanto en el frontend como en el backend. Transformo ideas en plataformas web completas y listas para usar. Combino un diseño moderno e intuitivo con un sistema interno robusto, garantizando que el sitio no solo se vea increíble, sino que sea rápido y seguro.</p>
-                <div class="hero-actions reveal">
-                    <a href="./pages/proyectos.html" class="btn btn-primary">Ver Proyectos</a>
-                    <a href="./pages/sobre-mi.html" class="btn btn-outline">Nosotros</a>
+        <section id="inicio" class="sec-hero">
+            <div class="sec-container sec-center">
+                <span class="sec-pill reveal"><span class="sec-dot"></span>Sistema en línea</span>
+                <h1 class="sec-hero__title reveal">Desarrollo de Software &amp; <span class="sec-accent">Experiencias Digitales</span></h1>
+                <p class="sec-hero__text reveal">Creo experiencias digitales únicas que combinan diseño atractivo y funcionalidad excepcional tanto en el frontend como en el backend. Transformo ideas en plataformas web completas y listas para usar. Combino un diseño moderno e intuitivo con un sistema interno robusto, garantizando que el sitio no solo se vea increíble, sino que sea rápido y seguro.</p>
+                <div class="sec-btns reveal">
+                    <a href="./pages/proyectos.html" class="sec-btn sec-btn--primary">Ver Proyectos</a>
+                    <a href="./pages/sobre-mi.html" class="sec-btn sec-btn--ghost">Nosotros</a>
                 </div>
-                <div class="hero-stats reveal">
-                    <div class="stat">
-                        <div class="num">2+</div>
-                        <div class="label">Años en Proyectos y Producción</div>
+                <div class="sec-stats reveal">
+                    <div class="sec-stat">
+                        <strong class="sec-stat__num" data-count="2" data-suffix="+">2+</strong>
+                        <span class="sec-stat__label">Años en Proyectos y Producción</span>
                     </div>
-                    <div class="stat">
-                        <div class="num">15+</div>
-                        <div class="label">Tecnologías Principales</div>
+                    <div class="sec-stat">
+                        <strong class="sec-stat__num" data-count="15" data-suffix="+">15+</strong>
+                        <span class="sec-stat__label">Tecnologías Principales</span>
                     </div>
-                    <div class="stat">
-                        <div class="num">100%</div>
-                        <div class="label">Compromiso</div>
+                    <div class="sec-stat">
+                        <strong class="sec-stat__num" data-count="100" data-suffix="%">100%</strong>
+                        <span class="sec-stat__label">Compromiso</span>
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="container modules-section">
-            <div class="home-preview">
-                <div class="preview-card glass-card reveal">
-                    <span class="icon">🧬</span>
-                    <h3>Frontend Interactivo</h3>
-                    <p>Interfaces dinámicas y responsivas construidas con React y JavaScript, con foco en el rendimiento.</p>
-                </div>
-                <div class="preview-card glass-card reveal">
-                    <span class="icon">🎨</span>
-                    <h3>Diseño & Maquetado</h3>
-                    <p>Estructuración semántica y diseño responsivo en HTML y CSS, cuidando cada detalle visual.</p>
-                </div>
-                <div class="preview-card glass-card reveal">
-                    <span class="icon">⚙️</span>
-                    <h3>Backend & APIs</h3>
-                    <p>Servidores, rutas y lógica del lado del servidor construidos con Node.js y Express.</p>
+            <div class="sec-container sec-wide">
+                <div class="sec-services">
+                    <article class="sec-service reveal">
+                        <span class="sec-service__icon" aria-hidden="true">🧬</span>
+                        <h3 class="sec-service__title">Frontend Interactivo</h3>
+                        <p class="sec-service__text">Interfaces dinámicas y responsivas construidas con React y JavaScript, con foco en el rendimiento.</p>
+                    </article>
+                    <article class="sec-service reveal">
+                        <span class="sec-service__icon" aria-hidden="true">🎨</span>
+                        <h3 class="sec-service__title">Diseño &amp; Maquetado</h3>
+                        <p class="sec-service__text">Estructuración semántica y diseño responsivo en HTML y CSS, cuidando cada detalle visual.</p>
+                    </article>
+                    <article class="sec-service reveal">
+                        <span class="sec-service__icon" aria-hidden="true">⚙️</span>
+                        <h3 class="sec-service__title">Backend &amp; APIs</h3>
+                        <p class="sec-service__text">Servidores, rutas y lógica del lado del servidor construidos con Node.js y Express.</p>
+                    </article>
                 </div>
             </div>
         </section>
+
     </main>
-    <footer class="site-footer">
-        <div class="container footer-main">
-            <div class="footer-col footer-brand">
-                <a href="./index.html" class="footer-logo">
-                    <img src="./assets/img/logo-footer.png" alt="Octavio Studio" width="200" height="200" loading="lazy" decoding="async">
-                    <span>Octavio Studio</span>
-                </a>
-                <p class="footer-tagline">Software a medida, de la idea a producción.</p>
-                <p class="footer-location">Tucumán, Argentina · Trabajo con clientes de todo el mundo.</p>
-                <p class="footer-availability"><span class="footer-dot"></span>Disponible para nuevos proyectos</p>
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="brand">
+                    <a href="./index.html" class="brand__head">
+                        <img src="./assets/img/andamio-isotipo-color.svg" alt="Andamio Studio" class="brand__logo brand__logo--light" loading="lazy" decoding="async">
+                        <img src="./assets/img/andamio-isotipo-negativo.svg" alt="Andamio Studio" class="brand__logo brand__logo--dark" loading="lazy" decoding="async">
+                        <span class="brand__name">Andamio Studio</span>
+                    </a>
+                    <p class="brand__tagline">Software a medida, de la idea a producción.</p>
+                    <p class="brand__location">Tucumán, Argentina · Trabajo con clientes de todo el mundo.</p>
+                    <p class="brand__status"><span class="dot"></span>Disponible para nuevos proyectos</p>
+                </div>
+
+                <nav class="col" aria-label="Servicios">
+                    <h3 class="col__title">Servicios</h3>
+                    <ul>
+                        <li><a href="./pages/contacto.html">Landing pages</a></li>
+                        <li><a href="./pages/contacto.html">Sitios web institucionales</a></li>
+                        <li><a href="./pages/contacto.html">Tiendas online (Shopify / Tiendanube)</a></li>
+                        <li><a href="./pages/contacto.html">Sistemas y SaaS a medida</a></li>
+                        <li><a href="./pages/contacto.html">Mantenimiento y soporte</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="col" aria-label="Navegación">
+                    <h3 class="col__title">Navegación</h3>
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./pages/sobre-mi.html">Nosotros</a></li>
+                        <li><a href="./pages/proyectos.html">Proyectos</a></li>
+                        <li><a href="./pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <div class="col">
+                    <h3 class="col__title">Contacto</h3>
+                    <ul>
+                        <li><a href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer">WhatsApp +54 9 381 301-9932</a></li>
+                        <li><a href="mailto:octaviofernandez40999@gmail.com">octaviofernandez40999@gmail.com</a></li>
+                        <li>Lun a Vie 9 a 18 hs (GMT-3)</li>
+                        <li>Respondo en menos de 24 hs</li>
+                    </ul>
+                </div>
             </div>
-            <nav class="footer-col footer-accordion" aria-label="Servicios">
-                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-servicios">
-                    Servicios
-                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <ul class="footer-accordion-panel" id="footer-panel-servicios">
-                    <li><a href="./pages/contacto.html">Landing pages</a></li>
-                    <li><a href="./pages/contacto.html">Sitios web institucionales</a></li>
-                    <li><a href="./pages/contacto.html">Tiendas online (Shopify / Tiendanube)</a></li>
-                    <li><a href="./pages/contacto.html">Sistemas y SaaS a medida</a></li>
-                    <li><a href="./pages/contacto.html">Mantenimiento y soporte</a></li>
+
+            <div class="footer__mid">
+                <ol class="process" id="footer-process">
+                    <li class="pinned"><a href="./pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                    <li>Consulta</li>
+                    <li>Propuesta</li>
+                    <li>Diseño</li>
+                    <li>Desarrollo</li>
+                    <li>Entrega</li>
+                    <li>Soporte</li>
+                </ol>
+
+                <ul class="stack" aria-label="Tecnologías principales">
+                    <li title="HTML5"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span class="sr-only">HTML5</span></li>
+                    <li title="CSS3"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span class="sr-only">CSS3</span></li>
+                    <li title="JavaScript"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span class="sr-only">JavaScript</span></li>
+                    <li title="React"><i class="devicon-react-original colored" aria-hidden="true"></i><span class="sr-only">React</span></li>
+                    <li title="Node.js"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i><span class="sr-only">Node.js</span></li>
+                    <li title="Express"><i class="devicon-express-original colored" aria-hidden="true"></i><span class="sr-only">Express</span></li>
+                    <li title="MongoDB"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i><span class="sr-only">MongoDB</span></li>
                 </ul>
-            </nav>
-            <nav class="footer-col footer-accordion" aria-label="Navegación del sitio">
-                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-nav">
-                    Navegación
-                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <ul class="footer-accordion-panel" id="footer-panel-nav">
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./pages/sobre-mi.html">Nosotros</a></li>
-                    <li><a href="./pages/proyectos.html">Proyectos</a></li>
-                    <li><a href="./pages/contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="footer-col footer-accordion">
-                <button type="button" class="footer-accordion-trigger" aria-expanded="false" aria-controls="footer-panel-contacto">
-                    Contacto
-                    <svg class="footer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <ul class="footer-accordion-panel" id="footer-panel-contacto">
-                    <li><a href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer">WhatsApp +54 9 381 301-9932</a></li>
-                    <li><a href="mailto:octaviofernandez40999@gmail.com">octaviofernandez40999@gmail.com</a></li>
-                    <li class="footer-plain">Lun a Vie 9 a 18 hs (GMT-3)</li>
-                    <li class="footer-plain">Respondo en menos de 24 hs</li>
-                </ul>
             </div>
-        </div>
-        <div class="container footer-strip">
-            <ul class="footer-process-list">
-                <li class="footer-process-pinned"><a href="./pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-                <li>Consulta</li>
-                <li>Propuesta</li>
-                <li>Diseño</li>
-                <li>Desarrollo</li>
-                <li>Entrega</li>
-                <li>Soporte</li>
-            </ul>
-            <ul class="footer-stack" aria-label="Tecnologías principales">
-                <li title="HTML5"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span class="sr-only">HTML5</span></li>
-                <li title="CSS3"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span class="sr-only">CSS3</span></li>
-                <li title="JavaScript"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span class="sr-only">JavaScript</span></li>
-                <li title="React"><i class="devicon-react-original colored" aria-hidden="true"></i><span class="sr-only">React</span></li>
-                <li title="Node.js"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i><span class="sr-only">Node.js</span></li>
-                <li title="Express"><i class="devicon-express-original colored" aria-hidden="true"></i><span class="sr-only">Express</span></li>
-                <li title="MongoDB"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i><span class="sr-only">MongoDB</span></li>
-            </ul>
-        </div>
-        <div class="container footer-bottom">
-            <p class="footer-copy">© 2026 Octavio Studio. Todos los derechos reservados.</p>
-            <div class="footer-legal">
-                <a href="./pages/privacidad.html">Política de privacidad</a>
-                <a href="./pages/terminos.html">Términos del servicio</a>
+
+            <div class="footer__bottom">
+                <p class="copy">© 2026 Andamio Studio. Todos los derechos reservados.</p>
+                <div class="legal">
+                    <a href="./pages/privacidad.html">Política de privacidad</a>
+                    <a href="./pages/terminos.html">Términos del servicio</a>
+                </div>
+                <div class="actions">
+                    <a class="icon-btn" href="https://github.com/octaviofernandez4" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+                    </a>
+                    <a class="icon-btn" href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l1.5-4A8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+                    </a>
+                    <a class="top-btn" href="#top">Volver arriba <span aria-hidden="true">↑</span></a>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="https://github.com/octaviofernandez4" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
-                </a>
-                <a href="https://wa.me/5493813019932" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l1.5-4A8.5 8.5 0 1 1 21 11.5Z"></path></svg>
-                </a>
-            </div>
-            <a href="#top" class="footer-top">Volver arriba ↑</a>
         </div>
     </footer>
     <script src="./js/main.js?v=1"></script>
     <script src="./js/andamio-brace.js"></script>
+    <script src="./js/logo-brace.js"></script>
+    <script src="./js/navbar-brace.js"></script>
+    <script src="./js/secciones-reveal.js"></script>
 </body>
 </html>

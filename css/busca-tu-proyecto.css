@@ -332,26 +332,25 @@
     color: var(--color-accent);
 }
 
-.cat-gastronomia .rubro-card-badge-category, .cat-gastronomia .rubro-group-icon { background: var(--color-accent-soft); color: var(--color-accent); }
-.cat-gastronomia .rubro-card:hover { border-color: var(--color-accent); }
+/* Color propio por rubro (icono del grupo + etiqueta de categoría en las cards) */
+.cat-gastronomia { --cat-color: #f2994a; }
+.cat-salud { --cat-color: #27ae60; }
+.cat-comercio { --cat-color: #2f80ed; }
+.cat-servicios { --cat-color: #9b59b6; }
+.cat-educacion { --cat-color: #d4a017; }
+.cat-oficios { --cat-color: #1abc9c; }
+.cat-entretenimiento { --cat-color: #eb4d8c; }
 
-.cat-salud .rubro-card-badge-category, .cat-salud .rubro-group-icon { background: var(--color-accent-soft); color: var(--color-accent); }
-.cat-salud .rubro-card:hover { border-color: var(--color-accent); }
+.rubro-group .rubro-card-badge-category,
+.rubro-group .rubro-group-icon,
+.rubro-group .rubro-card-tags .tag {
+    background: color-mix(in srgb, var(--cat-color) 18%, transparent);
+    color: var(--cat-color);
+}
 
-.cat-comercio .rubro-card-badge-category, .cat-comercio .rubro-group-icon { background: var(--color-accent-soft); color: var(--color-accent); }
-.cat-comercio .rubro-card:hover { border-color: var(--color-accent); }
-
-.cat-servicios .rubro-card-badge-category, .cat-servicios .rubro-group-icon { background: var(--color-accent-soft); color: var(--color-accent); }
-.cat-servicios .rubro-card:hover { border-color: var(--color-accent); }
-
-.cat-educacion .rubro-card-badge-category, .cat-educacion .rubro-group-icon { background: var(--color-accent-soft); color: var(--color-accent); }
-.cat-educacion .rubro-card:hover { border-color: var(--color-accent); }
-
-.cat-oficios .rubro-card-badge-category, .cat-oficios .rubro-group-icon { background: var(--color-accent-soft); color: var(--color-accent); }
-.cat-oficios .rubro-card:hover { border-color: var(--color-accent); }
-
-.cat-entretenimiento .rubro-card-badge-category, .cat-entretenimiento .rubro-group-icon { background: var(--color-accent-soft); color: var(--color-accent); }
-.cat-entretenimiento .rubro-card:hover { border-color: var(--color-accent); }
+.rubro-group .rubro-card:hover {
+    border-color: var(--cat-color);
+}
 
 /* ========================================= */
 /* BANNER CTA FINAL                          */
@@ -420,7 +419,60 @@
 }
 
 @media (min-width: 768px) {
-    .matchmaker-hero { padding-top: 140px; }
+    .matchmaker-hero { padding-top: 160px; }
+
+    .matchmaker-hero h1 {
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: clamp(32px, 3.4vw, 58px);
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        max-width: 18em;
+        margin-bottom: 24px;
+    }
+
+    .matchmaker-hero > .container > p {
+        font-size: clamp(16px, 1.15vw, 19px);
+        line-height: 1.6;
+        max-width: 42em;
+        margin-bottom: 44px;
+    }
+
+    .search-panel {
+        max-width: 980px;
+        border-radius: 24px;
+        padding: 24px;
+        margin-bottom: 48px;
+    }
+
+    .search-bar {
+        gap: 14px;
+        border-radius: 16px;
+        padding: 14px 18px;
+        margin-bottom: 20px;
+    }
+
+    .search-icon { width: 22px; height: 22px; }
+
+    .search-bar input { font-size: 1rem; min-height: 38px; }
+
+    .rubro-pill {
+        min-height: 44px;
+        padding: 10px 20px;
+        font-size: 0.82rem;
+    }
+
+    .matchmaker-hero .hero-stats { gap: 24px 64px; }
+
+    .matchmaker-hero .hero-stats .num {
+        font-family: 'Space Mono', 'Courier New', monospace;
+        font-size: clamp(28px, 2.2vw, 40px);
+    }
+
+    .matchmaker-hero .hero-stats .label {
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
 
     .catalog-section { padding: 0 0 90px; }
     .cta-banner-section { padding: 0 0 90px; }

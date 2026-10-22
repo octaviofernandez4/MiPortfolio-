@@ -148,9 +148,7 @@
         position: absolute;
         inset: 0;
         z-index: -1;
-        background: var(--color-bg);
-        -webkit-backdrop-filter: blur(18px) saturate(160%);
-        backdrop-filter: blur(18px) saturate(160%);
+        background: var(--color-accent);
         border-bottom: 1px solid var(--app-line);
     }
 
@@ -171,7 +169,16 @@
 
     .logo { gap: 10px; }
     .logo-icon { height: 32px; filter: drop-shadow(0 0 12px var(--shadow-color)); }
-    .logo-name { font-size: 20px; letter-spacing: 0.01em; }
+
+    .logo-name {
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: var(--color-on-accent);
+    }
+
+    .logo-name strong { color: var(--color-on-accent); }
 
     .hamburger,
     .nav-cta .btn { display: none !important; }
