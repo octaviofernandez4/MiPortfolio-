@@ -1,0 +1,25 @@
+<!--
+  BANNER CTA — pegar justo ANTES del <footer> en:
+    · index.html
+    · pages/sobre-mi.html
+
+  En el <head>:
+    index.html            → <link rel="stylesheet" href="banner/banner.css">
+    pages/sobre-mi.html   → <link rel="stylesheet" href="../banner/banner.css">
+
+  Antes de </body>:
+    index.html            → <script src="banner/banner.js" defer></script>
+    pages/sobre-mi.html   → <script src="../banner/banner.js" defer></script>
+-->
+<section class="of-banner" aria-labelledby="of-banner-title">
+  <div class="of-banner__inner">
+    <h2 class="of-banner__title" id="of-banner-title">
+      <span>¿Tenés un proyecto?</span>
+      <span>Hablemos esta semana.</span>
+    </h2>
+    <a class="of-banner__btn" href="https://wa.me/5493813019932">
+      Escribime por WhatsApp
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+    </a>
+  </div>
+</section>

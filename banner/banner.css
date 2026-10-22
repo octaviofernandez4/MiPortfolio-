@@ -1,0 +1,92 @@
+/* Banner CTA — Octavio Studio */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&display=swap");
+
+.of-banner {
+  --of-red: var(--color-accent, #ec3013);
+  --of-red-dark: var(--color-accent-active, #a8200c);
+  --of-paper: #f3f2f2;
+  background-color: var(--of-red);
+  background-image: url('/assets/img/reticula-rojo.svg');
+  background-size: 48px 48px;
+  background-repeat: repeat;
+  color: var(--of-paper);
+  font-family: "Archivo", system-ui, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  border: 0;
+}
+.of-banner *, .of-banner *::before, .of-banner *::after { box-sizing: border-box; }
+
+.of-banner__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 112px) clamp(24px, 8vw, 132px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+
+.of-banner__title {
+  margin: 0;
+  font-family: "Archivo", system-ui, sans-serif !important;
+  font-variant: normal;
+  text-transform: none;
+  overflow-wrap: normal;
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  color: var(--of-paper);
+}
+.of-banner__title span { display: block; }
+
+.of-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-width: 296px;
+  padding: 18px 20px 18px 18px;
+  background: var(--of-paper);
+  color: var(--of-red);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  border: 2px solid var(--of-paper);
+  border-radius: 0;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+  transition: background .18s ease, color .18s ease;
+}
+.of-banner__btn svg { width: 18px; height: 18px; flex: none; transition: transform .18s ease; }
+.of-banner__btn:hover { background: transparent; color: var(--of-paper); }
+.of-banner__btn:hover svg { transform: translateX(4px); }
+.of-banner__btn:active { background: var(--of-red-dark); }
+.of-banner__btn:focus-visible { outline: 2px solid var(--of-paper); outline-offset: 4px; }
+
+/* Aparición al hacer scroll (la activa banner.js) */
+.of-banner.is-hidden .of-banner__title,
+.of-banner.is-hidden .of-banner__btn { opacity: 0; transform: translateY(24px); }
+.of-banner .of-banner__title,
+.of-banner .of-banner__btn { transition: opacity .6s ease, transform .6s ease, background .18s ease, color .18s ease; }
+.of-banner .of-banner__btn { transition-delay: .12s, .12s, 0s, 0s; }
+
+@media (max-width: 900px) {
+  .of-banner__inner { flex-wrap: wrap; }
+}
+@media (max-width: 720px) {
+  .of-banner__inner { align-items: flex-start; flex-direction: column; }
+  .of-banner__btn { width: 100%; min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .of-banner.is-hidden .of-banner__title,
+  .of-banner.is-hidden .of-banner__btn { opacity: 1; transform: none; }
+}
