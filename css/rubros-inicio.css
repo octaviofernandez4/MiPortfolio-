@@ -1,0 +1,158 @@
+/* Busca tu proyecto (versión Inicio): chips de rubro + 3 cards + link al buscador.
+   Usa los tokens de css/paleta.css, así sigue el modo claro/oscuro. */
+
+.btp {
+  --btp-radius: 20px;
+  --btp-display: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+  --btp-mono: 'Space Mono', 'Courier New', monospace;
+  width: min(1600px, 92%);
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 0 clamp(64px, 6vw, 110px);
+  color: var(--color-text);
+}
+
+.btp__head { max-width: 680px; margin-bottom: 32px; }
+.btp__title {
+  font-family: var(--btp-display); font-weight: 700;
+  font-size: clamp(32px, 3vw, 58px); letter-spacing: -0.01em; line-height: 1.1;
+  margin: 0 0 14px;
+  color: var(--color-text);
+}
+.btp__lead { color: var(--color-text-muted); font-size: 17px; line-height: 1.6; text-wrap: pretty; }
+
+/* ---------- Botones ---------- */
+.btp .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font: 600 14.5px/1.2 'Montserrat', system-ui, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .25s, border-color .25s, transform .15s;
+}
+.btp .btn svg { width: 18px; height: 18px; flex: none; }
+.btp .btn:hover { background: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+.btp .btn:active { transform: scale(.98); background: var(--color-accent-active); }
+.btp .btn:focus-visible, .chip:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+/* ---------- Chips de rubro ---------- */
+.btp__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.chip {
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font: 500 13.5px 'Montserrat', system-ui, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.chip:hover { color: var(--color-text); border-color: var(--color-accent); }
+.chip[aria-selected="true"] { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+
+/* ---------- Grid ---------- */
+.btp__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+@media (max-width: 900px) { .btp__grid { grid-template-columns: 1fr; gap: 16px; } }
+
+/* ---------- Card de rubro ---------- */
+.rubro {
+  display: flex; flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--btp-radius);
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
+  animation: rubroIn .45s cubic-bezier(.2,.7,.2,1) both;
+}
+.rubro:hover { transform: translateY(-6px); border-color: var(--color-accent); box-shadow: 0 24px 60px -24px var(--shadow-color); }
+@keyframes rubroIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.rubro__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--color-surface-2); }
+.rubro__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.rubro:hover .rubro__media img { transform: scale(1.05); }
+/* degradado fijo oscuro: el texto de la categoría va siempre sobre la foto */
+.rubro__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(23, 22, 21, .78)); }
+
+.rubro__cat {
+  position: absolute; left: 14px; bottom: 12px; z-index: 1;
+  font-family: var(--btp-mono);
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: #f0ebe3;
+}
+.rubro__case {
+  position: absolute; top: 12px; left: 12px; z-index: 1;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: var(--color-bg); color: var(--color-text);
+  font-size: 11.5px; font-weight: 700;
+}
+.rubro__case::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--color-accent); }
+
+.rubro__body { display: flex; flex-direction: column; gap: 12px; padding: 22px 22px 24px; flex: 1; }
+.rubro__title {
+  font-family: var(--btp-display); font-weight: 700;
+  font-size: clamp(20px, 1.4vw, 24px); letter-spacing: -0.01em; line-height: 1.15;
+  color: var(--color-text);
+}
+.rubro__desc { color: var(--color-text-muted); font-size: 14.5px; line-height: 1.55; text-wrap: pretty; }
+.rubro__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+.rubro__tags span {
+  padding: 4px 9px; border-radius: 6px;
+  background: var(--color-accent-soft);
+  font-family: var(--btp-mono);
+  font-size: 11.5px; color: var(--color-accent-text);
+}
+.rubro__actions { display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding-top: 10px; }
+.rubro__actions .btn { justify-content: space-between; }
+.rubro__ver { color: var(--color-text-muted); font-size: 13.5px; font-weight: 600; text-decoration: none; padding: 4px 0; }
+.rubro__ver:hover { color: var(--color-accent-text); }
+
+/* ---------- Link al buscador completo ---------- */
+.btp__foot { display: flex; justify-content: center; margin-top: 36px; }
+.btp__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 48px;
+  padding: 13px 22px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 12px;
+  color: var(--color-text);
+  font-weight: 600; font-size: 15px;
+  text-decoration: none;
+  transition: border-color .25s, color .25s;
+}
+.btp__link:hover { border-color: var(--color-accent); color: var(--color-accent-text); }
+
+/* ---------- Celular ---------- */
+@media (max-width: 620px) {
+  .btp { width: auto; padding: 0 16px 56px; }
+  .btp__lead { font-size: 15px; }
+  /* chips en una sola fila deslizable */
+  .btp__chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 -16px 20px;
+    padding: 0 16px 4px;
+    scrollbar-width: none;
+  }
+  .btp__chips::-webkit-scrollbar { display: none; }
+  .btp__foot { margin-top: 24px; }
+  .btp__link { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rubro { animation: none; }
+  .rubro, .rubro:hover, .rubro__media img { transition: none; transform: none; }
+}

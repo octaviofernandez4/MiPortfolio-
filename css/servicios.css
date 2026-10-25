@@ -1,0 +1,200 @@
+/* Servicios — cards de lo que ofrece el estudio (Inicio PC y celular).
+   Usa los tokens de css/paleta.css, así sigue el modo claro/oscuro. */
+
+.servicios {
+  --svc-radius: 20px;
+  --svc-display: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+  --svc-mono: 'Space Mono', 'Courier New', monospace;
+  width: min(1600px, 92%);
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(64px, 6vw, 110px) 0;
+  color: var(--color-text);
+}
+
+.servicios__head { max-width: 640px; margin-bottom: 48px; }
+
+.servicios__title {
+  font-family: var(--svc-display);
+  font-weight: 700;
+  font-size: clamp(32px, 3vw, 58px);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  color: var(--color-text);
+}
+
+.servicios__lead { color: var(--color-text-muted); font-size: 17px; line-height: 1.6; text-wrap: pretty; }
+
+/* ---------- Grid ---------- */
+.servicios__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+@media (max-width: 1100px) { .servicios__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } }
+@media (max-width: 620px)  {
+  .servicios { width: auto; padding: 56px 16px; }
+  .servicios__head { margin-bottom: 32px; }
+  .servicios__lead { font-size: 15px; }
+  .servicios__grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ---------- Card ---------- */
+.svc {
+  --mx: 50%;
+  --my: 0%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px 28px 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--svc-radius);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
+}
+@media (max-width: 620px) { .svc { padding: 28px 22px 22px; gap: 16px; } }
+
+/* luz que sigue al cursor */
+.svc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 60%);
+  opacity: 0;
+  transition: opacity .35s;
+}
+.svc:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: 0 24px 60px -24px var(--shadow-color);
+}
+.svc:hover::before { opacity: 1; }
+
+.svc__top { display: flex; justify-content: space-between; align-items: center; }
+
+.svc__icon {
+  width: 44px; height: 44px;
+  padding: 10px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 12px;
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke .3s, border-color .3s;
+}
+.svc:hover .svc__icon { stroke: var(--color-accent); border-color: var(--color-accent); }
+
+.svc__name {
+  font-family: var(--svc-display);
+  font-weight: 700;
+  font-size: clamp(22px, 1.6vw, 28px);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.svc__for {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.svc__for b { color: var(--color-text); font-weight: 600; }
+
+.svc__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--color-border-soft);
+  flex: 1;
+}
+.svc__list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+.svc__list li::before {
+  content: "";
+  position: absolute;
+  left: 2px; top: 4px;
+  width: 12px; height: 7px;
+  border-left: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: rotate(-45deg);
+}
+
+.svc__cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  padding: 14px 18px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 12px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.svc__cta span { transition: transform .25s; }
+.svc__cta:hover { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+.svc__cta:hover span { transform: translateX(4px); }
+.svc__cta:active { transform: scale(.98); }
+.svc__cta:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+/* ---------- Destacada ---------- */
+.svc--featured {
+  background: linear-gradient(180deg, var(--color-accent-soft) 0%, var(--color-surface) 55%);
+  border-color: var(--color-accent);
+}
+.svc--featured .svc__cta { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+.svc--featured .svc__cta:hover { background: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+.svc--featured .svc__cta:active { background: var(--color-accent-active); }
+
+.svc__badge {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--svc-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 0 0 10px 10px;
+}
+
+/* ---------- Nota ---------- */
+.servicios__note {
+  margin-top: 36px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.servicios__note a { color: var(--color-accent-text); text-underline-offset: 4px; }
+.servicios__note a:hover { color: var(--color-text); }
+
+/* ---------- Entrada ---------- */
+.svc.is-hidden { opacity: 0; transform: translateY(24px); }
+.svc.is-in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .svc, .svc.is-in, .svc:hover { transition: none; transform: none; }
+}

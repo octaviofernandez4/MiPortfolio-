@@ -327,26 +327,22 @@ main.container {
 }
 
 @media (min-width: 768px) {
+    /* Un proyecto por fila, todos a ancho completo */
     .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 28px;
     }
 
-    .project-card.span-2,
-    .project-card.span-3 {
-        grid-column: span 2;
+    /* Mockup de celular centrado dentro de un marco ancho */
+    .project-card.tall .project-visual {
+        aspect-ratio: 2.1 / 1;
     }
 
     .project-card { border-radius: 20px; }
 
     .card-body { padding: clamp(28px, 2.4vw, 44px); }
 
-    .btn-more { display: none; }
-
-    .desc-more {
-        max-height: none;
-        overflow: visible;
-    }
+    .btn-more { font-size: 0.82rem; }
 
     .card-tags {
         gap: 10px;
@@ -415,18 +411,6 @@ main.container {
 
 @media (min-width: 1024px) {
     main.container { padding-top: 120px; }
-
-    .bento-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .project-card.span-2 {
-        grid-column: span 2;
-    }
-
-    .project-card.span-3 {
-        grid-column: span 3;
-    }
 }
 
 /* Intro más grande (PC), misma escala que Inicio/Nosotros */

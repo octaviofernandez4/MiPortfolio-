@@ -1,0 +1,67 @@
+/* Botón flotante de WhatsApp (todas las páginas). Lo arma js/wa-float.js.
+   Usa los tokens de css/paleta.css, así sigue el modo claro/oscuro. */
+
+.wa-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 999;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
+}
+.wa-float__btn {
+  position: relative;
+  display: grid; place-items: center;
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  background: var(--color-accent); color: var(--color-on-accent);
+  box-shadow: 0 12px 30px -8px color-mix(in srgb, var(--color-accent) 55%, transparent), 0 4px 12px var(--shadow-color);
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), background .25s;
+}
+.wa-float__btn svg { width: 32px; height: 32px; }
+.wa-float__btn:hover { transform: scale(1.08); background: var(--color-accent-hover); }
+.wa-float__btn:active { background: var(--color-accent-active); }
+.wa-float__btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.wa-float__btn::before {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  animation: waPulse 2.4s ease-out infinite;
+}
+@keyframes waPulse { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.6); opacity: 0; } }
+.wa-float__dot {
+  position: absolute; top: 3px; right: 3px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--color-text); border: 2px solid var(--color-bg);
+}
+.wa-float.is-read .wa-float__dot { display: none; }
+
+.wa-float__bubble {
+  position: relative;
+  display: flex; flex-direction: column; gap: 4px;
+  max-width: 260px;
+  padding: 14px 36px 14px 16px;
+  background: var(--color-surface); color: var(--color-text);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 16px 16px 4px 16px;
+  font-size: 13.5px; line-height: 1.45;
+  box-shadow: 0 16px 40px -12px var(--shadow-color);
+  cursor: pointer;
+  opacity: 0; transform: translateY(10px) scale(.96); transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity .35s, transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.wa-float__bubble span { color: var(--color-text-muted); }
+.wa-float__bubble strong { font-size: 14.5px; }
+.wa-float.is-open .wa-float__bubble { opacity: 1; transform: none; pointer-events: auto; }
+.wa-float__close {
+  position: absolute; top: 6px; right: 8px;
+  width: 24px; height: 24px;
+  border: 0; background: none; cursor: pointer;
+  font-size: 18px; line-height: 1; color: var(--color-text-muted);
+}
+.wa-float__close:hover { color: var(--color-accent-text); }
+
+/* Celular: arriba de la barra de pestañas inferior */
+@media (max-width: 767px) {
+  .wa-float { right: 14px; bottom: calc(var(--app-tab-h, 68px) + var(--app-safe-bottom, 0px) + 24px); }
+  .wa-float__btn { width: 56px; height: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wa-float__btn::before { animation: none; }
+}
