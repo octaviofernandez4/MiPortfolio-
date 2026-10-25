@@ -59,7 +59,11 @@
 
     /* Módulos: carrusel horizontal con snap */
     .container.modules-section { padding: 30px 0 4px; }
-    .modules-section .hero-stats { margin-bottom: 16px; }
+    /* La sección no tiene margen lateral (el carrusel va de borde a borde): las estadísticas lo llevan propio */
+    .modules-section .hero-stats {
+        width: auto;
+        margin: 0 var(--app-gutter) 16px;
+    }
 
     .home-preview {
         display: flex;
