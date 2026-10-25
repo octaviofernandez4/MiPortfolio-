@@ -45,8 +45,6 @@
 
     .channel-text { flex: 1; }
     .channel-icon { width: 42px; height: 42px; border-radius: 13px; }
-    .channel-card:nth-child(2) .channel-icon { color: var(--app-green); background: var(--color-accent-soft); }
-    .channel-card:nth-child(3) .channel-icon { color: var(--app-text); background: var(--app-surface-2); }
     .channel-label { font-size: 10.5px; }
     .channel-value { font-size: 14px; }
 

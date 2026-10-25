@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andamio Studio | Arma tu web</title>
+    <meta name="description" content="Armá tu proyecto y mirá una estimación de precio y plazo en tiempo real.">
+    <link rel="icon" href="/assets/img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/img/favicon/favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/favicon-180.png">
+    <link rel="stylesheet" href="../css/paleta.css">
+    <script src="../js/theme-toggle.js"></script>
+    <link rel="stylesheet" href="../css/cotizador.css">
+</head>
+<body>
+    <header class="site-header wrap">
+        <a class="brand" href="../index.html">
+            <img src="../assets/img/andamio-icono-app-oscuro.svg" alt="Andamio Studio" width="32" height="32">
+            <span class="brand-text">
+                <span class="brand-name"><b>Andamio</b> Studio</span>
+                <span class="brand-tag">CREATIVE DIGITAL AGENCY</span>
+            </span>
+        </a>
+        <div class="header-actions">
+            <a class="back" href="../index.html">← Volver al sitio</a>
+            <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Cambiar tema" aria-pressed="false">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero wrap">
+      <div class="kicker"><span class="live-dot"></span>COTIZADOR DE PROYECTOS</div>
+      <h1>Armá tu proyecto</h1>
+      <p>Elegí qué necesitás y mirá la estimación de precio y plazo en tiempo real. Cuando esté listo, nos lo mandás por WhatsApp y lo cerramos en una charla de 15 minutos.</p>
+      <p class="hero-alt">Completarlo es totalmente opcional. Si no encontrás lo que buscás o preferís saltearlo, <a href="https://wa.me/5493813019932?text=Hola%2C%20prefiero%20contarles%20mi%20problema%20directamente%3A%20" target="_blank" rel="noopener">contanos tu problema por WhatsApp</a> con tus palabras y nosotros te proponemos la solución.</p>
+    </section>
+  
+    <main class="layout wrap">
+      <div class="steps">
+  
+        <section class="step">
+          <div class="step-head"><span class="step-num">01</span><h2>¿Qué tipo de proyecto necesitás?</h2></div>
+          <div class="grid-2" id="services"></div>
+        </section>
+  
+        <section class="step">
+          <div class="step-head"><span class="step-num">02</span><h2>Contanos de tu negocio</h2></div>
+          <div class="q">
+            <div class="q-label">Rubro</div>
+            <div class="pills" id="rubros"></div>
+          </div>
+          <div class="q">
+            <div class="q-label">¿Ya tenés web?</div>
+            <div class="pills" data-seg="web"></div>
+          </div>
+  
+          <div class="cond" id="cond-tienda" hidden>
+            <div class="cond-kicker">SOBRE TU TIENDA</div>
+            <div class="q">
+              <div class="q-label">Plataforma</div>
+              <div class="pills" data-seg="platform"></div>
+            </div>
+            <div class="q">
+              <div class="q-label">Cantidad aproximada de productos</div>
+              <div class="pills" data-seg="products"></div>
+            </div>
+          </div>
+  
+          <div class="cond" id="cond-institucional" hidden>
+            <div class="cond-kicker">SOBRE TU WEB</div>
+            <div class="q">
+              <div class="q-label">Cantidad de secciones</div>
+              <div class="pills" data-seg="sections"></div>
+            </div>
+          </div>
+  
+          <div class="cond" id="cond-sistema" hidden>
+            <div class="cond-kicker">SOBRE TU SISTEMA</div>
+            <div class="q">
+              <div class="q-label">¿Qué querés automatizar? <span class="muted">Podés elegir varias</span></div>
+              <div class="pills" id="modules"></div>
+            </div>
+            <div class="q">
+              <div class="q-label">¿Cuántas personas lo van a usar?</div>
+              <div class="pills" data-seg="users"></div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="step">
+          <div class="step-head-wrap">
+            <div class="step-head"><span class="step-num">03</span><h2>Funcionalidades</h2></div>
+            <p class="step-sub">Sumá lo que tu proyecto necesita. Lo que ya viene con tu tipo de proyecto aparece como incluido.</p>
+          </div>
+          <div class="grid-2 feats" id="features"></div>
+        </section>
+  
+        <section class="step">
+          <div class="step-head"><span class="step-num">04</span><h2>Detalles finales</h2></div>
+          <div class="q">
+            <div class="q-label">¿Para cuándo lo necesitás?</div>
+            <div class="pills" data-seg="deadline"></div>
+          </div>
+          <div class="q">
+            <div class="q-label">¿Tenés los textos y las fotos?</div>
+            <div class="pills" data-seg="content"></div>
+          </div>
+          <div class="q">
+            <div class="q-label">¿Tenés dominio y hosting?</div>
+            <div class="pills" data-seg="domain"></div>
+          </div>
+          <div class="q">
+            <div class="q-label">Mantenimiento mensual</div>
+            <div class="pills" data-seg="maint"></div>
+            <div class="hint" id="maint-hint" hidden></div>
+          </div>
+          <label class="q">
+            <span class="q-label">¿Tenés un sitio de referencia que te guste? <span class="muted">Opcional</span></span>
+            <input class="input" type="url" id="refUrl" placeholder="https://...">
+          </label>
+        </section>
+  
+        <section class="step">
+          <div class="step-head-wrap">
+            <div class="step-head"><span class="step-num">05</span><h2>Tus datos</h2></div>
+            <p class="step-sub">Sin email ni registro: el resumen sale directo por WhatsApp.</p>
+          </div>
+          <div class="grid-2">
+            <label class="q"><span class="q-label">Tu nombre</span><input class="input" id="name" placeholder="Ej. Lucía"></label>
+            <label class="q"><span class="q-label">Nombre del negocio</span><input class="input" id="business" placeholder="Ej. Café Norte"></label>
+            <label class="q"><span class="q-label">Ciudad y país</span><input class="input" id="city" placeholder="Ej. Tucumán, Argentina"></label>
+          </div>
+          <label class="q">
+            <span class="q-label">Comentario <span class="muted">Opcional</span></span>
+            <textarea class="input" id="comment" rows="3" placeholder="Contanos algo más de tu idea..."></textarea>
+          </label>
+        </section>
+      </div>
+  
+      <aside class="panel" id="panel">
+        <div class="panel-head">
+          <div class="panel-kicker">TU ESTIMACIÓN</div>
+          <div class="panel-name" id="svc-name"></div>
+        </div>
+  
+        <div class="mobile-progress"><div class="bar"><div class="bar-fill" data-progress></div></div></div>
+  
+        <div class="price-block">
+          <div class="price-row">
+            <div class="price-main">
+              <div class="price-label">Inversión estimada <span class="mobile-only" id="m-weeks"></span></div>
+              <div class="price" id="price"><span class="cur">US$</span><span class="num" id="range"></span></div>
+            </div>
+            <button class="sheet-btn" id="sheet-btn" type="button" aria-expanded="false">Desglose ↑</button>
+          </div>
+          <div class="meta-row desktop-only"><span>Plazo de entrega</span><span class="mono" id="weeks"></span></div>
+          <div class="meta-row desktop-only" id="monthly-row" hidden><span>Mantenimiento</span><span class="mono" id="monthly"></span></div>
+        </div>
+  
+        <div class="progress desktop-only">
+          <div class="progress-top"><span>Formulario completo</span><span class="mono" id="progress-txt"></span></div>
+          <div class="bar"><div class="bar-fill" data-progress></div></div>
+        </div>
+  
+        <div class="breakdown">
+          <div class="panel-kicker">DESGLOSE</div>
+          <div id="lines"></div>
+        </div>
+  
+        <div class="actions">
+          <a class="wa-btn" id="wa" href="#" target="_blank" rel="noopener"><span>Enviar resumen por WhatsApp</span><span>→</span></a>
+          <button class="reset" id="reset" type="button">Empezar de nuevo</button>
+        </div>
+  
+        <p class="note">Valores orientativos en dólares. El precio final, la moneda (pesos o dólares) y la forma de pago se definen juntos después de una charla de 15 minutos, sin compromiso. Trabajamos con opciones accesibles y flexibles, como pago en cuotas o por etapas: todo se puede adaptar a tu presupuesto, es cuestión de hablarlo.</p>
+      </aside>
+    </main>
+
+    <script src="../js/cotizador.js"></script>
+</body>
+</html>

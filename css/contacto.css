@@ -69,6 +69,17 @@
     height: 20px;
 }
 
+/* Logos de marca: Gmail sobre blanco y WhatsApp en su verde */
+.channel-icon--gmail {
+    background: #ffffff;
+    border: 1px solid var(--color-border-soft);
+}
+
+.channel-icon--whatsapp {
+    background: #25d366;
+    color: #ffffff;
+}
+
 .channel-label {
     display: block;
     font-family: 'Space Mono', 'Courier New', monospace;
