@@ -16,12 +16,21 @@
 
     .hero h1 .text-gradient { display: block; padding-bottom: 2px; }
 
+    /* Misma fuente que el nombre de la marca en el app bar, en blanco pleno */
     .hero > .hero-inner > p {
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
         font-size: 15px;
+        font-weight: 700;
         line-height: 1.6;
-        color: var(--app-muted);
-        margin-bottom: 24px;
+        letter-spacing: 0.01em;
+        color: var(--color-text);
+        margin-bottom: 14px;
     }
+
+    /* Tres textos cortos: el último deja aire antes de los botones */
+    .hero > .hero-inner > p:last-of-type { margin-bottom: 24px; }
+
+    [data-theme="dark"] .hero > .hero-inner > p { color: #ffffff; }
 
     .hero-actions {
         display: grid;
