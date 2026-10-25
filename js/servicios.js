@@ -12,7 +12,7 @@
     var servicio = card.dataset.servicio;
     var cta = card.querySelector(".svc__cta");
     if (cta) {
-      cta.href = waLink("¡Hola Octavio! Me interesa el servicio de " + servicio + ". ¿Me pasás más info?");
+      cta.href = waLink("¡Hola! Me interesa el servicio de " + servicio + ". ¿Me pasás más info?");
       cta.target = "_blank";
       cta.rel = "noopener";
     }
@@ -27,7 +27,7 @@
 
   var libre = document.querySelector("[data-servicio-libre]");
   if (libre) {
-    libre.href = waLink("¡Hola Octavio! Tengo un proyecto y no sé qué servicio me conviene. ¿Lo vemos?");
+    libre.href = waLink("¡Hola! Tengo un proyecto y no sé qué servicio me conviene. ¿Lo vemos?");
     libre.target = "_blank";
     libre.rel = "noopener";
   }

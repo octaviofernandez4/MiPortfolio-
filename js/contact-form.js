@@ -24,7 +24,7 @@
                 form.reset();
             })
             .catch(() => {
-                status.textContent = 'Hubo un error al enviar. Probá de nuevo o escribime por WhatsApp.';
+                status.textContent = 'Hubo un error al enviar. Probá de nuevo o escribinos por WhatsApp.';
                 status.classList.add('error');
             })
             .finally(() => {

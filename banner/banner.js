@@ -1,7 +1,7 @@
 // Banner CTA — arma el link de WhatsApp con mensaje y anima la entrada
 (function () {
   var PHONE = "5493813019932";
-  var MESSAGE = "Hola Octavio, tengo un proyecto y me gustaría charlarlo.";
+  var MESSAGE = "Hola, tengo un proyecto y me gustaría charlarlo.";
 
   function init() {
     document.querySelectorAll(".of-banner").forEach(function (banner) {

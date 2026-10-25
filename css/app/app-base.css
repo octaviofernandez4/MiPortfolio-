@@ -1,5 +1,5 @@
 /* =========================================================
-   OCTAVIO STUDIO · MOBILE APP LAYER — BASE
+   ANDAMIO STUDIO · MOBILE APP LAYER — BASE
    Tokens, app bar superior y tab bar inferior.
    Se carga DESPUÉS de styles.css / navbar.css / footer.css.
    Solo afecta pantallas < 768px (desktop queda intacto).
