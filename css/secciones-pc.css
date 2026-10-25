@@ -242,7 +242,7 @@
     .sec-list { list-style: none; margin: 0; padding: 0; }
     .sec-list li {
         display: grid;
-        grid-template-columns: 44px 1fr;
+        grid-template-columns: 1fr;
         gap: 16px;
         padding: 18px 12px;
         border-radius: 12px;
@@ -250,12 +250,7 @@
     }
     .sec-list li:hover { background: var(--color-surface-2); }
     .sec-list li:hover b { color: var(--color-accent-text); }
-    .sec-n {
-        font-family: 'Space Mono', 'Courier New', monospace;
-        font-size: clamp(13px, 0.85vw, 15px);
-        color: var(--color-text-muted);
-        padding-top: 4px;
-    }
+    .sec-n { display: none; }
     .sec-list b {
         display: block;
         font-weight: 700;

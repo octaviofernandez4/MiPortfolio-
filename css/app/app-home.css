@@ -78,15 +78,7 @@
         counter-increment: modulo;
     }
 
-    .preview-card::before {
-        content: counter(modulo, decimal-leading-zero);
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-family: var(--app-mono);
-        font-size: 11px;
-        color: var(--app-dim);
-    }
+    .preview-card::before { display: none; }
 
     .glass-card:hover { transform: none; border-color: var(--app-line); }
     .glass-card:active { transform: scale(0.98); }

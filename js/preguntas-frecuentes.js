@@ -54,7 +54,7 @@
             else link.removeAttribute('aria-current');
         });
         if (!options.keepHash) history.replaceState(null, '', '#' + id);
-        if (options.scroll) {
+        if (options.scroll && window.innerWidth < 768) {
             const cats = document.querySelector('.faq-cats');
             if (cats) cats.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
