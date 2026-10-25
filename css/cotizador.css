@@ -183,12 +183,15 @@ textarea.input { resize: vertical; }
 .reset { align-self: flex-start; background: none; border: none; padding: 0; color: var(--color-text-muted); font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 .reset:hover { color: var(--color-accent-text); }
 .note { margin: 0; font-size: 12px; line-height: 1.5; color: var(--color-text-muted); text-wrap: pretty; }
-.sheet-btn, .mobile-only, .mobile-progress { display: none; }
+.sheet-btn, .mobile-only, .mobile-progress, .info-btn { display: none; }
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 
 /* Celular: el panel pasa a ser una barra fija abajo */
 @media (max-width: 899px) {
+  /* Solo celular: fondo liso, sin la cuadrícula de nodos */
+  body { background-image: none; background-color: #ffffff; }
+  [data-theme="dark"] body { background-color: #000000; }
   .wrap { padding-left: 16px; padding-right: 16px; }
   .hero { padding-top: 36px; padding-bottom: 24px; }
   .hero p { font-size: 15px; }
@@ -214,7 +217,13 @@ textarea.input { resize: vertical; }
   .breakdown, .reset, .note { display: none; }
   .panel.open .breakdown { display: flex; max-height: 45vh; padding-top: 12px; border-top: 1px solid var(--color-border-soft); }
   .panel.open .reset { display: block; }
-  .panel.open .note { display: block; }
+  /* La nota de precio y pago queda detrás de "Más info" */
+  .panel.open .info-btn {
+    display: block; align-self: flex-start;
+    padding: 0; border: 0; background: none; cursor: pointer;
+    color: var(--color-accent-text); font-size: 13px; font-weight: 600;
+  }
+  .panel.open.info-open .note { display: block; }
   .actions { order: 10; }
   .wa-btn { padding: 15px 18px; }
 }

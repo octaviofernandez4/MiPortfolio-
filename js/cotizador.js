@@ -44,7 +44,7 @@ const MODULES = ['Turnos', 'Stock', 'Ventas', 'Clientes', 'Facturación', 'Otro'
 
 const OPTS = {
   web: [['no', 'No'], ['renovar', 'Sí, pero quiero renovarla'], ['funciones', 'Sí, quiero sumarle funciones']],
-  platform: [['shopify', 'Shopify'], ['tiendanube', 'Tiendanube'], ['recomienden', 'Me recomiendan']],
+  platform: [['shopify', 'Shopify'], ['tiendanube', 'Tiendanube'], ['instagram', 'Solo Instagram'], ['linktree', 'Linktree / link en bio'], ['recomienden', 'Me recomiendan']],
   products: [['50', 'Hasta 50'], ['200', '50–200'], ['200+', '+200']],
   sections: [['5', 'Hasta 5'], ['5+', 'Más de 5']],
   users: [['3', '1–3'], ['10', '4–10'], ['10+', 'Más de 10']],
@@ -304,6 +304,12 @@ $('#sheet-btn').addEventListener('click', () => {
   const panel = $('#panel'), open = panel.classList.toggle('open');
   $('#sheet-btn').textContent = open ? 'Cerrar ↓' : 'Desglose ↑';
   $('#sheet-btn').setAttribute('aria-expanded', open);
+});
+
+$('#info-btn').addEventListener('click', () => {
+  const panel = $('#panel'), open = panel.classList.toggle('info-open');
+  $('#info-btn').textContent = open ? 'Menos info ↑' : 'Más info ↓';
+  $('#info-btn').setAttribute('aria-expanded', open);
 });
 
 render();
