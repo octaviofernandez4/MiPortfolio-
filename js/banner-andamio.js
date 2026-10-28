@@ -6,6 +6,8 @@
   var stack = document.getElementById('ab-stack');
   var lvlEl = document.getElementById('ab-lvl');
   if (!pane || !stack) return;
+  // Aire libre arriba del andamio, en pisos: el último piso siempre se ve completo
+  var TOP_GAP = 1.2;
   var count = 0, timer = null, busy = false;
 
   // Un nivel del isotipo: 3 parantes, 1 travesaño, 2 riostras (viewBox 96×36)
@@ -35,7 +37,7 @@
     addLevel(true);
     setTimeout(function(){
       var h = levelH();
-      if (stack.getBoundingClientRect().height > pane.clientHeight - h*0.4){
+      if (stack.getBoundingClientRect().height > pane.clientHeight - h * TOP_GAP){
         stack.classList.add('shift');
         stack.style.transform = 'translateY('+h+'px)';
         setTimeout(function(){
@@ -51,14 +53,14 @@
   function build(){
     clearInterval(timer); stack.innerHTML = ''; stack.style.transform=''; count = 0; busy = false;
     if (reduce){
-      do { addLevel(false); } while (stack.getBoundingClientRect().height < pane.clientHeight - levelH());
+      do { addLevel(false); } while (stack.getBoundingClientRect().height < pane.clientHeight - levelH() * (TOP_GAP + 1));
       return;
     }
     // arranque: arma los primeros niveles en cadena, luego sigue subiendo
     var first = 0;
     (function boot(){
       climb(); first++;
-      var full = stack.getBoundingClientRect().height + levelH() > pane.clientHeight;
+      var full = stack.getBoundingClientRect().height + levelH() * (TOP_GAP + 1) > pane.clientHeight;
       if (first < 8 && !full) setTimeout(boot, 1250);
       else timer = setInterval(climb, 2600);
     })();

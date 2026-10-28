@@ -99,9 +99,10 @@
     grid.innerHTML = list.slice(0, SHOWN).map(card).join("");
   }
 
-  var chips = [["all", "Todos"]].concat(Object.keys(CATS).map(function (k) { return [k, CATS[k]]; }));
+  // Sin chip "Todos": al cargar se muestran las 3 cards por defecto y ningún rubro marcado
+  var chips = Object.keys(CATS).map(function (k) { return [k, CATS[k]]; });
   chipsBox.innerHTML = chips.map(function (c) {
-    return '<button class="chip" type="button" role="tab" data-cat="' + c[0] + '" aria-selected="' + (c[0] === "all") + '">' + c[1] + "</button>";
+    return '<button class="chip" type="button" role="tab" data-cat="' + c[0] + '" aria-selected="false">' + c[1] + "</button>";
   }).join("");
 
   chipsBox.addEventListener("click", function (e) {
