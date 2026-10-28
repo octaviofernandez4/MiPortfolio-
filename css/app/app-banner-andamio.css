@@ -1,0 +1,130 @@
+/* =========================================================
+   ANDAMIO STUDIO · MOBILE APP LAYER — BANNER DE INICIO
+   Telón de entrada + andamio que se arma (tocá para sumar un nivel)
+   + frase + marquesina de servicios + CTA.
+   Ocupa la primera pantalla entre el app bar y la tab bar.
+   Fondo igual al banner "¿Tenés un proyecto?"; "obra" y "tinta"
+   fijos porque siempre van sobre rojo.
+   ========================================================= */
+@media (max-width: 767px) {
+
+    .aba {
+        --aba-obra: #f3f2f2;
+        --aba-tinta: #201e1d;
+        --aba-rule: 2px;
+        --aba-px: var(--app-gutter, 18px);
+        --aba-ease-out: cubic-bezier(.2,.8,.2,1);
+        --aba-ease-io: cubic-bezier(.7,0,.2,1);
+        --aba-spring: cubic-bezier(.2,.9,.3,1.25);
+        position: relative;
+        overflow: hidden;
+        max-width: none;
+        padding: 0;
+        /* debajo del app bar fijo */
+        margin: calc(var(--app-bar-h) + var(--app-safe-top)) 0 0;
+        /* el alto lo da el contenido: el andamio tiene alto fijo (~2 pisos) */
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-accent);
+        background-image: url('/assets/img/reticula-rojo.svg');
+        background-size: 48px 48px;
+        background-repeat: repeat;
+        color: var(--aba-obra);
+        font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    }
+    .aba *, .aba *::before, .aba *::after { box-sizing: border-box; }
+
+    /* ---------- Telón de entrada ---------- */
+    .aba__intro { position: absolute; inset: 0; z-index: 20; background: var(--aba-tinta); overflow: hidden; transition: transform .9s var(--aba-ease-io); }
+    .aba__intro.out { transform: translateY(-100%); }
+    .aba__i-up { position: absolute; top: 0; bottom: 0; width: 12%; background: var(--aba-obra); transform: scaleY(0); transform-origin: bottom; animation: abaGrowY .7s var(--aba-ease-io) var(--d) forwards; }
+    .aba__i-ld { position: absolute; left: 8%; right: 8%; top: 14%; height: 7%; background: var(--aba-obra); transform: scaleX(0); transform-origin: left; animation: abaDrawX .55s var(--aba-ease-io) .5s forwards; }
+    .aba__i-br { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .aba__i-br path { fill: var(--color-accent); transform-box: fill-box; transform-origin: left bottom; transform: scale(0); animation: abaSnap .5s var(--aba-spring) var(--d) forwards; }
+
+    /* ---------- Franja superior: nivel ---------- */
+    .aba__bar { position: relative; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; padding: 14px var(--aba-px); }
+    .aba__bar::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: var(--aba-rule); background: var(--aba-obra); transform: scaleX(0); transform-origin: left; }
+    .aba.ready .aba__bar::after { animation: abaDrawX .8s var(--aba-ease-io) forwards; }
+    .aba__level, .aba__place { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: 0; }
+    .aba.ready .aba__level { animation: abaFade .5s ease .2s forwards; }
+    .aba.ready .aba__place { animation: abaFade .5s ease .3s forwards; }
+    .aba__num { display: inline-block; overflow: hidden; height: 1.25em; line-height: 1.25em; min-width: 2ch; }
+    .aba__num b { display: block; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+    /* ---------- Andamio ---------- */
+    /* lugar para ~2 pisos completos + aire arriba (ver TOP_GAP en el JS) */
+    .aba__pane { position: relative; flex: none; height: min(345px, 90vw); overflow: hidden; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    .aba__pane::after { content: ""; position: absolute; left: var(--aba-px); right: var(--aba-px); bottom: 0; height: var(--aba-rule); background: var(--aba-obra); transform: scaleX(0); }
+    .aba.ready .aba__pane::after { animation: abaDrawX .8s var(--aba-ease-io) .15s forwards; }
+    .aba__stack { position: absolute; left: 50%; bottom: 0; width: min(62%, 250px); margin-left: calc(min(62%, 250px) / -2); display: flex; flex-direction: column-reverse; }
+    .aba__stack.shift { transition: transform .8s var(--aba-ease-io); }
+    .aba__lv { display: block; width: 100%; height: auto; overflow: visible; }
+    .aba__lv .up, .aba__lv .ld, .aba__lv .br { transform-box: fill-box; }
+    .aba__lv .up { transform-origin: bottom; transform: scaleY(0); animation: abaGrowY .5s var(--aba-ease-io) forwards; }
+    .aba__lv .ld { transform-origin: left; transform: scaleX(0); animation: abaDrawX .45s var(--aba-ease-io) forwards; }
+    .aba__lv .br { transform-origin: left bottom; transform: scale(0); animation: abaSnap .45s var(--aba-spring) forwards; }
+    .aba__lv.static * { animation: none !important; transform: none !important; }
+    .aba__stack.bump { animation: abaBump .35s var(--aba-ease-out); }
+
+    .aba__hint { position: absolute; z-index: 2; left: var(--aba-px); top: 12px; padding: 4px 8px 4px 0; background: var(--color-accent); display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: 0; transition: opacity .4s; }
+    .aba__hint::before { content: ""; width: 8px; height: 8px; background: var(--aba-obra); animation: abaBlink 1.2s steps(1) infinite; }
+    .aba__hint.show { opacity: 1; }
+    .aba__tap { position: absolute; width: 24px; height: 24px; margin: -12px 0 0 -12px; border: var(--aba-rule) solid var(--aba-obra); pointer-events: none; animation: abaTap .6s var(--aba-ease-out) forwards; }
+
+    /* ---------- Texto ---------- */
+    .aba__copy { flex-shrink: 0; padding: 20px var(--aba-px) 16px; display: flex; flex-direction: column; gap: 10px; }
+    .aba__title { margin: 0; font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif; font-weight: 700; font-size: clamp(30px, 9.4vw, 40px); line-height: 1; letter-spacing: -.02em; color: var(--aba-obra); }
+    .aba__line { display: block; overflow: hidden; padding-bottom: .06em; }
+    .aba__line > span { display: inline-block; transform: translateY(105%); }
+    .aba.ready .aba__line > span { animation: abaRise .9s var(--aba-ease-out) calc(var(--d) + .25s) forwards; }
+    .aba__lead { margin: 0; font-size: 15px; line-height: 1.4; font-weight: 500; color: var(--aba-obra); opacity: 0; transform: translateY(10px); }
+    .aba.ready .aba__lead { animation: abaFadeUp .7s var(--aba-ease-out) .75s forwards; }
+
+    /* ---------- Marquesina ---------- */
+    .aba__marquee { position: relative; flex-shrink: 0; overflow: hidden; border-top: var(--aba-rule) solid var(--aba-obra); border-bottom: var(--aba-rule) solid var(--aba-obra); opacity: 0; }
+    .aba.ready .aba__marquee { animation: abaFade .6s ease .9s forwards; }
+    .aba__track { display: flex; width: max-content; animation: abaMarquee 18s linear infinite; }
+    .aba__track span { display: flex; align-items: center; gap: 14px; padding: 11px 14px 11px 0; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
+    .aba__track span::after { content: ""; width: 8px; height: 8px; background: var(--aba-tinta); }
+
+    /* ---------- CTA ---------- */
+    .aba__dock { flex-shrink: 0; padding: 14px var(--aba-px) 16px; }
+    .aba__cta { position: relative; overflow: hidden; display: flex; justify-content: space-between; align-items: center; height: 54px; padding: 0 20px; background: var(--aba-obra); color: var(--aba-tinta); text-decoration: none; font-weight: 800; font-size: 16px; transform: translateY(140%); transition: transform .2s var(--aba-ease-out), color .2s; }
+    .aba.ready .aba__cta { animation: abaSlideUp .7s var(--aba-spring) 1s forwards; }
+    .aba__cta::before { content: ""; position: absolute; inset: 0; background: var(--aba-tinta); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--aba-ease-io); }
+    .aba__cta span, .aba__cta svg { position: relative; }
+    .aba__cta svg { transition: transform .25s var(--aba-ease-out); }
+    .aba__cta:active { transform: scale(.97) !important; }
+    .aba__cta:active::before, .aba__cta:hover::before { transform: scaleX(1); }
+    .aba__cta:active, .aba__cta:hover { color: var(--aba-obra); }
+    .aba__cta:hover svg { transform: translateX(4px); }
+    .aba__cta:focus-visible { outline: 2px solid var(--aba-obra); outline-offset: 3px; }
+
+    @media (max-height: 700px) {
+        .aba__title { font-size: clamp(26px, 8vw, 34px); }
+        .aba__copy { padding: 14px var(--aba-px) 12px; gap: 8px; }
+        .aba__cta { height: 50px; }
+        .aba__dock { padding: 12px var(--aba-px); }
+    }
+
+    /* El hero ya no necesita dejar lugar para el app bar: lo deja el banner */
+    .aba + .hero { padding-top: 28px; }
+
+    @keyframes abaGrowY { to { transform: scaleY(1); } }
+    @keyframes abaDrawX { to { transform: scaleX(1); } }
+    @keyframes abaSnap { to { transform: scale(1); } }
+    @keyframes abaRise { to { transform: translateY(0); } }
+    @keyframes abaFade { to { opacity: 1; } }
+    @keyframes abaFadeUp { to { opacity: 1; transform: none; } }
+    @keyframes abaSlideUp { to { transform: translateY(0); } }
+    @keyframes abaMarquee { to { transform: translateX(-50%); } }
+    @keyframes abaBlink { 50% { opacity: 0; } }
+    @keyframes abaBump { 40% { transform: translateY(4px); } }
+    @keyframes abaTap { from { transform: scale(.4); opacity: 1; } to { transform: scale(3.2); opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+        .aba *, .aba *::before, .aba *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition: none !important; }
+        .aba__intro { display: none; }
+    }
+}

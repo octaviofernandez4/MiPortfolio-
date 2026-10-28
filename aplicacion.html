@@ -21,6 +21,7 @@
     <!-- Capa mobile app -->
     <link rel="stylesheet" href="./css/app/app-base.css">
     <link rel="stylesheet" href="./css/app/app-home.css">
+    <link rel="stylesheet" href="./css/app/app-banner-andamio.css">
     <link rel="stylesheet" href="./css/app/app-footer.css">
 </head>
 <body id="top">
@@ -54,9 +55,58 @@
         </nav>
     </header>
     <main>
+        <section class="aba" id="aba" aria-label="Presentación">
+            <!-- Telón: se arma un nivel gigante y se levanta -->
+            <div class="aba__intro" id="aba-intro" aria-hidden="true">
+                <span class="aba__i-up" style="left:8%;--d:.05s"></span>
+                <span class="aba__i-up" style="left:44%;--d:.15s"></span>
+                <span class="aba__i-up" style="left:80%;--d:.25s"></span>
+                <span class="aba__i-ld"></span>
+                <svg class="aba__i-br" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path d="M20 100 L44 14 V30 L28 100Z" style="--d:.75s"/>
+                    <path d="M56 100 L80 14 V30 L64 100Z" style="--d:.9s"/>
+                </svg>
+            </div>
+
+            <div class="aba__bar">
+                <div class="aba__level">
+                    <span>Nivel</span>
+                    <span class="aba__num"><b id="aba-lvl">00</b></span>
+                </div>
+                <span class="aba__place">Tucumán, Argentina</span>
+            </div>
+
+            <div class="aba__pane" id="aba-pane" aria-label="Andamio animado. Tocá para sumar un nivel">
+                <div class="aba__stack" id="aba-stack"></div>
+                <span class="aba__hint" id="aba-hint">Tocá para sumar un nivel</span>
+            </div>
+
+            <div class="aba__copy">
+                <h2 class="aba__title">
+                    <span class="aba__line"><span style="--d:.05s">Primero la</span></span>
+                    <span class="aba__line"><span style="--d:.13s">estructura.</span></span>
+                    <span class="aba__line"><span style="--d:.21s">Después, todo</span></span>
+                    <span class="aba__line"><span style="--d:.29s">lo demás.</span></span>
+                </h2>
+                <p class="aba__lead">La estructura que sostiene lo que construís.</p>
+            </div>
+
+            <div class="aba__marquee" aria-label="Servicios">
+                <div class="aba__track" id="aba-track">
+                    <span>Páginas web</span><span>Landing pages</span><span>Apps móviles</span><span>Software a medida</span><span>Sistemas internos</span>
+                </div>
+            </div>
+
+            <div class="aba__dock">
+                <a class="aba__cta" href="./pages/cotizador.html">
+                    <span>Empecemos a construir</span>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </section>
+
         <section id="inicio" class="hero">
             <div class="container hero-inner">
-                <span class="badge reveal"><span class="dot"></span> Sistema en línea</span>
                 <h1 class="reveal">Desarrollo de Software & <span class="text-gradient">Experiencias Digitales</span></h1>
                 <p class="reveal">Creamos experiencias digitales que combinan diseño atractivo y funcionalidad para llevar tu empresa al siguiente nivel.</p>
                 <p class="reveal">Desde webs modernas que multiplican tus consultas y ventas, hasta sistemas internos que automatizan tu día a día.</p>
@@ -289,6 +339,7 @@
         </div>
     </footer>
     <script src="./js/main.js?v=1"></script>
+    <script src="./js/banner-andamio-app.js"></script>
     <script src="./js/servicios.js" defer></script>
     <script src="./js/rubros-inicio.js" defer></script>
     <script src="./banner/banner.js" defer></script>

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css/footer.css?v=2">
     <link rel="stylesheet" href="./css/footer-pc.css">
     <link rel="stylesheet" href="./css/secciones-pc.css">
+    <link rel="stylesheet" href="./css/banner-andamio.css">
     <link rel="stylesheet" href="./css/servicios.css">
     <link rel="stylesheet" href="./css/rubros-inicio.css">
     <link rel="stylesheet" href="banner/banner.css">
@@ -52,9 +53,42 @@
         </nav>
     </header>
     <main>
+        <section class="ab" aria-label="Presentación">
+            <div class="ab__top">
+                <span>Software a medida, de la idea a producción</span>
+                <span class="ab__hide-sm">Tucumán, Argentina</span>
+            </div>
+
+            <div class="ab__main">
+                <div class="ab__copy">
+                    <h2 class="ab__title">
+                        <span class="ab__line"><span style="animation-delay:.3s">Primero la</span></span>
+                        <span class="ab__line"><span style="animation-delay:.4s">estructura.</span></span>
+                        <span class="ab__line"><span style="animation-delay:.5s">Después,</span></span>
+                        <span class="ab__line"><span style="animation-delay:.6s">todo lo demás.</span></span>
+                    </h2>
+                    <div class="ab__row">
+                        <p class="ab__lead">La estructura que sostiene lo que construís: arquitectura clara, código mantenible y productos que escalan.</p>
+                        <a class="ab__cta" href="./pages/cotizador.html">
+                            Empecemos a construir
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="ab__scaffold" id="ab-scaffold" aria-hidden="true"><div class="ab__stack" id="ab-stack"></div></div>
+            </div>
+
+            <div class="ab__bottom">
+                <div class="ab__ticker">
+                    <span>Construimos</span>
+                    <span class="ab__word"><b id="ab-word">páginas web</b></span>
+                </div>
+                <span class="ab__hide-sm ab__level">Nivel <span id="ab-lvl">00</span></span>
+            </div>
+        </section>
+
         <section id="inicio" class="sec-hero">
             <div class="sec-container sec-center">
-                <span class="sec-pill reveal"><span class="sec-dot"></span>Sistema en línea</span>
                 <h1 class="sec-hero__title reveal">Desarrollo de Software &amp; <span class="sec-accent">Experiencias Digitales</span></h1>
                 <p class="sec-hero__text reveal">Creamos experiencias digitales únicas que combinan diseño atractivo y funcionalidad, Llevamos tu empresa al siguiente nivel digital. Desde webs modernas que multiplican tus consultas y ventas, hasta sistemas internos que automatizan tu día a día. Soluciones rápidas, seguras y listas para usar, pensadas 100% para hacer crecer tu marca. Transformamos ideas en plataformas web completas. Combinamos un diseño moderno e intuitivo con un sistema interno robusto, garantizando que el sitio no solo se vea increíble.</p>
                 <div class="sec-btns reveal">
@@ -296,6 +330,7 @@
     <script src="./js/logo-brace.js"></script>
     <script src="./js/navbar-brace.js"></script>
     <script src="./js/secciones-reveal.js"></script>
+    <script src="./js/banner-andamio.js"></script>
     <script src="./js/servicios.js" defer></script>
     <script src="./js/rubros-inicio.js" defer></script>
     <script src="banner/banner.js" defer></script>

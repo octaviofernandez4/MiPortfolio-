@@ -183,24 +183,6 @@
     .hamburger,
     .nav-cta .btn { display: none !important; }
 
-    /* Chip "Disponible" a la derecha del app bar */
-    .nav-cta::before {
-        content: 'Disponible';
-        display: inline-flex;
-        align-items: center;
-        height: 30px;
-        padding: 0 12px 0 24px;
-        border-radius: 999px;
-        font-family: var(--app-mono);
-        font-size: 10.5px;
-        letter-spacing: 0.04em;
-        color: var(--color-accent-text);
-        background:
-            radial-gradient(circle at 13px 50%, var(--app-green) 0 3.5px, var(--color-accent-soft) 4.5px 6px, transparent 6.5px),
-            var(--color-accent-soft);
-        border: 1px solid var(--color-accent-soft);
-    }
-
     /* =========================================================
        TAB BAR INFERIOR (reutiliza .nav-links, sin tocar el HTML)
        Orden: Inicio · Nosotros · [Buscar] · Proyectos · Contacto
