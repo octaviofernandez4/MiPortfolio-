@@ -67,9 +67,6 @@
     .aba__lv.static * { animation: none !important; transform: none !important; }
     .aba__stack.bump { animation: abaBump .35s var(--aba-ease-out); }
 
-    .aba__hint { position: absolute; z-index: 2; left: var(--aba-px); top: 12px; padding: 4px 8px 4px 0; background: var(--color-accent); display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; opacity: 0; transition: opacity .4s; }
-    .aba__hint::before { content: ""; width: 8px; height: 8px; background: var(--aba-obra); animation: abaBlink 1.2s steps(1) infinite; }
-    .aba__hint.show { opacity: 1; }
     .aba__tap { position: absolute; width: 24px; height: 24px; margin: -12px 0 0 -12px; border: var(--aba-rule) solid var(--aba-obra); pointer-events: none; animation: abaTap .6s var(--aba-ease-out) forwards; }
 
     /* ---------- Texto ---------- */

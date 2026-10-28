@@ -7,7 +7,6 @@
   var pane = document.getElementById('aba-pane');
   var stack = document.getElementById('aba-stack');
   var lvlEl = document.getElementById('aba-lvl');
-  var hint = document.getElementById('aba-hint');
   var track = document.getElementById('aba-track');
   if (!app || !pane || !stack) return;
   // Aire libre arriba del andamio, en pisos: el último piso siempre se ve completo
@@ -85,7 +84,7 @@
       climb(); n++;
       var full = stack.getBoundingClientRect().height + levelH() * (TOP_GAP + 1) > pane.clientHeight;
       if (n < 6 && !full) setTimeout(boot, 1050);
-      else { autoplay(); setTimeout(function(){ hint.classList.add('show'); }, 600); }
+      else autoplay();
     })();
   }
 
@@ -99,7 +98,7 @@
     t.style.top = (e.clientY - r.top) + 'px';
     pane.appendChild(t);
     setTimeout(function(){ t.remove(); }, 650);
-    if (climb()){ autoplay(); hint.classList.remove('show'); }
+    if (climb()) autoplay();
   });
 
   // ---- Secuencia de entrada ----
