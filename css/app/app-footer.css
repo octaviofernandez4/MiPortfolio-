@@ -103,12 +103,10 @@
 
     .footer-process-list li:not(:last-child)::after { content: none; }
 
-    .footer-stack { flex-wrap: nowrap; justify-content: space-between; gap: 6px; }
-    .footer-stack li { width: 40px; height: 40px; border-radius: 12px; background: var(--app-surface-2); }
-    .footer-stack i { font-size: 19px; }
-
     /* Cierre */
     .footer-bottom { gap: 14px; padding-top: 18px; border-top: 1px solid var(--app-line); }
+    /* aire entre "Cómo trabajo" y el cierre (le gana a .site-footer .container { margin: 0 auto }) */
+    .site-footer .footer-bottom { margin-top: 22px; }
     .footer-social { order: -1; gap: 10px; }
     .footer-social a { width: 46px; height: 46px; border-radius: 15px; background: var(--app-surface-2); }
     .footer-legal { gap: 16px; }

@@ -69,7 +69,7 @@
   var rw; addEventListener('resize', function(){ clearTimeout(rw); rw = setTimeout(build, 300); });
 
   // Ticker de servicios
-  var words = ['páginas web','landing pages','apps móviles','software a medida','sistemas internos'];
+  var words = ['páginas web','landing pages','software a medida','sistemas internos'];
   var w = document.getElementById('ab-word'), k = 0;
   if (!reduce) setInterval(function(){
     w.style.transform = 'translateY(-110%)';
