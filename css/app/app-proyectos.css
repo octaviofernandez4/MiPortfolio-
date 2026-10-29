@@ -29,8 +29,6 @@
         background: var(--color-surface-2);
     }
 
-    .project-card.tall .project-visual { aspect-ratio: 4 / 4.2; }
-
     .carousel-arrow { width: 34px; height: 34px; background: rgba(6, 8, 16, 0.6); }
     .carousel-arrow svg { width: 16px; height: 16px; }
     .carousel-prev { left: 8px; }

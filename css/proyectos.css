@@ -52,10 +52,6 @@ main.container {
     aspect-ratio: 2.1 / 1;
 }
 
-.project-card.tall .project-visual {
-    aspect-ratio: 716 / 1145;
-}
-
 .project-card.span-3 .project-visual {
     aspect-ratio: 2513 / 1208;
 }
@@ -79,15 +75,6 @@ main.container {
     height: 100%;
     object-fit: cover;
     object-position: center top;
-}
-
-.carousel-slide.contain {
-    background-color: var(--color-surface-2);
-}
-
-.carousel-slide.contain img {
-    object-fit: contain;
-    object-position: center;
 }
 
 .carousel-arrow {
@@ -331,11 +318,6 @@ main.container {
     .bento-grid {
         grid-template-columns: 1fr;
         gap: 28px;
-    }
-
-    /* Mockup de celular centrado dentro de un marco ancho */
-    .project-card.tall .project-visual {
-        aspect-ratio: 2.1 / 1;
     }
 
     .project-card { border-radius: 20px; }
