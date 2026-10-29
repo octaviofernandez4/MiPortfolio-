@@ -1,0 +1,154 @@
+/* =========================================================
+   ANDAMIO CODE · PÁGINA 404
+   Solo modo oscuro (404.html fija data-theme="dark"). Mismo fondo
+   que el Inicio (--pattern-bg de css/paleta.css). El andamio que se
+   derrumba lo dibuja js/404.js dentro de #nf-scene.
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+    background-image: var(--pattern-bg);
+    background-repeat: repeat;
+    background-size: 40px 40px;
+    color: var(--color-text);
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nf {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(40px, 5vw, 110px);
+    width: min(1400px, 92%);
+    margin: 0 auto;
+    padding: clamp(48px, 6vw, 96px) 0;
+}
+
+/* ---------- texto ---------- */
+.nf__kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 clamp(20px, 2vw, 32px);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: clamp(12px, 0.9vw, 15px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-text);
+}
+
+.nf__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 8px var(--color-accent);
+    animation: nf-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes nf-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.3); }
+}
+
+.nf__title {
+    margin: 0 0 clamp(20px, 2vw, 30px);
+    font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+    font-weight: 700;
+    font-size: clamp(40px, 4.6vw, 84px);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+.nf__title em { font-style: normal; color: var(--color-accent-text); }
+
+.nf__sub {
+    max-width: 34em;
+    margin: 0 0 18px;
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+.nf__path {
+    margin: 0 0 clamp(28px, 2.6vw, 40px);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: clamp(12px, 0.85vw, 14px);
+    color: var(--color-text-muted);
+    word-break: break-all;
+}
+
+.nf__path span { color: var(--color-text); }
+
+.nf__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    padding: 0 30px;
+    border-radius: 12px;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 700;
+    font-size: clamp(15px, 1.05vw, 18px);
+    text-decoration: none;
+    box-shadow: 0 14px 34px -12px var(--color-accent);
+    transition: background-color .2s, transform .15s;
+}
+
+.nf__btn svg { width: 20px; height: 20px; flex: none; }
+.nf__btn:hover { background: var(--color-accent-hover); }
+.nf__btn:active { background: var(--color-accent-active); transform: scale(.98); }
+.nf__btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+
+/* ---------- escena del andamio ---------- */
+.nf__scene { position: relative; width: 100%; }
+
+.nf__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.nf__ground { stroke: var(--color-border-soft); stroke-width: 2; }
+
+.nf__label {
+    margin: 14px 0 0;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: clamp(11px, 0.8vw, 13px);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+/* ---------- celular ---------- */
+@media (max-width: 767px) {
+    .nf {
+        grid-template-columns: minmax(0, 1fr);
+        align-content: center;
+        gap: 28px;
+        width: auto;
+        padding: calc(env(safe-area-inset-top, 0px) + 32px) 18px calc(env(safe-area-inset-bottom, 0px) + 36px);
+    }
+
+    .nf__scene { order: -1; max-width: 420px; margin: 0 auto; }
+    .nf__kicker { font-size: 10.5px; margin-bottom: 14px; }
+    .nf__title { font-size: clamp(2rem, 9.5vw, 2.6rem); margin-bottom: 14px; }
+    .nf__sub { font-size: 14.5px; }
+    .nf__path { font-size: 11px; margin-bottom: 24px; }
+    .nf__btn { width: 100%; justify-content: center; min-height: 56px; font-size: 15px; border-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nf__dot { animation: none; }
+}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://octaviofernandez.vercel.app/sitemap.xml
+Sitemap: https://andamiocode.pages.dev/sitemap.xml

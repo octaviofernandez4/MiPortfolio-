@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Andamio Code | Página no encontrada</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#171615">
+    <link rel="icon" href="/assets/img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/img/favicon/favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/assets/img/favicon/favicon-180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Cloudflare Pages sirve esta página (con estado 404) para cualquier dirección que no exista:
+         rutas absolutas porque puede mostrarse en cualquier nivel de carpetas. Solo modo oscuro. -->
+    <link rel="stylesheet" href="/css/paleta.css">
+    <link rel="stylesheet" href="/css/404.css">
+</head>
+<body>
+    <main class="nf">
+        <div class="nf__copy">
+            <p class="nf__kicker"><span class="nf__dot" aria-hidden="true"></span>Nivel 404 · Página no encontrada</p>
+            <h1 class="nf__title">Este andamio <em>no es estable.</em></h1>
+            <p class="nf__sub">El enlace que seguiste está roto o la página se movió. Primero la estructura: volvamos a un punto firme y sigamos construyendo desde ahí.</p>
+            <p class="nf__path" id="nf-path" hidden>Ruta solicitada: <span id="nf-path-value"></span></p>
+            <a class="nf__btn" id="nf-btn" href="/">
+                <svg viewBox="0 0 96 96" aria-hidden="true"><path fill="currentColor" d="M0 0H12V96H0Z M42 0H54V96H42Z M84 0H96V96H84Z M0 30H96V38H0Z M0 66H96V74H0Z"/></svg>
+                Reconstruir mi andamio
+            </a>
+        </div>
+
+        <div class="nf__scene" aria-hidden="true">
+            <svg class="nf__svg" id="nf-scene" viewBox="0 0 320 250"></svg>
+            <p class="nf__label">Estructura inestable · error 404</p>
+        </div>
+    </main>
+
+    <script src="/js/404.js"></script>
+</body>
+</html>
