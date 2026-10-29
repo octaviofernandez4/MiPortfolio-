@@ -513,3 +513,122 @@
 
     .rubro-card-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ---------- PC: versión grande ----------
+   Mismas medidas que Nosotros, Preguntas frecuentes y Contacto:
+   contenedor de hasta 1400px y tipografías con clamp(). Le gana al
+   tope de 1200px de <section> y .container (styles.css). */
+@media (min-width: 768px) {
+    .matchmaker-hero,
+    .catalog-section,
+    .cta-banner-section { max-width: none; padding-left: 0; padding-right: 0; }
+
+    .matchmaker-hero > .container,
+    .catalog-section > .container,
+    .cta-banner-section > .container {
+        width: min(1400px, 92%);
+        max-width: none;
+        padding: 0;
+    }
+
+    /* hero */
+    .matchmaker-hero { padding-top: 160px; padding-bottom: clamp(56px, 5vw, 90px); }
+
+    .matchmaker-hero h1 { font-size: clamp(38px, 3.6vw, 68px); margin-bottom: 32px; }
+
+    .matchmaker-hero > .container > p {
+        max-width: 38em;
+        margin-bottom: clamp(44px, 4vw, 64px);
+        font-size: clamp(17px, 1.25vw, 21px);
+    }
+
+    .search-panel {
+        max-width: 1120px;
+        padding: clamp(24px, 2vw, 34px);
+        border-radius: 28px;
+        margin-bottom: clamp(48px, 4.5vw, 76px);
+    }
+
+    .search-bar { padding: clamp(14px, 1.2vw, 20px) clamp(18px, 1.5vw, 26px); margin-bottom: 24px; }
+    .search-icon { width: 24px; height: 24px; }
+    .search-bar input { min-height: 44px; font-size: clamp(16px, 1.1vw, 19px); }
+    .search-btn { min-height: 52px; padding: 12px 28px; font-size: clamp(14px, 0.95vw, 16px); }
+
+    .rubro-filters { gap: 12px; }
+
+    .rubro-pill {
+        min-height: 50px;
+        padding: 12px 24px;
+        border-radius: 999px;
+        font-size: clamp(14px, 0.95vw, 16px);
+    }
+
+    .search-empty { font-size: clamp(15px, 1vw, 17px); }
+
+    .matchmaker-hero .hero-stats { gap: 28px clamp(64px, 6vw, 120px); }
+    .matchmaker-hero .hero-stats .num { font-size: clamp(32px, 2.8vw, 52px); }
+    .matchmaker-hero .hero-stats .label { margin-top: 10px; font-size: clamp(12px, 0.85vw, 14px); }
+
+    /* catálogo */
+    .catalog-section { padding-bottom: clamp(80px, 7vw, 130px); }
+
+    .catalog-header { margin-bottom: clamp(44px, 4vw, 64px); }
+    .catalog-header h2 { font-size: clamp(36px, 3vw, 58px); }
+
+    .rubro-groups { gap: clamp(56px, 5vw, 88px); }
+
+    .rubro-group-header { gap: 16px; margin-bottom: 28px; padding-bottom: 20px; }
+    .rubro-group-icon { width: 52px; height: 52px; border-radius: 14px; }
+    .rubro-group-icon svg { width: 26px; height: 26px; }
+    .rubro-group-header h3 { font-size: clamp(22px, 1.8vw, 32px); }
+
+    .rubro-card-grid { gap: 28px; }
+    .rubro-card { border-radius: 20px; }
+
+    .rubro-card-body { padding: clamp(22px, 1.8vw, 30px); }
+    .rubro-card-body h3 { margin-bottom: 12px; font-size: clamp(19px, 1.4vw, 25px); }
+    .rubro-card-body p { margin-bottom: 20px; font-size: clamp(15px, 1.05vw, 17px); }
+
+    .rubro-card-tags { margin-bottom: 22px; }
+    .rubro-card-tags .tag { padding: 6px 14px; font-size: clamp(12px, 0.85vw, 14px); }
+
+    /* si no entran en una línea, "Quiero esto…" baja entero debajo de "Ver →" */
+    .rubro-card-links { flex-wrap: wrap; gap: 10px 16px; padding-top: 18px; }
+    .rubro-card-link,
+    .rubro-card-link-secondary { white-space: nowrap; font-size: clamp(14px, 0.95vw, 16px); }
+
+    /* banner final */
+    .cta-banner-section { padding-bottom: clamp(80px, 7vw, 130px); }
+
+    .cta-banner {
+        gap: clamp(32px, 4vw, 72px);
+        padding: clamp(44px, 4vw, 72px);
+        border-radius: 28px;
+    }
+
+    .cta-banner-text .eyebrow { font-size: clamp(13px, 0.9vw, 15px); }
+    .cta-banner-text h2 { margin-bottom: 20px; font-size: clamp(28px, 2.4vw, 44px); }
+    .cta-banner-text p { margin-bottom: 28px; font-size: clamp(16px, 1.15vw, 19px); }
+
+    .cta-features { gap: 16px; }
+    .cta-features span { font-size: clamp(15px, 1.05vw, 17px); }
+    .cta-features svg { width: 22px; height: 22px; }
+
+    .cta-banner-actions { width: clamp(320px, 26vw, 420px); gap: 16px; }
+
+    .cta-banner-actions .btn {
+        min-height: 56px;
+        padding: 16px 24px;
+        font-size: clamp(14px, 0.95vw, 16px);
+    }
+
+    .cta-banner-actions .btn svg { width: 18px; height: 18px; }
+}
+
+/* etiquetas sobre la foto más grandes solo con cards anchas (si no, se pisan) */
+@media (min-width: 1280px) {
+    .rubro-card-badge { top: 16px; padding: 7px 14px; font-size: clamp(12px, 0.8vw, 13.5px); }
+    .rubro-card-badge-category { left: 16px; }
+    .rubro-card-badge-time { right: 16px; }
+    .rubro-card-badge svg { width: 14px; height: 14px; }
+}
