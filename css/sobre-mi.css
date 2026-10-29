@@ -9,18 +9,6 @@
     text-align: center;
 }
 
-.about-handle {
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 0.05em;
-    color: var(--color-text);
-}
-
-.about-handle span {
-    color: var(--color-accent);
-}
-
 .about-text {
     min-width: 0;
     max-width: 640px;

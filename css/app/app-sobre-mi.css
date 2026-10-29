@@ -29,16 +29,6 @@
         background: var(--app-grad);
     }
 
-    .about-handle {
-        align-self: flex-start;
-        padding: 6px 11px;
-        margin-bottom: 14px;
-        font-size: 11px;
-        border-radius: 999px;
-        background: var(--app-surface-2);
-        border: 1px solid var(--app-line-2);
-    }
-
     .about-text { align-items: stretch; max-width: none; }
     .about-text p { font-size: 14.5px; line-height: 1.6; margin-bottom: 0; }
 

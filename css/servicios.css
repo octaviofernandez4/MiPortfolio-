@@ -135,6 +135,7 @@
   border-bottom: 2px solid var(--color-accent);
   transform: rotate(-45deg);
 }
+.svc__opt { color: var(--color-accent-text); white-space: nowrap; }
 
 .svc__cta {
   display: flex;
