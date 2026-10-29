@@ -169,16 +169,21 @@
     margin: 0;
 }
 
+/* Cerrado también queda invisible para Tab y lectores de pantalla
+   (visibility se cambia recién al terminar de cerrarse) */
 .js-footer-enhanced .footer-accordion-panel {
     max-height: 0;
     overflow: hidden;
     padding-top: 0;
-    transition: max-height 0.35s ease, padding-top 0.35s ease;
+    visibility: hidden;
+    transition: max-height 0.35s ease, padding-top 0.35s ease, visibility 0s linear 0.35s;
 }
 
 .js-footer-enhanced .footer-accordion-panel.expanded {
     max-height: 600px;
     padding-top: 10px;
+    visibility: visible;
+    transition-delay: 0s;
 }
 
 .footer-accordion-panel a,
@@ -311,6 +316,10 @@
     display: block;
 }
 
+/* Redes: cuadradito oscuro en modo oscuro, blanco en modo claro */
+[data-theme="dark"] .footer-social a { background: #171615; color: var(--color-text); }
+[data-theme="light"] .footer-social a { background: #ffffff; color: var(--color-text); }
+
 .footer-top {
     display: inline-flex;
     align-items: center;
@@ -358,6 +367,7 @@
         max-height: none;
         overflow: visible;
         padding-top: 0;
+        visibility: visible;
     }
 
     .footer-strip {

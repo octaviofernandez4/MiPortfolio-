@@ -1,5 +1,5 @@
 /* =========================================================
-   ANDAMIO STUDIO · MOBILE APP LAYER — FOOTER
+   ANDAMIO CODE · MOBILE APP LAYER — FOOTER
    El footer pasa a ser una tarjeta tipo "Más / Ajustes".
    ========================================================= */
 @media (max-width: 767px) {
@@ -108,7 +108,11 @@
     /* aire entre "Cómo trabajo" y el cierre (le gana a .site-footer .container { margin: 0 auto }) */
     .site-footer .footer-bottom { margin-top: 22px; }
     .footer-social { order: -1; gap: 10px; }
-    .footer-social a { width: 46px; height: 46px; border-radius: 15px; background: var(--app-surface-2); }
+    .footer-social a { width: 46px; height: 46px; border-radius: 15px; background: var(--app-surface-2); color: var(--app-text); }
+    .footer-social svg { width: 20px; height: 20px; }
+    /* Redes: cuadradito oscuro en modo oscuro, blanco en modo claro */
+    [data-theme="dark"] .footer-social a { background: #171615; }
+    [data-theme="light"] .footer-social a { background: #ffffff; }
     .footer-legal { gap: 16px; }
     .footer-legal a { display: inline-flex; align-items: center; min-height: 32px; font-size: 12px; }
     .footer-copy { font-size: 10.5px; color: var(--app-dim); }

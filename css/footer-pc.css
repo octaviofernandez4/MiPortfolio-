@@ -1,5 +1,5 @@
 /* =========================================================
-   ANDAMIO STUDIO · FOOTER GRANDE (PC)
+   ANDAMIO CODE · FOOTER GRANDE (PC)
    Reemplaza al footer de accordion solo en viewport de escritorio.
    Colores: solo los títulos de columna usan el rojo de acento;
    el resto del texto usa --color-text (negro/blanco intenso según tema).
@@ -222,6 +222,9 @@
         flex-wrap: wrap;
         gap: 20px 32px;
         padding-top: clamp(24px, 2.5vw, 32px);
+        /* lugar para el botón flotante de WhatsApp (62px + 22px de margen):
+           así no tapa "Volver arriba" al llegar al final */
+        padding-right: 72px;
     }
 
     .copy {
@@ -271,6 +274,11 @@
         width: 19px;
         height: 19px;
     }
+
+    /* Redes (Instagram, TikTok): cuadradito oscuro en modo oscuro,
+       blanco en modo claro; el logo va en el color de texto */
+    [data-theme="dark"] .icon-btn { background: #171615; }
+    [data-theme="light"] .icon-btn { background: #ffffff; }
 
     .icon-btn:hover {
         border-color: var(--color-accent);

@@ -4,7 +4,11 @@
 .wa-float {
   position: fixed; right: 22px; bottom: 22px; z-index: 999;
   display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
+  /* la caja ocupa el ancho del globito aunque esté cerrado: que no tape
+     los clicks de lo que hay debajo (ej. "Volver arriba" del footer) */
+  pointer-events: none;
 }
+.wa-float__btn { pointer-events: auto; }
 .wa-float__btn {
   position: relative;
   display: grid; place-items: center;

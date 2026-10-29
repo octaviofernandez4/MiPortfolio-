@@ -1,5 +1,5 @@
 /* =========================================================
-   Cotizador · Andamio Studio
+   Cotizador · Andamio Code
    Editá precios y textos en la sección CONFIG.
    ========================================================= */
 
@@ -138,7 +138,7 @@ function progress() {
 
 function waText(c) {
   const s = state, out = [];
-  out.push('¡Hola Andamio Studio! Armé mi proyecto en el cotizador:', '');
+  out.push('¡Hola Andamio Code! Armé mi proyecto en el cotizador:', '');
   out.push(`*Proyecto:* ${c.svc.name}`);
   if (s.rubro) out.push(`*Rubro:* ${s.rubro}`);
   if (s.web) out.push(`*Web actual:* ${label('web', s.web)}`);

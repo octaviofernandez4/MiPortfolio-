@@ -15,7 +15,7 @@
     "index.html": "Hola, vi tu web y quiero cotizar un proyecto.",
     "aplicacion.html": "Hola, vi tu web y quiero cotizar un proyecto.",
     "proyectos.html": "Hola, vi tus proyectos y quiero algo similar para mi negocio.",
-    "sobre-mi.html": "Hola, leí sobre Andamio Studio y quiero hablar de un proyecto.",
+    "sobre-mi.html": "Hola, leí sobre Andamio Code y quiero hablar de un proyecto.",
     "contacto.html": "Hola, quiero cotizar un proyecto para mi negocio.",
     "busca-tu-proyecto.html": "Hola, estuve viendo los rubros y quiero algo para mi negocio.",
     "preguntas-frecuentes.html": "Hola, leí las preguntas frecuentes y tengo una consulta."

@@ -1,6 +1,6 @@
 (function(){
   var WA = '5493813019932';
-  var MAIL = 'octaviofernandez40999@gmail.com';
+  var MAIL = 'andamiocode40999@gmail.com';
   // EmailJS (emailjs.com): el botón "Enviar" manda el mensaje directo al mail
   var EMAILJS_PUBLIC_KEY = 'u2RCygT3q9PjYjmjG';
   var EMAILJS_SERVICE_ID = 'service_8uvfg17';
