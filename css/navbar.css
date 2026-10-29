@@ -415,7 +415,7 @@ header {
     }
 
     /* PC chica: los dos botones quedan solo con ícono para que entre el logo */
-    @media (max-width: 1439px) {
+    @media (max-width: 1599px) {
         .nav-cta .btn {
             gap: 0;
             width: clamp(48px, 4.5vw, 60px);

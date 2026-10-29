@@ -49,7 +49,6 @@
     .agm-tab.is-active { background: var(--color-accent); color: var(--color-on-accent); }
 
     .agm-tab:focus-visible,
-    .agm-btn:focus-visible,
     .agm-link:focus-visible,
     .agm-btn-primary:focus-visible,
     .agm-btn-secondary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
@@ -122,65 +121,7 @@
 
     .agm-row p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--app-muted); }
 
-    /* ---------- preguntas: acordeón ---------- */
-    .agm-acc { display: flex; flex-direction: column; gap: 10px; }
-
-    .agm-item {
-        background: var(--app-surface);
-        border: 1px solid var(--app-line);
-        border-radius: var(--app-radius-sm);
-        transition: border-color .2s;
-    }
-
-    .agm-item.is-open { border-color: var(--color-accent); }
-
-    .agm .agm-q { margin: 0; font: inherit; }
-
-    .agm-btn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        width: 100%;
-        min-height: 58px;
-        padding: 16px;
-        background: none;
-        border: 0;
-        border-radius: var(--app-radius-sm);
-        color: var(--app-text);
-        font-family: var(--app-font);
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 1.35;
-        text-align: left;
-        cursor: pointer;
-    }
-
-    .agm-plus {
-        flex: none;
-        display: grid;
-        place-items: center;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        border: 1px solid var(--app-line);
-        transition: transform .3s ease, background-color .2s, border-color .2s, color .2s;
-    }
-
-    .agm-plus svg { width: 16px; height: 16px; }
-
-    .agm-item.is-open .agm-plus {
-        transform: rotate(45deg);
-        color: var(--color-on-accent);
-        background: var(--color-accent);
-        border-color: var(--color-accent);
-    }
-
-    .agm-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
-    .agm-item.is-open .agm-panel { grid-template-rows: 1fr; }
-    .agm-panel-inner { overflow: hidden; }
-    .agm-panel p { margin: 0; padding: 0 16px 18px; font-size: 14px; line-height: 1.6; color: var(--app-muted); }
-
+    /* ---------- preguntas: dentro del andamio (css/faq-andamio.css) ---------- */
     .agm-link {
         display: flex;
         align-items: center;
@@ -243,6 +184,6 @@
 
     @media (prefers-reduced-motion: reduce) {
         .agm-view.is-active { animation: none; }
-        .agm-plus, .agm-panel, .agm-tab { transition: none; }
+        .agm-tab { transition: none; }
     }
 }

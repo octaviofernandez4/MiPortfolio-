@@ -28,18 +28,5 @@
     show(next);
     root.querySelector('#agm-tab-' + next).focus();
   });
-
-  // Acordeón: una abierta a la vez
-  var items = root.querySelectorAll('.agm-item');
-  items.forEach(function(item){
-    var btn = item.querySelector('.agm-btn');
-    btn.addEventListener('click', function(){
-      var open = !item.classList.contains('is-open');
-      items.forEach(function(o){
-        o.classList.remove('is-open');
-        o.querySelector('.agm-btn').setAttribute('aria-expanded','false');
-      });
-      if(open){ item.classList.add('is-open'); btn.setAttribute('aria-expanded','true'); }
-    });
-  });
+  // El acordeón de preguntas (dentro del andamio) lo arma js/faq-andamio.js
 })();

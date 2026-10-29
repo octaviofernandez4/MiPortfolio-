@@ -1,6 +1,6 @@
 /* =========================================================
    ANDAMIO CODE · GARANTÍAS + PREGUNTAS FRECUENTES (INICIO)
-   Solo las cards de garantías y el acordeón de preguntas, sin
+   Solo las cards de garantías y las preguntas (css/faq-andamio.css), sin
    títulos (versión PC, en index.html dentro de .sec-highlights,
    arriba de las cards "Frontend Interactivo", etc.). La versión de
    celular está en css/app/app-garantias-faq.css. Colores de css/paleta.css.
@@ -70,84 +70,10 @@
     color: var(--color-text-muted);
 }
 
-/* ---------- preguntas frecuentes ---------- */
-.ag-acc {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 900px;
-    margin: clamp(64px, 6vw, 110px) auto 0;
-}
-
-.ag-item {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-soft);
-    border-radius: 18px;
-    transition: border-color .2s;
-}
-
-.ag-item:hover,
-.ag-item.is-open { border-color: var(--color-accent); }
-
-.ag-block .ag-q { margin: 0; font: inherit; }
-
-.ag-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-    padding: 22px 26px;
-    background: none;
-    border: 0;
-    border-radius: 18px;
-    color: var(--color-text);
-    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
-    font-size: clamp(16px, 1.15vw, 19px);
-    font-weight: 600;
-    line-height: 1.4;
-    text-align: left;
-    cursor: pointer;
-}
-
-.ag-btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-
-.ag-plus {
-    flex: none;
-    display: grid;
-    place-items: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    color: var(--color-text);
-    border: 1px solid var(--color-border-soft);
-    transition: transform .3s ease, background-color .2s, border-color .2s, color .2s;
-}
-
-.ag-plus svg { width: 18px; height: 18px; }
-
-.ag-item.is-open .ag-plus {
-    transform: rotate(45deg);
-    color: var(--color-on-accent);
-    background: var(--color-accent);
-    border-color: var(--color-accent);
-}
-
-.ag-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
-.ag-item.is-open .ag-panel { grid-template-rows: 1fr; }
-.ag-panel-inner { overflow: hidden; }
-
-.ag-panel p {
-    margin: 0;
-    padding: 0 26px 24px;
-    max-width: 68ch;
-    font-size: clamp(15px, 1.02vw, 17px);
-    line-height: 1.65;
-    color: var(--color-text-muted);
-}
+/* Las preguntas frecuentes (dentro del andamio) están en css/faq-andamio.css */
 
 @media (prefers-reduced-motion: reduce) {
-    .ag-card, .ag-plus, .ag-panel { transition: none; }
+    .ag-card { transition: none; }
 }
 
 /* Igual que .btp__grid: una columna por debajo de 900px */
