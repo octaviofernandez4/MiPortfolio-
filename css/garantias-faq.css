@@ -1,0 +1,158 @@
+/* =========================================================
+   ANDAMIO STUDIO · GARANTÍAS + PREGUNTAS FRECUENTES (INICIO)
+   Solo las cards de garantías y el acordeón de preguntas, sin
+   títulos (versión PC, en index.html dentro de .sec-highlights,
+   arriba de las cards "Frontend Interactivo", etc.). La versión de
+   celular está en css/app/app-garantias-faq.css. Colores de css/paleta.css.
+   ========================================================= */
+.ag-block { width: 100%; text-align: left; }
+
+/* PC: mismo ancho que las cards de rubros (.btp → min(1600px, 92%) de la
+   pantalla); sale del tope de 1200px que styles.css le pone a <section>. */
+@media (min-width: 768px) {
+    .sec-highlights .ag-block {
+        width: min(1600px, 92vw);
+        margin-left: calc(50% - min(800px, 46vw));
+    }
+}
+
+/* ---------- garantías ---------- */
+.ag-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ag-card {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: clamp(28px, 2.4vw, 40px);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: 20px;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
+}
+
+.ag-card:hover { transform: translateY(-6px); border-color: var(--color-accent); box-shadow: 0 24px 60px -24px var(--shadow-color); }
+
+.ag-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    color: var(--color-accent-text);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-soft);
+}
+
+.ag-icon svg { width: 24px; height: 24px; }
+
+.ag-block .ag-card h3 {
+    margin: 0 0 10px;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+    font-weight: 700;
+    font-size: clamp(20px, 1.45vw, 25px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+}
+
+.ag-card p {
+    margin: 0;
+    font-size: clamp(15px, 1.05vw, 17px);
+    line-height: 1.55;
+    color: var(--color-text-muted);
+}
+
+/* ---------- preguntas frecuentes ---------- */
+.ag-acc {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 900px;
+    margin: clamp(64px, 6vw, 110px) auto 0;
+}
+
+.ag-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: 18px;
+    transition: border-color .2s;
+}
+
+.ag-item:hover,
+.ag-item.is-open { border-color: var(--color-accent); }
+
+.ag-block .ag-q { margin: 0; font: inherit; }
+
+.ag-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 22px 26px;
+    background: none;
+    border: 0;
+    border-radius: 18px;
+    color: var(--color-text);
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: clamp(16px, 1.15vw, 19px);
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+}
+
+.ag-btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+.ag-plus {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--color-text);
+    border: 1px solid var(--color-border-soft);
+    transition: transform .3s ease, background-color .2s, border-color .2s, color .2s;
+}
+
+.ag-plus svg { width: 18px; height: 18px; }
+
+.ag-item.is-open .ag-plus {
+    transform: rotate(45deg);
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.ag-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.ag-item.is-open .ag-panel { grid-template-rows: 1fr; }
+.ag-panel-inner { overflow: hidden; }
+
+.ag-panel p {
+    margin: 0;
+    padding: 0 26px 24px;
+    max-width: 68ch;
+    font-size: clamp(15px, 1.02vw, 17px);
+    line-height: 1.65;
+    color: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ag-card, .ag-plus, .ag-panel { transition: none; }
+}
+
+/* Igual que .btp__grid: una columna por debajo de 900px */
+@media (max-width: 900px) {
+    .ag-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+.ag-more { margin-top: 36px; }

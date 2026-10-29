@@ -1,106 +1,388 @@
 /* =========================================================
    ANDAMIO STUDIO · MOBILE APP LAYER — CONTACTO
+   Versión celular de pages/app-contacto.html: accesos rápidos
+   (WhatsApp / Email), datos, formulario y "Qué pasa después".
+   Con al menos un carácter en el mensaje, los dos botones se
+   cambian por "Enviar" (mail directo, js/contacto-app.js).
+   Colores de css/paleta.css (vía variables --app-*).
    ========================================================= */
 @media (max-width: 767px) {
 
-    section.contact { padding: calc(var(--app-bar-h) + var(--app-safe-top) + 26px) var(--app-gutter) 0; }
+    .ca {
+        max-width: none;
+        padding: calc(var(--app-bar-h) + var(--app-safe-top) + 26px) var(--app-gutter) 0;
+        color: var(--app-text);
+    }
 
-    .contact-grid { gap: 22px; padding-top: 0; }
+    /* ---------- encabezado ---------- */
+    .ca-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        height: 30px;
+        padding: 0 12px;
+        border: 1px solid var(--app-line);
+        border-radius: 999px;
+        background: var(--app-surface);
+        font-family: var(--app-mono);
+        font-size: 10.5px;
+        letter-spacing: 0.04em;
+        color: var(--app-muted);
+    }
 
-    .contact-intro h2 { font-size: clamp(2.05rem, 9.4vw, 2.6rem); line-height: 1.04; letter-spacing: -0.04em; margin: 0 0 12px; }
-    .contact-intro > p { font-size: 14.5px; line-height: 1.6; margin-bottom: 20px; }
+    .ca-pulse {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        box-shadow: 0 0 8px var(--color-accent);
+        animation: ca-pulse 1.8s ease-in-out infinite;
+    }
 
-    /* Canales: lista agrupada con chevrons */
-    .contact-channels {
-        gap: 0;
+    @keyframes ca-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: .5; transform: scale(1.3); }
+    }
+
+    .ca .ca-title {
+        margin: 18px 0 12px;
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: clamp(2rem, 9vw, 2.5rem);
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+        color: var(--app-text);
+    }
+
+    .ca-sub { margin: 0 0 22px; font-size: 14.5px; line-height: 1.55; color: var(--app-muted); }
+
+    /* ---------- accesos rápidos ---------- */
+    .ca-quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+
+    .ca-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        min-height: 116px;
+        padding: 16px;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius);
+        color: var(--app-text);
+        transition: transform .15s var(--app-ease);
+    }
+
+    .ca-tile:active { transform: scale(0.98); }
+
+    .ca-tile--wa { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+
+    .ca-tile-icon {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    .ca-tile-icon svg { width: 24px; height: 24px; }
+
+    /* logos reales de WhatsApp y Gmail */
+    .ca-tile-icon--whatsapp { background: #25d366; color: #ffffff; }
+    .ca-tile-icon--gmail { background: #ffffff; border: 1px solid var(--app-line); }
+
+    .ca-tile-label { font-size: 16px; font-weight: 700; }
+    .ca-tile-hint { font-size: 12.5px; color: var(--app-muted); }
+    .ca-tile--wa .ca-tile-hint { color: var(--color-on-accent); opacity: .85; }
+
+    /* ---------- datos ---------- */
+    .ca-info {
+        list-style: none;
+        margin: 0 0 28px;
+        padding: 0;
         overflow: hidden;
         background: var(--app-surface);
         border: 1px solid var(--app-line);
         border-radius: var(--app-radius);
     }
 
-    .channel-card {
+    .ca-info li {
+        display: flex;
+        align-items: center;
         gap: 14px;
-        min-height: 70px;
+        min-height: 66px;
         padding: 14px 16px;
-        border: 0;
-        border-radius: 0;
-        background: none;
+        border-bottom: 1px solid var(--app-line);
     }
 
-    .channel-card + .channel-card { border-top: 1px solid var(--app-line); }
-    .channel-card:hover { transform: none; border-color: var(--app-line); }
-    .channel-card:active { background: rgba(255, 255, 255, 0.04); }
+    .ca-info li:last-child { border-bottom: 0; }
 
-    .channel-card::after {
-        content: '';
+    .ca-info-icon {
         flex: none;
-        width: 18px;
-        height: 18px;
-        margin-left: auto;
-        background: var(--app-dim);
-        -webkit-mask: var(--i-chevron) center / contain no-repeat;
-        mask: var(--i-chevron) center / contain no-repeat;
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        color: var(--color-accent-text);
+        background: var(--color-accent-soft);
     }
 
-    .channel-text { flex: 1; }
-    .channel-icon { width: 42px; height: 42px; border-radius: 13px; }
-    .channel-label { font-size: 10.5px; }
-    .channel-value { font-size: 14px; }
+    .ca-info-icon svg { width: 18px; height: 18px; }
 
-    /* Formulario */
-    .contact-form-card {
-        padding: 20px 18px 18px;
-        border-radius: var(--app-radius);
+    .ca-info-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+    .ca-info-label { font-family: var(--app-mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--app-muted); }
+    .ca-info-value { font-size: 14.5px; font-weight: 600; overflow-wrap: break-word; }
+
+    .ca-copy {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--app-line);
+        border-radius: 12px;
+        background: var(--app-surface-2);
+        color: var(--app-text);
+        cursor: pointer;
+    }
+
+    .ca-copy svg { width: 18px; height: 18px; }
+    .ca-copy.is-done { border-color: var(--color-accent); color: var(--color-accent-text); }
+
+    /* ---------- formulario ---------- */
+    .ca-card {
+        padding: 24px 18px;
         background: var(--app-surface);
-        border-color: var(--app-line);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius);
     }
 
-    .contact-form-card::before {
-        content: 'Escribime';
-        display: block;
-        margin-bottom: 4px;
-        font-family: var(--app-font);
-        font-size: 20px;
-        font-weight: 800;
-        letter-spacing: -0.025em;
+    .ca .ca-form-title {
+        margin: 0 0 8px;
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: 21px;
+        letter-spacing: -0.01em;
         color: var(--app-text);
     }
 
-    .contact-form-card::after {
-        content: 'Respondo en menos de 24 hs';
-        position: absolute;
-        top: 24px;
-        right: 18px;
+    .ca-form-sub { margin: 0 0 22px; font-size: 13.5px; line-height: 1.55; color: var(--app-muted); }
+
+    .ca-form { display: flex; flex-direction: column; gap: 18px; }
+
+    .ca-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; margin: 0; padding: 0; border: 0; }
+
+    .ca-field > label,
+    .ca-field > legend {
+        padding: 0;
         font-family: var(--app-mono);
-        font-size: 10px;
-        color: var(--app-dim);
+        font-size: 10.5px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--app-muted);
     }
 
-    .contact-form-card { position: relative; }
-    .contact-form-card .form-group:first-child { margin-top: 16px; }
+    .ca-field > legend { margin-bottom: 10px; }
+    .ca-opt { text-transform: none; letter-spacing: 0; opacity: .75; }
 
-    .form-group { margin-bottom: 14px; }
-    .form-group label { margin-bottom: 8px; font-size: 10.5px; }
-
-    .form-group input,
-    .form-group textarea {
+    .ca-input {
+        width: 100%;
         min-height: 52px;
         padding: 14px 16px;
-        font-size: 16px; /* evita el zoom automático en iOS */
+        border: 1px solid var(--app-line);
         border-radius: var(--app-radius-sm);
-        background: var(--app-surface-2);
-        border-color: var(--app-line-2);
+        background: var(--app-bg);
+        color: var(--app-text);
+        font-family: var(--app-font);
+        font-size: 16px;
+        line-height: 1.4;
+        transition: border-color .2s, box-shadow .2s;
     }
 
-    .form-group textarea { min-height: 140px; }
+    .ca-input::placeholder { color: var(--app-muted); opacity: .7; }
+    .ca-input:focus { outline: 0; border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-soft); }
+    .ca-textarea { min-height: 120px; resize: none; }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-        border-color: var(--app-cyan);
-        background: var(--app-surface-2);
-        box-shadow: 0 0 0 4px var(--color-accent-soft);
+    .ca-error { display: none; font-size: 12.5px; color: var(--color-accent-text); }
+    .ca-field.is-invalid .ca-input { border-color: var(--color-accent); }
+    .ca-field.is-invalid .ca-error { display: block; }
+
+    /* chips en una fila deslizable */
+    .ca-chips {
+        display: flex;
+        gap: 8px;
+        margin: 0 -18px;
+        padding: 2px 18px 4px;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
     }
 
-    .form-submit { min-height: 54px; font-size: 15px; margin-top: 4px; }
+    .ca-chips::-webkit-scrollbar { display: none; }
+
+    .ca-chip { position: relative; flex: none; scroll-snap-align: start; cursor: pointer; }
+    .ca-chip input { position: absolute; opacity: 0; pointer-events: none; }
+
+    .ca-chip span {
+        display: inline-flex;
+        align-items: center;
+        height: 42px;
+        padding: 0 16px;
+        border: 1px solid var(--app-line);
+        border-radius: 999px;
+        background: var(--app-bg);
+        color: var(--app-muted);
+        font-size: 13.5px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color .2s, border-color .2s, color .2s;
+    }
+
+    .ca-chip input:checked + span { color: var(--color-on-accent); background: var(--color-accent); border-color: var(--color-accent); }
+    .ca-chip input:focus-visible + span { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+    /* ---------- botones ---------- */
+    .ca-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+
+    .ca-submit,
+    .ca-send,
+    .ca-alt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        border-radius: var(--app-radius-sm);
+        font-family: var(--app-font);
+        font-weight: 700;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: transform .15s var(--app-ease), background-color .2s;
+    }
+
+    .ca-submit,
+    .ca-send {
+        min-height: 54px;
+        border: 0;
+        background: var(--color-accent);
+        color: var(--color-on-accent);
+        font-size: 15px;
+        box-shadow: 0 10px 30px -10px var(--color-accent);
+    }
+
+    .ca-submit svg,
+    .ca-send svg { width: 20px; height: 20px; }
+
+    .ca-alt {
+        min-height: 48px;
+        border: 1px solid var(--app-line);
+        background: transparent;
+        color: var(--app-text);
+        font-size: 14px;
+    }
+
+    .ca-submit:active,
+    .ca-send:active,
+    .ca-alt:active { transform: scale(0.98); }
+
+    .ca-send:disabled { opacity: .7; cursor: progress; }
+
+    /* "Enviar" reemplaza a los dos botones apenas hay texto en el mensaje */
+    .ca-send { display: none; }
+    .ca-form.has-msg .ca-submit,
+    .ca-form.has-msg .ca-alt { display: none; }
+    .ca-form.has-msg .ca-send { display: flex; animation: ca-swap .3s var(--app-ease); }
+
+    @keyframes ca-swap {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: none; }
+    }
+
+    .ca-form-status { margin: 0; font-size: 13.5px; font-weight: 600; }
+    .ca-form-status:empty { display: none; }
+    .ca-form-status.is-ok { color: var(--app-text); }
+    .ca-form-status.is-ok::before { content: '✓ '; color: var(--color-accent-text); }
+    .ca-form-status.is-error { color: var(--color-accent-text); }
+
+    .ca-legal { margin: 0; font-size: 12px; line-height: 1.5; color: var(--app-muted); }
+    .ca .ca-legal a { color: var(--color-accent-text); text-decoration: underline; text-underline-offset: 3px; }
+
+    .ca-tile:focus-visible,
+    .ca-copy:focus-visible,
+    .ca-alt:focus-visible,
+    .ca-submit:focus-visible,
+    .ca-send:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+    /* ---------- qué pasa después ---------- */
+    .ca-next { margin-top: 32px; }
+
+    .ca .ca-next-title {
+        margin: 0 0 16px;
+        font-family: var(--app-mono);
+        font-size: 10.5px;
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--app-muted);
+    }
+
+    .ca-steps { list-style: none; margin: 0; padding: 0; }
+    .ca-steps li { position: relative; display: flex; gap: 14px; padding-bottom: 20px; }
+    .ca-steps li:last-child { padding-bottom: 0; }
+
+    .ca-steps li:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 16px;
+        top: 36px;
+        bottom: 2px;
+        width: 1px;
+        background: var(--app-line);
+    }
+
+    .ca-step-n {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid var(--color-accent);
+        background: var(--app-bg);
+        color: var(--color-accent-text);
+        font-family: var(--app-mono);
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .ca-steps strong { display: block; margin: 6px 0 3px; font-size: 15px; color: var(--app-text); }
+    .ca-steps p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--app-muted); }
+
+    /* ---------- aviso flotante (copiar email, errores) ---------- */
+    .ca-toast {
+        position: fixed;
+        left: 50%;
+        bottom: calc(var(--app-tab-h) + var(--app-safe-bottom) + 28px);
+        z-index: 60;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: var(--app-text);
+        color: var(--app-bg);
+        font-size: 13.5px;
+        font-weight: 600;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, 12px);
+        transition: opacity .2s, transform .2s;
+    }
+
+    .ca-toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (prefers-reduced-motion: reduce) {
+        .ca-pulse, .ca-form.has-msg .ca-send { animation: none; }
+        .ca-toast, .ca-tile, .ca-submit, .ca-send, .ca-alt { transition: none; }
+    }
 }

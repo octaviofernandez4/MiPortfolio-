@@ -1,273 +1,435 @@
-/* ========================================= */
-/* 7. CONTACTO                                */
-/* ========================================= */
-.contact-grid {
+/* =========================================================
+   ANDAMIO STUDIO · CONTACTO
+   Intro + canales + "Qué pasa después" a la izquierda y el
+   formulario a la derecha. Lo usa pages/contacto.html (PC); la versión de celular
+   (pages/app-contacto.html) tiene su propio diseño en
+   css/app/app-contacto.css y js/contacto-app.js.
+   Colores de css/paleta.css, así sigue el modo claro/oscuro.
+   ========================================================= */
+.ct {
+    max-width: none;
+    padding: 110px 20px 90px;
+    color: var(--color-text);
+}
+
+.ct-wrap {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: start;
-    padding-top: 10px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+    max-width: 680px;
+    margin: 0 auto;
 }
 
-.contact-intro {
-    min-width: 0;
-}
-
-.contact-intro h2 {
-    font-size: 1.6rem;
-    margin: 20px 0 16px;
-}
-
-.contact-intro > p {
+/* ---------- intro ---------- */
+.ct-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 999px;
+    background: var(--color-surface);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
     color: var(--color-text-muted);
-    font-size: 1.02rem;
-    max-width: 68ch;
-    margin-bottom: 30px;
 }
 
-.contact-channels {
+.ct-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 8px var(--color-accent);
+    flex-shrink: 0;
+    animation: ct-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes ct-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.3); }
+}
+
+.ct .ct-title {
+    margin: 24px 0 20px;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    color: var(--color-text);
+}
+
+.ct-sub {
+    max-width: 34em;
+    margin: 0 0 36px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+/* ---------- canales ---------- */
+.ct-channels {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: 20px;
 }
 
-.channel-card {
+.ct-channel {
     display: flex;
     align-items: center;
     gap: 16px;
-    min-height: 44px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-soft);
-    border-radius: 14px;
-    padding: 16px 18px;
-    transition: all 0.3s ease;
+    padding: 18px 20px;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border-soft);
 }
 
-.channel-card:hover {
-    transform: translateY(-4px);
+.ct-channel:last-child { border-bottom: 0; }
+
+.ct-channel--wa { transition: background-color .2s; }
+.ct-channel--wa:hover { background: var(--color-surface-2); }
+.ct-channel--wa:hover .ct-ch-arrow { transform: translateX(4px); color: var(--color-accent-text); }
+
+.ct-ch-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    color: var(--color-accent-text);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-soft);
+}
+
+.ct-ch-icon svg { width: 22px; height: 22px; }
+
+/* logos reales de WhatsApp y Gmail, como en la versión anterior */
+.ct-ch-icon--whatsapp { background: #25d366; border-color: #25d366; color: #ffffff; }
+.ct-ch-icon--whatsapp svg { width: 26px; height: 26px; }
+.ct-ch-icon--gmail { background: #ffffff; border-color: var(--color-border-soft); }
+.ct-ch-icon--gmail svg { width: 26px; height: 26px; }
+
+.ct-ch-text { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+
+.ct-ch-label {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+}
+
+.ct-ch-value { font-size: 1rem; font-weight: 600; overflow-wrap: break-word; }
+
+.ct .ct-ch-link { color: var(--color-text); }
+.ct .ct-ch-link:hover { color: var(--color-accent-text); text-decoration: underline; text-underline-offset: 3px; }
+
+.ct-ch-arrow { font-size: 20px; color: var(--color-text-muted); transition: transform .2s, color .2s; }
+
+.ct-copy {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+}
+
+.ct-copy svg { width: 14px; height: 14px; }
+.ct-copy:hover { border-color: var(--color-accent); }
+.ct-copy.is-done { border-color: var(--color-accent); color: var(--color-accent-text); }
+
+/* ---------- qué pasa después ---------- */
+.ct-next { margin-top: 40px; }
+
+.ct .ct-next-title {
+    margin: 0 0 18px;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.ct-steps { display: flex; flex-direction: column; list-style: none; margin: 0; padding: 0; }
+
+.ct-steps li { position: relative; display: flex; gap: 16px; padding-bottom: 22px; }
+.ct-steps li:last-child { padding-bottom: 0; }
+
+.ct-steps li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 36px;
+    bottom: 2px;
+    width: 1px;
+    background: var(--color-border-soft);
+}
+
+.ct-step-n {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--color-accent);
+    background: var(--color-bg);
+    color: var(--color-accent-text);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.ct-steps strong { display: block; margin: 6px 0 4px; font-size: 1rem; color: var(--color-text); }
+.ct-steps p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--color-text-muted); }
+
+/* ---------- card del formulario ---------- */
+.ct-card {
+    padding: 32px 24px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: 24px;
+}
+
+.ct-card-head { margin-bottom: 28px; }
+
+.ct .ct-form-title {
+    margin: 0 0 10px;
+    font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+}
+
+.ct-card-head p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--color-text-muted); }
+
+.ct-form { display: flex; flex-direction: column; gap: 20px; }
+
+.ct-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.ct-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; margin: 0; padding: 0; border: 0; }
+
+.ct-field > label,
+.ct-field > legend {
+    padding: 0;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.ct-field > legend { margin-bottom: 12px; }
+
+.ct-opt { text-transform: none; letter-spacing: 0; opacity: .75; }
+
+.ct-input {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 12px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.ct-input::placeholder { color: var(--color-text-muted); opacity: .7; }
+.ct-input:hover { border-color: var(--color-text-muted); }
+.ct-input:focus { outline: 0; border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-soft); }
+
+.ct-textarea { min-height: 140px; resize: vertical; }
+
+.ct-error { display: none; font-size: 0.8rem; color: var(--color-accent-text); }
+.ct-field.is-invalid .ct-input { border-color: var(--color-accent); }
+.ct-field.is-invalid .ct-error { display: block; }
+
+/* ---------- chips de servicio ---------- */
+.ct-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.ct-chip { position: relative; cursor: pointer; }
+.ct-chip input { position: absolute; opacity: 0; pointer-events: none; }
+
+.ct-chip span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 16px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 999px;
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color .2s, border-color .2s, color .2s;
+}
+
+.ct-chip:hover span { color: var(--color-text); border-color: var(--color-text-muted); }
+
+.ct-chip input:checked + span {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
     border-color: var(--color-accent);
 }
 
-.channel-icon {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    background: var(--color-accent-soft);
+.ct-chip input:focus-visible + span { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+/* ---------- botones ---------- */
+.ct-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+
+.ct-submit,
+.ct-send,
+.ct-alt {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-accent);
-}
-
-.channel-text {
-    min-width: 0;
-}
-
-.channel-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* Logos de marca: Gmail sobre blanco y WhatsApp en su verde */
-.channel-icon--gmail {
-    background: #ffffff;
-    border: 1px solid var(--color-border-soft);
-}
-
-.channel-icon--whatsapp {
-    background: #25d366;
-    color: #ffffff;
-}
-
-.channel-label {
-    display: block;
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 0.72rem;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 3px;
-}
-
-.channel-value {
-    display: block;
-    color: var(--color-text);
-    font-weight: 600;
-    font-size: 0.82rem;
-    overflow-wrap: anywhere;
-}
-
-/* Formulario de contacto */
-.contact-form-card {
-    min-width: 0;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-soft);
-    border-radius: 18px;
-    padding: 24px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin-bottom: 10px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    min-height: 44px;
-    padding: 14px 16px;
-    background: var(--color-surface-2);
-    border: 1px solid var(--color-border-soft);
-    border-radius: 10px;
-    color: var(--color-text);
+    gap: 10px;
+    border-radius: 12px;
     font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
-    font-size: 0.92rem;
-    outline: none;
-    transition: border-color 0.25s ease, background 0.25s ease;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 130px;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: var(--color-text-muted);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--color-accent);
-    background: var(--color-surface-2);
-}
-
-.form-submit {
-    width: 100%;
-    border: none;
+    font-weight: 700;
     cursor: pointer;
+    transition: background-color .2s, border-color .2s, color .2s, transform .1s;
+}
+
+.ct-submit {
+    min-height: 56px;
+    border: 0;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-size: 1rem;
+}
+
+.ct-submit svg { width: 20px; height: 20px; }
+.ct-submit:hover { background: var(--color-accent-hover); }
+.ct-submit:active { background: var(--color-accent-active); transform: scale(.99); }
+
+.ct-alt {
+    min-height: 50px;
+    border: 1px solid var(--color-border-soft);
+    background: transparent;
+    color: var(--color-text);
     font-size: 0.92rem;
 }
 
-.form-status {
-    margin-top: 16px;
-    text-align: center;
-    font-size: 0.82rem;
-    min-height: 1.2em;
+.ct-alt:hover { border-color: var(--color-accent); color: var(--color-accent-text); }
+
+/* "Enviar" (directo al mail): reemplaza a los dos botones de arriba
+   apenas hay al menos un carácter en el mensaje (js/contacto.js) */
+.ct-send {
+    display: none;
+    min-height: 56px;
+    border: 0;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-size: 1rem;
 }
 
-.form-status.success {
-    color: var(--color-accent);
+.ct-send svg { width: 20px; height: 20px; }
+.ct-send:hover { background: var(--color-accent-hover); }
+.ct-send:active { background: var(--color-accent-active); transform: scale(.99); }
+.ct-send:disabled { opacity: .7; cursor: progress; }
+
+.ct-form.has-msg .ct-submit,
+.ct-form.has-msg .ct-alt { display: none; }
+
+.ct-form.has-msg .ct-send { display: flex; animation: ct-swap .3s cubic-bezier(.2,.7,.2,1); }
+
+@keyframes ct-swap {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
 }
 
-.form-status.error {
-    color: var(--color-accent-text);
+.ct-form-status { margin: 0; font-size: 0.9rem; font-weight: 600; }
+.ct-form-status:empty { display: none; }
+.ct-form-status.is-ok { color: var(--color-text); }
+.ct-form-status.is-ok::before { content: '✓ '; color: var(--color-accent-text); }
+.ct-form-status.is-error { color: var(--color-accent-text); }
+
+.ct-submit:focus-visible,
+.ct-send:focus-visible,
+.ct-alt:focus-visible,
+.ct-copy:focus-visible,
+.ct-channel--wa:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+.ct-legal { margin: 0; font-size: 0.8rem; color: var(--color-text-muted); }
+.ct .ct-legal a { color: var(--color-accent-text); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .ct-pulse, .ct-form.has-msg .ct-send { animation: none; }
+}
+
+/* ---------- PC: versión grande (mismas medidas que Inicio y Nosotros) ---------- */
+@media (min-width: 768px) {
+    .ct { width: min(1400px, 92%); margin: 0 auto; padding: 160px 0 clamp(80px, 7vw, 130px); }
+
+    .ct-status { gap: 12px; padding: 12px 24px; font-size: clamp(13px, 0.9vw, 15px); }
+    .ct-pulse { width: 10px; height: 10px; }
+
+    .ct .ct-title { margin: 36px 0 28px; font-size: clamp(38px, 3.6vw, 68px); line-height: 1.12; }
+    .ct-sub { margin-bottom: 48px; font-size: clamp(17px, 1.25vw, 21px); }
+
+    .ct-channel { gap: 20px; padding: clamp(20px, 1.6vw, 26px) clamp(20px, 1.8vw, 30px); }
+    .ct-ch-icon { width: 54px; height: 54px; border-radius: 14px; }
+    .ct-ch-icon svg { width: 26px; height: 26px; }
+    .ct-ch-icon--whatsapp svg,
+    .ct-ch-icon--gmail svg { width: 30px; height: 30px; }
+    .ct-ch-label { font-size: clamp(12px, 0.85vw, 14px); }
+    .ct-ch-value { font-size: clamp(16px, 1.15vw, 20px); }
+    .ct-copy { height: 42px; padding: 0 18px; font-size: clamp(13px, 0.9vw, 15px); }
+
+    .ct-next { margin-top: clamp(44px, 4vw, 64px); }
+    .ct .ct-next-title { margin-bottom: 24px; font-size: clamp(12px, 0.85vw, 14px); }
+    .ct-steps li { gap: 20px; padding-bottom: 28px; }
+    .ct-steps li:not(:last-child)::before { left: 20px; top: 44px; }
+    .ct-step-n { width: 42px; height: 42px; font-size: clamp(14px, 1vw, 16px); }
+    .ct-steps strong { margin-top: 8px; font-size: clamp(16px, 1.2vw, 20px); }
+    .ct-steps p { font-size: clamp(15px, 1.05vw, 17px); }
+
+    .ct-card { padding: clamp(36px, 3.2vw, 56px); border-radius: 28px; }
+    .ct-card-head { margin-bottom: 34px; }
+    .ct .ct-form-title { font-size: clamp(26px, 2.2vw, 40px); }
+    .ct-card-head p { font-size: clamp(15px, 1.05vw, 17px); }
+
+    .ct-form { gap: 24px; }
+    .ct-field > label,
+    .ct-field > legend { font-size: clamp(12px, 0.85vw, 14px); }
+    .ct-input { min-height: 58px; padding: 16px 18px; font-size: clamp(16px, 1.05vw, 18px); }
+    .ct-textarea { min-height: 170px; }
+    .ct-chip span { min-height: 46px; padding: 0 20px; font-size: clamp(14px, 0.95vw, 16px); }
+
+    .ct-submit,
+    .ct-send { min-height: 62px; font-size: clamp(16px, 1.1vw, 18px); }
+    .ct-form-status { font-size: clamp(15px, 1vw, 17px); }
+    .ct-alt { min-height: 56px; font-size: clamp(15px, 1vw, 17px); }
+    .ct-legal { font-size: clamp(13px, 0.85vw, 14px); }
 }
 
 @media (min-width: 1024px) {
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-    }
-}
-
-/* Más grande en PC, misma escala que Inicio/Nosotros */
-@media (min-width: 768px) {
-    .contact {
-        padding-top: 160px;
+    .ct-wrap {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        gap: clamp(56px, 5vw, 110px);
+        max-width: none;
+        align-items: start;
     }
 
-    .contact-intro .badge {
-        padding: 12px 24px;
-        font-size: clamp(13px, 0.9vw, 15px);
-        border-radius: 999px;
-    }
-
-    .contact-intro h2 {
-        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
-        font-weight: 700;
-        font-size: clamp(34px, 3vw, 56px);
-        line-height: 1.12;
-        letter-spacing: -0.01em;
-        margin: 28px 0 20px;
-    }
-
-    .contact-intro > p {
-        font-size: clamp(16px, 1.15vw, 19px);
-        line-height: 1.6;
-        max-width: 48em;
-        margin-bottom: 40px;
-    }
-
-    .channel-card {
-        gap: 20px;
-        min-height: 56px;
-        border-radius: 18px;
-        padding: 22px 26px;
-    }
-
-    .channel-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
-    }
-
-    .channel-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .channel-label {
-        font-size: 0.8rem;
-    }
-
-    .channel-value {
-        font-size: 1rem;
-    }
-
-    .contact-form-card {
-        border-radius: 22px;
-        padding: 44px;
-    }
-
-    .form-group {
-        margin-bottom: 24px;
-    }
-
-    .form-group label {
-        font-size: 0.8rem;
-        margin-bottom: 12px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        min-height: 52px;
-        padding: 16px 20px;
-        border-radius: 12px;
-        font-size: 1rem;
-    }
-
-    .form-group textarea {
-        min-height: 160px;
-    }
-
-    .form-submit {
-        min-height: 60px;
-        font-size: 1rem;
-        border-radius: 12px;
-    }
-
-    .form-status {
-        font-size: 0.88rem;
-    }
+    /* la card queda fija debajo de la barra de arriba (alto: clamp(104px, 8vw, 132px)) */
+    .ct-card { position: sticky; top: calc(clamp(104px, 8vw, 132px) + 28px); }
 }

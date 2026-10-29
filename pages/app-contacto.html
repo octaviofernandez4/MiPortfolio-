@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css?v=2">
-    <link rel="stylesheet" href="../css/contacto.css">
     <!-- Capa mobile app -->
     <link rel="stylesheet" href="../css/app/app-base.css">
     <link rel="stylesheet" href="../css/app/app-contacto.css">
@@ -52,52 +51,100 @@
         </nav>
     </header>
     <main>
-        <section id="contacto" class="contact reveal">
-            <div class="contact-grid">
-                <div class="contact-intro">
-                    <span class="badge reveal"><span class="dot"></span> Estado: Disponible</span>
-                    <h2 class="reveal">Construyamos algo <span class="text-gradient">extraordinario</span>.</h2>
-                    <p class="reveal">¿Tenés un proyecto en mente o simplemente querés conectar? Abrí un canal de comunicación abajo — normalmente respondemos en menos de 24 horas.</p>
+        <section id="contacto" class="ca" data-cta>
+            <span class="ca-status"><span class="ca-pulse" aria-hidden="true"></span>Disponible para nuevos proyectos</span>
+            <h1 class="ca-title">Construyamos algo extraordinario.</h1>
+            <p class="ca-sub">Contanos qué necesitás y te respondemos en menos de 24 horas.</p>
 
-                    <div class="contact-channels">
-                        <a href="mailto:octaviofernandez40999@gmail.com" class="channel-card reveal">
-                            <span class="channel-icon channel-icon--gmail">
-                                <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#4caf50" d="M45 16.2l-5 2.75-5 4.75V40h7c1.66 0 3-1.34 3-3V16.2z"/><path fill="#1e88e5" d="M3 16.2l3.61 1.71L13 23.7V40H6c-1.66 0-3-1.34-3-3V16.2z"/><path fill="#e53935" d="M35 11.2 24 19.45 13 11.2l-1 5.8 1 6.7 11 8.25 11-8.25 1-6.7z"/><path fill="#c62828" d="M3 12.3v3.9l10 7.5V11.2L9.88 8.86A4.3 4.3 0 0 0 7.3 8 4.3 4.3 0 0 0 3 12.3z"/><path fill="#fbc02d" d="M45 12.3v3.9l-10 7.5V11.2l3.12-2.34A4.3 4.3 0 0 1 40.7 8 4.3 4.3 0 0 1 45 12.3z"/></svg>
-                            </span>
-                            <span class="channel-text">
-                                <span class="channel-label">Email</span>
-                                <span class="channel-value">octaviofernandez40999@gmail.com</span>
-                            </span>
-                        </a>
-                        <a href="https://wa.me/5493813019932" target="_blank" rel="noopener" class="channel-card reveal">
-                            <span class="channel-icon channel-icon--whatsapp">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.95-.2-.3a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.16.25-.63.8-.78.96-.14.17-.29.19-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.7 2.7 0 0 0-.85 2.02 4.7 4.7 0 0 0 1 2.5 10.8 10.8 0 0 0 4.13 3.65c1.54.66 2.14.72 2.91.6.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.46-.28Z"/></svg>
-                            </span>
-                            <span class="channel-text">
-                                <span class="channel-label">WhatsApp</span>
-                                <span class="channel-value">+54 9 381 301-9932</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-
-                <form id="contact-form" class="contact-form-card reveal">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary form-submit">Enviar Mensaje</button>
-                    <p id="form-status" class="form-status"></p>
-                </form>
+            <div class="ca-quick">
+              <a class="ca-tile ca-tile--wa" href="https://wa.me/5493813019932?text=Hola%2C%20quiero%20consultar%20por%20una%20web" target="_blank" rel="noopener">
+                <span class="ca-tile-icon ca-tile-icon--whatsapp" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.1-1.3A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.95-.2-.3a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.16.25-.63.8-.78.96-.14.17-.29.19-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.7 2.7 0 0 0-.85 2.02 4.7 4.7 0 0 0 1 2.5 10.8 10.8 0 0 0 4.13 3.65c1.54.66 2.14.72 2.91.6.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.46-.28Z"/></svg></span>
+                <span class="ca-tile-label">WhatsApp</span>
+                <span class="ca-tile-hint">Lo más rápido</span>
+              </a>
+              <a class="ca-tile" href="mailto:octaviofernandez40999@gmail.com">
+                <span class="ca-tile-icon ca-tile-icon--gmail" aria-hidden="true"><svg viewBox="0 0 48 48"><path fill="#4caf50" d="M45 16.2l-5 2.75-5 4.75V40h7c1.66 0 3-1.34 3-3V16.2z"/><path fill="#1e88e5" d="M3 16.2l3.61 1.71L13 23.7V40H6c-1.66 0-3-1.34-3-3V16.2z"/><path fill="#e53935" d="M35 11.2 24 19.45 13 11.2l-1 5.8 1 6.7 11 8.25 11-8.25 1-6.7z"/><path fill="#c62828" d="M3 12.3v3.9l10 7.5V11.2L9.88 8.86A4.3 4.3 0 0 0 7.3 8 4.3 4.3 0 0 0 3 12.3z"/><path fill="#fbc02d" d="M45 12.3v3.9l-10 7.5V11.2l3.12-2.34A4.3 4.3 0 0 1 40.7 8 4.3 4.3 0 0 1 45 12.3z"/></svg></span>
+                <span class="ca-tile-label">Email</span>
+                <span class="ca-tile-hint">Escribinos</span>
+              </a>
             </div>
+
+            <ul class="ca-info">
+              <li>
+                <span class="ca-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                <span class="ca-info-text"><span class="ca-info-label">Email</span><span class="ca-info-value">octaviofernandez40999<wbr>@gmail.com</span></span>
+                <button class="ca-copy" type="button" data-ca-copy="octaviofernandez40999@gmail.com" aria-label="Copiar email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button>
+              </li>
+              <li>
+                <span class="ca-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                <span class="ca-info-text"><span class="ca-info-label">Horario</span><span class="ca-info-value">Lun a Vie, 9 a 18 hs (GMT-3)</span></span>
+              </li>
+              <li>
+                <span class="ca-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="ca-info-text"><span class="ca-info-label">Ubicación</span><span class="ca-info-value">Tucumán, Argentina</span></span>
+              </li>
+            </ul>
+
+            <div class="ca-card" aria-labelledby="ca-form-title">
+              <h2 class="ca-form-title" id="ca-form-title">Contanos tu proyecto</h2>
+              <p class="ca-form-sub">Toma menos de un minuto. Al escribir tu mensaje, lo podés enviar directo desde acá.</p>
+
+              <form class="ca-form" id="ca-form" novalidate>
+                <fieldset class="ca-field">
+                  <legend>¿Qué necesitás?</legend>
+                  <div class="ca-chips">
+                    <label class="ca-chip"><input type="radio" name="servicio" value="Landing Page"><span>Landing Page</span></label>
+                    <label class="ca-chip"><input type="radio" name="servicio" value="Web Institucional"><span>Web Institucional</span></label>
+                    <label class="ca-chip"><input type="radio" name="servicio" value="Tienda Online"><span>Tienda Online</span></label>
+                    <label class="ca-chip"><input type="radio" name="servicio" value="Sistema a Medida"><span>Sistema a Medida</span></label>
+                    <label class="ca-chip"><input type="radio" name="servicio" value="Todavía no sé" checked><span>Todavía no sé</span></label>
+                  </div>
+                </fieldset>
+
+                <div class="ca-field">
+                  <label for="ca-nombre">Nombre</label>
+                  <input class="ca-input" id="ca-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" enterkeyhint="next" required>
+                  <span class="ca-error" id="ca-nombre-err">Contanos cómo te llamás.</span>
+                </div>
+                <div class="ca-field">
+                  <label for="ca-negocio">Negocio <span class="ca-opt">(opcional)</span></label>
+                  <input class="ca-input" id="ca-negocio" name="negocio" type="text" autocomplete="organization" placeholder="Nombre o rubro" enterkeyhint="next">
+                </div>
+                <div class="ca-field">
+                  <label for="ca-email">Email</label>
+                  <input class="ca-input" id="ca-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" placeholder="tu@email.com" enterkeyhint="next" required>
+                  <span class="ca-error" id="ca-email-err">Revisá que el email esté bien escrito.</span>
+                </div>
+                <div class="ca-field">
+                  <label for="ca-mensaje">Mensaje</label>
+                  <textarea class="ca-input ca-textarea" id="ca-mensaje" name="mensaje" rows="4" placeholder="Contanos qué querés lograr con tu web" required></textarea>
+                  <span class="ca-error" id="ca-mensaje-err">Escribinos al menos una línea sobre tu proyecto.</span>
+                </div>
+                <div class="ca-actions">
+                  <button class="ca-submit" type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                    Enviar por WhatsApp
+                  </button>
+                  <button class="ca-alt" type="button" data-ca-mail>Prefiero enviarlo por email</button>
+                  <button class="ca-send" type="button" data-ca-send>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    <span class="ca-send-text">Enviar</span>
+                  </button>
+                </div>
+                <p class="ca-form-status" id="ca-form-status" role="status" aria-live="polite"></p>
+                <p class="ca-legal">Usamos tus datos solo para responderte. <a href="./app-privacidad.html">Política de privacidad</a></p>
+              </form>
+            </div>
+
+            <div class="ca-next" aria-labelledby="ca-next-title">
+              <h2 class="ca-next-title" id="ca-next-title">Qué pasa después</h2>
+              <ol class="ca-steps">
+                <li><span class="ca-step-n">1</span><div><strong>Te respondemos</strong><p>En menos de 24 hs hábiles, por el medio que prefieras.</p></div></li>
+                <li><span class="ca-step-n">2</span><div><strong>Te pasamos la propuesta</strong><p>Gratis y sin compromiso, con precio cerrado y plazo exacto.</p></div></li>
+                <li><span class="ca-step-n">3</span><div><strong>Arrancamos</strong><p>Pagás el 50% para empezar y el resto cuando esté terminado.</p></div></li>
+              </ol>
+            </div>
+            <div class="ca-toast" role="status" aria-live="polite"></div>
         </section>
     </main>
     <footer class="site-footer">
@@ -170,8 +217,8 @@
         </div>
     </footer>
     <script src="../js/main.js?v=1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="../js/contact-form.js?v=1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
+    <script src="../js/contacto-app.js" defer></script>
     <script src="../js/wa-float.js" defer></script>
 </body>
 </html>

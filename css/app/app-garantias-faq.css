@@ -1,0 +1,248 @@
+/* =========================================================
+   ANDAMIO STUDIO · MOBILE APP LAYER — GARANTÍAS + PREGUNTAS
+   Bloque con pestañas (Garantías / Preguntas) en aplicacion.html,
+   debajo de rubros y arriba de las cards de módulos. Las pestañas
+   quedan pegadas debajo de la barra de arriba mientras se recorre
+   el bloque. Colores de css/paleta.css (vía variables --app-*).
+   ========================================================= */
+@media (max-width: 767px) {
+
+    .agm {
+        position: relative;
+        margin: 0 0 30px;
+        padding: 0 16px;
+        color: var(--app-text);
+    }
+
+    /* ---------- pestañas ---------- */
+    .agm-top {
+        position: sticky;
+        top: calc(var(--app-bar-h) + var(--app-safe-top));
+        z-index: 5;
+        margin: 0 -16px;
+        padding: 10px 16px 12px;
+    }
+
+    .agm-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        padding: 4px;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius-sm);
+    }
+
+    .agm-tab {
+        height: 44px;
+        border: 0;
+        border-radius: 10px;
+        background: transparent;
+        color: var(--app-muted);
+        font-family: var(--app-font);
+        font-size: 14.5px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color .2s, color .2s;
+    }
+
+    .agm-tab.is-active { background: var(--color-accent); color: var(--color-on-accent); }
+
+    .agm-tab:focus-visible,
+    .agm-btn:focus-visible,
+    .agm-link:focus-visible,
+    .agm-btn-primary:focus-visible,
+    .agm-btn-secondary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+    /* ---------- vistas ---------- */
+    .agm-view { padding-top: 10px; }
+    .agm-view[hidden] { display: none; }
+    .agm-view.is-active { animation: agm-in .35s var(--app-ease); }
+
+    @keyframes agm-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: none; }
+    }
+
+    .agm .agm-title {
+        margin: 6px 0 10px;
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+        color: var(--app-text);
+    }
+
+    .agm-sub { margin: 0 0 22px; font-size: 15px; line-height: 1.5; color: var(--app-muted); }
+
+    /* ---------- garantías: lista agrupada ---------- */
+    .agm-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius);
+    }
+
+    .agm-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px 16px;
+        border-bottom: 1px solid var(--app-line);
+    }
+
+    .agm-row:last-child { border-bottom: 0; }
+
+    .agm-icon {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        color: var(--color-accent-text);
+        background: var(--color-accent-soft);
+        border: 1px solid var(--color-accent-soft);
+    }
+
+    .agm-icon svg { width: 20px; height: 20px; }
+
+    .agm .agm-row h3 {
+        margin: 0 0 5px;
+        font-family: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+        font-size: 17px;
+        line-height: 1.25;
+        color: var(--app-text);
+    }
+
+    .agm-row p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--app-muted); }
+
+    /* ---------- preguntas: acordeón ---------- */
+    .agm-acc { display: flex; flex-direction: column; gap: 10px; }
+
+    .agm-item {
+        background: var(--app-surface);
+        border: 1px solid var(--app-line);
+        border-radius: var(--app-radius-sm);
+        transition: border-color .2s;
+    }
+
+    .agm-item.is-open { border-color: var(--color-accent); }
+
+    .agm .agm-q { margin: 0; font: inherit; }
+
+    .agm-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        width: 100%;
+        min-height: 58px;
+        padding: 16px;
+        background: none;
+        border: 0;
+        border-radius: var(--app-radius-sm);
+        color: var(--app-text);
+        font-family: var(--app-font);
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.35;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .agm-plus {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1px solid var(--app-line);
+        transition: transform .3s ease, background-color .2s, border-color .2s, color .2s;
+    }
+
+    .agm-plus svg { width: 16px; height: 16px; }
+
+    .agm-item.is-open .agm-plus {
+        transform: rotate(45deg);
+        color: var(--color-on-accent);
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+    }
+
+    .agm-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+    .agm-item.is-open .agm-panel { grid-template-rows: 1fr; }
+    .agm-panel-inner { overflow: hidden; }
+    .agm-panel p { margin: 0; padding: 0 16px 18px; font-size: 14px; line-height: 1.6; color: var(--app-muted); }
+
+    .agm-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        margin-top: 16px;
+        border: 1px solid var(--app-line);
+        border-radius: 12px;
+        color: var(--app-text);
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* ---------- cierre con botones ---------- */
+    .agm-cta {
+        margin-top: 26px;
+        padding-top: 22px;
+        border-top: 1px solid var(--app-line);
+    }
+
+    .agm-cta p { margin: 0 0 12px; font-size: 14px; text-align: center; color: var(--app-muted); }
+
+    /* uno debajo del otro: lado a lado "Pedí tu presupuesto gratis" no entra */
+    .agm-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+    .agm-btn-primary,
+    .agm-btn-secondary {
+        display: flex;
+        align-items: center;
+        min-height: 52px;
+        border-radius: var(--app-radius-sm);
+        font-size: 14.5px;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: transform .15s var(--app-ease);
+    }
+
+    .agm-btn-primary {
+        justify-content: center;
+        gap: 8px;
+        background: var(--color-accent);
+        color: var(--color-on-accent);
+        font-weight: 700;
+    }
+
+    .agm-btn-primary svg { width: 18px; height: 18px; }
+
+    .agm-btn-secondary {
+        justify-content: center;
+        padding: 0 18px;
+        border: 1px solid var(--app-line);
+        background: var(--app-surface-2);
+        color: var(--app-text);
+        font-weight: 700;
+    }
+
+    .agm-btn-primary:active,
+    .agm-btn-secondary:active { transform: scale(0.98); }
+
+    @media (prefers-reduced-motion: reduce) {
+        .agm-view.is-active { animation: none; }
+        .agm-plus, .agm-panel, .agm-tab { transition: none; }
+    }
+}

@@ -64,9 +64,8 @@
 
     /* ---------- hero ---------- */
     .sec-hero { padding: 160px 0 clamp(64px, 6vw, 110px); }
-    /* Estadísticas + cards, debajo de Servicios */
+    /* Garantías, preguntas y cards, debajo de Servicios */
     .sec-highlights { padding-top: 0; }
-    .sec-highlights .sec-stats { margin-top: 0; }
 
     .sec-pill {
         display: inline-flex;
