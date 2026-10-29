@@ -1,0 +1,336 @@
+/* =========================================================
+   ANDAMIO CODE · PREGUNTAS FRECUENTES DENTRO DE UN ANDAMIO
+   Inicio PC (index.html, debajo de las garantías) y celular
+   (aplicacion.html, pestaña "Preguntas"). js/faq-andamio.js arma
+   las piezas (parantes, travesaños, diagonales, abrazaderas) y la
+   animación de armado al entrar en pantalla.
+   El andamio usa el color del texto (hueso en modo oscuro, tinta en
+   modo claro) y el nivel de la pregunta abierta se prende en rojo.
+   ========================================================= */
+.faqa {
+    --faqa-steel: var(--color-text);
+    --faqa-brace: color-mix(in srgb, var(--color-text) 30%, transparent);
+    --faqa-clamp: color-mix(in srgb, var(--color-text) 55%, var(--color-bg));
+    --faqa-glow: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    --faqa-bay: clamp(30px, 6vw, 68px);
+    --faqa-gap: 22px;
+    --faqa-ledger-top: 39px;
+
+    position: relative;
+    max-width: 1040px;
+    margin: clamp(64px, 6vw, 110px) auto 0;
+    color: var(--color-text);
+    text-align: left;
+}
+
+.faqa *, .faqa *::before, .faqa *::after { box-sizing: border-box; }
+
+/* ---------- estructura ---------- */
+.faqa-bay { position: absolute; width: var(--faqa-bay); }
+.faqa-bay--l { left: 0; }
+.faqa-bay--r { right: 0; }
+
+/* parantes (verticales) */
+.faqa-standards {
+    top: -46px;
+    bottom: 0;
+    z-index: 1;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 900ms cubic-bezier(.2,.8,.2,1);
+}
+
+.faqa-standards i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+    margin-left: -3.5px;
+    border-radius: 2px;
+    background: var(--faqa-steel);
+}
+
+.faqa-standards i:first-child, .faqa-ground b:nth-child(1), .faqa-clamps span:nth-child(1) { left: 20%; }
+.faqa-standards i:last-child,  .faqa-ground b:nth-child(2), .faqa-clamps span:nth-child(2) { left: 80%; }
+
+/* baranda de arriba */
+.faqa-rail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -34px;
+    height: 6px;
+    z-index: 2;
+    border-radius: 2px;
+    background: var(--faqa-steel);
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 700ms cubic-bezier(.2,.8,.2,1) var(--faqa-rail-d, 0ms), opacity 400ms ease var(--faqa-rail-d, 0ms);
+}
+
+.faqa-list { display: flex; flex-direction: column; gap: var(--faqa-gap); }
+
+/* ---------- cada nivel (una pregunta) ---------- */
+.faqa-item { position: relative; padding: 0 var(--faqa-bay); --d: 0ms; }
+
+.faqa-brace {
+    position: absolute;
+    top: calc(var(--faqa-ledger-top) + 3px);
+    height: calc(100% + var(--faqa-gap));
+    z-index: 0;
+    overflow: visible;
+    opacity: 0;
+    transition: opacity 500ms ease var(--d);
+}
+
+.faqa-brace line {
+    stroke: var(--faqa-brace);
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+    transition: stroke 300ms ease;
+}
+
+/* travesaño */
+.faqa-ledger {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--faqa-ledger-top);
+    height: 7px;
+    z-index: 1;
+    border-radius: 2px;
+    background: var(--faqa-steel);
+    transform: scaleX(0);
+    transition: transform 600ms cubic-bezier(.2,.8,.2,1) var(--d), background-color 300ms ease, box-shadow 300ms ease;
+}
+
+/* abrazaderas */
+.faqa-clamps {
+    position: absolute;
+    top: calc(var(--faqa-ledger-top) - 7px);
+    height: 20px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 400ms ease var(--d);
+}
+
+.faqa-clamps span {
+    position: absolute;
+    top: 0;
+    width: 18px;
+    height: 20px;
+    margin-left: -9px;
+    border-radius: 4px;
+    background: var(--faqa-clamp);
+    transition: background-color 300ms ease, box-shadow 300ms ease;
+}
+
+.faqa-clamps span::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-bg);
+}
+
+/* ---------- tablón (la tarjeta de la pregunta) ---------- */
+.faqa-plank {
+    position: relative;
+    z-index: 3;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: 18px;
+    box-shadow: 0 14px 34px -18px var(--shadow-color);
+    transform: translateY(-36px);
+    opacity: 0;
+    transition: transform 650ms cubic-bezier(.34,1.45,.5,1) var(--d), opacity 350ms ease var(--d), border-color 300ms ease;
+}
+
+.faqa-plank:hover { border-color: color-mix(in srgb, var(--color-accent) 55%, var(--color-border-soft)); }
+
+.faqa .faqa-q { margin: 0; font: inherit; }
+
+.faqa-btn {
+    all: unset;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 84px;
+    padding: 20px 24px 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border-radius: 18px;
+}
+
+.faqa-btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+.faqa-qtext {
+    flex: 1;
+    min-width: 0;
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    font-size: clamp(16px, 1.15vw, 19px);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-text);
+    text-wrap: pretty;
+}
+
+.faqa-icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--color-text);
+    border: 1px solid var(--color-border-soft);
+    transition: transform 350ms cubic-bezier(.2,.8,.2,1), background-color 300ms ease, border-color 300ms ease, color 300ms ease;
+}
+
+.faqa-icon svg { width: 18px; height: 18px; }
+.faqa-btn:hover .faqa-icon { border-color: var(--color-accent); }
+
+.faqa-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 420ms cubic-bezier(.2,.8,.2,1); }
+.faqa-panel > div { overflow: hidden; min-height: 0; }
+
+.faqa .faqa-a {
+    margin: 0 28px;
+    padding: 20px 0 26px;
+    border-top: 1px dashed var(--color-border-soft);
+    max-width: 68ch;
+    font-size: clamp(15px, 1.02vw, 17px);
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    text-wrap: pretty;
+}
+
+/* ---------- pregunta abierta: el nivel se prende en rojo ---------- */
+.faqa-item.is-open .faqa-plank { border-color: var(--color-accent); }
+.faqa-item.is-open .faqa-ledger { background: var(--color-accent); box-shadow: 0 0 14px var(--faqa-glow); }
+.faqa-item.is-open .faqa-clamps span { background: var(--color-accent); box-shadow: 0 0 10px var(--faqa-glow); }
+.faqa-item.is-open .faqa-brace line { stroke: var(--color-accent); }
+.faqa-item.is-open .faqa-icon { transform: rotate(45deg); background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+.faqa-item.is-open .faqa-panel { grid-template-rows: 1fr; }
+
+/* ---------- armado al entrar en pantalla ---------- */
+.faqa.is-built .faqa-standards { transform: scaleY(1); }
+.faqa.is-built .faqa-rail { transform: scaleX(1); opacity: 1; }
+.faqa.is-built .faqa-brace,
+.faqa.is-built .faqa-clamps { opacity: 1; }
+.faqa.is-built .faqa-ledger { transform: scaleX(1); }
+.faqa.is-built .faqa-plank { transform: translateY(0); opacity: 1; }
+
+/* ---------- base (husillos y piso) ---------- */
+.faqa-ground { position: relative; height: 66px; }
+.faqa-ground .faqa-bay { top: 0; height: 66px; }
+
+.faqa-ground b {
+    position: absolute;
+    top: 44px;
+    width: 4px;
+    height: 14px;
+    margin-left: -2px;
+    background: repeating-linear-gradient(180deg, var(--faqa-steel) 0 2px, transparent 2px 4px);
+}
+
+.faqa-ground b::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 14px;
+    width: 28px;
+    height: 6px;
+    border-radius: 1px;
+    background: var(--faqa-clamp);
+}
+
+.faqa-ground::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    right: -20px;
+    top: 64px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--color-border-soft) 0 14px, transparent 14px 22px);
+}
+
+/* ---------- PC: más grande, como el resto de la página ---------- */
+@media (min-width: 768px) {
+    .faqa {
+        --faqa-bay: clamp(56px, 6.5vw, 120px);
+        --faqa-gap: clamp(22px, 2vw, 32px);
+        --faqa-ledger-top: clamp(42px, 3.6vw, 56px);
+        max-width: min(1400px, 100%);
+    }
+
+    .faqa-standards { top: -60px; }
+    .faqa-standards i { width: 10px; margin-left: -5px; }
+    .faqa-rail { top: -46px; height: 8px; }
+    .faqa-ledger { height: 9px; }
+    .faqa-brace line { stroke-width: 4; }
+
+    .faqa-clamps { top: calc(var(--faqa-ledger-top) - 9px); height: 27px; }
+    .faqa-clamps span { width: 24px; height: 27px; margin-left: -12px; border-radius: 5px; }
+    .faqa-clamps span::after { left: 8px; top: 9.5px; width: 8px; height: 8px; }
+
+    .faqa-plank, .faqa-btn { border-radius: 22px; }
+    .faqa-btn { min-height: clamp(84px, 7.2vw, 112px); padding: 24px clamp(26px, 2.4vw, 40px); gap: 24px; }
+    .faqa-qtext { font-size: clamp(18px, 1.5vw, 26px); }
+    .faqa-icon { width: clamp(44px, 3.4vw, 56px); height: clamp(44px, 3.4vw, 56px); }
+    .faqa-icon svg { width: 22px; height: 22px; }
+    .faqa .faqa-a {
+        margin: 0 clamp(26px, 2.4vw, 40px);
+        padding: 24px 0 clamp(28px, 2.4vw, 38px);
+        max-width: 72ch;
+        font-size: clamp(16px, 1.22vw, 21px);
+    }
+
+    .faqa-ground { height: 86px; }
+    .faqa-ground .faqa-bay { height: 86px; }
+    .faqa-ground b { top: 58px; width: 6px; height: 18px; margin-left: -3px; }
+    .faqa-ground b::after { left: -15px; top: 18px; width: 36px; height: 8px; }
+    .faqa-ground::after { left: -28px; right: -28px; top: 84px; }
+}
+
+/* ---------- celular ---------- */
+@media (max-width: 767px) {
+    .faqa {
+        --faqa-bay: 26px;
+        --faqa-gap: 14px;
+        --faqa-ledger-top: 27px;
+        margin: 46px 0 0;
+    }
+
+    .faqa-standards i { width: 5px; margin-left: -2.5px; }
+    .faqa-standards { top: -40px; }
+    .faqa-rail { top: -30px; height: 5px; }
+    .faqa-ledger { height: 5px; }
+    .faqa-clamps { top: calc(var(--faqa-ledger-top) - 5px); height: 15px; }
+    .faqa-clamps span { width: 12px; height: 15px; margin-left: -6px; border-radius: 3px; }
+    .faqa-clamps span::after { left: 4px; top: 5.5px; width: 4px; height: 4px; }
+    /* Un solo parante por lado, centrado; sin diagonales (no hay lugar) */
+    .faqa-standards i:first-child, .faqa-ground b:nth-child(1), .faqa-clamps span:nth-child(1) { left: 50%; }
+    .faqa-standards i:last-child,  .faqa-ground b:nth-child(2), .faqa-clamps span:nth-child(2) { display: none; }
+    .faqa-brace { display: none; }
+
+    .faqa-plank, .faqa-btn { border-radius: var(--app-radius-sm, 14px); }
+    .faqa-btn { min-height: 58px; padding: 14px 14px; gap: 10px; }
+    .faqa-qtext { font-family: var(--app-font, 'Montserrat', sans-serif); font-size: 15px; line-height: 1.35; }
+    .faqa-icon { width: 32px; height: 32px; }
+    .faqa-icon svg { width: 16px; height: 16px; }
+    .faqa .faqa-a { margin: 0 14px; padding: 14px 0 18px; font-size: 14px; line-height: 1.6; }
+
+    .faqa-ground { height: 52px; }
+    .faqa-ground .faqa-bay { height: 52px; }
+    .faqa-ground b { top: 32px; height: 12px; }
+    .faqa-ground b::after { left: -9px; top: 12px; width: 22px; height: 5px; }
+    .faqa-ground::after { left: -8px; right: -8px; top: 50px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faqa *, .faqa *::before, .faqa *::after { transition-duration: 1ms !important; transition-delay: 0ms !important; }
+}
