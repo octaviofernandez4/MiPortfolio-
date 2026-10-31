@@ -440,10 +440,18 @@ header {
         .logo-name-suffix { display: block; }
     }
 
+    /* Mismo hover que "Empecemos a construir": fondo negro, letras blancas */
     .nav-cta .btn:hover {
         transform: none;
-        background: var(--color-accent-hover);
+        background: #201e1d;
+        border-color: #201e1d;
+        color: var(--color-on-accent);
         box-shadow: none;
+    }
+
+    .nav-cta .btn:active {
+        background: #000;
+        border-color: #000;
     }
 
     .cta-arrow {

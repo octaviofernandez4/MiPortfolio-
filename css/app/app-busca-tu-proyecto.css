@@ -107,22 +107,6 @@
         border-radius: var(--app-radius);
     }
 
-    /* Métricas 2x2 */
-    .matchmaker-hero .hero-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1px;
-        width: 100%;
-        overflow: hidden;
-        background: var(--app-line);
-        border: 1px solid var(--app-line);
-        border-radius: var(--app-radius);
-    }
-
-    .matchmaker-hero .hero-stats .stat { min-width: 0; padding: 14px 16px; text-align: left; background: var(--app-surface); }
-    .matchmaker-hero .hero-stats .num { font-size: 22px; line-height: 1.1; background: var(--app-grad-text); -webkit-background-clip: text; background-clip: text; }
-    .matchmaker-hero .hero-stats .label { font-size: 9.5px; line-height: 1.35; letter-spacing: 0.07em; margin-top: 6px; }
-
     /* ---------- Catálogo ---------- */
     .catalog-section { padding: 34px 0 0; }
 

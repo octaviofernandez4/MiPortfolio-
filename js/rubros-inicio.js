@@ -23,7 +23,7 @@
   };
 
   var RUBROS = [
-    { cat: "ofi", t: "concesionarias de autos", d: "Stock filtrable, tasación online y ficha detallada por vehículo.", tags: ["Stock filtrable", "Tasación online", "Fichas"], img: "elgarage-home.webp", url: "/pages/oficios-vehiculos/concesionaria-auto.html", caso: "El Garage", demo: "https://elgarageautomovilesyb.com/", k: "auto autos usados agencia" },
+    { cat: "ofi", t: "concesionarias de autos", d: "Stock filtrable, tasación online y ficha detallada por vehículo.", tags: ["Stock filtrable", "Tasación online", "Fichas"], img: "concesionaria-autos.webp", url: "/pages/oficios-vehiculos/concesionaria-auto.html", k: "auto autos usados agencia" },
     { cat: "ent", t: "complejos de pádel y canchas", d: "Reservas de turnos, pagos con Mercado Pago, torneos y panel para el dueño.", tags: ["Reservas", "Mercado Pago", "Torneos"], img: "padeltime-home.webp", url: "/pages/proyectos.html", caso: "PadelTime", demo: "https://padel-time-roan.vercel.app/", k: "padel futbol tenis canchas deporte club" },
     { cat: "gas", t: "restaurantes", d: "Menú digital, reservas online y gestión de mesas en un solo sistema.", tags: ["Menú QR", "Reservas", "Delivery"], img: "Restaurante.webp", url: "/pages/gastronomia/restaurante.html", k: "comida resto parrilla" },
     { cat: "sal", t: "gimnasios y centros de entrenamiento", d: "Reserva de clases, planes de membresía y seguimiento de turnos.", tags: ["Clases", "Membresías", "Turnos"], img: "gimnasio.webp", url: "/pages/salud/gimnasio.html", k: "gym crossfit fitness" },
