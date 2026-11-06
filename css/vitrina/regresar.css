@@ -1,0 +1,39 @@
+/* Plantillas completas: barra de arriba con el botón rojo "Regresar" al Inicio.
+   Solo aparece cuando la página se abre sola (no dentro de la vitrina del Inicio):
+   js/vitrina/regresar.js agrega la clase .con-regresar al <html>. */
+.regresar-bar { display: none; }
+
+.con-regresar .regresar-bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 16px;
+  background: #201e1d;
+}
+
+.regresar-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 16px;
+  background: #ec3013;
+  color: #fff;
+  font: 700 14px/1 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+  text-decoration: none;
+  transition: background .2s;
+}
+
+.regresar-bar a:hover { background: #c92710; color: #fff; }
+.regresar-bar a:active { background: #a8200c; }
+.regresar-bar svg { width: 16px; height: 16px; }
+
+/* Lo de cada plantilla baja 48px para dejar lugar a la barra */
+.con-regresar body.plantilla-web .nav { top: 48px; }
+.con-regresar body.plantilla-app { padding-top: 48px; }
+@media (max-width: 500px) {
+  .con-regresar body.plantilla-app .device { height: calc(100dvh - 48px); }
+}
