@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex">
+  <!-- Vitrina del Inicio (celular): demo de tienda de ropa en formato app -->
+  <title>Stride District</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/vitrina/tienda-app.css">
+  <link rel="stylesheet" href="../../css/vitrina/regresar.css">
+  <script src="../../js/vitrina/regresar.js"></script>
+</head>
+<body class="plantilla-app">
+<div class="regresar-bar"><a href="../../aplicacion.html#vitrina"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Regresar</a></div>
+<div class="device" id="device">
+
+  <!-- Barra de estado (solo visible en el marco de escritorio) -->
+  <div class="status">
+    <span class="time" id="clock">9:41</span>
+    <div class="island"></div>
+    <div class="status-icons">
+      <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+      <svg viewBox="0 0 16 12"><path d="M8 2.5c2.3 0 4.4.9 6 2.4l1.2-1.2A10 10 0 0 0 8 .8 10 10 0 0 0 .8 3.7L2 4.9a8.4 8.4 0 0 1 6-2.4Zm0 3.4c1.4 0 2.7.5 3.6 1.4l1.2-1.2a6.8 6.8 0 0 0-9.6 0l1.2 1.2c1-.9 2.2-1.4 3.6-1.4Zm0 3.4c.5 0 1 .2 1.3.5L8 11.2 6.7 9.8c.3-.3.8-.5 1.3-.5Z"/></svg>
+      <span class="battery"><i></i></span>
+    </div>
+  </div>
+
+  <div class="screens" id="screens">
+
+    <!-- ===== INICIO ===== -->
+    <section class="screen active" id="home" data-title="Inicio">
+      <header class="navbar home-bar">
+        <a class="logo" href="#">
+          <span class="logo-top">STRIDE</span>
+          <span class="logo-bottom">District</span>
+        </a>
+        <div class="nb-actions">
+          <button class="round-btn tap" data-goto="search" aria-label="Buscar">
+            <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <button class="round-btn tap" id="bellBtn" aria-label="Notificaciones">
+            <svg class="ic" viewBox="0 0 24 24"><path d="M10.27 21a2 2 0 0 0 3.46 0"/><path d="M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33"/></svg>
+            <span class="dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content">
+        <p class="kicker" id="greeting">Buenas tardes</p>
+        <h1 class="large-title">Dominá las calles</h1>
+
+        <div class="hero-car" id="heroCar">
+          <article class="hero-card">
+            <div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/app-hero-1.webp')"></div>
+            <div class="hero-shade"></div>
+            <div class="hero-info">
+              <span class="pill lime">Nuevo drop</span>
+              <h2>Hecho para el <em>movimiento</em></h2>
+              <button class="btn-primary tap" data-goto="search">Ver novedades</button>
+            </div>
+          </article>
+          <article class="hero-card">
+            <div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/app-hero-2.webp')"></div>
+            <div class="hero-shade"></div>
+            <div class="hero-info">
+              <span class="pill">Colección</span>
+              <h2>Nacido en la <em>calle</em></h2>
+              <button class="btn-primary tap" data-goto="search">Explorar looks</button>
+            </div>
+          </article>
+          <article class="hero-card">
+            <div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/app-hero-3.webp')"></div>
+            <div class="hero-shade"></div>
+            <div class="hero-info">
+              <span class="pill">Exclusivo app</span>
+              <h2>Pisá con <em>actitud</em></h2>
+              <button class="btn-primary tap" data-goto="search">Comprar</button>
+            </div>
+          </article>
+        </div>
+        <div class="dots" id="heroDots"><i class="on"></i><i></i><i></i></div>
+
+        <div class="chips" id="chips">
+          <button class="chip on tap" data-cat="all">Todo</button>
+          <button class="chip tap" data-cat="zapatillas">Zapatillas</button>
+          <button class="chip tap" data-cat="buzos">Buzos</button>
+          <button class="chip tap" data-cat="remeras">Remeras</button>
+          <button class="chip tap" data-cat="accesorios">Accesorios</button>
+        </div>
+
+        <div class="sec-head">
+          <h3>Novedades</h3>
+          <button class="link tap" data-goto="search">Ver todo</button>
+        </div>
+        <div class="h-scroll products" id="newList"></div>
+
+        <article class="promo tap" data-goto="search">
+          <p class="promo-limited">Por tiempo limitado</p>
+          <p class="promo-num">40% OFF</p>
+          <p class="promo-sub">En estilos seleccionados</p>
+          <span class="promo-cta">Ver ofertas
+            <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </article>
+
+        <div class="sec-head">
+          <h3>Comprá por categoría</h3>
+        </div>
+        <div class="cat-grid">
+          <button class="cat tap" data-search="zapatillas"><div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-zapatillas.webp')"></div><span>Zapatillas</span></button>
+          <button class="cat tap" data-search="buzos"><div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-buzos.webp')"></div><span>Buzos</span></button>
+          <button class="cat tap" data-search="accesorios"><div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-accesorios.webp')"></div><span>Accesorios</span></button>
+          <button class="cat tap" data-search="remeras"><div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-remeras.webp')"></div><span>Remeras</span></button>
+        </div>
+
+        <div class="culture">
+          <h3>Más que una marca. <em>Es una cultura.</em></h3>
+          <p>Etiquetanos en tus looks con <b>#StrideDistrict</b> para aparecer.</p>
+        </div>
+        <div class="h-scroll gallery">
+          <div class="ph g" style="background-image:url('../../assets/img/vitrina/tienda/look-1.webp')"></div>
+          <div class="ph g" style="background-image:url('../../assets/img/vitrina/tienda/look-2.webp')"></div>
+          <div class="ph g" style="background-image:url('../../assets/img/vitrina/tienda/look-3.webp')"></div>
+          <div class="ph g" style="background-image:url('../../assets/img/vitrina/tienda/look-4.webp')"></div>
+          <div class="ph g" style="background-image:url('../../assets/img/vitrina/tienda/look-6.webp')"></div>
+        </div>
+
+        <div class="sec-head">
+          <h3>Lo que dicen</h3>
+          <span class="rating">★ 4.9 · 2.300 reseñas</span>
+        </div>
+        <div class="h-scroll reviews">
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>Envío rapidísimo, productos originales y streetwear que rompe. Nunca falla.</p>
+            <span class="who"><i></i>Jorge T.</span>
+          </article>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>La calidad es de primera y los talles calzan perfecto. Mi tienda de cabecera.</p>
+            <span class="who"><i></i>Miguel L.</span>
+          </article>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>Me encanta la comunidad y los lanzamientos. Es más que una tienda, es una vibra.</p>
+            <span class="who"><i></i>Alyssa R.</span>
+          </article>
+        </div>
+
+        <div class="trust">
+          <div><svg class="ic" viewBox="0 0 24 24"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z"/><path d="m9 12 2 2 4-4"/></svg>100% originales</div>
+          <div><svg class="ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>Cambios en 14 días</div>
+          <div><svg class="ic" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Pago seguro</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BUSCAR ===== -->
+    <section class="screen" id="search" data-title="Buscar">
+      <header class="navbar"><span class="nb-title">Buscar</span></header>
+      <div class="content">
+        <h1 class="large-title">Buscar</h1>
+        <div class="search-row">
+          <label class="search-field">
+            <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="searchInput" placeholder="Zapatillas, buzos, marcas..." autocomplete="off">
+          </label>
+          <button class="cancel" id="searchCancel">Cancelar</button>
+        </div>
+        <div class="seg" id="seg">
+          <button class="seg-opt on" data-cat="all">Todo</button>
+          <button class="seg-opt" data-cat="zapatillas">Calzado</button>
+          <button class="seg-opt" data-cat="ropa">Ropa</button>
+          <button class="seg-opt" data-cat="accesorios">Extras</button>
+          <span class="seg-thumb" id="segThumb"></span>
+        </div>
+        <p class="result-count" id="resultCount"></p>
+        <div class="grid products" id="searchGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== FAVORITOS ===== -->
+    <section class="screen" id="favs" data-title="Favoritos">
+      <header class="navbar"><span class="nb-title">Favoritos</span></header>
+      <div class="content">
+        <h1 class="large-title">Favoritos</h1>
+        <div class="grid products" id="favGrid"></div>
+        <div class="empty" id="favEmpty">
+          <div class="empty-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+          <h4>Todavía no guardaste nada</h4>
+          <p>Tocá el corazón en cualquier producto para tenerlo a mano.</p>
+          <button class="btn-primary tap" data-goto="search">Explorar productos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARRITO ===== -->
+    <section class="screen" id="cart" data-title="Carrito">
+      <header class="navbar"><span class="nb-title">Carrito</span></header>
+      <div class="content">
+        <h1 class="large-title">Carrito</h1>
+        <div class="group" id="cartList"></div>
+        <div id="cartSummary">
+          <p class="group-label">Resumen</p>
+          <div class="group">
+            <div class="row"><span>Subtotal</span><span id="sumSub">$0.00</span></div>
+            <div class="row"><span>Envío</span><span id="sumShip">Gratis</span></div>
+            <div class="row total"><span>Total</span><span id="sumTotal">$0.00</span></div>
+          </div>
+          <p class="group-note" id="shipNote"></p>
+        </div>
+        <div class="empty" id="cartEmpty">
+          <div class="empty-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5 5 3h14l1.6 2.5A2 2 0 0 1 21 7v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 .4-1.5Z"/></svg></div>
+          <h4>Tu carrito está vacío</h4>
+          <p>Envío gratis en compras desde $150.</p>
+          <button class="btn-primary tap" data-goto="home">Empezar a comprar</button>
+        </div>
+      </div>
+      <div class="checkout-bar" id="checkoutBar">
+        <button class="btn-primary block tap" id="checkoutBtn">
+          <svg class="ic" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Pagar <span id="checkoutTotal">$0.00</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== PERFIL ===== -->
+    <section class="screen" id="profile" data-title="Perfil">
+      <header class="navbar"><span class="nb-title">Perfil</span></header>
+      <div class="content">
+        <h1 class="large-title">Perfil</h1>
+        <div class="group">
+          <div class="row profile-row">
+            <span class="avatar">MG</span>
+            <div class="grow"><b>Martina G.</b><small>Miembro District · Nivel Oro</small></div>
+          </div>
+        </div>
+
+        <p class="group-label">Preferencias</p>
+        <div class="group">
+          <div class="row"><span class="ico" style="background:#ff375f"><svg class="ic" viewBox="0 0 24 24"><path d="M10.27 21a2 2 0 0 0 3.46 0"/><path d="M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33"/></svg></span><span class="grow">Avisos de lanzamientos</span><label class="switch"><input type="checkbox" checked><i></i></label></div>
+          <div class="row"><span class="ico" style="background:#bf5af2"><svg class="ic" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span class="grow">Newsletter</span><label class="switch"><input type="checkbox" id="newsSwitch"><i></i></label></div>
+        </div>
+
+        <p class="legal">Stride District v1.0</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Tab bar -->
+  <nav class="tabbar" id="tabbar">
+    <button class="tab on" data-tab="home">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span>Inicio</span>
+    </button>
+    <button class="tab" data-tab="search">
+      <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span>Buscar</span>
+    </button>
+    <button class="tab" data-tab="favs">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <span>Favoritos</span>
+    </button>
+    <button class="tab" data-tab="cart">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5 5 3h14l1.6 2.5A2 2 0 0 1 21 7v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 .4-1.5Z"/></svg>
+      <span>Carrito</span>
+      <b class="badge" id="cartBadge">0</b>
+    </button>
+    <button class="tab" data-tab="profile">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Perfil</span>
+    </button>
+  </nav>
+
+  <!-- Hoja de producto -->
+  <div class="sheet-wrap" id="sheetWrap">
+    <div class="backdrop" id="backdrop"></div>
+    <div class="sheet" id="sheet" role="dialog" aria-modal="true">
+      <div class="grabber"></div>
+      <div class="sheet-body" id="sheetBody"></div>
+    </div>
+  </div>
+
+  <!-- Notificación tipo iOS -->
+  <div class="banner" id="banner">
+    <span class="banner-ic">SD</span>
+    <div><b id="bannerTitle">Stride District</b><p id="bannerText"></p></div>
+    <small>ahora</small>
+  </div>
+
+  <div class="home-indicator"></div>
+</div>
+
+<script src="../../js/vitrina/tienda-app.js"></script>
+</body>
+</html>

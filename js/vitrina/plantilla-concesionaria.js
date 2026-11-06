@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const suf = el.dataset.suffix || '', unit = el.dataset.unit ? `<small>${el.dataset.unit}</small>` : '';
     const t0 = performance.now(), dur = 2000;
     const step = now => {
-      const p = Math.min((now - t0) / dur, 1), v = end * ease(p);
+      const p = Math.min(Math.max(0, now - t0) / dur, 1), v = end * ease(p);
       el.innerHTML = v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf + unit;
       if (p < 1) requestAnimationFrame(step);
     };
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!e.isIntersecting) return; o.disconnect();
     const t0 = performance.now();
     const step = now => {
-      const p = Math.min((now - t0) / 2600, 1), v = Math.round(80 * ease(p));
+      const p = Math.min(Math.max(0, now - t0) / 2600, 1), v = Math.round(80 * ease(p));
       cVal.textContent = v; cBar.style.width = v + '%';
       if (p < 1) requestAnimationFrame(step);
     };
@@ -131,4 +131,21 @@ document.addEventListener('DOMContentLoaded', () => {
       el.addEventListener('mouseleave', () => cur$.classList.remove('big'));
     });
   }
+
+  // Galería de fotos del modal (antes era un cartel de "insertá tu video")
+  const gSlides = $$('.mg-slide'), gCount = $('#galCount');
+  let g = 0;
+  const showG = i => {
+    gSlides[g].classList.remove('active');
+    g = (i + gSlides.length) % gSlides.length;
+    gSlides[g].classList.add('active');
+    gCount.textContent = String(g + 1).padStart(2, '0') + ' / ' + String(gSlides.length).padStart(2, '0');
+  };
+  $('#galPrev').addEventListener('click', () => showG(g - 1));
+  $('#galNext').addEventListener('click', () => showG(g + 1));
+  addEventListener('keydown', e => {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') showG(g + 1);
+    if (e.key === 'ArrowLeft') showG(g - 1);
+  });
 });

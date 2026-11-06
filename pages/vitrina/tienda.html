@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <!-- Vitrina del Inicio: inicio, categorías y novedades de la demo de tienda de ropa -->
+  <title>Stride District — Zapatillas y streetwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/vitrina/plantilla-tienda.css">
+  <style>html, body { overflow: hidden; }</style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="tb-item">
+        <svg class="ic" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 9.38A1 1 0 0 0 17.52 9H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+        Envío gratis en compras desde <b class="accent">$150</b>
+      </span>
+      <span class="tb-item tb-center">🔥 Nuevos lanzamientos todos los viernes</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-top">STRIDE</span>
+        <span class="logo-bottom">District</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#novedades" data-cat="all">Novedades</a>
+        <a href="#novedades" data-cat="zapatillas">Zapatillas</a>
+        <a href="#novedades" data-cat="buzos">Ropa</a>
+        <a href="#novedades" data-cat="accesorios">Accesorios</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#ofertas" class="nav-sale">Ofertas</a>
+      </nav>
+
+      <div class="header-icons">
+        <button class="icon-btn" id="searchBtn" aria-label="Buscar">
+          <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Favoritos">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="badge" id="wishCount">0</span>
+        </button>
+        <button class="icon-btn" aria-label="Carrito">
+          <svg class="ic" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn burger" id="burger" aria-label="Menú">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-bar" id="searchBar">
+      <div class="container">
+        <input type="search" placeholder="Buscá zapatillas, buzos, gorras..." aria-label="Buscar productos">
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg ph"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="hero-kicker">Dominá las calles</p>
+      <h1 class="hero-title" id="heroTitle">
+        <span class="white">Hecho para el</span>
+        <span class="orange">movimiento</span>
+      </h1>
+      <p class="hero-text">Zapatillas exclusivas y streetwear para la cultura.<br>Para los que se animan. Para vos.</p>
+      <div class="hero-btns">
+        <a href="#novedades" class="btn btn-primary" data-cat="all">Ver novedades <span class="arrow">→</span></a>
+        <a href="#cultura" class="btn btn-outline">Explorar looks <span class="arrow">→</span></a>
+      </div>
+
+      <div class="trust">
+        <div class="trust-item">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><b>100% originales</b><small>Garantizado</small></div>
+        </div>
+        <div class="trust-item">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          <div><b>Cambios fáciles</b><small>Política de 14 días</small></div>
+        </div>
+        <div class="trust-item">
+          <svg class="ic" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div><b>Pago seguro</b><small>Comprá con confianza</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-pager">
+      <span id="heroIdx">01</span><i></i><span>03</span>
+    </div>
+  </section>
+
+  <!-- Categorías -->
+  <section class="section light" id="categorias">
+    <div class="container">
+      <div class="sec-head">
+        <h2 class="sec-title">Comprá por categoría</h2>
+        <a href="#novedades" class="sec-link" data-cat="all">Ver todos los productos <span class="arrow">→</span></a>
+      </div>
+      <div class="cat-grid">
+        <a href="#novedades" class="cat-card" data-cat="zapatillas">
+          <div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-zapatillas.webp')"></div>
+          <div class="cat-info"><h3>Zapatillas</h3><span>Comprar ahora →</span></div>
+        </a>
+        <a href="#novedades" class="cat-card" data-cat="buzos">
+          <div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-buzos.webp')"></div>
+          <div class="cat-info"><h3>Buzos</h3><span>Comprar ahora →</span></div>
+        </a>
+        <a href="#novedades" class="cat-card" data-cat="accesorios">
+          <div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-accesorios.webp')"></div>
+          <div class="cat-info"><h3>Accesorios</h3><span>Comprar ahora →</span></div>
+        </a>
+        <a href="#novedades" class="cat-card" data-cat="remeras">
+          <div class="ph" style="background-image:url('../../assets/img/vitrina/tienda/cat-remeras.webp')"></div>
+          <div class="cat-info"><h3>Remeras</h3><span>Comprar ahora →</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Novedades -->
+  <section class="section dark" id="novedades">
+    <div class="container">
+      <div class="sec-head">
+        <h2 class="sec-title">Novedades</h2>
+        <a href="#novedades" class="sec-link" data-cat="all">Ver todo <span class="arrow">→</span></a>
+      </div>
+      <div class="carousel">
+        <button class="car-arrow prev" data-target="products" aria-label="Anterior">‹</button>
+        <div class="products" id="products"></div>
+        <button class="car-arrow next" data-target="products" aria-label="Siguiente">›</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../../js/vitrina/vitrina.js"></script>
+  <script src="../../js/vitrina/plantilla-tienda.js"></script>
+</body>
+</html>

@@ -13,9 +13,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/vitrina/concesionaria-app.css">
-<script src="../../js/vitrina/concesionaria-app.js" defer></script>
 <link rel="stylesheet" href="../../css/vitrina/regresar.css">
 <script src="../../js/vitrina/regresar.js"></script>
+<script src="../../js/vitrina/concesionaria-app.js" defer></script>
 </head>
 <body class="plantilla-app">
 <div class="regresar-bar"><a href="../../aplicacion.html#vitrina"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Regresar</a></div>
@@ -42,17 +42,17 @@
         <div class="hero-carousel" id="heroCarousel">
           <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')">
             <span class="pill pill-accent">Nuevo</span>
-            <div class="hc-body"><h2>Hilux SRV</h2><p>Toyota · 4x4 · 0 km</p>
+            <div class="hc-body"><h2>ZX-1</h2><p>Diseñado sin concesiones.</p>
               <div class="hc-actions"><button class="btn btn-accent" data-open-model="0">Descubrir <i data-icon="arrow-right"></i></button><button class="btn-circle" id="filmBtn" aria-label="Ver film"><i data-icon="play"></i></button></div>
             </div>
           </article>
-          <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-corolla-costa.webp')">
-            <span class="pill">Sedán</span>
-            <div class="hc-body"><h2>Corolla XEI</h2><p>Toyota · Híbrido</p></div>
+          <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-tiguan.webp')">
+            <span class="pill">Performance</span>
+            <div class="hc-body"><h2>2.000 HP</h2><p>0–60 mph en 1,85 s.</p></div>
           </article>
-          <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-208.webp')">
-            <span class="pill">Hatchback</span>
-            <div class="hc-body"><h2>208 Allure</h2><p>Peugeot · 1.0 Turbo</p></div>
+          <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-compass.webp')">
+            <span class="pill">Autonomía</span>
+            <div class="hc-body"><h2>520 mi</h2><p>Batería de estado sólido.</p></div>
           </article>
         </div>
         <div class="pager" id="pager"><i class="on"></i><i></i><i></i></div>
@@ -67,9 +67,9 @@
 
         <div class="section-head"><h3>La gama</h3><button class="link" data-tab-go="models">Ver todo</button></div>
         <div class="h-scroll">
-          <button class="mini-card" data-open-model="0" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')"><span>Toyota</span><b>Hilux SRV</b></button>
-          <button class="mini-card" data-open-model="1" style="--img:url('../../assets/img/vitrina/auto-corolla.webp')"><span>Toyota</span><b>Corolla XEI</b></button>
-          <button class="mini-card" data-open-model="2" style="--img:url('../../assets/img/vitrina/auto-208.webp')"><span>Peugeot</span><b>208 Allure</b></button>
+          <button class="mini-card" data-open-model="0" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')"><span>ZX-1</span><b>Pure</b></button>
+          <button class="mini-card" data-open-model="1" style="--img:url('../../assets/img/vitrina/auto-corolla.webp')"><span>ZX-1</span><b>Performance</b></button>
+          <button class="mini-card" data-open-model="2" style="--img:url('../../assets/img/vitrina/auto-208.webp')"><span>ZX-1</span><b>Signature</b></button>
         </div>
 
         <div class="section-head"><h3>Destacado</h3></div>
@@ -90,7 +90,7 @@
         <div class="search"><i data-icon="search"></i><input id="search" placeholder="Buscar modelo" autocomplete="off"></div>
         <div class="segmented" id="seg">
           <span class="seg-thumb"></span>
-          <button class="on" data-filter="all">Todos</button><button data-filter="pickup">Pick-up</button><button data-filter="auto">Autos</button>
+          <button class="on" data-filter="all">Todos</button><button data-filter="track">Pista</button><button data-filter="grand">Gran turismo</button>
         </div>
         <div class="model-list" id="modelList"></div>
         <div class="tab-spacer"></div>
@@ -115,7 +115,7 @@
           <div class="row"><span class="row-ic"><i data-icon="atom"></i></span><div><b>Solid-state</b><small>Más segura, liviana y resistente</small></div></div>
         </div>
         <div class="section-head"><h3>Sustentable por diseño</h3></div>
-        <div class="feature" style="--img:url('../../assets/img/vitrina/app/1449844908441.webp')">
+        <div class="feature" style="--img:url('../../assets/img/vitrina/auto-naturaleza.webp')">
           <span class="eyebrow light">Construido para hoy</span><h4>Innovation that<br>respects tomorrow.</h4>
         </div>
         <div class="tab-spacer"></div>
@@ -136,7 +136,7 @@
           </div>
           <p class="group-label">Preferencias</p>
           <div class="list-group form-group">
-            <label class="frow"><span>Modelo</span><select name="model" id="modelSelect"><option>Toyota Hilux SRV</option><option>Toyota Corolla XEI</option><option>Peugeot 208 Allure</option></select></label>
+            <label class="frow"><span>Modelo</span><select name="model" id="modelSelect"><option>ZX-1 Pure</option><option>ZX-1 Performance</option><option>ZX-1 Signature</option></select></label>
             <div class="frow"><span>Test drive</span><label class="switch"><input type="checkbox" name="test" checked><i></i></label></div>
             <div class="frow"><span>Newsletter</span><label class="switch"><input type="checkbox" name="news"><i></i></label></div>
             <label class="frow frow-col"><textarea name="msg" rows="3" placeholder="Mensaje (opcional)"></textarea></label>
@@ -188,8 +188,14 @@
   <div class="sheet-backdrop" id="sheetBackdrop"></div>
   <div class="sheet" id="sheet">
     <div class="grabber"></div>
-    <div class="sheet-head"><h3>Video Hilux SRV</h3><button class="round-btn" id="sheetClose" aria-label="Cerrar"><i data-icon="x"></i></button></div>
-    <div class="sheet-video"><i data-icon="play-circle"></i><p>Insertá tu video aquí</p></div>
+    <div class="sheet-head"><h3>Galería ZX-1</h3><button class="round-btn" id="sheetClose" aria-label="Cerrar"><i data-icon="x"></i></button></div>
+    <div class="sheet-gallery" id="sheetGallery">
+      <div class="sg-item" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')"></div>
+      <div class="sg-item" style="--img:url('../../assets/img/vitrina/auto-corolla-costa.webp')"></div>
+      <div class="sg-item" style="--img:url('../../assets/img/vitrina/auto-208.webp')"></div>
+      <div class="sg-item" style="--img:url('../../assets/img/vitrina/auto-interior-208.webp')"></div>
+    </div>
+    <div class="sg-dots" id="sgDots"><i class="on"></i><i></i><i></i><i></i></div>
   </div>
 </div>
 </body>

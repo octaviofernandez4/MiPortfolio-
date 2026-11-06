@@ -214,3 +214,26 @@ p{line-height:1.6;color:var(--ink-2);text-wrap:pretty}
   .hero-slide{background:linear-gradient(180deg,rgba(242,242,240,.92) 0%,rgba(242,242,240,.5) 55%,rgba(242,242,240,.1)),var(--img) center/cover,#ccc}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero-title .line span{transform:none}}
+
+/* ===== Ajustes de la plantilla publicada ===== */
+/* El título del hero se cortaba ("EXTRAORDI…") porque no entraba en 720px */
+.hero-content{max-width:min(980px,100%)}
+.hero-title{font-size:clamp(30px,4.4vw,64px)}
+@media (max-width:760px){.hero-title{font-size:clamp(18px,6vw,34px)}}
+/* Footer sin la columna de redes */
+.footer-top{grid-template-columns:1.4fr repeat(4,1fr)}
+@media (max-width:1100px){.footer-top{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.footer-top{grid-template-columns:1fr 1fr}}
+.footer-bottom span:last-child:empty{display:none}
+/* Galería de fotos (reemplaza el cartel de "insertá tu video") */
+.modal-gallery{position:absolute;inset:0;overflow:hidden;background:#000}
+.mg-slide{position:absolute;inset:0;background:var(--img) center/cover;opacity:0;transform:scale(1.04);transition:opacity .6s ease,transform 1.2s var(--ease)}
+.mg-slide.active{opacity:1;transform:none}
+.mg-arrow{position:absolute;top:50%;z-index:2;width:46px;height:46px;margin-top:-23px;display:grid;place-items:center;background:var(--accent);color:var(--ink);transition:background .3s}
+.mg-arrow:hover{background:var(--accent-d)}
+.mg-prev{left:16px}.mg-prev svg{transform:rotate(180deg)}
+.mg-next{right:16px}
+.mg-count{position:absolute;left:20px;bottom:16px;z-index:2;color:#fff;font-family:var(--f-head);font-size:12px;letter-spacing:.2em}
+/* El aviso de "consulta enviada" asomaba 9px abajo de la pantalla */
+.toast{transform:translate(-50%,calc(100% + 40px))}
+.toast.show{transform:translate(-50%,0)}

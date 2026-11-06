@@ -37,3 +37,7 @@
 @media (max-width: 500px) {
   .con-regresar body.plantilla-app .device { height: calc(100dvh - 48px); }
 }
+/* Tienda: el header es sticky y la barra de progreso va arriba de todo */
+.con-regresar body.plantilla-tienda { padding-top: 48px; }
+.con-regresar body.plantilla-tienda .header { top: 48px; }
+.con-regresar body.plantilla-tienda .progress { top: 48px; }

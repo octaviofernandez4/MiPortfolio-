@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Datos ----------
   const MODELS = [
-    { brand:'Toyota', name:'Hilux SRV', tag:'Pick-up', type:'pickup', price:'US$ 52.000', img:'../../assets/img/vitrina/auto-hilux.webp',
-      desc:'La pick-up más vendida del país. Robusta para el campo y cómoda para la ciudad.', specs:[['204','CV'],['2.8','Turbo diésel'],['4x4','Tracción']] },
-    { brand:'Toyota', name:'Corolla XEI', tag:'Sedán', type:'auto', price:'US$ 33.500', img:'../../assets/img/vitrina/auto-corolla.webp',
-      desc:'Sedán híbrido, silencioso y económico. Ideal para el día a día y la ruta.', specs:[['122','CV'],['Híbrido','Motor'],['CVT','Caja']] },
-    { brand:'Peugeot', name:'208 Allure', tag:'Hatchback', type:'auto', price:'US$ 24.900', img:'../../assets/img/vitrina/auto-208.webp',
-      desc:'Compacto, moderno y con motor turbo. El auto ideal para moverse por la ciudad.', specs:[['115','CV'],['1.0T','Motor'],['CVT','Caja']] }
+    { name:'Pure', tag:'Gran turismo', type:'grand', price:'$2.250.000', img:'../../assets/img/vitrina/auto-hilux.webp',
+      desc:'La esencia del ZX-1. Equilibrio perfecto entre confort y rendimiento para el día a día.', specs:[['1.600','HP'],['560','Millas'],['2,1s','0–60']] },
+    { name:'Performance', tag:'Pista', type:'track', price:'$2.650.000', img:'../../assets/img/vitrina/auto-corolla.webp',
+      desc:'Aerodinámica activa y chasis afinado en pista. Nacido para el cronómetro.', specs:[['2.000','HP'],['520','Millas'],['1,85s','0–60']] },
+    { name:'Signature', tag:'Gran turismo', type:'grand', price:'$3.250.000', img:'../../assets/img/vitrina/auto-208.webp',
+      desc:'Edición numerada con interiores artesanales y personalización total.', specs:[['2.000','HP'],['540','Millas'],['1,9s','0–60']] }
   ];
 
   // ---------- Reloj ----------
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const runCounters = () => $$('[data-count]').forEach(el => {
     const end = +el.dataset.count, dec = +el.dataset.decimals || 0, suf = el.dataset.suffix || '', t0 = performance.now();
     const step = now => {
-      const p = Math.min((now - t0) / 1600, 1);
+      const p = Math.min(Math.max(0, now - t0) / 1600, 1);
       el.textContent = (end * ease(p)).toLocaleString('es-AR', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
       if (p < 1) requestAnimationFrame(step);
     };
@@ -104,11 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let filter = 'all';
   const renderModels = () => {
     const q = search.value.trim().toLowerCase();
-    const items = MODELS.map((m, i) => ({ ...m, i })).filter(m => (filter === 'all' || m.type === filter) && (m.brand + ' ' + m.name).toLowerCase().includes(q));
+    const items = MODELS.map((m, i) => ({ ...m, i })).filter(m => (filter === 'all' || m.type === filter) && ('zx-1 ' + m.name).toLowerCase().includes(q));
     list.innerHTML = items.length ? items.map((m, k) => `
       <button class="model" data-open-model="${m.i}" style="--d:${k * .08}s">
         <div class="model-img" style="--img:url('${m.img}')"></div>
-        <div class="model-info"><div><h3>${m.brand} <em>${m.name}</em></h3><p>${m.tag} · Desde ${m.price}</p></div><span class="chev"><i data-icon="chevron-right"></i></span></div>
+        <div class="model-info"><div><h3>ZX-1 <em>${m.name}</em></h3><p>${m.tag} · Desde ${m.price}</p></div><span class="chev"><i data-icon="chevron-right"></i></span></div>
       </button>`).join('') : '<p class="empty">Sin resultados</p>';
     renderIcons(list);
   };
@@ -127,8 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const m = MODELS[current = i];
     dHero.style.setProperty('--img', `url('${m.img}')`);
     $('#dTag').textContent = m.tag;
-    $('#dTitle').textContent = m.brand + ' ' + m.name;
-    $('#detailNavTitle').textContent = m.name;
+    $('#dTitle').textContent = 'ZX-1 ' + m.name;
+    $('#detailNavTitle').textContent = 'ZX-1 ' + m.name;
     $('#dDesc').textContent = m.desc;
     $('#dPrice').textContent = m.price;
     $('#dSpecs').innerHTML = m.specs.map(s => `<div><strong>${s[0]}</strong><span>${s[1]}</span></div>`).join('');
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (charging) return; charging = true; ringVal = 10; ring.style.transition = 'none';
     const t0 = performance.now(), dur = 3200;
     const step = now => {
-      const p = Math.min((now - t0) / dur, 1), v = 10 + 70 * ease(p);
+      const p = Math.min(Math.max(0, now - t0) / dur, 1), v = 10 + 70 * ease(p);
       ring.style.strokeDashoffset = C * (1 - v / 100); rVal.textContent = Math.round(v);
       rTime.textContent = p < 1 ? Math.ceil(12 * (1 - p)) + ' min restantes' : 'Carga al 80% · lista';
       if (p < 1) requestAnimationFrame(step); else { charging = false; ringVal = 80; notify('Carga completada · 80%'); }
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#sheetClose').addEventListener('click', () => toggleSheet(false));
   back.addEventListener('click', () => toggleSheet(false));
   let sy = null;
-  sheet.addEventListener('pointerdown', e => { sy = e.clientY; sheet.style.transition = 'none'; sheet.setPointerCapture(e.pointerId); });
+  sheet.addEventListener('pointerdown', e => { if (e.target.closest('#sheetGallery')) return; sy = e.clientY; sheet.style.transition = 'none'; sheet.setPointerCapture(e.pointerId); });
   sheet.addEventListener('pointermove', e => { if (sy !== null) sheet.style.transform = `translateY(${Math.max(0, e.clientY - sy)}px)`; });
   sheet.addEventListener('pointerup', e => { if (sy === null) return; sheet.style.transition = ''; const dy = e.clientY - sy; sy = null; toggleSheet(dy < 100); });
 
@@ -212,6 +212,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!ok) { navigator.vibrate && navigator.vibrate([20, 40, 20]); return; }
     e.target.reset(); notify('Consulta enviada ✓');
   });
+
+  // ---------- Galería del sheet ----------
+  const sg = $('#sheetGallery'), sgDots = $$('#sgDots i');
+  sg.addEventListener('scroll', () => {
+    const i = Math.round(sg.scrollLeft / sg.clientWidth);
+    sgDots.forEach((d, k) => d.classList.toggle('on', k === i));
+  }, { passive: true });
 
   renderModels();
   renderIcons();
