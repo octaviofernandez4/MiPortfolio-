@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <!-- Plantilla completa de restaurante (se abre desde la vitrina del Inicio) -->
+  <title>Ámbar — Cocina de autor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/vitrina/plantilla-restaurante.css">
+  <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="brand"><span class="brand-dot"><i data-lucide="flame"></i></span>Ámbar</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#platos">Platos</a>
+      <a href="#menu">Menú</a>
+      <a href="#reservas">Reservas</a>
+    </nav>
+    <a href="#reservas" class="btn btn-outline nav-cta">Reservar mesa <i data-lucide="arrow-up-right"></i></a>
+    <button class="burger" id="burger" aria-label="Abrir menú"><i data-lucide="menu"></i></button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('../../assets/img/vitrina/rest-hero-1.webp')"></div>
+      <div class="hero-slide" style="background-image:url('../../assets/img/vitrina/rest-hero-2.webp')"></div>
+      <div class="hero-slide" style="background-image:url('../../assets/img/vitrina/rest-hero-3.webp')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="eyebrow reveal">Cocina de autor · Desde 2012</p>
+      <h1 class="hero-title" id="heroTitle">Sabores que reúnen a toda la familia</h1>
+      <p class="hero-text reveal" style="--d:.3s">Ingredientes de temporada, fuego lento y una mesa pensada para compartir. Cada plato cuenta una historia.</p>
+      <div class="hero-actions reveal" style="--d:.45s">
+        <a href="#reservas" class="btn btn-primary">Reservar ahora <i data-lucide="arrow-right"></i></a>
+        <a href="#menu" class="btn btn-ghost"><i data-lucide="book-open"></i> Ver menú</a>
+      </div>
+    </div>
+
+    <div class="hero-bar reveal" style="--d:.6s">
+      <button class="circle-btn" id="prevSlide" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
+      <div class="hero-bar-item">
+        <span class="script">Abierto</span>
+        <strong>Mar – Dom · 12:00 – 00:00</strong>
+      </div>
+      <div class="hero-bar-divider"></div>
+      <p class="hero-bar-text" id="slideCaption">Nuestra hamburguesa de la casa: brioche artesanal, cheddar añejo y cebolla caramelizada.</p>
+      <div class="dots" id="dots"></div>
+      <button class="circle-btn" id="nextSlide" aria-label="Siguiente"><i data-lucide="chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="about" id="nosotros">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p class="eyebrow reveal">Nuestra filosofía</p>
+        <h2 class="section-title reveal" style="--d:.1s">Generosidad en cada plato, respeto por cada ingrediente</h2>
+        <p class="reveal" style="--d:.2s">Trabajamos con productores locales y cocinamos sin atajos. Fermentos propios, panes horneados cada mañana y carnes a la brasa de leña de quebracho.</p>
+        <div class="stats reveal" style="--d:.3s">
+          <div><strong class="counter" data-target="14">0</strong><span>Años de cocina</span></div>
+          <div><strong class="counter" data-target="38">0</strong><span>Productores locales</span></div>
+          <div><strong class="counter" data-target="4.9" data-decimals="1">0</strong><span>Valoración media</span></div>
+        </div>
+        <a href="#platos" class="btn btn-outline reveal" style="--d:.4s">Conocé nuestros platos <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="about-visual reveal" style="--d:.2s">
+        <div class="arch">
+          <img src="../../assets/img/vitrina/rest-plato-autor.webp" alt="Plato de autor" class="parallax" data-speed="0.08">
+        </div>
+        <div class="badge-float">
+          <i data-lucide="award"></i>
+          <div><strong>Mejor bistró</strong><span>Guía Gastro 2025</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATOS DESTACADOS -->
+  <section class="dishes" id="platos">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow reveal">Lo más pedido</p>
+        <h2 class="section-title reveal" style="--d:.1s">Platos destacados</h2>
+        <p class="reveal" style="--d:.2s">Una selección de los favoritos de nuestros comensales, preparados al momento.</p>
+      </div>
+      <div class="dish-grid">
+        <article class="dish reveal" style="--d:.1s">
+          <div class="dish-img"><img src="../../assets/img/vitrina/rest-bowl.webp" alt="Bowl de estación"><span class="price">$12.400</span></div>
+          <div class="dish-body"><h3>Bowl de estación</h3><p>Quinoa, palta, verduras asadas y vinagreta de cítricos.</p></div>
+        </article>
+        <article class="dish reveal" style="--d:.2s">
+          <div class="dish-img"><img src="../../assets/img/vitrina/rest-brochetas.webp" alt="Brochetas a la brasa"><span class="price">$15.900</span></div>
+          <div class="dish-body"><h3>Brochetas a la brasa</h3><p>Cordero marinado, chimichurri ahumado y papas rústicas.</p></div>
+        </article>
+        <article class="dish reveal" style="--d:.3s">
+          <div class="dish-img"><img src="../../assets/img/vitrina/rest-hamburguesa.webp" alt="Hamburguesa Ámbar"><span class="price">$13.800</span></div>
+          <div class="dish-body"><h3>Hamburguesa Ámbar</h3><p>Doble medallón, cheddar añejo y cebolla caramelizada.</p></div>
+        </article>
+        <article class="dish reveal" style="--d:.4s">
+          <div class="dish-img"><img src="../../assets/img/vitrina/rest-pizza.webp" alt="Pizza de masa madre"><span class="price">$14.200</span></div>
+          <div class="dish-body"><h3>Pizza de masa madre</h3><p>48 h de fermentación, mozzarella fior di latte y albahaca.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow reveal">La carta</p>
+        <h2 class="section-title reveal" style="--d:.1s">Nuestro menú</h2>
+      </div>
+      <div class="tabs reveal" style="--d:.2s" id="tabs">
+        <button class="tab active" data-cat="entradas"><i data-lucide="salad"></i> Entradas</button>
+        <button class="tab" data-cat="principales"><i data-lucide="beef"></i> Principales</button>
+        <button class="tab" data-cat="postres"><i data-lucide="cake-slice"></i> Postres</button>
+        <button class="tab" data-cat="bebidas"><i data-lucide="wine"></i> Bebidas</button>
+      </div>
+      <div class="menu-list" id="menuList"></div>
+    </div>
+  </section>
+
+  <!-- RESERVAS -->
+  <section class="reserve" id="reservas">
+    <div class="container reserve-grid">
+      <div class="reserve-info">
+        <p class="eyebrow reveal">Reservas</p>
+        <h2 class="section-title reveal" style="--d:.1s">Guardamos tu mesa</h2>
+        <p class="reveal" style="--d:.2s">Reservá online y te confirmamos por WhatsApp en minutos.</p>
+        <ul class="info-list reveal" style="--d:.3s">
+          <li><i data-lucide="map-pin"></i> Av. Corrientes 1234, Buenos Aires</li>
+          <li><i data-lucide="phone"></i> +54 11 5555-0123</li>
+          <li><i data-lucide="clock"></i> Martes a domingo, 12:00 – 00:00</li>
+        </ul>
+      </div>
+      <form class="reserve-form reveal" style="--d:.2s" id="reserveForm" novalidate>
+        <div class="field"><label for="name">Nombre</label><input id="name" type="text" placeholder="Tu nombre" required></div>
+        <div class="field"><label for="phone">Teléfono</label><input id="phone" type="tel" placeholder="+54 11 ..." required></div>
+        <div class="field"><label for="date">Fecha</label><input id="date" type="date" required></div>
+        <div class="field"><label for="time">Hora</label>
+          <select id="time" required>
+            <option value="">Elegí un horario</option>
+            <option>12:30</option><option>13:30</option><option>20:00</option><option>21:00</option><option>22:00</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>Personas</label>
+          <div class="stepper">
+            <button type="button" id="minus" aria-label="Menos"><i data-lucide="minus"></i></button>
+            <span id="guests">2</span>
+            <button type="button" id="plus" aria-label="Más"><i data-lucide="plus"></i></button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary full">Confirmar reserva <i data-lucide="check"></i></button>
+        <p class="form-msg" id="formMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#inicio" class="brand"><span class="brand-dot"><i data-lucide="flame"></i></span>Ámbar</a>
+      <p>© 2026 Ámbar Cocina de Autor</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        <a href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba"><i data-lucide="arrow-up"></i></button>
+
+  <script src="../../js/vitrina/plantilla-restaurante.js"></script>
+</body>
+</html>

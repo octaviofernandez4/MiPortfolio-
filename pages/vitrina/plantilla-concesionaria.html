@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<!-- Plantilla completa de concesionaria (se abre desde la vitrina del Inicio) -->
+<title>Brío Automotores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/vitrina/plantilla-concesionaria.css">
+<script src="../../js/vitrina/plantilla-concesionaria.js" defer></script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="#" class="brand" aria-label="Brío inicio">
+    <span class="brand-mark">B</span>
+    <span class="brand-name">BRÍO<small>AUTOMOTORES</small></span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#lineup">Vehículos</a>
+    <a href="#tech">Tecnología</a>
+    <a href="#interior">Diseño</a>
+    <a href="#sustain">Sustentabilidad</a>
+    <a href="#press">Nosotros</a>
+    <a href="#inquire">Noticias</a>
+  </nav>
+  <a href="#inquire" class="nav-cta">Reservá el tuyo <i data-lucide="arrow-right"></i></a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')"></div>
+    <div class="hero-slide" style="--img:url('../../assets/img/vitrina/auto-corolla-costa.webp')"></div>
+    <div class="hero-slide" style="--img:url('../../assets/img/vitrina/auto-208.webp')"></div>
+    <div class="hero-slide" style="--img:url('../../assets/img/vitrina/auto-corolla.webp')"></div>
+  </div>
+  <div class="hero-content">
+    <p class="kicker reveal">El futuro del rendimiento</p>
+    <h1 class="hero-title">
+      <span class="line"><span>Electric.</span></span>
+      <span class="line"><span>Extraordinary.</span></span>
+      <span class="line"><span>Brío.</span></span>
+    </h1>
+    <p class="hero-sub reveal">0 km y usados seleccionados. Financiación y permutas.</p>
+    <div class="hero-actions reveal">
+      <a href="#lineup" class="btn btn-accent">Ver vehículos <i data-lucide="arrow-right"></i></a>
+      <button class="btn btn-ghost" id="filmBtn">Ver film <i data-lucide="play"></i></button>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="active"><span>01</span><i></i></button>
+    <button><span>02</span><i></i></button>
+    <button><span>03</span><i></i></button>
+    <button><span>04</span><i></i></button>
+  </div>
+  <div class="scroll-hint"><span></span></div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat reveal"><strong data-count="2000" data-suffix="+">0</strong><span>Caballos de fuerza</span></div>
+  <div class="stat reveal"><strong data-count="520">0</strong><span>Millas de autonomía (est.)</span></div>
+  <div class="stat reveal"><strong data-count="248">0</strong><span>MPH velocidad máx.</span></div>
+  <div class="stat reveal"><strong data-count="1.85" data-decimals="2" data-unit="s">0</strong><span>0–60 MPH</span></div>
+</section>
+
+<!-- LINEUP -->
+<section class="lineup" id="lineup">
+  <div class="lineup-intro reveal">
+    <p class="kicker">La gama</p>
+    <h2>Built to<br>perform.</h2>
+    <p>Tres expresiones de rendimiento.<br>Un ADN sin concesiones.</p>
+    <a href="#inquire" class="btn btn-outline">Ver todos los modelos <i data-lucide="arrow-right"></i></a>
+  </div>
+  <div class="cards">
+    <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')">
+      <div class="car-info"><h3>Toyota<br><em>Hilux SRV</em></h3><p>Desde US$ 52.000</p></div>
+      <span class="car-arrow"><i data-lucide="arrow-up-right"></i></span>
+    </article>
+    <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-corolla.webp')">
+      <div class="car-info"><h3>Toyota<br><em>Corolla XEI</em></h3><p>Desde US$ 33.500</p></div>
+      <span class="car-arrow"><i data-lucide="arrow-up-right"></i></span>
+    </article>
+    <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-208.webp')">
+      <div class="car-info"><h3>Peugeot<br><em>208 Allure</em></h3><p>Desde US$ 24.900</p></div>
+      <span class="car-arrow"><i data-lucide="arrow-up-right"></i></span>
+    </article>
+  </div>
+</section>
+
+<!-- TECH -->
+<section class="tech" id="tech">
+  <div class="tech-text reveal">
+    <p class="kicker">Brío Battery Technology</p>
+    <h2>Power. Density.<br>Freedom.</h2>
+    <p>Nuestra arquitectura de batería de estado sólido de nueva generación ofrece autonomía excepcional, potencia brutal y seguridad sin igual.</p>
+    <div class="tech-specs">
+      <div><i data-lucide="zap"></i><strong>800V</strong><span>Ultra alto voltaje</span></div>
+      <div><i data-lucide="battery-charging"></i><strong>350kW</strong><span>Carga rápida DC<br>(10–80% en 12 min)</span></div>
+      <div><i data-lucide="atom"></i><strong>Solid-state</strong><span>Más segura, liviana<br>y resistente</span></div>
+    </div>
+    <a href="#inquire" class="btn btn-accent">Explorar tecnología <i data-lucide="arrow-right"></i></a>
+  </div>
+  <div class="tech-visual reveal">
+    <div class="battery" id="battery">
+      <div class="battery-img" style="--img:url('../../assets/img/vitrina/auto-carga.webp')"></div>
+      <div class="charge"><span id="chargeVal">0</span>%<small>carga</small></div>
+      <div class="charge-bar"><i id="chargeBar"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERIOR -->
+<section class="split" id="interior">
+  <div class="split-img parallax" style="--img:url('../../assets/img/vitrina/auto-interior-208.webp')"></div>
+  <div class="split-text reveal">
+    <p class="kicker">Pensado para el conductor</p>
+    <h2>Pure connection.<br>Zero distractions.</h2>
+    <p>Un habitáculo diseñado a tu alrededor. Cada control, intuitivo. Cada detalle, intencional.</p>
+    <a href="#inquire" class="btn btn-outline">Explorar interior <i data-lucide="arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section class="split split-rev" id="sustain">
+  <div class="split-text reveal">
+    <p class="kicker">Sustentable por diseño</p>
+    <h2>Innovation that<br>respects tomorrow.</h2>
+    <p>Materiales sustentables. Abastecimiento ético. Fabricación responsable. Rendimiento con propósito.</p>
+    <a href="#inquire" class="btn btn-outline">Nuestro compromiso <i data-lucide="arrow-right"></i></a>
+  </div>
+  <div class="split-img parallax" style="--img:url('../../assets/img/vitrina/auto-ruta.webp')">
+    <div class="badge"><span class="brand-mark">B</span><p>Construido para hoy.<br>Preservando el mañana.</p></div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press" id="press">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="p1">TopGear</span><span class="p2">CAR&amp;DRIVER</span><span class="p3">HYPEBEAST</span><span class="p4">Forbes</span><span class="p5">ROAD&amp;TRACK</span><span class="p6">AUTOCAR</span>
+      <span class="p1">TopGear</span><span class="p2">CAR&amp;DRIVER</span><span class="p3">HYPEBEAST</span><span class="p4">Forbes</span><span class="p5">ROAD&amp;TRACK</span><span class="p6">AUTOCAR</span>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRE -->
+<section class="inquire" id="inquire">
+  <div class="reveal">
+    <p class="kicker">Consultas</p>
+    <h2>Own the future.</h2>
+    <p>El stock se mueve rápido. Consultá ahora y reservá tu próximo auto.</p>
+  </div>
+  <form class="form reveal" id="form" novalidate>
+    <label class="f"><input name="first" required placeholder=" "><span>Nombre</span></label>
+    <label class="f"><input name="last" required placeholder=" "><span>Apellido</span></label>
+    <label class="f"><input name="email" type="email" required placeholder=" "><span>Email</span></label>
+    <label class="f"><input name="phone" type="tel" placeholder=" "><span>Teléfono</span></label>
+    <label class="f f-wide"><textarea name="msg" rows="1" placeholder=" "></textarea><span>Preferencias / mensaje</span></label>
+    <button class="btn btn-dark" type="submit">Enviar consulta <i data-lucide="arrow-right"></i></button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <a href="#" class="brand brand-lg"><span class="brand-mark">B</span><span class="brand-name">BRÍO<small>AUTOMOTORES</small></span></a>
+    <div class="fcol"><h4>Vehículos</h4><a href="#">Toyota Hilux SRV</a><a href="#">Toyota Corolla XEI</a><a href="#">Peugeot 208 Allure</a><a href="#">Comparar</a></div>
+    <div class="fcol"><h4>Tecnología</h4><a href="#">Batería</a><a href="#">Carga</a><a href="#">Rendimiento</a><a href="#">Seguridad</a></div>
+    <div class="fcol"><h4>Empresa</h4><a href="#">Nosotros</a><a href="#">Sustentabilidad</a><a href="#">Empleos</a><a href="#">Noticias</a></div>
+    <div class="fcol"><h4>Propiedad</h4><a href="#">Reservá el tuyo</a><a href="#">Servicios</a><a href="#">Garantía</a><a href="#">FAQ</a></div>
+    <div class="fcol social"><h4>Seguinos</h4>
+      <div><a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a><a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a><a href="#" aria-label="X"><i data-lucide="twitter"></i></a><a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Brío Automotores. Todos los derechos reservados.</span><span><a href="#">Privacidad</a><a href="#">Términos</a></span></div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar"><i data-lucide="x"></i></button>
+    <div class="modal-video"><i data-lucide="play-circle"></i><p>Video del showroom — insertá tu video aquí</p></div>
+  </div>
+</div>
+<div class="toast" id="toast"><i data-lucide="check-circle-2"></i><span>Consulta enviada. Te contactaremos pronto.</span></div>
+<div class="cursor" id="cursor"></div>
+</body>
+</html>

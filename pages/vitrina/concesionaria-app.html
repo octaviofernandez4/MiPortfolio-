@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<!-- Vitrina del Inicio (celular): demo de concesionaria en formato app -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#f2f2f0">
+<title>Brío Automotores — App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/vitrina/concesionaria-app.css">
+<script src="../../js/vitrina/concesionaria-app.js" defer></script>
+</head>
+<body>
+<div class="device">
+  <div class="island" id="island"><span class="island-dot"></span><span class="island-text" id="islandText"></span></div>
+  <div class="statusbar">
+    <span id="clock">9:41</span>
+    <span class="sb-icons"><i data-icon="signal"></i><i data-icon="wifi"></i><i data-icon="battery"></i></span>
+  </div>
+
+  <main class="app" id="app">
+    <!-- TAB: INICIO -->
+    <section class="screen active" data-screen="home">
+      <div class="scroll">
+        <header class="large-header">
+          <div class="lh-row">
+            <div class="brand"><span class="brand-mark">B</span><span>BRÍO</span></div>
+            <button class="round-btn" data-tab-go="reserve" aria-label="Perfil"><i data-icon="user"></i></button>
+          </div>
+          <p class="eyebrow">Buenas tardes</p>
+          <h1 class="large-title">Electric.<br>Extraordinary.</h1>
+        </header>
+
+        <div class="hero-carousel" id="heroCarousel">
+          <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')">
+            <span class="pill pill-accent">Nuevo</span>
+            <div class="hc-body"><h2>Hilux SRV</h2><p>Toyota · 4x4 · 0 km</p>
+              <div class="hc-actions"><button class="btn btn-accent" data-open-model="0">Descubrir <i data-icon="arrow-right"></i></button><button class="btn-circle" id="filmBtn" aria-label="Ver film"><i data-icon="play"></i></button></div>
+            </div>
+          </article>
+          <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-corolla-costa.webp')">
+            <span class="pill">Sedán</span>
+            <div class="hc-body"><h2>Corolla XEI</h2><p>Toyota · Híbrido</p></div>
+          </article>
+          <article class="hero-card" style="--img:url('../../assets/img/vitrina/auto-208.webp')">
+            <span class="pill">Hatchback</span>
+            <div class="hc-body"><h2>208 Allure</h2><p>Peugeot · 1.0 Turbo</p></div>
+          </article>
+        </div>
+        <div class="pager" id="pager"><i class="on"></i><i></i><i></i></div>
+
+        <div class="section-head"><h3>En números</h3></div>
+        <div class="stats-grid">
+          <div class="stat"><i data-icon="gauge"></i><strong data-count="2000" data-suffix="+">0</strong><span>Caballos</span></div>
+          <div class="stat"><i data-icon="route"></i><strong data-count="520">0</strong><span>Millas</span></div>
+          <div class="stat"><i data-icon="wind"></i><strong data-count="248">0</strong><span>MPH máx.</span></div>
+          <div class="stat"><i data-icon="timer"></i><strong data-count="1.85" data-decimals="2" data-suffix="s">0</strong><span>0–60 mph</span></div>
+        </div>
+
+        <div class="section-head"><h3>La gama</h3><button class="link" data-tab-go="models">Ver todo</button></div>
+        <div class="h-scroll">
+          <button class="mini-card" data-open-model="0" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')"><span>Toyota</span><b>Hilux SRV</b></button>
+          <button class="mini-card" data-open-model="1" style="--img:url('../../assets/img/vitrina/auto-corolla.webp')"><span>Toyota</span><b>Corolla XEI</b></button>
+          <button class="mini-card" data-open-model="2" style="--img:url('../../assets/img/vitrina/auto-208.webp')"><span>Peugeot</span><b>208 Allure</b></button>
+        </div>
+
+        <div class="section-head"><h3>Destacado</h3></div>
+        <button class="feature" data-tab-go="tech" style="--img:url('../../assets/img/vitrina/auto-interior-208.webp')">
+          <span class="eyebrow light">Pensado para el conductor</span>
+          <h4>Pure connection.<br>Zero distractions.</h4>
+        </button>
+
+        <div class="press-strip"><div class="press-track"><span>TopGear</span><span>CAR&amp;DRIVER</span><span>HYPEBEAST</span><span>Forbes</span><span>ROAD&amp;TRACK</span><span>AUTOCAR</span><span>TopGear</span><span>CAR&amp;DRIVER</span><span>HYPEBEAST</span><span>Forbes</span><span>ROAD&amp;TRACK</span><span>AUTOCAR</span></div></div>
+        <div class="tab-spacer"></div>
+      </div>
+    </section>
+
+    <!-- TAB: MODELOS -->
+    <section class="screen" data-screen="models">
+      <div class="scroll">
+        <header class="large-header"><p class="eyebrow">Tres expresiones</p><h1 class="large-title">Modelos</h1></header>
+        <div class="search"><i data-icon="search"></i><input id="search" placeholder="Buscar modelo" autocomplete="off"></div>
+        <div class="segmented" id="seg">
+          <span class="seg-thumb"></span>
+          <button class="on" data-filter="all">Todos</button><button data-filter="pickup">Pick-up</button><button data-filter="auto">Autos</button>
+        </div>
+        <div class="model-list" id="modelList"></div>
+        <div class="tab-spacer"></div>
+      </div>
+    </section>
+
+    <!-- TAB: TECNOLOGÍA -->
+    <section class="screen dark" data-screen="tech">
+      <div class="scroll">
+        <header class="large-header"><p class="eyebrow accent">Brío Battery Technology</p><h1 class="large-title">Power.<br>Density.</h1></header>
+        <div class="ring-card">
+          <svg viewBox="0 0 200 200" class="ring">
+            <circle cx="100" cy="100" r="86" class="ring-bg"></circle>
+            <circle cx="100" cy="100" r="86" class="ring-fg" id="ringFg"></circle>
+          </svg>
+          <div class="ring-center"><strong id="ringVal">0</strong><span>% carga</span><small id="ringTime">12 min restantes</small></div>
+          <button class="btn btn-accent btn-block" id="chargeBtn"><i data-icon="zap"></i> Simular carga rápida</button>
+        </div>
+        <div class="list-group dark-group">
+          <div class="row"><span class="row-ic"><i data-icon="zap"></i></span><div><b>800V</b><small>Ultra alto voltaje</small></div></div>
+          <div class="row"><span class="row-ic"><i data-icon="battery-charging"></i></span><div><b>350 kW</b><small>Carga DC 10–80% en 12 min</small></div></div>
+          <div class="row"><span class="row-ic"><i data-icon="atom"></i></span><div><b>Solid-state</b><small>Más segura, liviana y resistente</small></div></div>
+        </div>
+        <div class="section-head"><h3>Sustentable por diseño</h3></div>
+        <div class="feature" style="--img:url('../../assets/img/vitrina/app/1449844908441.webp')">
+          <span class="eyebrow light">Construido para hoy</span><h4>Innovation that<br>respects tomorrow.</h4>
+        </div>
+        <div class="tab-spacer"></div>
+      </div>
+    </section>
+
+    <!-- TAB: RESERVAR -->
+    <section class="screen" data-screen="reserve">
+      <div class="scroll">
+        <header class="large-header"><p class="eyebrow">Producción limitada</p><h1 class="large-title">Own the<br>future.</h1></header>
+        <form id="form" novalidate>
+          <p class="group-label">Tus datos</p>
+          <div class="list-group form-group">
+            <label class="frow"><span>Nombre</span><input name="first" required placeholder="Requerido"></label>
+            <label class="frow"><span>Apellido</span><input name="last" required placeholder="Requerido"></label>
+            <label class="frow"><span>Email</span><input name="email" type="email" required placeholder="nombre@mail.com"></label>
+            <label class="frow"><span>Teléfono</span><input name="phone" type="tel" placeholder="Opcional"></label>
+          </div>
+          <p class="group-label">Preferencias</p>
+          <div class="list-group form-group">
+            <label class="frow"><span>Modelo</span><select name="model" id="modelSelect"><option>Toyota Hilux SRV</option><option>Toyota Corolla XEI</option><option>Peugeot 208 Allure</option></select></label>
+            <div class="frow"><span>Test drive</span><label class="switch"><input type="checkbox" name="test" checked><i></i></label></div>
+            <div class="frow"><span>Newsletter</span><label class="switch"><input type="checkbox" name="news"><i></i></label></div>
+            <label class="frow frow-col"><textarea name="msg" rows="3" placeholder="Mensaje (opcional)"></textarea></label>
+          </div>
+          <button class="btn btn-dark btn-block" type="submit">Enviar consulta <i data-icon="arrow-right"></i></button>
+          <p class="legal">© 2026 Brío Automotores · Privacidad · Términos</p>
+        </form>
+        <div class="tab-spacer"></div>
+      </div>
+    </section>
+
+    <!-- PUSH: DETALLE DE MODELO -->
+    <section class="detail" id="detail" aria-hidden="true">
+      <div class="detail-nav" id="detailNav">
+        <button class="nav-back" id="backBtn"><i data-icon="chevron-left"></i> Atrás</button>
+        <span class="detail-nav-title" id="detailNavTitle"></span>
+        <button class="round-btn glass" id="favBtn" aria-label="Favorito"><i data-icon="heart"></i></button>
+      </div>
+      <div class="scroll" id="detailScroll">
+        <div class="detail-hero" id="detailHero"></div>
+        <div class="detail-body">
+          <p class="eyebrow" id="dTag"></p>
+          <h1 class="detail-title" id="dTitle"></h1>
+          <p class="muted" id="dDesc"></p>
+          <div class="spec-row" id="dSpecs"></div>
+          <p class="group-label">Color exterior</p>
+          <div class="swatches" id="swatches">
+            <button class="sw on" style="--c:#b9bcbf" data-name="Plata Lunar"></button>
+            <button class="sw" style="--c:#1a1b1d" data-name="Negro Obsidiana"></button>
+            <button class="sw" style="--c:#e9e9e6" data-name="Blanco Glaciar"></button>
+            <button class="sw" style="--c:#c8f31d" data-name="Volt"></button>
+          </div>
+          <p class="muted small" id="swName">Plata Lunar</p>
+        </div>
+        <div class="tab-spacer"></div>
+      </div>
+      <div class="buy-bar"><div><small>Desde</small><strong id="dPrice"></strong></div><button class="btn btn-accent" id="reserveBtn">Reservar <i data-icon="arrow-right"></i></button></div>
+    </section>
+  </main>
+
+  <nav class="tabbar" id="tabbar">
+    <button class="on" data-tab="home"><i data-icon="home"></i><span>Inicio</span></button>
+    <button data-tab="models"><i data-icon="car"></i><span>Modelos</span></button>
+    <button data-tab="tech"><i data-icon="zap"></i><span>Tecnología</span></button>
+    <button data-tab="reserve"><i data-icon="calendar"></i><span>Reservar</span></button>
+  </nav>
+  <div class="home-indicator"></div>
+
+  <div class="sheet-backdrop" id="sheetBackdrop"></div>
+  <div class="sheet" id="sheet">
+    <div class="grabber"></div>
+    <div class="sheet-head"><h3>Video Hilux SRV</h3><button class="round-btn" id="sheetClose" aria-label="Cerrar"><i data-icon="x"></i></button></div>
+    <div class="sheet-video"><i data-icon="play-circle"></i><p>Insertá tu video aquí</p></div>
+  </div>
+</div>
+</body>
+</html>

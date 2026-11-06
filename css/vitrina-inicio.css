@@ -1,0 +1,151 @@
+/* Vitrina del Inicio — "Mejorá tu negocio con una buena web".
+   Dos demos reales (restaurante y concesionaria) dentro de una ventana de navegador.
+   Cada demo es una página aparte en pages/vitrina/ y se muestra en un iframe
+   que toma el alto de su contenido (js/vitrina-inicio.js). */
+
+.vitrina {
+  --vit-display: 'Copperplate', 'Copperplate Gothic Light', 'Copperplate Gothic Bold', serif;
+  --vit-mono: 'Space Mono', 'Courier New', monospace;
+  width: min(1600px, 92%);
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(64px, 6vw, 110px) 0;
+  color: var(--color-text);
+}
+
+.vitrina__head { max-width: 760px; margin-bottom: clamp(40px, 4vw, 64px); }
+
+.vitrina__title {
+  font-family: var(--vit-display);
+  font-weight: 700;
+  font-size: clamp(32px, 3vw, 58px);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  color: var(--color-text);
+}
+
+.vitrina__lead { color: var(--color-text-muted); font-size: clamp(17px, 1.1vw, 20px); line-height: 1.6; text-wrap: pretty; margin: 0; }
+
+.vitrina__list { display: grid; gap: clamp(56px, 5vw, 96px); }
+
+.vitrina__item { margin: 0; }
+
+/* ---------- Ventana de navegador ---------- */
+.vitrina__browser {
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.vitrina__bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 52px;
+  padding: 0 18px;
+  border-bottom: 2px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.vitrina__dots { display: flex; gap: 8px; flex-shrink: 0; }
+.vitrina__dots i { width: 12px; height: 12px; border: 2px solid var(--color-border); }
+.vitrina__dots i:first-child { background: var(--color-accent); border-color: var(--color-accent); }
+
+.vitrina__url {
+  flex: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 14px;
+  font-family: var(--vit-mono);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vitrina__url svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* espacio a la derecha para que la URL quede centrada como en un navegador */
+.vitrina__bar::after { content: ""; width: 52px; flex-shrink: 0; }
+
+.vitrina__frame {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: var(--color-bg);
+}
+
+.vitrina__frame--restaurante { height: 1700px; }
+.vitrina__frame--concesionaria { height: 1100px; }
+
+/* ---------- Pie de cada demo ---------- */
+.vitrina__cap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  font-size: clamp(15px, 1vw, 18px);
+  color: var(--color-text-muted);
+}
+
+.vitrina__cap b { color: var(--color-text); font-weight: 700; }
+
+.vitrina__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  font-weight: 800;
+  color: var(--color-text);
+  text-decoration: none;
+  border: 2px solid var(--color-border);
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.vitrina__cta svg { width: 18px; height: 18px; transition: transform .2s; }
+.vitrina__cta:hover { background: var(--color-text); color: var(--color-bg); }
+.vitrina__cta:hover svg { transform: translateX(4px); }
+.vitrina__cta:active { background: #000; border-color: #000; color: #fff; }
+
+.vitrina__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* "Ver plantilla": botón rojo que abre la plantilla entera en otra pestaña */
+.vitrina__ver { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-on-accent); }
+.vitrina__ver:hover { background: #201e1d; border-color: #201e1d; color: #fff; }
+.vitrina__ver:hover svg { transform: none; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 767px) {
+  .vitrina { width: auto; padding: 56px 16px; }
+  .vitrina__head { margin-bottom: 28px; }
+  .vitrina__title { font-size: clamp(28px, 8vw, 36px); }
+  .vitrina__lead { font-size: 15px; }
+  .vitrina__list { gap: 44px; }
+
+  .vitrina__bar { gap: 10px; height: 42px; padding: 0 10px; }
+  .vitrina__dots { gap: 5px; }
+  .vitrina__dots i { width: 9px; height: 9px; }
+  .vitrina__url { height: 26px; padding: 0 10px; font-size: 11.5px; }
+  .vitrina__bar::after { width: 37px; }
+
+  .vitrina__frame--restaurante { height: 1400px; }
+  .vitrina__frame--concesionaria { height: 1200px; }
+  /* versión app: alto fijo de pantalla de teléfono, la app scrollea por dentro */
+  .vitrina__frame--app { height: min(720px, 80svh); }
+
+  .vitrina__cap { flex-direction: column; align-items: stretch; gap: 12px; margin-top: 14px; font-size: 14.5px; }
+  .vitrina__actions { flex-direction: column; gap: 10px; }
+  .vitrina__cta { justify-content: center; }
+}

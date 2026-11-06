@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <!-- Vitrina del Inicio (celular): demo de restaurante en formato app -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0e0c0a">
+  <title>Ámbar — App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/vitrina/restaurante-app.css">
+  <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="stage">
+  <div class="device" id="device">
+    <div class="island"></div>
+    <div class="statusbar">
+      <span id="clock">9:41</span>
+      <span class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></span>
+    </div>
+
+    <main class="screens">
+      <!-- INICIO -->
+      <section class="screen active" id="home">
+        <header class="topbar"><span class="small-title">Ámbar</span></header>
+        <div class="scroll">
+          <div class="large-head">
+            <div>
+              <p class="greet" id="greet">Buenas noches</p>
+              <h1 class="large-title brand-title">Ámbar</h1>
+            </div>
+            <button class="avatar press" aria-label="Perfil"><i data-lucide="user"></i></button>
+          </div>
+
+          <label class="search">
+            <i data-lucide="search"></i>
+            <input type="search" placeholder="Buscar platos, bebidas…" id="searchInput">
+          </label>
+
+          <div class="carousel" id="carousel">
+            <article class="hero-card" style="background-image:url('../../assets/img/vitrina/rest-hero-1.webp')">
+              <span class="pill">Nuevo</span>
+              <div><h2>Sabores que reúnen a la familia</h2><p>Hamburguesa Ámbar · cheddar añejo</p></div>
+            </article>
+            <article class="hero-card" style="background-image:url('../../assets/img/vitrina/rest-hero-3.webp')">
+              <span class="pill">A la brasa</span>
+              <div><h2>Fuego lento de quebracho</h2><p>Carnes madurada 21 días</p></div>
+            </article>
+            <article class="hero-card" style="background-image:url('../../assets/img/vitrina/rest-hero-2.webp')">
+              <span class="pill">Salón</span>
+              <div><h2>Tu mesa te espera</h2><p>Reservá en segundos</p></div>
+            </article>
+          </div>
+          <div class="page-dots" id="pageDots"><span class="on"></span><span></span><span></span></div>
+
+          <div class="section-row"><h3>Categorías</h3></div>
+          <div class="chips">
+            <button class="chip press" data-go="entradas"><i data-lucide="salad"></i>Entradas</button>
+            <button class="chip press" data-go="principales"><i data-lucide="beef"></i>Principales</button>
+            <button class="chip press" data-go="postres"><i data-lucide="cake-slice"></i>Postres</button>
+            <button class="chip press" data-go="bebidas"><i data-lucide="wine"></i>Bebidas</button>
+          </div>
+
+          <div class="section-row"><h3>Lo más pedido</h3><button class="link" data-tab="menu">Ver todo</button></div>
+          <div class="h-scroll" id="featured"></div>
+
+          <div class="info-card">
+            <div class="info-icon"><i data-lucide="clock"></i></div>
+            <div><strong>Abierto ahora</strong><span>Mar – Dom · 12:00 – 00:00</span></div>
+            <i data-lucide="chevron-right" class="muted-ic"></i>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i data-lucide="map-pin"></i></div>
+            <div><strong>Av. Corrientes 1234</strong><span>Buenos Aires · 1,2 km</span></div>
+            <i data-lucide="chevron-right" class="muted-ic"></i>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <!-- MENÚ -->
+      <section class="screen" id="menu">
+        <header class="topbar"><span class="small-title">Menú</span></header>
+        <div class="scroll">
+          <div class="large-head"><h1 class="large-title">Menú</h1></div>
+          <div class="segmented" id="segmented">
+            <span class="seg-thumb" id="segThumb"></span>
+            <button class="on" data-cat="entradas">Entradas</button>
+            <button data-cat="principales">Principales</button>
+            <button data-cat="postres">Postres</button>
+            <button data-cat="bebidas">Bebidas</button>
+          </div>
+          <div class="list" id="menuList"></div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <!-- RESERVAR -->
+      <section class="screen" id="reserve">
+        <header class="topbar"><span class="small-title">Reservar</span></header>
+        <div class="scroll">
+          <div class="large-head"><h1 class="large-title">Reservar</h1></div>
+
+          <p class="group-label">Fecha</p>
+          <div class="h-scroll dates" id="dates"></div>
+
+          <p class="group-label">Horario</p>
+          <div class="times" id="times"></div>
+
+          <p class="group-label">Detalles</p>
+          <div class="group">
+            <div class="row">
+              <i data-lucide="users" class="row-ic"></i><span>Personas</span>
+              <div class="stepper"><button class="press" id="gMinus"><i data-lucide="minus"></i></button><b id="guests">2</b><button class="press" id="gPlus"><i data-lucide="plus"></i></button></div>
+            </div>
+            <div class="row"><i data-lucide="user" class="row-ic"></i><input id="rName" placeholder="Nombre"></div>
+            <div class="row"><i data-lucide="phone" class="row-ic"></i><input id="rPhone" type="tel" placeholder="Teléfono"></div>
+            <div class="row"><i data-lucide="sparkles" class="row-ic"></i><span>Ocasión especial</span><label class="switch"><input type="checkbox" id="rSpecial"><span></span></label></div>
+          </div>
+
+          <button class="btn-main press" id="confirmRes">Confirmar reserva</button>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <!-- PEDIDO -->
+      <section class="screen" id="cart">
+        <header class="topbar"><span class="small-title">Pedido</span></header>
+        <div class="scroll">
+          <div class="large-head"><h1 class="large-title">Pedido</h1></div>
+          <div id="cartBody"></div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- TAB BAR -->
+    <nav class="tabbar" id="tabbar">
+      <button class="tab on" data-tab="home"><i data-lucide="house"></i><span>Inicio</span></button>
+      <button class="tab" data-tab="menu"><i data-lucide="utensils"></i><span>Menú</span></button>
+      <button class="tab" data-tab="reserve"><i data-lucide="calendar-days"></i><span>Reservar</span></button>
+      <button class="tab" data-tab="cart"><i data-lucide="shopping-bag"></i><span>Pedido</span><em class="badge" id="badge">0</em></button>
+    </nav>
+    <div class="home-indicator"></div>
+
+    <!-- SHEET -->
+    <div class="backdrop" id="backdrop"></div>
+    <div class="sheet" id="sheet">
+      <div class="grabber"></div>
+      <div id="sheetContent"></div>
+    </div>
+
+    <div class="toast" id="toast"><i data-lucide="check-circle-2"></i><span id="toastText">Agregado</span></div>
+  </div>
+</div>
+<script src="../../js/vitrina/restaurante-app.js"></script>
+</body>
+</html>
