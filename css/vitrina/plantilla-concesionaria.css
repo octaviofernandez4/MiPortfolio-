@@ -237,3 +237,25 @@ p{line-height:1.6;color:var(--ink-2);text-wrap:pretty}
 /* El aviso de "consulta enviada" asomaba 9px abajo de la pantalla */
 .toast{transform:translate(-50%,calc(100% + 40px))}
 .toast.show{transform:translate(-50%,0)}
+/* Celular: el auto del hero entra entero abajo y el texto queda arriba */
+@media (max-width:760px){
+  .hero{height:auto;min-height:0;padding-bottom:calc(56vw + 70px)}
+  .hero-slide{inset:0;background:linear-gradient(180deg,#f2f2f0 0%,#f2f2f0 55%,rgba(242,242,240,0) 72%),var(--img) center bottom/100% auto no-repeat,#f2f2f0;transform:none}
+  .hero-slide.active{transform:none}
+  .hero-content{height:auto;justify-content:flex-start;padding-top:110px;padding-bottom:24px}
+  .hero-dots{bottom:16px}
+  .scroll-hint{display:none}
+  .car-card{aspect-ratio:3/2}
+  .split-img{min-height:0;aspect-ratio:3/2}
+}
+/* El Corolla está a la derecha de su foto: se corre el encuadre para que se vea entero */
+.car-card:nth-child(2)::before{background-position:center,78% center}
+/* Menú de celular: al scrollear, el blur del nav "encerraba" el menú y sus links
+   quedaban asomando sobre la página. Sin blur en celular y oculto mientras está cerrado. */
+@media (max-width:1100px){
+  .nav.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(242,242,240,.97)}
+  .nav-links{visibility:hidden;transition:transform .6s var(--ease),visibility 0s .6s}
+  .nav-links.open{visibility:visible;transition:transform .6s var(--ease),visibility 0s}
+}
+/* En permutas el cartel va arriba para no tapar el auto */
+.badge{bottom:auto;top:10%}

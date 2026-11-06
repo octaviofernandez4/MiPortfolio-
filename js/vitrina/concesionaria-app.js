@@ -27,19 +27,20 @@ document.addEventListener('DOMContentLoaded', () => {
     'signal':'<path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/>',
     'wifi':'<path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 8.82a15 15 0 0 1 20 0"/><line x1="12" x2="12.01" y1="20" y2="20"/>',
     'battery':'<rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/><rect width="10" height="6" x="5" y="9" fill="currentColor" stroke="none"/>',
-    'check':'<path d="M20 6 9 17l-5-5"/>'
+    'check':'<path d="M20 6 9 17l-5-5"/>',
+    'percent':'<line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>'
   };
   const icon = n => `<svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n] || ''}</svg>`;
   const renderIcons = (root = document) => $$('i[data-icon]', root).forEach(i => i.outerHTML = icon(i.dataset.icon));
 
   // ---------- Datos ----------
   const MODELS = [
-    { name:'Pure', tag:'Gran turismo', type:'grand', price:'$2.250.000', img:'../../assets/img/vitrina/auto-hilux.webp',
-      desc:'La esencia del ZX-1. Equilibrio perfecto entre confort y rendimiento para el día a día.', specs:[['1.600','HP'],['560','Millas'],['2,1s','0–60']] },
-    { name:'Performance', tag:'Pista', type:'track', price:'$2.650.000', img:'../../assets/img/vitrina/auto-corolla.webp',
-      desc:'Aerodinámica activa y chasis afinado en pista. Nacido para el cronómetro.', specs:[['2.000','HP'],['520','Millas'],['1,85s','0–60']] },
-    { name:'Signature', tag:'Gran turismo', type:'grand', price:'$3.250.000', img:'../../assets/img/vitrina/auto-208.webp',
-      desc:'Edición numerada con interiores artesanales y personalización total.', specs:[['2.000','HP'],['540','Millas'],['1,9s','0–60']] }
+    { brand:'Toyota', name:'Hilux SRV', tag:'Pick-up', type:'pickup', price:'US$ 52.000', img:'../../assets/img/vitrina/auto-hilux.webp',
+      desc:'La pick-up más vendida del país. Robusta para el campo y cómoda para la ciudad.', specs:[['204','CV'],['2.8','Turbo diésel'],['4x4','Tracción']] },
+    { brand:'Toyota', name:'Corolla XEI', tag:'Sedán', type:'auto', price:'US$ 33.500', img:'../../assets/img/vitrina/auto-corolla-costa.webp',
+      desc:'Sedán híbrido, silencioso y económico. Ideal para el día a día y la ruta.', specs:[['122','CV'],['Híbrido','Motor'],['CVT','Caja']] },
+    { brand:'Jeep', name:'Compass', tag:'SUV', type:'auto', price:'US$ 41.900', img:'../../assets/img/vitrina/auto-compass.webp',
+      desc:'SUV con motor turbo, buen despeje y espacio para toda la familia.', specs:[['175','CV'],['1.3T','Motor'],['Aut. 6v','Caja']] }
   ];
 
   // ---------- Reloj ----------
@@ -104,11 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let filter = 'all';
   const renderModels = () => {
     const q = search.value.trim().toLowerCase();
-    const items = MODELS.map((m, i) => ({ ...m, i })).filter(m => (filter === 'all' || m.type === filter) && ('zx-1 ' + m.name).toLowerCase().includes(q));
+    const items = MODELS.map((m, i) => ({ ...m, i })).filter(m => (filter === 'all' || m.type === filter) && (m.brand + ' ' + m.name).toLowerCase().includes(q));
     list.innerHTML = items.length ? items.map((m, k) => `
       <button class="model" data-open-model="${m.i}" style="--d:${k * .08}s">
         <div class="model-img" style="--img:url('${m.img}')"></div>
-        <div class="model-info"><div><h3>ZX-1 <em>${m.name}</em></h3><p>${m.tag} · Desde ${m.price}</p></div><span class="chev"><i data-icon="chevron-right"></i></span></div>
+        <div class="model-info"><div><h3>${m.brand} <em>${m.name}</em></h3><p>${m.tag} · Desde ${m.price}</p></div><span class="chev"><i data-icon="chevron-right"></i></span></div>
       </button>`).join('') : '<p class="empty">Sin resultados</p>';
     renderIcons(list);
   };
@@ -127,8 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const m = MODELS[current = i];
     dHero.style.setProperty('--img', `url('${m.img}')`);
     $('#dTag').textContent = m.tag;
-    $('#dTitle').textContent = 'ZX-1 ' + m.name;
-    $('#detailNavTitle').textContent = 'ZX-1 ' + m.name;
+    $('#dTitle').textContent = m.brand + ' ' + m.name;
+    $('#detailNavTitle').textContent = m.name;
     $('#dDesc').textContent = m.desc;
     $('#dPrice').textContent = m.price;
     $('#dSpecs').innerHTML = m.specs.map(s => `<div><strong>${s[0]}</strong><span>${s[1]}</span></div>`).join('');
@@ -183,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const step = now => {
       const p = Math.min(Math.max(0, now - t0) / dur, 1), v = 10 + 70 * ease(p);
       ring.style.strokeDashoffset = C * (1 - v / 100); rVal.textContent = Math.round(v);
-      rTime.textContent = p < 1 ? Math.ceil(12 * (1 - p)) + ' min restantes' : 'Carga al 80% · lista';
-      if (p < 1) requestAnimationFrame(step); else { charging = false; ringVal = 80; notify('Carga completada · 80%'); }
+      rTime.textContent = p < 1 ? 'Calculando…' : 'Pre-aprobado · hasta 60 cuotas';
+      if (p < 1) requestAnimationFrame(step); else { charging = false; ringVal = 80; notify('Pre-aprobado · hasta 80% financiable'); }
     };
     requestAnimationFrame(step); haptic();
   });

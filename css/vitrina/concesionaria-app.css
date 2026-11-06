@@ -241,3 +241,8 @@ svg.ic{width:20px;height:20px;stroke-width:1.8;flex:none}
 .sg-dots{display:flex;justify-content:center;gap:6px;padding:12px 0 0}
 .sg-dots i{width:7px;height:7px;border-radius:4px;background:rgba(0,0,0,.18);transition:width .4s var(--spring),background .3s}
 .sg-dots i.on{width:22px;background:var(--ink)}
+/* Fotos de autos sin recortes: los autos son horizontales */
+.hero-card::before{background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(14,15,16,.96) 66%),var(--img) center top/100% auto no-repeat,#0e0f10}
+.mini-card{flex:0 0 220px;height:150px}
+.model-img{height:auto;aspect-ratio:3/2}
+.detail-hero{height:auto;aspect-ratio:3/2}

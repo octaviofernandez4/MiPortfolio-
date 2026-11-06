@@ -4,30 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Brío Automotores</title>
-<!-- Vitrina del Inicio: solo "Built to perform" y "Pensado para el conductor" de la demo de concesionaria -->
+<!-- Vitrina del Inicio: la gama y "Pensado para el conductor" de la plantilla de concesionaria -->
+<title>Brío Automotores — 0 km y usados</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/vitrina/concesionaria.css">
+<link rel="stylesheet" href="../../css/vitrina/plantilla-concesionaria.css">
+<script src="../../js/vitrina/plantilla-concesionaria.js" defer></script>
+<style>
+  html, body { overflow: hidden; }
+  /* en la vitrina el menú queda fijo arriba con su estilo "scrolleado" */
+  .nav { position: relative; height: 68px; background: rgba(242,242,240,.92); box-shadow: 0 1px 0 var(--line); }
+  .burger { pointer-events: none; }
+</style>
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" id="nav">
   <a href="#" class="brand" aria-label="Brío inicio">
     <span class="brand-mark">B</span>
     <span class="brand-name">BRÍO<small>AUTOMOTORES</small></span>
   </a>
-  <nav class="nav-links">
+  <nav class="nav-links" id="navLinks">
     <a href="#lineup">Vehículos</a>
-    <a href="#tech">Tecnología</a>
-    <a href="#interior">Diseño</a>
-    <a href="#sustain">Sustentabilidad</a>
-    <a href="#press">Nosotros</a>
-    <a href="#inquire">Noticias</a>
+    <a href="#tech">Financiación</a>
+    <a href="#interior">Interior</a>
+    <a href="#sustain">Permutas</a>
+    <a href="#press">Marcas</a>
+    <a href="#inquire">Contacto</a>
   </nav>
-  <a href="#inquire" class="nav-cta">Reservá el tuyo <i data-icon="arrow-right"></i></a>
-  <span class="burger" aria-hidden="true"><span></span><span></span></span>
+  <a href="#inquire" class="nav-cta">Reservá el tuyo <i data-lucide="arrow-right"></i></a>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span></button>
 </header>
 
 <!-- LINEUP -->
@@ -35,21 +42,21 @@
   <div class="lineup-intro reveal">
     <p class="kicker">La gama</p>
     <h2>Built to<br>perform.</h2>
-    <p>Tres expresiones de rendimiento.<br>Un ADN sin concesiones.</p>
-    <a href="#inquire" class="btn btn-outline">Ver todos los modelos <i data-icon="arrow-right"></i></a>
+    <p>Los más elegidos del mes.<br>0 km con garantía oficial.</p>
+    <a href="#inquire" class="btn btn-outline">Consultar stock <i data-lucide="arrow-right"></i></a>
   </div>
   <div class="cards">
     <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-hilux.webp')">
       <div class="car-info"><h3>Toyota<br><em>Hilux SRV</em></h3><p>Desde US$ 52.000</p></div>
-      <span class="car-arrow"><i data-icon="arrow-up-right"></i></span>
+      <span class="car-arrow"><i data-lucide="arrow-up-right"></i></span>
     </article>
-    <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-corolla.webp')">
+    <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-corolla-costa.webp')">
       <div class="car-info"><h3>Toyota<br><em>Corolla XEI</em></h3><p>Desde US$ 33.500</p></div>
-      <span class="car-arrow"><i data-icon="arrow-up-right"></i></span>
+      <span class="car-arrow"><i data-lucide="arrow-up-right"></i></span>
     </article>
-    <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-208.webp')">
-      <div class="car-info"><h3>Peugeot<br><em>208 Allure</em></h3><p>Desde US$ 24.900</p></div>
-      <span class="car-arrow"><i data-icon="arrow-up-right"></i></span>
+    <article class="car-card reveal" style="--img:url('../../assets/img/vitrina/auto-compass.webp')">
+      <div class="car-info"><h3>Jeep<br><em>Compass</em></h3><p>Desde US$ 41.900</p></div>
+      <span class="car-arrow"><i data-lucide="arrow-up-right"></i></span>
     </article>
   </div>
 </section>
@@ -60,12 +67,11 @@
   <div class="split-text reveal">
     <p class="kicker">Pensado para el conductor</p>
     <h2>Pure connection.<br>Zero distractions.</h2>
-    <p>Un habitáculo diseñado a tu alrededor. Cada control, intuitivo. Cada detalle, intencional.</p>
-    <a href="#inquire" class="btn btn-outline">Explorar interior <i data-icon="arrow-right"></i></a>
+    <p>Probá el auto antes de decidir: coordinamos tu test drive y te mostramos cada detalle del habitáculo.</p>
+    <a href="#inquire" class="btn btn-outline">Pedir test drive <i data-lucide="arrow-right"></i></a>
   </div>
 </section>
 
 <script src="../../js/vitrina/vitrina.js"></script>
-<script src="../../js/vitrina/concesionaria.js"></script>
 </body>
 </html>
