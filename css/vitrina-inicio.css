@@ -143,33 +143,8 @@
 
   .vitrina__frame--restaurante { height: 1400px; }
   .vitrina__frame--concesionaria { height: 1200px; }
-  /* versión app: alto fijo de pantalla de teléfono. Es una vista previa que no se toca
-     (así el dedo siempre scrollea el Inicio, en iOS se trababa); para usarla se abre entera. */
-  .vitrina__frame--app { height: min(720px, 80svh); pointer-events: none; }
-  .vitrina__browser { position: relative; }
-  .vitrina__tap {
-    position: absolute;
-    inset: 42px 0 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 96px;
-    text-decoration: none;
-  }
-  .vitrina__tap span {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 0 18px;
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--color-on-accent);
-    background: var(--color-accent);
-    border: 2px solid var(--color-accent);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
-    transition: background .2s, border-color .2s;
-  }
-  .vitrina__tap:active span { background: #201e1d; border-color: #201e1d; }
+  /* versión app: alto fijo de pantalla de teléfono, la app scrollea por dentro */
+  .vitrina__frame--app { height: min(720px, 80svh); }
 
   .vitrina__cap { flex-direction: column; align-items: stretch; gap: 12px; margin-top: 14px; font-size: 14.5px; }
   .vitrina__actions { flex-direction: column; gap: 10px; }
